@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+<template id="__bundler_thumbnail" data-bg-color="#EBEAE6">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#EBEAE6"/><text x="50" y="58" font-family="serif" font-size="30" fill="rgb(25,35,22)" text-anchor="middle">E</text></svg>
+</template>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="ext-resource-dependency" content="./assets/roya-resort.png" data-resource-id="roya-resort" />
+<meta name="ext-resource-dependency" content="./assets/roya-desa.png" data-resource-id="roya-desa" />
+<meta name="ext-resource-dependency" content="./assets/balicopter.png" data-resource-id="balicopter" />
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    @font-face { font-family: "HeadingNow-84Regular"; src: url("./fonts/HeadingNow-84Regular.otf") format("opentype"); font-weight: 400; }
+    @font-face { font-family: "HeadingNow-82Light"; src: url("./fonts/HeadingNow-82Light.otf") format("opentype"); font-weight: 200; }
+    @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+    html, body { margin: 0; height: 100%; overflow-x: hidden; scroll-behavior: smooth; }
+    a { color: rgb(255,255,255); }
+    a:hover { color: rgba(255,255,255,0.8); }
+  </style>
+</helmet>
+<div style="width: 100vw; height: 100vh; overflow: hidden; position: relative; background-color: #EBEAE6" data-om-label="hero">
+<div style="position: relative; width: 100%; height: 100%; overflow: hidden; border-radius: 0px; font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; box-sizing: border-box">
+  <img src="./assets/layer-bg.png" alt="" style="position: absolute; inset: 0; width: 100%; height: 110%; object-fit: cover; top: -80px; opacity: {{ bgOpacity }}; transform: scale({{ bgScale }}); transition: opacity 0.9s ease-out, transform 1.2s ease-out">
+  <img src="./logo_hero-mrxwd1df-p5qw.png" alt="" style="position: absolute; left: {{ logoLeft }}px; top: {{ logoTop }}px; width: {{ logoWidth }}px; height: auto; opacity: {{ logoOpacity }}; transform: translateY({{ logoOffsetY }}px) scale({{ logoScale }}); transform-origin: center; transition: opacity 0.6s ease-out, transform 0.7s ease-out" data-om-label="logo">
+  <img src="./assets/layer-top.png" alt="" style="position: absolute; inset: 0; width: 100%; height: 110%; object-fit: cover; top: -80px; opacity: {{ topOpacity }}; transform: scale({{ topScale }}); transition: opacity 0.9s ease-out, transform 1.2s ease-out">
+
+  <div style="position: fixed; left: clamp(12px,2.5vw,36px); right: clamp(12px,2.5vw,36px); top: clamp(10px,2vw,24px); z-index: 100; border-radius: 16px; background: rgba(0,0,0,0.3); backdrop-filter: blur(24px); display: grid; grid-template-columns: auto 1fr auto; padding: clamp(10px,1.2vw,16px) clamp(10px,1.2vw,16px) clamp(10px,1.2vw,16px) clamp(14px,1.8vw,24px); align-items: center; box-sizing: border-box; gap: 16px; opacity:{{ headerOpacity }}; transform:translateY({{ headerOffsetY }}px); transition: opacity 0.6s ease-out, transform 0.6s ease-out;">
+    <a href="/" style="width:clamp(100px,10.3vw,149px); justify-self:start; flex-shrink:0; display:block;"><img src="./assets/everville-logo.png" alt="EVERVILLE" style="width:100%; height:auto; filter:brightness(0) invert(1); display:block;"></a>
+    <div style="display:flex; flex-direction:row; gap:clamp(10px,1.8vw,36px); align-items:center; flex-wrap:nowrap; justify-self:start; margin-left:clamp(8px,1.2vw,20px); min-width:0; overflow:hidden;">
+      <span style="font-size: clamp(11px,0.97vw,16px); font-weight: 400; line-height: 21px; color: #fff; text-transform: none; white-space: nowrap; cursor: pointer; transition: color 0.2s ease-out" style-hover="color: rgba(255,255,255,0.65)">Проекты</span>
+      <span style="font-size: clamp(11px,0.97vw,16px); font-weight: 400; line-height: 21px; color: #fff; text-transform: none; white-space: nowrap; cursor: pointer; transition: color 0.2s ease-out" style-hover="color: rgba(255,255,255,0.65)">Инвестиции</span>
+      <span style="font-size: clamp(11px,0.97vw,16px); font-weight: 400; line-height: 21px; color: #fff; text-transform: none; white-space: nowrap; cursor: pointer; transition: color 0.2s ease-out" style-hover="color: rgba(255,255,255,0.65)">Юридика</span>
+      <span style="font-size: clamp(11px,0.97vw,16px); font-weight: 400; line-height: 21px; color: #fff; text-transform: none; white-space: nowrap; cursor: pointer; transition: color 0.2s ease-out" style-hover="color: rgba(255,255,255,0.65)">О компании</span>
+      <span style="font-size: clamp(11px,0.97vw,16px); font-weight: 400; line-height: 21px; color: #fff; text-transform: none; white-space: nowrap; cursor: pointer; transition: color 0.2s ease-out" style-hover="color: rgba(255,255,255,0.65)">Контакты</span>
+    </div>
+    <div style="display: flex; flex-direction: row; gap: 12px; align-items: center; flex-wrap: nowrap; justify-self: end; min-width: 0">
+      <div style="display:flex; flex-direction:row; gap:8px; align-items:stretch;">
+        <div style="border-radius: 8px; background: rgb(43,58,39); display: inline-flex; padding: clamp(12px,1.1vw,16px) clamp(16px,1.6vw,24px); justify-content: center; align-items: center; box-sizing: border-box; padding-top: clamp(10px,1.1vw,16px); padding-bottom: clamp(10px,1.1vw,16px); padding-left: clamp(14px,1.6vw,24px); padding-right: clamp(14px,1.6vw,24px); cursor: pointer; transition: background 0.2s ease-out" style-hover="background: rgb(30,41,27)">
+          <span style="font-weight: 700; font-size: clamp(11px,0.97vw,16px); line-height: 21px; color: #fff; white-space: nowrap; text-transform: none">Войти</span>
+        </div>
+        <div style="border-radius: 8px; background: #fff; display: inline-flex; padding: clamp(12px,1.1vw,16px) clamp(16px,1.6vw,24px); justify-content: center; align-items: center; box-sizing: border-box; padding-top: clamp(10px,1.1vw,16px); padding-bottom: clamp(10px,1.1vw,16px); padding-left: clamp(14px,1.6vw,24px); padding-right: clamp(14px,1.6vw,24px); cursor: pointer; transition: background 0.2s ease-out" style-hover="background: rgb(206,210,199)">
+          <span style="font-weight: 700; font-size: clamp(11px,0.97vw,16px); line-height: 21px; color: rgb(43,58,39); text-transform: none; white-space: nowrap">Инвестировать</span>
+        </div>
+      </div>
+      <div style="border-radius: 8px; backdrop-filter: blur(12px); display: flex; flex-direction: row; gap: 4px; padding: clamp(12px,1.1vw,16px); align-items: center; box-sizing: border-box; background-color: #2B3A270D; cursor: pointer; transition: background-color 0.2s ease-out" style-hover="background-color: rgba(43,58,39,0.5)">
+        <span style="font-weight:700; font-size:clamp(11px,0.97vw,14px); color:#fff;">RU</span>
+        <svg width="14" height="7" viewBox="0 0 14 7" fill="#fff"><path d="M 7 7 L 0.938 1.75 L 13.062 1.75 L 7 7 Z"></path></svg>
+      </div>
+    </div>
+  </div>
+
+  <div style="position: absolute; left: 0; bottom: 0; width: 100%; padding: clamp(30px,7.5vh,60px) clamp(24px,15.2vw,219px); box-sizing: border-box; padding-top: 64px; padding-bottom: 96px; padding-left: 60px; padding-right: 60px">
+    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, #2B3A2766, #161E1366, #161E1366, #161E13CC); backdrop-filter: blur(10px); -webkit-mask-image: linear-gradient(180deg, transparent 0%, black 60%, black 100%); mask-image: linear-gradient(180deg, transparent 0%, black 60%, black 100%); pointer-events: none; left: -9px; top: 30px; opacity: {{ bottomOpacity }}; transition: opacity 0.6s ease-out"></div>
+    <div style="position:relative; display:flex; flex-direction:column; gap:clamp(18px,4.5vh,36px); align-items:center; opacity: {{ bottomTextOpacity }}; transform: translateY({{ bottomTextOffsetY }}px); transition: opacity 0.6s ease-out, transform 0.6s ease-out;">
+      <div style="display: flex; flex-direction: column; gap: 8px; align-items: center; width: 100%">
+        <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 48px; text-align: center; white-space: normal; line-height: 120%; color: #fff; text-transform: uppercase; width: 100%; align-self: auto; flex-grow: 0">гостиничная недвижимость на Бали</span>
+        <span style="font-family: 'HeadingNow-82Light'; font-weight: 200; font-size: 48px; text-align: center; white-space: normal; line-height: 120%; color: #fff; text-transform: uppercase; width: 100%">подотчётная инвестору</span>
+      </div>
+      <div style="display:flex; flex-direction:row; gap:16px; align-items:center; flex-wrap:wrap; justify-content:center;">
+        <div style="border-radius: 8px; background: rgba(43,58,39,0.6); display: flex; padding: clamp(14px,2.5vh,20px) clamp(28px,6vw,48px); justify-content: center; align-items: center; box-sizing: border-box; padding-top: 20px; padding-bottom: 20px; padding-left: 28px; padding-right: 28px; cursor: pointer; transition: background 0.2s ease-out" style-hover="background: rgba(30,41,27,0.75)">
+          <span style="font-weight: 700; font-size: 16px; line-height: 21px; color: #fff; text-transform: none; white-space: nowrap">Смотреть проекты</span>
+        </div>
+        <div style="border-radius: 8px; background: #fff; display: flex; padding: clamp(14px,2.5vh,20px) clamp(28px,6vw,48px); justify-content: center; align-items: center; box-sizing: border-box; padding-top: 20px; padding-bottom: 20px; padding-left: 28px; padding-right: 28px; cursor: pointer; transition: background 0.2s ease-out" style-hover="background: rgb(206,210,199)">
+          <span style="font-weight: 700; font-size: 16px; line-height: 21px; color: rgb(43,58,39); text-transform: none; white-space: nowrap">Инвестировать</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div style="background: #EBEAE6; padding: clamp(60px,8vw,120px) clamp(24px,15.2vw,219px) clamp(60px,10vw,140px); box-sizing: border-box; display: flex; flex-direction: column; gap: clamp(48px,6vw,80px); align-items: center; padding-right: 60px; padding-left: 60px; padding-top: 160px; padding-bottom: 160px" ref="{{ sectionRef }}">
+  <div style="box-sizing: border-box; display: flex; flex-direction: column; gap: 160px; justify-content: normal; align-items: center"><div style="max-width: 1230px; font-size: clamp(22px,3.2vw,42px); line-height: 1.3; text-transform: uppercase; color: rgb(25,35,22); text-align: center; display: flex; flex-direction: column; gap: 8px">
+    <div style="overflow: hidden"><div style="transform: translateY({{ h1Y }}%); opacity: {{ h1O }}; filter: blur({{ h1B }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1) 0ms, opacity 0.9s ease-out 0ms, filter 0.9s ease-out 0ms"><span style="font-weight: 400; font-family: HeadingNow-82Light; line-height: 1.5">Этот сайт — для тех, </span><span style="font-weight: 700; font-family: HeadingNow-84Regular; line-height: 1.5">кто уже в проекте.</span></div></div>
+    <div style="overflow: hidden"><div style="display: flex; align-items: center; justify-content: center; gap: clamp(16px,2.5vw,32px); width: 100%; flex-wrap: nowrap; transform: translateY({{ h2Y }}%); opacity: {{ h2O }}; filter: blur({{ h2B }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1) 120ms, opacity 0.9s ease-out 120ms, filter 0.9s ease-out 120ms"><span style="white-space: nowrap"><span style="font-weight: 400; font-family: HeadingNow-82Light; line-height: 1.5">И для тех, </span><span style="font-weight: 700; font-family: HeadingNow-84Regular; line-height: 1.5">кто верит фактам,</span></span><span style="flex: 0 0 auto; width: clamp(90px,14vw,206px); height: 2px; background: rgb(25,35,22); display: block; transform: scaleX({{ lineScale }}); transform-origin: left; transition: transform 0.7s cubic-bezier(.16,1,.3,1)"></span></div></div>
+    <div style="overflow: hidden"><div style="display: flex; align-items: center; justify-content: center; gap: clamp(16px,2.5vw,32px); width: 100%; flex-wrap: nowrap; transform: translateY({{ h3Y }}%); opacity: {{ h3O }}; filter: blur({{ h3B }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1) 240ms, opacity 0.9s ease-out 240ms, filter 0.9s ease-out 240ms"><span style="flex: 0 0 auto; width: clamp(140px,23vw,337px); height: 2px; background: rgb(25,35,22); display: block; transform: scaleX({{ lineScale }}); transform-origin: right; transition: transform 0.7s cubic-bezier(.16,1,.3,1)"></span><span style="font-weight: 700; white-space: nowrap; font-family: HeadingNow-84Regular; line-height: 1.5">а не обещаниям.</span></div></div>
+  </div><div style="box-sizing: border-box; display: flex; flex-direction: column; gap: 80px; justify-content: normal; align-items: center; transform: translateY({{ secY }}px); opacity: {{ secO }}; filter: blur({{ secB }}px); transition: transform 0.7s cubic-bezier(.16,1,.3,1), opacity 0.7s ease-out, filter 0.7s ease-out"><div style="display: flex; flex-direction: row; justify-content: space-between; align-items: flex-start; gap: 40px; width: 100%; max-width: 1320px; flex-wrap: wrap">
+    <div style="max-width: 697px; flex: 1 1 420px; font-family: 'HeadingNow-82Light'; font-size: clamp(17px,2.2vw,28px); line-height: 1.35; text-transform: uppercase; color: rgb(25,35,22); display: flex; flex-direction: column; gap: 4px">
+      <div><span style="font-weight: 200">Единый портал, </span><span style="font-weight: 700; font-family: HeadingNow-84Regular">ДЛЯ ИНВЕСТОРОВ</span></div>
+      <div style="display: flex; align-items: center; justify-content: center; gap: clamp(10px,1.6vw,20px); flex-wrap: nowrap"><span style="font-weight: 700; white-space: nowrap; font-family: HeadingNow-84Regular;">И ПАРТНЁРОВ ПРОЕКТА.</span><span style="flex: 0 0 auto; width: clamp(60px,10vw,139px); height: 2px; background: rgb(25,35,22); display: block; transform: scaleX({{ lineScale2 }}); transform-origin: left; transition: transform 0.7s cubic-bezier(.16,1,.3,1)"></span></div>
+      <div style="display: flex; align-items: center; justify-content: center; gap: clamp(10px,1.6vw,20px); flex-wrap: nowrap"><span style="flex: 0 0 auto; width: clamp(52px,8.7vw,121px); height: 2px; background: rgb(25,35,22); display: block; transform: scaleX({{ lineScale2 }}); transform-origin: right; transition: transform 0.7s cubic-bezier(.16,1,.3,1)"></span><span style="font-weight: 200; white-space: nowrap;">Все факты — в одном месте.</span></div>
+    </div>
+    <span style="font-size: 18px; line-height: 1.5; color: rgb(0,0,0); max-width: 536px; flex: 1 1 320px; font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif">В одном месте — документы, бюджеты, юридические заключения, строительная отчётность, операционные сводки и список ответственных. Публичный сайт показывает стандарт. Закрытые каналы открывают файлы.</span>
+  </div><div style="display: flex; flex-direction: row; gap: 24px; width: 100%; max-width: 1320px; flex-wrap: wrap">
+    <div style="border-radius: 16px; background: rgb(43,58,39); display: flex; flex-direction: column; gap: 16px; padding: 24px; box-sizing: border-box; flex: 1 1 300px">
+      <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 20px; text-transform: uppercase; color: #fff; line-height: 28 px">Всё по одному активу</span>
+      <span style="font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 300; font-size: 16px; line-height: 1.5; color: #fff; height: 100%; text-align: left">Договоры, исходные файлы, допущения, обновления и открытые вопросы собраны в одном деле.</span>
+    </div>
+    <div style="border-radius: 16px; background: rgb(61,42,34); display: flex; flex-direction: column; gap: 16px; padding: 24px; box-sizing: border-box; flex: 1 1 300px">
+      <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 20px; text-transform: uppercase; color: #fff; line-height: 28 px">Отчётность понятна</span>
+      <span style="font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 300; font-size: 16px; line-height: 1.5; color: #fff; text-align: left">Инвестор не собирает картину по фрагментам. Каждое обновление показывает, что изменилось, что это значит и на каком документе основано.</span>
+    </div>
+    <div style="border-radius: 16px; background: rgb(138,122,104); display: flex; flex-direction: column; gap: 16px; padding: 24px; box-sizing: border-box; flex: 1 1 300px; line-height: 1.5">
+      <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 20px; text-transform: uppercase; color: #fff; line-height: 28 px">Следующий шаг ясен</span>
+      <span style="font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 300; font-size: 16px; line-height: 1.5; color: #fff; text-align: left">Документ называет открытый вопрос, ответственного и решение, которого ждут — от команды или от инвестора.</span>
+    </div>
+  </div></div></div>
+  
+  
+</div>
+
+<div style="background: #fff; padding: 160px 60px; box-sizing: border-box; display: flex; flex-direction: column; align-items: center" ref="{{ projRef }}">
+  <div style="width: 100%; max-width: 1310px; display: flex; flex-direction: column; gap: 80px">
+    <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: flex-start; gap: 40px; flex-wrap: wrap">
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <div style="overflow: hidden"><span style="display: block; font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: clamp(30px,4.2vw,56px); color: rgb(25,35,22); white-space: nowrap; transform: translateY({{ projTitleY }}%); opacity: {{ projTitleO }}; filter: blur({{ projTitleB }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1), opacity 0.9s ease-out, filter 0.9s ease-out">ИЗБРАННЫЕ</span></div>
+        <div style="overflow: hidden"><div style="display: flex; align-items: center; gap: 20px; transform: translateY({{ projTitleY }}%); opacity: {{ projTitleO }}; filter: blur({{ projTitleB }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1) 100ms, opacity 0.9s ease-out 100ms, filter 0.9s ease-out 100ms">
+          <span style="flex: 0 0 auto; width: 198px; height: 2px; background: rgb(25,35,22); display: block; transform: scaleX({{ lineScale3 }}); transform-origin: right; transition: transform 0.7s cubic-bezier(.16,1,.3,1)"></span>
+          <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: clamp(30px,4.2vw,56px); color: rgb(25,35,22); white-space: nowrap">ПРОЕКТЫ</span>
+        </div></div>
+      </div>
+      <div style="width: 100%; max-width: 648px; flex: 1 1 420px; display: flex; flex-direction: column; gap: 24px; align-items: flex-end; transform: translateY({{ projTitleY }}%); opacity: {{ projTitleO }}; filter: blur({{ projTitleB }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1) 120ms, opacity 0.9s ease-out 120ms, filter 0.9s ease-out 120ms">
+        <span style="font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 400; font-size: 18px; line-height: 1.5; color: rgb(0,0,0); align-self: stretch">В Everville каждый проект — это часть большой картины жизни на Бали. Мы создаём не просто объекты, а звенья единой цепи, которые усиливают друг друга. Это жизнь в формате 360: честная, прозрачная и наполненная всеми привилегиями острова, собранными в одну систему для наших гостей и партнёров</span>
+        <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; width: 100%; flex-wrap: wrap; gap: 16px">
+          <div style="display: flex; flex-direction: row; gap: 12px; align-items: center">
+            <sc-for list="{{ indicatorDots }}" as="dot" hint-placeholder-count="3">
+              <span style="width: {{ dot.width }}px; height: 2px; background: rgb(25,35,22); display: block; opacity: {{ dot.opacity }}; transition: width 0.3s ease-out, opacity 0.3s ease-out"></span>
+            </sc-for>
+          </div>
+          <div style="display: flex; flex-direction: row; gap: 8px; align-items: center">
+            <div onClick="{{ onPrev }}" style="width: 64px; height: 64px; border-radius: 50%; box-shadow: inset 0 0 0 1px rgb(25,35,22); display: flex; align-items: center; justify-content: center; cursor: pointer; opacity: {{ prevOpacity }}; transition: box-shadow 0.2s ease-out" style-hover="box-shadow: inset 0 0 0 1.5px rgb(25,35,22)">
+              <svg width="24" height="14" viewBox="0 0 24 14" fill="none"><path d="M 1 7 L 23 7 M 8 1 L 1 7 L 8 13" stroke="rgb(25,35,22)" stroke-width="1.5" fill="none"></path></svg>
+            </div>
+            <div onClick="{{ onNext }}" style="width: 64px; height: 64px; border-radius: 50%; box-shadow: inset 0 0 0 1px rgb(25,35,22); display: flex; align-items: center; justify-content: center; cursor: pointer; opacity: {{ nextOpacity }}; transition: box-shadow 0.2s ease-out" style-hover="box-shadow: inset 0 0 0 1.5px rgb(25,35,22)">
+              <svg width="24" height="14" viewBox="0 0 24 14" fill="none"><path d="M 1 7 L 23 7 M 16 1 L 23 7 L 16 13" stroke="rgb(25,35,22)" stroke-width="1.5" fill="none"></path></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="box-sizing: border-box; display: flex; flex-direction: column; gap: 48px; justify-content: normal; align-items: normal; transform: translateY({{ projY }}px); opacity: {{ projO }}; filter: blur({{ projB }}px); transition: transform 0.7s cubic-bezier(.16,1,.3,1), opacity 0.7s ease-out, filter 0.7s ease-out"><div style="width: 100%; overflow: hidden" ref="{{ carouselViewportRef }}">
+      <div style="display: flex; flex-direction: row; gap: 24px; align-items: flex-start; transform: translateX({{ carouselOffset }}px); transition: transform 0.5s cubic-bezier(.16,1,.3,1)">
+        <sc-for list="{{ projects }}" as="p" hint-placeholder-count="3">
+          <div style="flex: 0 0 480px; width: 480px; display: flex; flex-direction: column; gap: 16px">
+            <div style="display: flex; flex-direction: column; gap: 8px">
+              <span style="font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 400; font-size: 18px; color: rgb(138,70,70)">{{ p.tag }}</span>
+              <span style="font-family: HeadingNow-84Regular; font-weight: 700; font-size: 36px; line-height: 1; color: rgb(0,0,0); text-transform: uppercase">{{ p.title }}</span>
+              <span style="font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 400; font-size: 20px; line-height: 1.5; color: rgb(0,0,0)">{{ p.subtitle }}</span>
+            </div>
+            <div style="position: relative; width: 100%; height: 300px; border-radius: 16px; overflow: hidden">
+              <img src="{{ p.image }}" alt="{{ p.title }}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover">
+              <sc-if value="{{ p.location }}">
+                <div style="position: absolute; right: 12px; top: 12px; border-radius: 999px; background: rgba(255,255,255,0.8); display: flex; flex-direction: row; gap: 6px; padding: 8px 16px 8px 12px; align-items: center">
+                  <svg width="12" height="17" viewBox="0 0 11.783 17.288" fill="rgb(138,70,70)"><path d="M 5.892 0 C 9.146 0 11.783 2.638 11.783 5.892 C 11.783 9.146 5.892 17.288 5.892 17.288 C 5.892 17.288 0 9.146 0 5.892 C 0 2.638 2.638 0 5.892 0 Z M 5.892 3.422 C 4.528 3.422 3.422 4.528 3.422 5.892 C 3.422 7.255 4.528 8.361 5.892 8.361 C 7.256 8.361 8.361 7.255 8.361 5.892 C 8.361 4.528 7.256 3.422 5.892 3.422 Z" fill-rule="nonzero"></path></svg>
+                  <span style="font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 400; font-size: 16px; white-space: nowrap; color: rgb(138,70,70)">{{ p.location }}</span>
+                </div>
+              </sc-if>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div><div style="border-radius: 8px; background: rgb(43,58,39); display: flex; padding: 16px 24px; justify-content: center; align-items: center; align-self: center; cursor: pointer; transition: background 0.2s ease-out" style-hover="background: rgb(30,41,27)">
+      <span style="font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 700; font-size: 14px; text-transform: uppercase; color: #fff; white-space: nowrap">Все проекты</span>
+    </div></div>
+    
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440}}">
+class Component extends DCLogic {
+  state = { logoTop: 287, logoLeft: 397, logoWidth: 526, carouselIndex: 0, bgOpacity: 0, bgScale: 1.08, topOpacity: 0, topScale: 1.1, logoOpacity: 0, logoScale: 0.92, logoOffsetY: 48, headerOpacity: 0, headerOffsetY: -24, bottomOpacity: 0, bottomTextOpacity: 0, bottomTextOffsetY: 24 };
+  CARD_W = 480; CARD_GAP = 24;
+  sectionRef = React.createRef();
+  projRef = React.createRef();
+  carouselViewportRef = React.createRef();
+  IMG_W = 1440; IMG_H = 800; FX = 0.3008; FY = 0.4062; FW = 0.3658;
+  BOX_H_RATIO = 1.1; BOX_TOP_PX = -80;
+  componentDidMount() {
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      this.setState({ bgOpacity: 1, bgScale: 1, topOpacity: 1, topScale: 1 });
+    }));
+    setTimeout(() => this.setState({ logoOpacity: 0.85, logoScale: 1, logoOffsetY: 0 }), 700);
+    setTimeout(() => this.setState({ headerOpacity: 1, headerOffsetY: 0, bottomOpacity: 1 }), 950);
+    setTimeout(() => this.setState({ bottomTextOpacity: 1, bottomTextOffsetY: 0 }), 1250);
+    this.update = () => {
+      const cw = window.innerWidth, ch = window.innerHeight;
+      const boxW = cw, boxH = ch * this.BOX_H_RATIO;
+      const scale = Math.max(boxW / this.IMG_W, boxH / this.IMG_H);
+      const displayedW = this.IMG_W * scale, displayedH = this.IMG_H * scale;
+      const cropLeft = (displayedW - boxW) / 2, cropTop = (displayedH - boxH) / 2;
+      this.setState({
+        logoTop: this.FY * displayedH - cropTop + this.BOX_TOP_PX,
+        logoLeft: this.FX * displayedW - cropLeft,
+        logoWidth: this.FW * displayedW,
+      });
+    };
+    this.update();
+    window.addEventListener("resize", this.update);
+    const obs = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        this.setState({ sec1Visible: true });
+        setTimeout(() => this.setState({ linesVisible: true }), 500);
+        setTimeout(() => this.setState({ sec2Visible: true }), 400);
+        setTimeout(() => this.setState({ sec2LinesVisible: true }), 900);
+        obs.disconnect();
+      }
+    }, { threshold: 0.15 });
+    if (this.sectionRef.current) obs.observe(this.sectionRef.current);
+    const projObs = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        this.setState({ projVisible: true });
+        setTimeout(() => this.setState({ projLinesVisible: true }), 500);
+        setTimeout(() => this.setState({ projCardsVisible: true }), 400);
+        projObs.disconnect();
+      }
+    }, { threshold: 0.15 });
+    if (this.projRef.current) projObs.observe(this.projRef.current);
+    this.updateCarouselW = () => {
+      if (this.carouselViewportRef.current) this.setState({ carouselViewportW: this.carouselViewportRef.current.offsetWidth });
+    };
+    this.updateCarouselW();
+    window.addEventListener("resize", this.updateCarouselW);
+  }
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.update);
+    window.removeEventListener("resize", this.updateCarouselW);
+  }
+  renderVals() {
+    const projects = [
+      { tag: "стандарт девелопмента", title: "ROYA RESORT", subtitle: "резорт · сёрф · гольф", image: (window.__resources && window.__resources['roya-resort']) || './assets/roya-resort.png', location: "Dreamland Beach, Бали" },
+      { tag: "инфраструктура города", title: "ROYA DESA", subtitle: "прибрежный город · марина", image: (window.__resources && window.__resources['roya-desa']) || './assets/roya-desa.png', location: "Чандидаса, Бали" },
+      { tag: "доступность острова", title: "BALICOPTER", subtitle: "частная авиация", image: (window.__resources && window.__resources['balicopter']) || './assets/balicopter.png', location: "Убуд, Бали" },
+      { tag: "стандарт девелопмента", title: "ROYA RESORT", subtitle: "резорт · сёрф · гольф", image: (window.__resources && window.__resources['roya-resort']) || './assets/roya-resort.png', location: "Dreamland Beach, Бали" },
+      { tag: "инфраструктура города", title: "ROYA DESA", subtitle: "прибрежный город · марина", image: (window.__resources && window.__resources['roya-desa']) || './assets/roya-desa.png', location: "Чандидаса, Бали" },
+      { tag: "доступность острова", title: "BALICOPTER", subtitle: "частная авиация", image: (window.__resources && window.__resources['balicopter']) || './assets/balicopter.png', location: "Убуд, Бали" },
+    ];
+    const stepW = this.CARD_W + this.CARD_GAP;
+    const viewportW = this.state.carouselViewportW || 1310;
+    const maxScroll = Math.max(0, projects.length * stepW - this.CARD_GAP - viewportW);
+    const maxIndex = Math.min(projects.length - 1, Math.ceil(maxScroll / stepW));
+    const numStops = maxIndex + 1;
+    return {
+      ...this.state,
+      bgOpacity: this.state.bgOpacity ?? 1,
+      bgScale: this.state.bgScale ?? 1,
+      topOpacity: this.state.topOpacity ?? 1,
+      topScale: this.state.topScale ?? 1,
+      logoOpacity: this.state.logoOpacity ?? 0.85,
+      logoScale: this.state.logoScale ?? 1,
+      logoOffsetY: this.state.logoOffsetY ?? 0,
+      headerOpacity: this.state.headerOpacity ?? 1,
+      headerOffsetY: this.state.headerOffsetY ?? 0,
+      bottomOpacity: this.state.bottomOpacity ?? 1,
+      bottomTextOpacity: this.state.bottomTextOpacity ?? 1,
+      bottomTextOffsetY: this.state.bottomTextOffsetY ?? 0,
+      sectionRef: this.sectionRef,
+      h1Y: this.state.sec1Visible ? 0 : 100,
+      h1O: this.state.sec1Visible ? 1 : 0,
+      h2Y: this.state.sec1Visible ? 0 : 100,
+      h2O: this.state.sec1Visible ? 1 : 0,
+      h3Y: this.state.sec1Visible ? 0 : 100,
+      h3O: this.state.sec1Visible ? 1 : 0,
+      h1B: this.state.sec1Visible ? 0 : 4,
+      h2B: this.state.sec1Visible ? 0 : 4,
+      h3B: this.state.sec1Visible ? 0 : 4,
+      lineScale: this.state.linesVisible ? 1 : 0,
+      lineScale2: this.state.sec2LinesVisible ? 1 : 0,
+      secY: this.state.sec2Visible ? 0 : 32,
+      secO: this.state.sec2Visible ? 1 : 0,
+      secB: this.state.sec2Visible ? 0 : 10,
+      projRef: this.projRef,
+      projY: this.state.projCardsVisible ? 0 : 32,
+      projO: this.state.projCardsVisible ? 1 : 0,
+      projB: this.state.projCardsVisible ? 0 : 10,
+      projTitleY: this.state.projVisible ? 0 : 100,
+      projTitleO: this.state.projVisible ? 1 : 0,
+      projTitleB: this.state.projVisible ? 0 : 4,
+      lineScale3: this.state.projLinesVisible ? 1 : 0,
+      projects,
+      carouselViewportRef: this.carouselViewportRef,
+      carouselIndex: Math.min(this.state.carouselIndex, maxIndex),
+      carouselOffset: -Math.min(Math.min(this.state.carouselIndex, maxIndex) * stepW, maxScroll),
+      indicatorDots: Array.from({ length: numStops }, (_, i) => ({ opacity: i === this.state.carouselIndex ? 1 : 0.35, width: i === this.state.carouselIndex ? 48 : 20 })),
+      prevOpacity: this.state.carouselIndex === 0 ? 0.4 : 1,
+      nextOpacity: this.state.carouselIndex === maxIndex ? 0.4 : 1,
+      onPrev: () => this.setState(s => ({ carouselIndex: Math.max(0, s.carouselIndex - 1) })),
+      onNext: () => this.setState(s => ({ carouselIndex: Math.min(maxIndex, s.carouselIndex + 1) })),
+    };
+  }
+}
+</script>
+</body>
+</html>
