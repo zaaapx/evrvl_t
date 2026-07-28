@@ -6,10 +6,10 @@
 </template>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="ext-resource-dependency" content="./assets/roya-resort.png" data-resource-id="roya-resort" />
-<meta name="ext-resource-dependency" content="./assets/roya-desa.png" data-resource-id="roya-desa" />
-<meta name="ext-resource-dependency" content="./assets/balicopter.png" data-resource-id="balicopter" />
-<script src="./support.js"></script>
+<meta name="ext-resource-dependency" content="./3pt-laptop/assets/roya-resort.png" data-resource-id="roya-resort" />
+<meta name="ext-resource-dependency" content="./3pt-laptop/assets/roya-desa.png" data-resource-id="roya-desa" />
+<meta name="ext-resource-dependency" content="./3pt-laptop/assets/balicopter.png" data-resource-id="balicopter" />
+<script src="./3pt-laptop/support.js"></script>
 </head>
 <body>
 <x-dc>
@@ -26,12 +26,12 @@
 </helmet>
 <div style="width: 100vw; height: 100vh; overflow: hidden; position: relative; background-color: #EBEAE6" data-om-label="hero">
 <div style="position: relative; width: 100%; height: 100%; overflow: hidden; border-radius: 0px; font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; box-sizing: border-box">
-  <img src="./assets/layer-bg.png" alt="" style="position: absolute; inset: 0; width: 100%; height: 110%; object-fit: cover; top: -80px; opacity: {{ bgOpacity }}; transform: scale({{ bgScale }}); transition: opacity 0.9s ease-out, transform 1.2s ease-out">
-  <img src="./logo_hero-mrxwd1df-p5qw.png" alt="" style="position: absolute; left: {{ logoLeft }}px; top: {{ logoTop }}px; width: {{ logoWidth }}px; height: auto; opacity: {{ logoOpacity }}; transform: translateY({{ logoOffsetY }}px) scale({{ logoScale }}); transform-origin: center; transition: opacity 0.6s ease-out, transform 0.7s ease-out" data-om-label="logo">
-  <img src="./assets/layer-top.png" alt="" style="position: absolute; inset: 0; width: 100%; height: 110%; object-fit: cover; top: -80px; opacity: {{ topOpacity }}; transform: scale({{ topScale }}); transition: opacity 0.9s ease-out, transform 1.2s ease-out">
+  <img src="./3pt-laptop/assets/layer-bg.png" alt="" style="position: absolute; inset: 0; width: 100%; height: 110%; object-fit: cover; top: -80px; opacity: {{ bgOpacity }}; transform: scale({{ bgScale }}); transition: opacity 0.9s ease-out, transform 1.2s ease-out">
+  <img src="./3pt-laptop/assets/layer-everville.png" alt="" style="position: absolute; left: {{ logoLeft }}px; top: {{ logoTop }}px; width: {{ logoWidth }}px; height: auto; opacity: {{ logoOpacity }}; transform: translateY({{ logoOffsetY }}px) scale({{ logoScale }}); transform-origin: center; transition: opacity 0.6s ease-out, transform 0.7s ease-out" data-om-label="logo">
+  <img src="./3pt-laptop/assets/layer-top.png" alt="" style="position: absolute; inset: 0; width: 100%; height: 110%; object-fit: cover; top: -80px; opacity: {{ topOpacity }}; transform: scale({{ topScale }}); transition: opacity 0.9s ease-out, transform 1.2s ease-out">
 
   <div style="position: fixed; left: clamp(12px,2.5vw,36px); right: clamp(12px,2.5vw,36px); top: clamp(10px,2vw,24px); z-index: 100; border-radius: 16px; background: rgba(0,0,0,0.3); backdrop-filter: blur(24px); display: grid; grid-template-columns: auto 1fr auto; padding: clamp(10px,1.2vw,16px) clamp(10px,1.2vw,16px) clamp(10px,1.2vw,16px) clamp(14px,1.8vw,24px); align-items: center; box-sizing: border-box; gap: 16px; opacity:{{ headerOpacity }}; transform:translateY({{ headerOffsetY }}px); transition: opacity 0.6s ease-out, transform 0.6s ease-out;">
-    <a href="/" style="width:clamp(100px,10.3vw,149px); justify-self:start; flex-shrink:0; display:block;"><img src="./assets/everville-logo.png" alt="EVERVILLE" style="width:100%; height:auto; filter:brightness(0) invert(1); display:block;"></a>
+    <a href="/" style="width:clamp(100px,10.3vw,149px); justify-self:start; flex-shrink:0; display:block;"><img src="./3pt-laptop/assets/everville-logo.png" alt="EVERVILLE" style="width:100%; height:auto; filter:brightness(0) invert(1); display:block;"></a>
     <div style="display:flex; flex-direction:row; gap:clamp(10px,1.8vw,36px); align-items:center; flex-wrap:nowrap; justify-self:start; margin-left:clamp(8px,1.2vw,20px); min-width:0; overflow:hidden;">
       <span style="font-size: clamp(11px,0.97vw,16px); font-weight: 400; line-height: 21px; color: #fff; text-transform: none; white-space: nowrap; cursor: pointer; transition: color 0.2s ease-out" style-hover="color: rgba(255,255,255,0.65)">Проекты</span>
       <span style="font-size: clamp(11px,0.97vw,16px); font-weight: 400; line-height: 21px; color: #fff; text-transform: none; white-space: nowrap; cursor: pointer; transition: color 0.2s ease-out" style-hover="color: rgba(255,255,255,0.65)">Инвестиции</span>
@@ -224,12 +224,12 @@ class Component extends DCLogic {
   }
   renderVals() {
     const projects = [
-      { tag: "стандарт девелопмента", title: "ROYA RESORT", subtitle: "резорт · сёрф · гольф", image: (window.__resources && window.__resources['roya-resort']) || './assets/roya-resort.png', location: "Dreamland Beach, Бали" },
-      { tag: "инфраструктура города", title: "ROYA DESA", subtitle: "прибрежный город · марина", image: (window.__resources && window.__resources['roya-desa']) || './assets/roya-desa.png', location: "Чандидаса, Бали" },
-      { tag: "доступность острова", title: "BALICOPTER", subtitle: "частная авиация", image: (window.__resources && window.__resources['balicopter']) || './assets/balicopter.png', location: "Убуд, Бали" },
-      { tag: "стандарт девелопмента", title: "ROYA RESORT", subtitle: "резорт · сёрф · гольф", image: (window.__resources && window.__resources['roya-resort']) || './assets/roya-resort.png', location: "Dreamland Beach, Бали" },
-      { tag: "инфраструктура города", title: "ROYA DESA", subtitle: "прибрежный город · марина", image: (window.__resources && window.__resources['roya-desa']) || './assets/roya-desa.png', location: "Чандидаса, Бали" },
-      { tag: "доступность острова", title: "BALICOPTER", subtitle: "частная авиация", image: (window.__resources && window.__resources['balicopter']) || './assets/balicopter.png', location: "Убуд, Бали" },
+      { tag: "стандарт девелопмента", title: "ROYA RESORT", subtitle: "резорт · сёрф · гольф", image: (window.__resources && window.__resources['roya-resort']) || './3pt-laptop/assets/roya-resort.png', location: "Dreamland Beach, Бали" },
+      { tag: "инфраструктура города", title: "ROYA DESA", subtitle: "прибрежный город · марина", image: (window.__resources && window.__resources['roya-desa']) || './3pt-laptop/assets/roya-desa.png', location: "Чандидаса, Бали" },
+      { tag: "доступность острова", title: "BALICOPTER", subtitle: "частная авиация", image: (window.__resources && window.__resources['balicopter']) || './3pt-laptop/assets/balicopter.png', location: "Убуд, Бали" },
+      { tag: "стандарт девелопмента", title: "ROYA RESORT", subtitle: "резорт · сёрф · гольф", image: (window.__resources && window.__resources['roya-resort']) || './3pt-laptop/assets/roya-resort.png', location: "Dreamland Beach, Бали" },
+      { tag: "инфраструктура города", title: "ROYA DESA", subtitle: "прибрежный город · марина", image: (window.__resources && window.__resources['roya-desa']) || './3pt-laptop/assets/roya-desa.png', location: "Чандидаса, Бали" },
+      { tag: "доступность острова", title: "BALICOPTER", subtitle: "частная авиация", image: (window.__resources && window.__resources['balicopter']) || './3pt-laptop/assets/balicopter.png', location: "Убуд, Бали" },
     ];
     const stepW = this.CARD_W + this.CARD_GAP;
     const viewportW = this.state.carouselViewportW || 1310;
