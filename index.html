@@ -1,11 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
 <template id="__bundler_thumbnail" data-bg-color="#EBEAE6">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#EBEAE6"/><text x="50" y="58" font-family="serif" font-size="30" fill="rgb(25,35,22)" text-anchor="middle">E</text></svg>
 </template>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EVERVILLE — гостиничная недвижимость на Бали</title>
+<meta name="description" content="Гостиничная недвижимость на Бали, подотчётная инвестору. Юридическая структура, финансовая модель и отчётность — в одном портале Everville.">
+<link rel="preload" href="./fonts/HeadingNow-84Regular.otf" as="font" type="font/otf" crossorigin>
+<link rel="preload" href="./fonts/HeadingNow-82Light.otf" as="font" type="font/otf" crossorigin>
 <meta name="ext-resource-dependency" content="./assets/roya-resort.webp" data-resource-id="roya-resort" />
 <meta name="ext-resource-dependency" content="./assets/roya-desa.webp" data-resource-id="roya-desa" />
 <meta name="ext-resource-dependency" content="./assets/balicopter.webp" data-resource-id="balicopter" />
@@ -15,21 +19,21 @@
 <x-dc>
 <helmet>
   <style>
-    @font-face { font-family: "HeadingNow-84Regular"; src: url("./fonts/HeadingNow-84Regular.otf") format("opentype"); font-weight: 400; }
-    @font-face { font-family: "HeadingNow-82Light"; src: url("./fonts/HeadingNow-82Light.otf") format("opentype"); font-weight: 200; }
+    @font-face { font-family: "HeadingNow-84Regular"; src: url("./fonts/HeadingNow-84Regular.otf") format("opentype"); font-weight: 400; font-display: swap; }
+    @font-face { font-family: "HeadingNow-82Light"; src: url("./fonts/HeadingNow-82Light.otf") format("opentype"); font-weight: 200; font-display: swap; }
     @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap");
-    @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
     html, body { margin: 0; height: 100%; overflow-x: hidden; scroll-behavior: smooth; }
     a { color: rgb(255,255,255); }
     a:hover { color: rgba(255,255,255,0.8); }
     @keyframes evrvl-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
     @media print { [data-export-hide] { display: none !important; } }
+    input::placeholder { color: rgba(0,0,0,0.5); opacity: 1; }
   </style>
 </helmet>
 <div style="width: {{ mobileWidth }}; margin: 0 auto; position: relative; background: #EBEAE6">
 <div style="display: {{ mobileHeaderDisplay }}; position: sticky; top: {{ headerTop }}; height: 0; z-index: 400">
   <div data-export-hide="true" style="position: relative; margin: 0 12px; z-index: 500; border-radius: 14px; background: rgba(0,0,0,0.32); backdrop-filter: blur(24px); display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 10px 10px 14px; box-sizing: border-box; opacity:{{ headerOpacity }}; transform:translateY({{ headerOffsetY }}px); transition: opacity 0.6s ease-out, transform 0.6s ease-out">
-    <a href="/" style="display: block; flex-shrink: 0"><img src="./assets/logo-mobile.svg" alt="EVERVILLE" style="width: 120px; height: 36px; display: block"></a>
+    <a href="./" style="display: block; flex-shrink: 0"><img src="./assets/logo-mobile.svg" alt="EVERVILLE" style="width: 120px; height: 36px; display: block"></a>
     <div style="display: flex; flex-direction: row; align-items: center; gap: 6px">
       <div style="display: flex; flex-direction: row; gap: 4px; align-items: center; padding: 12px 10px; border-radius: 8px; cursor: pointer">
         <span style="font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 700; font-size: 13px; color: #fff">RU</span>
@@ -68,7 +72,7 @@
   <img src="./assets/layer-top.webp" alt="" style="position: absolute; inset: 0; width: 100%; height: 110%; object-fit: cover; top: -80px; opacity: {{ topOpacity }}; transform: scale({{ topScale }}); transition: opacity 0.9s ease-out, transform 1.2s ease-out">
 
   <div style="position: fixed; left: clamp(12px,2.5vw,36px); right: clamp(12px,2.5vw,36px); top: clamp(10px,2vw,24px); z-index: 100; border-radius: 16px; background: rgba(0,0,0,0.3); backdrop-filter: blur(24px); display: grid; grid-template-columns: auto 1fr auto; padding: clamp(10px,1.2vw,16px) clamp(10px,1.2vw,16px) clamp(10px,1.2vw,16px) clamp(14px,1.8vw,24px); align-items: center; box-sizing: border-box; gap: 16px; opacity:{{ headerOpacity }}; transform:translateY({{ headerOffsetY }}px); transition: opacity 0.6s ease-out, transform 0.6s ease-out;">
-    <a href="/" style="width: 131px; justify-self: start; flex-shrink: 0; display: block; height: 42px; align-self: flex-end; flex-direction: column-reverse"><img src="./assets/logo.svg" alt="EVERVILLE" style="width: 128px; height: 40px; display: block"></a>
+    <a href="./" style="width: 131px; justify-self: start; flex-shrink: 0; display: block; height: 42px; align-self: flex-end; flex-direction: column-reverse"><img src="./assets/logo.svg" alt="EVERVILLE" style="width: 128px; height: 40px; display: block"></a>
     <div style="display:flex; flex-direction:row; gap:clamp(10px,1.8vw,36px); align-items:center; flex-wrap:nowrap; justify-self:start; margin-left:clamp(8px,1.2vw,20px); min-width:0; overflow:hidden;">
       <span style="font-size: clamp(11px,0.97vw,16px); font-weight: 400; line-height: 21px; color: #fff; text-transform: none; white-space: nowrap; cursor: pointer; transition: color 0.2s ease-out" style-hover="color: rgba(255,255,255,0.65)">Проекты</span>
       <span style="font-size: clamp(11px,0.97vw,16px); font-weight: 400; line-height: 21px; color: #fff; text-transform: none; white-space: nowrap; cursor: pointer; transition: color 0.2s ease-out" style-hover="color: rgba(255,255,255,0.65)">Инвестиции</span>
@@ -226,7 +230,7 @@
         </div></div>
       </div>
       <div style="width: 100%; max-width: 648px; flex: 1 1 420px; display: flex; flex-direction: column; gap: 8px; align-items: flex-end; transform: translateY({{ projTitleY }}%); opacity: {{ projTitleO }}; filter: blur({{ projTitleB }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1) 120ms, opacity 0.9s ease-out 120ms, filter 0.9s ease-out 120ms">
-        <span style="font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 400; font-size: clamp(14px,calc(9.43px + 0.595vw),18px); line-height: 1.5; color: #2D2D2D; align-self: stretch"><b>В Everville каждый проект</b> — это часть большой картины жизни на Бали. Мы создаём не просто объекты, а звенья единой цепи, которые усиливают друг друга. Это жизнь в формате 360: честная, прозрачная и наполненная всеми привилегиями острова, собранными в одну систему для наших гостей и партнёров</span>
+        <span style="font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 400; font-size: clamp(14px,calc(9.43px + 0.595vw),16px); line-height: 1.5; color: #2D2D2D; align-self: stretch"><b>В Everville каждый проект</b> — это часть большой картины жизни на Бали. Мы создаём не просто объекты, а звенья единой цепи, которые усиливают друг друга. Это жизнь в формате 360: честная, прозрачная и наполненная всеми привилегиями острова, собранными в одну систему для наших гостей и партнёров</span>
         <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; width: 100%; flex-wrap: wrap; gap: 16px">
           <div style="display: flex; flex-direction: row; gap: 12px; align-items: center">
             <sc-for list="{{ indicatorDots }}" as="dot" hint-placeholder-count="3">
@@ -244,7 +248,7 @@
         </div>
       </div>
     </div>
-    <div style="box-sizing: border-box; display: flex; flex-direction: column; gap: clamp(24px,calc(-12.6px + 4.76vw),56px); justify-content: normal; align-items: normal"><div data-reveal="projcards" style="box-sizing: border-box; display: flex; flex-direction: column; gap: 24px; justify-content: center; align-items: normal; transform: translateY({{ projY }}px); opacity: {{ projO }}; filter: blur({{ projB }}px); transition: transform 0.7s cubic-bezier(.16,1,.3,1), opacity 0.7s ease-out, filter 0.7s ease-out"><div style="width: 100%; overflow: hidden" ref="{{ carouselViewportRef }}">
+    <div style="box-sizing: border-box; display: flex; flex-direction: column; gap: clamp(24px,calc(-12.6px + 4.76vw),56px); justify-content: normal; align-items: normal"><div data-reveal="projcards" style="box-sizing: border-box; display: flex; flex-direction: column; gap: 24px; justify-content: center; align-items: normal; transform: translateY({{ projY }}px); opacity: {{ projO }}; filter: blur({{ projB }}px); transition: transform 0.7s cubic-bezier(.16,1,.3,1), opacity 0.7s ease-out, filter 0.7s ease-out"><div style="width: {{ bleedWidth }}; margin-left: {{ bleedMargin }}; padding-left: {{ bleedPadLeft }}; box-sizing: border-box; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 {{ projFadeL }}, #000 calc(100% - {{ projFadeR }}), transparent); mask-image: linear-gradient(90deg, transparent, #000 {{ projFadeL }}, #000 calc(100% - {{ projFadeR }}), transparent)" ref="{{ carouselViewportRef }}">
       <div onMouseDown="{{ onDragStart }}" onTouchStart="{{ onDragStart }}" onTouchMove="{{ onDragMove }}" onTouchEnd="{{ onDragEnd }}" style="display: flex; flex-direction: row; gap: {{ cardGap }}; align-items: flex-start; transform: translateX({{ carouselOffset }}px); transition: {{ carouselTransition }}; cursor: {{ carouselCursor }}; user-select: {{ carouselUserSelect }}; touch-action: pan-y">
         <sc-for list="{{ projects }}" as="p" hint-placeholder-count="0">
           <div style="flex: 0 0 {{ cardW }}; width: {{ cardW }}; display: flex; flex-direction: column; gap: 12px">
@@ -272,13 +276,13 @@
   </div><div style="width: 100%; background: #fff; box-sizing: border-box; padding: clamp(48px,calc(-80px + 16.67vw),160px) {{ padX }} clamp(40px,calc(-51.4px + 11.9vw),120px); display: flex; justify-content: center; flex-direction: column; gap: 36px; align-items: center" data-reveal="legacy" data-om-label="legacy" ref="{{ legacyRef }}">
   
     
-    <sc-if value="{{ isMobile }}"><img src="./assets/sand-flower.webp" alt="" style="flex: 0 0 auto; width: 164px; max-width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block; transform: translateY({{ legY }}px) scale({{ legS }}); opacity: {{ legO }}; transition: transform 1s cubic-bezier(.16,1,.3,1), opacity 1s ease-out; height: 164px"><div style="flex: 1 1 auto; width: 100%; min-width: 0; font-size: clamp(28px,calc(21.7px + 0.62vw),42px); line-height: 1.2; text-transform: uppercase; color: rgb(25,35,22); display: flex; flex-direction: column; gap: 8px; align-items: stretch">
+    <sc-if value="{{ isMobile }}"><img src="./assets/sand-flower.webp" alt="" loading="lazy" decoding="async" style="flex: 0 0 auto; width: 164px; max-width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block; transform: translateY({{ legY }}px) scale({{ legS }}); opacity: {{ legO }}; transition: transform 1s cubic-bezier(.16,1,.3,1), opacity 1s ease-out; height: 164px"><div style="flex: 1 1 auto; width: 100%; min-width: 0; font-size: clamp(28px,calc(21.7px + 0.62vw),42px); line-height: 1.2; text-transform: uppercase; color: rgb(25,35,22); display: flex; flex-direction: column; gap: 8px; align-items: stretch">
       <div style="overflow: hidden"><div style="display: flex; flex-direction: row; align-items: center; gap: clamp(20px,3vw,44px); transform: translateY({{ legT1Y }}%); opacity: {{ legT1O }}; filter: blur({{ legT1B }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1) 0ms, opacity 0.9s ease-out 0ms, filter 0.9s ease-out 0ms"><span style="font-weight: 700; font-family: HeadingNow-84Regular; white-space: nowrap; font-size: clamp(16px,max(min(calc(10.3px + 1.79vw),20px),calc(1.7px + 2.38vw)),36px)">Мы строим</span><span style="flex: 1 1 auto; min-width: 40px; height: 1.5px; background: rgb(25,35,22); display: block; transform: scaleX({{ legLine }}); transform-origin: left; transition: transform 0.7s cubic-bezier(.16,1,.3,1) 200ms"></span></div></div>
       
       <span style="font-weight: 200; font-family: HeadingNow-82Light; font-size: clamp(16px,max(min(calc(10.3px + 1.79vw),20px),calc(1.7px + 2.38vw)),36px); text-align: right">Не просто объекты –</span><span style="font-weight: 700; font-family: HeadingNow-84Regular; font-size: clamp(16px,max(min(calc(10.3px + 1.79vw),20px),calc(1.7px + 2.38vw)),36px)">Мы создаем наследие.</span>
-    </div></sc-if><sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}"><div style="display: flex; flex-direction: row; gap: clamp(24px,2.5vw,36px); align-items: center; width: fit-content; max-width: 100%; margin: 0 auto"><img src="./assets/sand-flower.webp" alt="" style="flex: 0 0 auto; width: clamp(180px,18.9vw,272px); height: clamp(180px,18.9vw,272px); object-fit: cover; display: block; transform: translateY({{ legY }}px) scale({{ legS }}); opacity: {{ legO }}; transition: transform 1s cubic-bezier(.16,1,.3,1), opacity 1s ease-out"><div style="flex: 1 1 auto; min-width: 0; font-size: clamp(24px,2.5vw,36px); line-height: 1.2; text-transform: uppercase; color: rgb(25,35,22); display: flex; flex-direction: column; gap: 8px; align-items: flex-start">
+    </div></sc-if><sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}"><div style="display: flex; flex-direction: row; gap: clamp(24px,2.5vw,36px); align-items: center; width: fit-content; max-width: 100%; margin: 0 auto"><img src="./assets/sand-flower.webp" alt="" loading="lazy" decoding="async" style="flex: 0 0 auto; width: clamp(180px,18.9vw,272px); height: clamp(180px,18.9vw,272px); object-fit: cover; display: block; transform: translateY({{ legY }}px) scale({{ legS }}); opacity: {{ legO }}; transition: transform 1s cubic-bezier(.16,1,.3,1), opacity 1s ease-out"><div style="flex: 1 1 auto; min-width: 0; font-size: clamp(24px,2.5vw,36px); line-height: 1.2; text-transform: uppercase; color: rgb(25,35,22); display: flex; flex-direction: column; gap: 8px; align-items: flex-start">
       <div style="overflow: hidden; width: 100%"><div style="display: flex; flex-direction: row; align-items: center; gap: clamp(24px,4vw,60px); transform: translateY({{ legT1Y }}%); opacity: {{ legT1O }}; filter: blur({{ legT1B }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1) 0ms, opacity 0.9s ease-out 0ms, filter 0.9s ease-out 0ms"><span style="font-weight: 700; font-family: HeadingNow-84Regular; white-space: nowrap">Мы строим</span><span style="flex: 0 0 auto; width: clamp(140px,21.5vw,309px); height: 1.5px; background: rgb(25,35,22); display: block; transform: scaleX({{ legLine }}); transform-origin: left; transition: transform 0.7s cubic-bezier(.16,1,.3,1) 200ms"></span></div></div>
-      <div style="overflow: hidden"><span style="display: block; font-weight: 200; font-family: HeadingNow-82Light; white-space: nowrap; margin-left: clamp(60px,9.6vw,139px); transform: translateY({{ legT2Y }}%); opacity: {{ legT2O }}; filter: blur({{ legT2B }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1) 120ms, opacity 0.9s ease-out 120ms, filter 0.9s ease-out 120ms">Не просто объекты –</span></div>
+      <div style="overflow: hidden"><div style="display: flex; flex-direction: row; align-items: center; gap: clamp(20px,3vw,44px); transform: translateY({{ legT2Y }}%); opacity: {{ legT2O }}; filter: blur({{ legT2B }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1) 120ms, opacity 0.9s ease-out 120ms, filter 0.9s ease-out 120ms"><span style="flex: 0 0 auto; width: calc(clamp(60px,9.6vw,139px) - clamp(20px,3vw,44px)); height: 1.5px; background: rgb(25,35,22); display: block; transform: scaleX({{ legLine }}); transform-origin: left; transition: transform 0.7s cubic-bezier(.16,1,.3,1) 250ms"></span><span style="font-weight: 200; font-family: HeadingNow-82Light; white-space: nowrap">Не просто объекты –</span></div></div>
       <div style="overflow: hidden"><span style="display: block; font-weight: 700; font-family: HeadingNow-84Regular; white-space: nowrap; transform: translateY({{ legT3Y }}%); opacity: {{ legT3O }}; filter: blur({{ legT3B }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1) 240ms, opacity 0.9s ease-out 240ms, filter 0.9s ease-out 240ms">Мы создаем наследие.</span></div>
     </div></div></sc-if>
   
@@ -288,7 +292,7 @@
 </div>
 
 <div style="width: 100%; box-sizing: border-box" data-om-label="partners-wrap"><div style="position: relative; overflow: hidden; background: #241109; padding: clamp(56px,8.33vw,140px) {{ padX }} clamp(56px,8.33vw,140px); box-sizing: border-box; display: flex; flex-direction: column; align-items: center; gap: clamp(64px,8vw,120px)" data-om-label="partners" ref="{{ partnersRef }}">
-  <img src="./assets/rust-bg2.webp" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; pointer-events: none"><div data-reveal="parhead" style="position: relative; width: 100%; max-width: 1320px; font-size: clamp(28px,calc(21.7px + 0.62vw),42px); line-height: 1.35; text-transform: uppercase; color: #fff; display: flex; flex-direction: column; gap: 0px">
+  <img src="./assets/rust-bg2.webp" alt="" loading="lazy" decoding="async" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; pointer-events: none"><div data-reveal="parhead" style="position: relative; width: 100%; max-width: 1320px; font-size: clamp(28px,calc(21.7px + 0.62vw),42px); line-height: 1.35; text-transform: uppercase; color: #fff; display: flex; flex-direction: column; gap: 0px">
     <div style="overflow: hidden"><div style="transform: translateY({{ parT1Y }}%); opacity: {{ parT1O }}; filter: blur({{ parT1B }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1) 0ms, opacity 0.9s ease-out 0ms, filter 0.9s ease-out 0ms"><span style="font-weight: 700; font-family: HeadingNow-84Regular; font-size: clamp(20px,calc(-5.1px + 3.27vw),36px)">Построено на</span></div></div>
     <div style="overflow: hidden"><div style="display: flex; flex-direction: row; align-items: center; gap: clamp(20px,3vw,44px); transform: translateY({{ parT2Y }}%); opacity: {{ parT2O }}; filter: blur({{ parT2B }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1) 120ms, opacity 0.9s ease-out 120ms, filter 0.9s ease-out 120ms"><span style="flex: 0 1 clamp(120px,17vw,240px); min-width: 24px; height: 1.5px; background: #fff; display: block; transform: scaleX({{ parLine }}); transform-origin: right; transition: transform 0.7s cubic-bezier(.16,1,.3,1) 200ms"></span><span style="font-weight: 200; font-family: HeadingNow-82Light; white-space: nowrap; font-size: clamp(20px,calc(-5.1px + 3.27vw),36px)">Правильных</span></div></div>
     <div style="overflow: hidden"><div style="display: flex; flex-direction: row; align-items: flex-end; gap: clamp(20px,3vw,44px); transform: translateY({{ parT3Y }}%); opacity: {{ parT3O }}; filter: blur({{ parT3B }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1) 240ms, opacity 0.9s ease-out 240ms, filter 0.9s ease-out 240ms"><span style="font-weight: 700; font-family: HeadingNow-84Regular; white-space: nowrap; font-size: clamp(20px,calc(-5.1px + 3.27vw),36px)">Отношениях</span><span style="flex: 1 1 auto; min-width: 24px; height: 1.5px; background: #fff; display: block; margin-bottom: 0.35em; transform: scaleX({{ parLine }}); transform-origin: left; transition: transform 0.7s cubic-bezier(.16,1,.3,1) 300ms"></span><span style="flex: 0 0 auto; white-space: nowrap; font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 400; font-size: clamp(12px,calc(2.86px + 1.19vw),20px); line-height: 1.4; text-transform: none; color: rgba(255,255,255,0.9)">доверенные партнёры</span></div></div>
@@ -311,16 +315,149 @@
     </div>
     <div style="display: flex; flex-direction: column; gap: clamp(40px,4.2vw,64px)">
       <sc-for list="{{ checkItems }}" as="item" hint-placeholder-count="5">
-        <div style="display: grid; grid-template-columns: minmax(0,calc(38% + clamp(0px, 38.4vw - 294.9px, 258px))) minmax(0,1fr); column-gap: clamp(12px,calc(-42.9px + 7.14vw),60px); align-items: start; min-height: clamp(80px,7.9vw,104px)" data-chk-item="{{ item.index }}">
-          <div style="grid-column: 1; grid-row: 1; overflow: hidden; padding-bottom: clamp(12px,1.2vw,18px)"><span style="display: block; font-family: HeadingNow-82Light; font-weight: 200; font-size: clamp(16px,calc(-13.7px + 3.87vw),28px); line-height: 1.2; text-align: right; overflow-wrap: break-word; hyphens: auto; color: rgb(25,35,22); transform: translateY({{ item.tY }}%); opacity: {{ item.tO }}; filter: blur({{ item.tB }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1), opacity 0.9s ease-out, filter 0.9s ease-out">{{ item.title }}</span></div>
-          <span style="grid-column: 1; grid-row: 2; display: block; width: 100%; height: 1.5px; background: rgb(25,35,22); transform: scaleX({{ item.lineS }}); transform-origin: right; transition: transform 0.9s cubic-bezier(.16,1,.3,1) 220ms"></span>
-          <span style="grid-column: 2; grid-row: 2; margin-top: clamp(10px,1.1vw,16px); font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-size: clamp(14px,1.05vw,16px); line-height: 1.55; color: #2D2D2D; min-width: 0; display: block; opacity: {{ item.dO }}; transform: translateY({{ item.dY }}px); transition: transform 0.8s cubic-bezier(.16,1,.3,1) 320ms, opacity 0.8s ease-out 320ms">{{ item.text }}</span>
+        <div style="display: grid; grid-template-columns: {{ chkCols }}; column-gap: clamp(12px,calc(-42.9px + 7.14vw),60px); align-items: start; min-height: clamp(80px,7.9vw,104px)" data-chk-item="{{ item.index }}">
+          <div style="grid-column: 1; grid-row: 1; overflow: hidden; padding-bottom: clamp(12px,1.2vw,18px)"><span style="display: block; font-family: HeadingNow-82Light; font-weight: 200; font-size: {{ chkTitleFont }}; line-height: 1.2; text-align: {{ chkTitleAlign }}; overflow-wrap: break-word; hyphens: auto; color: rgb(25,35,22); transform: translateY({{ item.tY }}%); opacity: {{ item.tO }}; filter: blur({{ item.tB }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1), opacity 0.9s ease-out, filter 0.9s ease-out">{{ item.title }}</span></div>
+          <span style="grid-column: 1; grid-row: 2; display: block; width: 100%; height: 1.5px; background: rgb(25,35,22); transform: scaleX({{ item.lineS }}); transform-origin: {{ chkLineOrigin }}; transition: transform 0.9s cubic-bezier(.16,1,.3,1) 220ms"></span>
+          <span style="grid-column: {{ chkDescCol }}; grid-row: {{ chkDescRow }}; margin-top: clamp(10px,1.1vw,16px); font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-size: clamp(16px,1.05vw,18px); line-height: 1.55; color: #2D2D2D; min-width: 0; display: block; opacity: {{ item.dO }}; transform: translateY({{ item.dY }}px); transition: transform 0.8s cubic-bezier(.16,1,.3,1) 320ms, opacity 0.8s ease-out 320ms">{{ item.text }}</span>
         </div>
       </sc-for>
     </div>
-    <img src="./assets/foundation-clean.webp" alt="" style="width: {{ bleedWidth }}; margin-left: {{ bleedMargin }}; height: clamp(220px,26vw,420px); object-fit: cover; object-position: center 82.7%; display: block; margin-top: clamp(40px,5vw,80px); opacity: {{ chkImgO }}; transform: translateY({{ chkImgY }}px); transition: transform 1s cubic-bezier(.16,1,.3,1) 200ms, opacity 1s ease-out 200ms">
+    <img src="./assets/foundation-clean.webp" alt="" loading="lazy" decoding="async" style="width: {{ imgBleedWidth }}; margin-left: {{ imgBleedMargin }}; height: clamp(220px,26vw,420px); object-fit: cover; object-position: center 82.7%; display: block; margin-top: clamp(40px,5vw,80px); opacity: {{ chkImgO }}; transform: translateY({{ chkImgY }}px); transition: transform 1s cubic-bezier(.16,1,.3,1) 200ms, opacity 1s ease-out 200ms">
   </div>
 </div>
+
+<div style="background: #EBEAE6; padding: clamp(64px,8.33vw,140px) {{ padX }}; box-sizing: border-box; display: flex; flex-direction: column; align-items: center" data-om-label="testimonials" data-screen-label="Нам доверяют" ref="{{ tstRef }}">
+  <div style="width: 100%; max-width: 1320px; display: flex; flex-direction: column; gap: clamp(40px,4.5vw,72px)">
+    <div data-reveal="tsthead" style="display: flex; flex-direction: row; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap">
+      <div style="display: flex; flex-direction: column; gap: 0px; flex: 0 0 auto; position: relative; width: {{ tstTitleColW }}">
+        <div style="overflow: hidden"><div style="display: flex; align-items: center; gap: 20px; transform: translateY({{ tstTitleY }}%); opacity: {{ tstTitleO }}; transition: transform 0.9s cubic-bezier(.16,1,.3,1), opacity 0.9s ease-out; height: 46px">
+          
+          <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: clamp(24px,calc(-12.5px + 4.76vw),36px); color: rgb(25,35,22); white-space: nowrap">НАМ</span><span style="flex: 0 0 auto; width: clamp(60px,8vw,120px); height: 1.5px; background: rgb(25,35,22); display: block; transform: scaleX({{ tstLine }}); transform-origin: left; transition: transform 0.7s cubic-bezier(.16,1,.3,1) 200ms"></span>
+        </div></div>
+        <div style="overflow: hidden"><div style="display: flex; flex-direction: row; align-items: center; transform: translateY({{ tstTitleY }}%); opacity: {{ tstTitleO }}; transition: transform 0.9s cubic-bezier(.16,1,.3,1) 100ms, opacity 0.9s ease-out 100ms"><span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: clamp(24px,calc(-12.5px + 4.76vw),36px); color: rgb(25,35,22); white-space: nowrap">ДОВЕРЯЮТ</span></div></div>
+      </div>
+      <div style="box-sizing: border-box; display: flex; flex-direction: column; gap: 24px; justify-content: space-between; align-items: flex-start; width: {{ tstColW }}"><span style="display: block; font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 400; font-size: clamp(14px,calc(9.43px + 0.595vw),16px); line-height: 1.5; color: #2D2D2D; max-width: 648px"><b>За каждой историей</b> — реальная сделка: документы, цифры и конкретные имена. Инвесторы и партнёры рассказывают, как устроена работа с Everville — от первого юридического пакета до операционной отчётности по своему активу</span><div style="display: flex; flex-direction: row; gap: clamp(24px,4.5vw,72px); align-items: center; flex: 0 1 auto; transform: translateY({{ tstTitleY }}%); opacity: {{ tstTitleO }}; transition: transform 0.9s cubic-bezier(.16,1,.3,1) 120ms, opacity 0.9s ease-out 120ms; height: {{ tstHeadH }}; justify-content: space-between; width: {{ tstHeadW }}; flex-wrap: wrap">
+        <div style="display: flex; flex-direction: row; gap: 12px; align-items: center">
+          <sc-for list="{{ tstDots }}" as="dot" hint-placeholder-count="3">
+            <span style="width: {{ dot.width }}px; height: 2px; background: rgb(25,35,22); display: block; opacity: {{ dot.opacity }}; transition: width 0.3s ease-out, opacity 0.3s ease-out"></span>
+          </sc-for>
+        </div>
+        
+      <div style="display: flex; flex-direction: row; gap: 8px; align-items: center; margin-left: auto; transform: translateY({{ tstTitleY }}%); opacity: {{ tstTitleO }}; transition: transform 0.9s cubic-bezier(.16,1,.3,1) 140ms, opacity 0.9s ease-out 140ms">
+        <div onClick="{{ onTstPrev }}" style="width: clamp(48px,calc(29.7px + 2.38vw),64px); height: clamp(48px,calc(29.7px + 2.38vw),64px); border-radius: 50%; box-shadow: inset 0 0 0 1px rgb(25,35,22); display: flex; align-items: center; justify-content: center; cursor: pointer; opacity: {{ tstPrevOpacity }}; pointer-events: {{ tstPrevPointer }}; transition: box-shadow 0.2s ease-out" style-hover="box-shadow: inset 0 0 0 1.5px rgb(25,35,22)">
+          <svg width="24" height="14" viewBox="0 0 24 14" fill="none"><path d="M 1 7 L 23 7 M 8 1 L 1 7 L 8 13" stroke="rgb(25,35,22)" stroke-width="1.5" fill="none"></path></svg>
+        </div>
+        <div onClick="{{ onTstNext }}" style="width: clamp(48px,calc(29.7px + 2.38vw),64px); height: clamp(48px,calc(29.7px + 2.38vw),64px); border-radius: 50%; box-shadow: inset 0 0 0 1px rgb(25,35,22); display: flex; align-items: center; justify-content: center; cursor: pointer; opacity: {{ tstNextOpacity }}; pointer-events: {{ tstNextPointer }}; transition: box-shadow 0.2s ease-out" style-hover="box-shadow: inset 0 0 0 1.5px rgb(25,35,22)">
+          <svg width="24" height="14" viewBox="0 0 24 14" fill="none"><path d="M 1 7 L 23 7 M 16 1 L 23 7 L 16 13" stroke="rgb(25,35,22)" stroke-width="1.5" fill="none"></path></svg>
+        </div>
+      </div></div></div>
+      
+    </div>
+    <div data-reveal="tstcards" style="transform: translateY({{ tstCardsY }}px); opacity: {{ tstCardsO }}; transition: transform 0.7s cubic-bezier(.16,1,.3,1), opacity 0.7s ease-out"><div style="width: {{ bleedWidth }}; margin-left: {{ bleedMargin }}; padding-left: {{ bleedPadLeft }}; box-sizing: border-box; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 {{ tstFadeL }}, #000 calc(100% - {{ tstFadeR }}), transparent); mask-image: linear-gradient(90deg, transparent, #000 {{ tstFadeL }}, #000 calc(100% - {{ tstFadeR }}), transparent)" ref="{{ tstViewportRef }}">
+      <div style="display: flex; flex-direction: row; gap: {{ tstGap }}; align-items: stretch; transform: translateX({{ tstOffset }}px); transition: transform 0.5s cubic-bezier(.16,1,.3,1)">
+        <sc-for list="{{ testimonials }}" as="t" hint-placeholder-count="0">
+          <div style="flex: 0 0 {{ tstCardW }}; width: {{ tstCardW }}; background: #fff; border-radius: 20px; padding: {{ tstCardPad }}; box-sizing: border-box; display: flex; flex-direction: column; gap: 16px">
+            <div style="display: flex; flex-direction: row; gap: 16px; align-items: center">
+              <div style="width: {{ tstAvatar }}; height: {{ tstAvatar }}; border-radius: 50%; background: {{ t.bg }}; display: flex; align-items: center; justify-content: center; flex-shrink: 0; overflow: hidden">
+                <sc-if value="{{ t.photo }}"><img data-lazysrc="{{ t.photo }}" alt="{{ t.name }}" draggable="false" style="width: 100%; height: 100%; object-fit: cover; display: block"></sc-if>
+                <sc-if value="{{ t.noPhoto }}"><span style="font-family: 'HeadingNow-82Light'; font-weight: 200; font-size: 24px; color: #fff; letter-spacing: 0.04em">{{ t.initials }}</span></sc-if>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 4px; min-width: 0">
+                <span style="font-family: HeadingNow-84Regular; font-weight: 700; font-size: {{ tstNameFont }}; line-height: {{ tstNameLH }}; text-transform: uppercase; color: rgb(25,35,22)">{{ t.name }}</span>
+                <span style="font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 400; font-size: 14px; color: #2D2D2D">{{ t.role }}</span>
+              </div>
+            </div>
+            <span style="font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 400; font-size: 16px; line-height: 1.55; color: rgb(25,35,22)">{{ t.quote }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </div></div>
+  </div>
+</div>
+
+<div style="background: #EBEAE6; padding: clamp(64px,8.33vw,140px) {{ padX }}; box-sizing: border-box; display: flex; flex-direction: column; align-items: center" data-om-label="faq" data-screen-label="FAQ" ref="{{ faqRef }}">
+  <div style="width: 100%; max-width: 1320px; display: flex; flex-direction: row; justify-content: space-between; align-items: flex-start; gap: clamp(32px,4vw,64px); flex-wrap: wrap">
+    <div data-reveal="faqhead" style="flex: 0 0 auto; font-size: clamp(28px,calc(21.7px + 0.62vw),42px); line-height: 1.3; text-transform: uppercase; color: rgb(25,35,22); display: flex; flex-direction: column; gap: 0px; position: {{ faqHeadPos }}; top: 120px">
+      <div style="overflow: hidden"><div style="transform: translateY({{ faqT1Y }}%); opacity: {{ faqT1O }}; transition: transform 0.9s cubic-bezier(.16,1,.3,1) 0ms, opacity 0.9s ease-out 0ms"><span style="font-weight: 200; font-family: HeadingNow-82Light; font-size: clamp(24px,calc(-12.5px + 4.76vw),36px)">Частые</span></div></div>
+      <div style="overflow: hidden"><div style="display: flex; flex-direction: row; align-items: center; gap: clamp(20px,3vw,44px); transform: translateY({{ faqT2Y }}%); opacity: {{ faqT2O }}; transition: transform 0.9s cubic-bezier(.16,1,.3,1) 120ms, opacity 0.9s ease-out 120ms"><span style="flex: 0 0 auto; width: clamp(60px,8vw,120px); height: 1.5px; background: rgb(25,35,22); display: block; transform: scaleX({{ faqLine }}); transform-origin: left; transition: transform 0.7s cubic-bezier(.16,1,.3,1) 200ms"></span><span style="font-weight: 700; font-family: HeadingNow-84Regular; font-size: clamp(24px,calc(-12.5px + 4.76vw),36px); white-space: nowrap">Вопросы</span></div></div>
+    </div>
+    <div data-reveal="faqitems" style="flex: 1 1 520px; max-width: 760px; display: flex; flex-direction: column; opacity: {{ faqItemsO }}; transform: translateY({{ faqItemsY }}px); transition: transform 0.8s cubic-bezier(.16,1,.3,1) 150ms, opacity 0.8s ease-out 150ms">
+      <sc-for list="{{ faqItems }}" as="f" hint-placeholder-count="5">
+        <div style="border-top: 1.5px solid rgba(25,35,22,0.25); display: flex; flex-direction: column">
+          <div onClick="{{ f.onToggle }}" style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; gap: 24px; padding: clamp(20px,2vw,28px) 0; cursor: pointer">
+            <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: clamp(16px,calc(11.4px + 0.6vw),21px); line-height: 1.25; text-transform: uppercase; color: rgb(25,35,22); transition: opacity 0.2s ease-out">{{ f.q }}</span>
+            <span style="flex: 0 0 auto; width: 40px; height: 40px; border-radius: 50%; box-shadow: inset 0 0 0 1px rgb(25,35,22); display: flex; align-items: center; justify-content: center; transform: rotate({{ f.rot }}); transition: transform 0.4s cubic-bezier(.16,1,.3,1)">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M 7 1 L 7 13 M 1 7 L 13 7" stroke="rgb(25,35,22)" stroke-width="1.5"></path></svg>
+            </span>
+          </div>
+          <div style="display: grid; grid-template-rows: {{ f.aRows }}; opacity: {{ f.aO }}; transition: {{ f.aTrans }}">
+            <span style="display: block; overflow: hidden; min-height: 0; padding: 0 clamp(0px,6vw,88px) clamp(24px,2.2vw,32px) 0; font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 400; font-size: clamp(14px,1.05vw,16px); line-height: 1.55; color: #2D2D2D">{{ f.a }}</span>
+          </div>
+        </div>
+      </sc-for>
+      <div style="border-top: 1.5px solid rgba(25,35,22,0.25)"></div>
+    </div>
+  </div>
+</div>
+
+<div style="position: relative; overflow: hidden; background: rgb(25,35,22); box-sizing: border-box; display: flex; flex-direction: column; align-items: center; width: 100%; height: clamp(640px,56.25vw,810px)" data-om-label="cta" data-screen-label="Личный доступ (CTA)" ref="{{ ctaRef }}">
+  <img src="./assets/cta-bg.webp" alt="" loading="lazy" decoding="async" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; pointer-events: none">
+  <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15,20,13,0.35), rgba(15,20,13,0.15) 45%, rgba(15,20,13,0.4)); display: flex; justify-content: center; align-items: center; padding: 0 {{ padX }}; box-sizing: border-box"><div style="position: relative; width: 100%; max-width: 1000px; display: flex; flex-direction: column; gap: clamp(24px,2.2vw,32px)">
+    <div data-reveal="ctahead" style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: {{ ctaFont }}; line-height: 1.2; text-transform: uppercase; color: #fff; display: flex; flex-direction: column; gap: 6px">
+      <div style="overflow: hidden"><span style="display: block; white-space: nowrap; transform: translateY({{ ctaT1Y }}%); opacity: {{ ctaT1O }}; transition: transform 0.9s cubic-bezier(.16,1,.3,1) 0ms, opacity 0.9s ease-out 0ms">Ваш личный доступ</span></div>
+      <div style="overflow: hidden"><div style="display: flex; flex-direction: row; align-items: center; gap: clamp(20px,3vw,44px); margin-left: clamp(16px,4vw,60px); transform: translateY({{ ctaT2Y }}%); opacity: {{ ctaT2O }}; transition: transform 0.9s cubic-bezier(.16,1,.3,1) 120ms, opacity 0.9s ease-out 120ms"><span style="flex: 0 1 clamp(90px,14vw,206px); min-width: 24px; height: 1.5px; background: #fff; display: block; transform: scaleX({{ ctaLine }}); transform-origin: right; transition: transform 0.7s cubic-bezier(.16,1,.3,1) 200ms"></span><span style="white-space: nowrap; font-family: HeadingNow-82Light">К возможностям</span></div></div>
+      <div style="overflow: hidden"><div style="display: flex; flex-direction: row; align-items: center; gap: clamp(20px,3vw,44px); margin-left: clamp(32px,7vw,104px); transform: translateY({{ ctaT3Y }}%); opacity: {{ ctaT3O }}; transition: transform 0.9s cubic-bezier(.16,1,.3,1) 240ms, opacity 0.9s ease-out 240ms"><span style="white-space: nowrap; font-family: HeadingNow-82Light">Острова</span><span style="flex: 0 1 clamp(140px,22vw,320px); min-width: 40px; height: 1.5px; background: #fff; display: block; transform: scaleX({{ ctaLine }}); transform-origin: left; transition: transform 0.7s cubic-bezier(.16,1,.3,1) 300ms"></span></div></div>
+    </div>
+    <span style="max-width: 708px; font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 400; font-size: clamp(15px,calc(12.1px + 0.38vw),20px); line-height: 1.4; color: #fff; opacity: {{ ctaFormO }}; transform: translateY({{ ctaFormY }}px); transition: transform 0.8s cubic-bezier(.16,1,.3,1) 200ms, opacity 0.8s ease-out 200ms">Познакомьтесь с инфраструктурой Everville лично. Мы ответим на все вопросы о девелопменте, юридической структуре Capital и эксклюзивных сервисах холдинга</span>
+    <div data-reveal="ctaform" style="display: flex; flex-direction: row; gap: 10px; align-items: stretch; flex-wrap: wrap; margin-top: clamp(14px,2.6vw,38px); opacity: {{ ctaFormO }}; transform: translateY({{ ctaFormY }}px); transition: transform 0.8s cubic-bezier(.16,1,.3,1) 300ms, opacity 0.8s ease-out 300ms">
+      <input type="text" placeholder="Ваше имя" style="flex: 1 1 240px; min-width: 0; height: 53px; border: none; outline: none; border-radius: 10px; background: rgb(235,234,230); padding: 0 16px; box-sizing: border-box; font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 600; font-size: 16px; color: rgb(25,35,22)">
+      <input type="email" placeholder="Ваш e-mail" style="flex: 1 1 240px; min-width: 0; height: 53px; border: none; outline: none; border-radius: 10px; background: rgb(235,234,230); padding: 0 16px; box-sizing: border-box; font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 600; font-size: 16px; color: rgb(25,35,22)">
+      <div style="flex: 1 1 200px; height: 53px; border-radius: 8px; background: rgb(43,58,39); display: flex; flex-direction: row; gap: 10px; justify-content: center; align-items: center; cursor: pointer; transition: background 0.2s ease-out" style-hover="background: rgb(30,41,27)">
+        <span style="font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 700; font-size: 14px; text-transform: uppercase; color: #fff; white-space: nowrap">Стать партнером</span>
+        <svg width="18" height="12" viewBox="0 0 24 14" fill="none"><path d="M 1 7 L 23 7 M 16 1 L 23 7 L 16 13" stroke="#fff" stroke-width="1.5" fill="none"></path></svg>
+      </div>
+    </div>
+  </div></div>
+  
+</div><div style="position: relative; overflow: hidden; background: url('./assets/footer-beach.webp') center / cover no-repeat, rgb(25,35,22); padding: {{ footPadTop }} {{ padX }} {{ footPadBottom }}; box-sizing: border-box; display: flex; flex-direction: column; align-items: center" data-om-label="footer" data-screen-label="Футер" ref="{{ footRef }}">
+  <sc-if value="{{ footerVideo }}"><video ref="{{ footerVideoRef }}" src="./assets/footer-video.mp4" poster="./assets/footer-beach.webp" preload="none" loop="{{ true }}" muted="{{ true }}" playsInline="{{ true }}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; pointer-events: none"></video></sc-if>
+  <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,18,12,0.85), rgba(10,18,12,0.6) 55%, rgba(10,18,12,0.35)); pointer-events: none"></div>
+  <div data-reveal="foot" style="position: relative; width: 100%; max-width: 1320px; display: flex; flex-direction: {{ footDir }}; justify-content: space-between; align-items: {{ footAlign }}; gap: clamp(32px,4vw,56px); flex-wrap: wrap; opacity: {{ footO }}; transform: translateY({{ footY }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1), opacity 0.9s ease-out; font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif">
+    <a href="./" style="display: block; flex: 0 0 auto"><img src="./assets/logo.svg" alt="EVERVILLE" style="width: 131px; height: auto; display: block"></a>
+    <sc-for list="{{ footerCols }}" as="col" hint-placeholder-count="3">
+      <div style="display: flex; flex-direction: column; gap: clamp(24px,2.5vw,24px); flex: 0 1 auto; min-width: 160px; align-items: {{ footColAlign }}; text-align: {{ footTextAlign }}">
+        <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 18px; line-height: 1.2; text-transform: uppercase; color: #fff">{{ col.title }}</span>
+        <div style="display: flex; flex-direction: column; gap: 14px">
+          <sc-for list="{{ col.links }}" as="lnk" hint-placeholder-count="3">
+            <span style="font-weight: 400; font-size: 16px; line-height: 1.1; color: #fff; cursor: pointer; transition: opacity 0.2s ease-out" style-hover="opacity: 0.65">{{ lnk.label }}</span>
+          </sc-for>
+        </div>
+      </div>
+    </sc-for>
+    <div style="display: flex; flex-direction: column; gap: clamp(24px,2.5vw,16px); flex: 0 1 auto; min-width: 200px; align-items: {{ footColAlign }}; text-align: {{ footTextAlign }}">
+      <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 18px; line-height: 1.2; text-transform: uppercase; color: #fff">Контакты</span>
+      <div style="display: flex; flex-direction: row; gap: 4px; align-items: center">
+        <div style="width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s ease-out" style-hover="background: rgba(255,255,255,0.12)" title="Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"></rect><circle cx="12" cy="12" r="4.5"></circle><circle cx="17.6" cy="6.4" r="1.2" fill="#fff" stroke="none"></circle></svg>
+        </div>
+        <div style="width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s ease-out" style-hover="background: rgba(255,255,255,0.12)" title="Facebook">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M 13.5 21 L 13.5 13.5 L 16.2 13.5 L 16.6 10.3 L 13.5 10.3 L 13.5 8.2 C 13.5 7.3 13.8 6.6 15.1 6.6 L 16.7 6.6 L 16.7 3.7 C 16.4 3.7 15.4 3.6 14.3 3.6 C 11.9 3.6 10.2 5.1 10.2 7.9 L 10.2 10.3 L 7.5 10.3 L 7.5 13.5 L 10.2 13.5 L 10.2 21 Z"></path></svg>
+        </div>
+        <div style="width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s ease-out" style-hover="background: rgba(255,255,255,0.12)" title="Telegram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M 21.5 3.4 L 2.9 10.6 C 2 10.9 2 11.5 2.8 11.7 L 7.5 13.2 L 9.3 18.7 C 9.5 19.3 9.4 19.6 10.1 19.6 C 10.6 19.6 10.8 19.4 11.1 19.1 C 11.3 18.9 12.4 17.8 13.6 16.6 L 18.5 20.2 C 19.4 20.7 20 20.4 20.3 19.4 L 23.5 4.9 C 23.8 3.6 22.9 3 21.5 3.4 Z M 8.5 12.9 L 18.9 6.4 C 19.4 6.1 19.9 6.2 19.5 6.6 L 10.6 14.6 L 10.3 18.2 Z"></path></svg>
+        </div>
+        <div style="width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s ease-out" style-hover="background: rgba(255,255,255,0.12)" title="WhatsApp">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M 12 2 C 6.5 2 2 6.4 2 11.9 C 2 13.7 2.5 15.4 3.4 16.9 L 2 22 L 7.3 20.6 C 8.7 21.4 10.3 21.8 12 21.8 C 17.5 21.8 22 17.4 22 11.9 C 22 6.4 17.5 2 12 2 Z M 12 20 C 10.5 20 9 19.6 7.8 18.9 L 7.5 18.7 L 4.4 19.5 L 5.2 16.5 L 5 16.2 C 4.2 14.9 3.8 13.4 3.8 11.9 C 3.8 7.4 7.5 3.8 12 3.8 C 16.5 3.8 20.2 7.4 20.2 11.9 C 20.2 16.4 16.5 20 12 20 Z M 16.5 14.1 C 16.3 14 15.1 13.4 14.9 13.3 C 14.6 13.2 14.5 13.2 14.3 13.4 C 14.1 13.7 13.6 14.2 13.5 14.4 C 13.3 14.6 13.2 14.6 12.9 14.5 C 11.4 13.7 10.4 13.1 9.4 11.4 C 9.1 10.9 9.7 11 10.2 10 C 10.3 9.8 10.2 9.6 10.2 9.5 C 10.1 9.4 9.6 8.2 9.4 7.7 C 9.2 7.2 9 7.3 8.8 7.3 C 8.7 7.3 8.5 7.3 8.3 7.3 C 8.1 7.3 7.8 7.3 7.6 7.6 C 7.3 7.9 6.6 8.5 6.6 9.7 C 6.6 11 7.6 12.2 7.7 12.4 C 7.8 12.5 9.6 15.3 12.3 16.5 C 14 17.2 14.7 17.3 15.6 17.2 C 16.1 17.1 17.1 16.6 17.3 16 C 17.5 15.4 17.5 14.9 17.4 14.8 C 17.4 14.7 17.2 14.6 16.9 14.5 Z"></path></svg>
+        </div>
+        <div style="width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s ease-out" style-hover="background: rgba(255,255,255,0.12)" title="Google">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M 21.8 12.2 C 21.8 11.5 21.7 10.9 21.6 10.2 L 12 10.2 L 12 14 L 17.5 14 C 17.3 15.2 16.6 16.3 15.5 17 L 15.5 19.5 L 18.7 19.5 C 20.6 17.8 21.8 15.3 21.8 12.2 Z M 12 22 C 14.7 22 17 21.1 18.7 19.5 L 15.5 17 C 14.6 17.6 13.4 18 12 18 C 9.4 18 7.2 16.3 6.4 13.9 L 3.1 13.9 L 3.1 16.5 C 4.8 19.8 8.1 22 12 22 Z M 6.4 13.9 C 6.2 13.3 6.1 12.7 6.1 12 C 6.1 11.3 6.2 10.7 6.4 10.1 L 6.4 7.5 L 3.1 7.5 C 2.4 8.9 2 10.4 2 12 C 2 13.6 2.4 15.1 3.1 16.5 Z M 12 6 C 13.5 6 14.8 6.5 15.8 7.5 L 18.8 4.5 C 17 2.9 14.7 2 12 2 C 8.1 2 4.8 4.2 3.1 7.5 L 6.4 10.1 C 7.2 7.7 9.4 6 12 6 Z"></path></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
 </div>
 </x-dc>
@@ -332,6 +469,11 @@ class Component extends DCLogic {
   sectionRef = React.createRef();
   projRef = React.createRef();
   carouselViewportRef = React.createRef();
+  tstViewportRef = React.createRef();
+  tstRef = React.createRef();
+  ctaRef = React.createRef();
+  footRef = React.createRef();
+  faqRef = React.createRef();
   legacyRef = React.createRef();
   partnersRef = React.createRef();
   checkRef = React.createRef();
@@ -345,6 +487,7 @@ class Component extends DCLogic {
       : ["./assets/layer-bg.webp", "./assets/layer-top.webp", "./assets/logo-hero.svg"];
   }
   mobileHeroRef = React.createRef();
+  footerVideoRef = React.createRef();
   measureMobileLogo() {
     // sit the wordmark's baseline just above the sea line of layer-bg-mobile.png,
     // measured off the hero box itself (100svh ≠ innerHeight on iOS, min-height can win)
@@ -389,6 +532,11 @@ class Component extends DCLogic {
       const cw = window.innerWidth, ch = window.innerHeight;
       const mob = cw <= this.MOBILE_MAX;
       if (mob !== this.state.mobile) this.setState({ mobile: mob, menuOpen: false });
+      const wide = cw >= 1430;
+      if (wide !== this.state.wide) {
+        this.setState({ wide });
+        requestAnimationFrame(() => { this.updateCarouselW && this.updateCarouselW(); });
+      }
       const boxW = cw, boxH = ch * this.BOX_H_RATIO;
       const scale = Math.max(boxW / this.IMG_W, boxH / this.IMG_H);
       const displayedW = this.IMG_W * scale, displayedH = this.IMG_H * scale;
@@ -417,6 +565,13 @@ class Component extends DCLogic {
       parhead: [["partnersVisible", 0]],
       parmarq: [["marqueeVisible", 0]],
       chkhead: [["checkVisible", 0]],
+      tsthead: [["tstVisible", 0], ["tstLinesVisible", 450]],
+      tstcards: [["tstCardsVisible", 0]],
+      ctahead: [["ctaVisible", 0], ["ctaLinesVisible", 450]],
+      ctaform: [["ctaFormVisible", 0]],
+      foot: [["footVisible", 0]],
+      faqhead: [["faqVisible", 0], ["faqLinesVisible", 450]],
+      faqitems: [["faqItemsVisible", 0]],
     };
     this._revealSeen = new WeakSet();
     const attachReveal = () => {
@@ -454,9 +609,28 @@ class Component extends DCLogic {
     requestAnimationFrame(() => { attachReveal(); attachItems(); });
     setTimeout(() => { attachReveal(); attachItems(); }, 400);
     this.updateCarouselW = () => {
-      if (this.carouselViewportRef.current) this.setState({ carouselViewportW: this.carouselViewportRef.current.offsetWidth });
+      const inner = (el) => el ? el.clientWidth - parseFloat(getComputedStyle(el).paddingLeft || "0") : 0;
+      const patch = {};
+      if (this.carouselViewportRef.current) patch.carouselViewportW = inner(this.carouselViewportRef.current);
+      if (this.tstViewportRef.current) patch.tstViewportW = inner(this.tstViewportRef.current);
+      if (Object.keys(patch).length) this.setState(patch);
     };
+    fetch("./assets/footer-video.mp4", { method: "HEAD" }).then(r => {
+      if (r.ok) this.setState({ footerVideo: true }, () => {
+        const v = this.footerVideoRef.current;
+        if (!v) return;
+        v.muted = true;
+        if (window.IntersectionObserver) {
+          this._footIO = new IntersectionObserver(entries => {
+            if (entries.some(e => e.isIntersecting)) { v.play().catch(() => {}); this._footIO.disconnect(); }
+          }, { rootMargin: "600px" });
+          this._footIO.observe(v);
+        } else { v.play().catch(() => {}); }
+      });
+    }).catch(() => {});
     this.updateCarouselW();
+    requestAnimationFrame(() => this.updateCarouselW());
+    window.addEventListener("resize", () => requestAnimationFrame(() => this.updateCarouselW()));
     window.addEventListener("resize", this.updateCarouselW);
     this.handleMouseMove = (e) => this.dragMove(e.clientX);
     this.handleMouseUp = () => this.dragEnd();
@@ -524,7 +698,8 @@ class Component extends DCLogic {
     const gap = isMob ? 12 : this.CARD_GAP;
     const stepW = cardW + gap;
     const viewportW = this.state.carouselViewportW || 1310;
-    const maxScroll = isMob ? Math.max(0, (projects.length - 1) * stepW) : Math.max(0, projects.length * stepW - gap - viewportW);
+    const edgePad = isMob ? 16 : 76; // stop with a margin from the window edge so the last card is fully visible
+    const maxScroll = isMob ? Math.max(0, (projects.length - 1) * stepW) : Math.max(0, projects.length * stepW - gap - viewportW + edgePad);
     const maxIndex = isMob ? projects.length - 1 : Math.min(projects.length - 1, Math.ceil(maxScroll / stepW));
     const numStops = maxIndex + 1;
     return {
@@ -547,8 +722,15 @@ class Component extends DCLogic {
       legacyDir: (forceView === "mobile" || (forceView !== "desktop" && !!this.state.mobile)) ? "column" : "row",
       legacyAlign: (forceView === "mobile" || (forceView !== "desktop" && !!this.state.mobile)) ? "stretch" : "center",
       legacyImg: (forceView === "mobile" || (forceView !== "desktop" && !!this.state.mobile)) ? "100%" : "223px",
-      bleedWidth: forceView === "mobile" && !this.state.mobile ? "100%" : "100vw",
-      bleedMargin: forceView === "mobile" && !this.state.mobile ? "0" : "calc(50% - 50vw)",
+      bleedWidth: (forceView === "mobile" && !this.state.mobile) || (forceView !== "mobile" && !this.state.mobile && !!this.state.wide) ? "100%" : "100vw",
+      bleedMargin: (forceView === "mobile" && !this.state.mobile) || (forceView !== "mobile" && !this.state.mobile && !!this.state.wide) ? "0" : "calc(50% - 50vw)",
+      bleedPadLeft: (forceView === "mobile" && !this.state.mobile) || (forceView !== "mobile" && !this.state.mobile && !!this.state.wide) ? "0" : "calc(50vw - 50%)",
+      imgBleedWidth: forceView === "mobile" && !this.state.mobile ? "100%" : "100vw",
+      imgBleedMargin: forceView === "mobile" && !this.state.mobile ? "0" : "calc(50% - 50vw)",
+      bleedFadeL: (forceView === "mobile" || (forceView !== "desktop" && !!this.state.mobile)) ? "16px" : "56px",
+      bleedFadeR: (forceView === "mobile" || (forceView !== "desktop" && !!this.state.mobile)) ? "16px" : "80px",
+      projFadeL: Math.min(this.state.carouselIndex, maxIndex) > 0 ? (isMob ? "16px" : "56px") : "0px",
+      projFadeR: Math.min(this.state.carouselIndex, maxIndex) < maxIndex ? (isMob ? "16px" : "80px") : "0px",
       mobileHeaderDisplay: (forceView === "mobile" || (forceView !== "desktop" && !!this.state.mobile)) ? "block" : "none",
       barTop: this.state.menuOpen ? "translateY(4.25px) rotate(45deg)" : "none",
       barMid: this.state.menuOpen ? "scaleX(0.4)" : "none",
@@ -569,6 +751,20 @@ class Component extends DCLogic {
       padX: (forceView === "mobile" || (forceView !== "desktop" && !!this.state.mobile)) ? "16px" : "60px",
       padXNeg: (forceView === "mobile" || (forceView !== "desktop" && !!this.state.mobile)) ? "-16px" : "-60px",
       isMobile: forceView === "mobile" || (forceView !== "desktop" && !!this.state.mobile),
+      chkCols: isMob ? "minmax(0,1fr)" : "minmax(0,calc(38% + clamp(0px, 38.4vw - 294.9px, 258px))) minmax(0,1fr)",
+      chkTitleFont: isMob ? "20px" : "clamp(16px,calc(-13.7px + 3.87vw),28px)",
+      chkTitleAlign: isMob ? "left" : "right",
+      chkLineOrigin: isMob ? "left" : "right",
+      chkDescCol: isMob ? "1" : "2",
+      chkDescRow: isMob ? "3" : "2",
+      faqHeadPos: isMob ? "static" : "sticky",
+      ctaFont: isMob ? "22px" : "clamp(26px,calc(8px + 3.33vw),56px)",
+      footDir: isMob ? "column" : "row",
+      footPadTop: isMob ? "64px" : "clamp(64px,8.33vw,120px)",
+      footPadBottom: isMob ? "64px" : "clamp(180px,23.3vw,336px)",
+      footAlign: isMob ? "center" : "flex-start",
+      footColAlign: isMob ? "center" : "stretch",
+      footTextAlign: isMob ? "center" : "left",
       isDesktop: forceView === "desktop" || (forceView !== "mobile" && !this.state.mobile),
       menuOpen: !!this.state.menuOpen,
       onToggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
@@ -579,21 +775,21 @@ class Component extends DCLogic {
       h2O: this.state.sec1Visible ? 1 : 0,
       h3Y: this.state.sec1Visible ? 0 : 100,
       h3O: this.state.sec1Visible ? 1 : 0,
-      h1B: this.state.sec1Visible ? 0 : 4,
-      h2B: this.state.sec1Visible ? 0 : 4,
-      h3B: this.state.sec1Visible ? 0 : 4,
+      h1B: this.state.sec1Visible ? 0 : 0,
+      h2B: this.state.sec1Visible ? 0 : 0,
+      h3B: this.state.sec1Visible ? 0 : 0,
       lineScale: this.state.linesVisible ? 1 : 0,
       lineScale2: this.state.sec2LinesVisible ? 1 : 0,
       secY: this.state.sec2Visible ? 0 : 32,
       secO: this.state.sec2Visible ? 1 : 0,
-      secB: this.state.sec2Visible ? 0 : 10,
+      secB: this.state.sec2Visible ? 0 : 0,
       projRef: this.projRef,
       projY: this.state.projCardsVisible ? 0 : 32,
       projO: this.state.projCardsVisible ? 1 : 0,
-      projB: this.state.projCardsVisible ? 0 : 10,
+      projB: this.state.projCardsVisible ? 0 : 0,
       projTitleY: this.state.projVisible ? 0 : 100,
       projTitleO: this.state.projVisible ? 1 : 0,
-      projTitleB: this.state.projVisible ? 0 : 4,
+      projTitleB: this.state.projVisible ? 0 : 0,
       lineScale3: this.state.projLinesVisible ? 1 : 0,
       projects,
       cardW: cardW + "px",
@@ -626,8 +822,8 @@ class Component extends DCLogic {
       onDragEnd: () => this.dragEnd(),
       legacyRef: this.legacyRef,
       checkRef: this.checkRef,
-      chkT1Y: this.state.checkVisible ? 0 : 100, chkT1O: this.state.checkVisible ? 1 : 0, chkT1B: this.state.checkVisible ? 0 : 4,
-      chkT2Y: this.state.checkVisible ? 0 : 100, chkT2O: this.state.checkVisible ? 1 : 0, chkT2B: this.state.checkVisible ? 0 : 4,
+      chkT1Y: this.state.checkVisible ? 0 : 100, chkT1O: this.state.checkVisible ? 1 : 0, chkT1B: this.state.checkVisible ? 0 : 0,
+      chkT2Y: this.state.checkVisible ? 0 : 100, chkT2O: this.state.checkVisible ? 1 : 0, chkT2B: this.state.checkVisible ? 0 : 0,
       chkImgO: this.state.checkVisible ? 1 : 0,
       chkImgY: this.state.checkVisible ? 0 : 40,
       checkItems: [
@@ -638,19 +834,113 @@ class Component extends DCLogic {
         { title: "Среда на Бали", text: "Индонезийское право, связи на Бали, местная операционная команда и партнёрская среда — часть актива, а не декорация." },
       ].map((it, i) => {
         const on = !!(this.state.chkShown || {})[i];
-        return { ...it, index: i, tY: on ? 0 : 100, tO: on ? 1 : 0, tB: on ? 0 : 4, lineS: on ? 1 : 0, dO: on ? 1 : 0, dY: on ? 0 : 16 };
+        return { ...it, index: i, tY: on ? 0 : 100, tO: on ? 1 : 0, tB: on ? 0 : 0, lineS: on ? 1 : 0, dO: on ? 1 : 0, dY: on ? 0 : 16 };
       }),
       partnersRef: this.partnersRef,
+      ctaRef: this.ctaRef,
+      footRef: this.footRef,
+      faqRef: this.faqRef,
+      faqT1Y: this.state.faqVisible ? 0 : 100, faqT1O: this.state.faqVisible ? 1 : 0,
+      faqT2Y: this.state.faqVisible ? 0 : 100, faqT2O: this.state.faqVisible ? 1 : 0,
+      faqLine: this.state.faqLinesVisible ? 1 : 0,
+      faqItemsO: this.state.faqItemsVisible ? 1 : 0,
+      faqItemsY: this.state.faqItemsVisible ? 0 : 32,
+      faqItems: [
+        { q: "Как юридически оформлено владение?", a: "Каждый объект держит отдельная индонезийская структура (PT PMA). Инвестор получает долю в ней и полный пакет: устав, реестр долей, договоры на землю и юридические заключения — до подписания чего-либо." },
+        { q: "Какой порог входа и формат участия?", a: "Порог входа зависит от проекта — от доли в юните до участия в пуле девелопмента. Формат, график платежей и структура сделки фиксируются в договоре до внесения средств." },
+        { q: "Как я контролирую строительство и деньги?", a: "Через Investor Portal: бюджеты, строительная отчётность, журналы работ, операционные сводки и открытые вопросы с ответственными — в одном деле по вашему активу, с документом-основанием у каждого обновления." },
+        { q: "Что с доходностью и когда выплаты?", a: "Финансовая модель с допущениями открыта до сделки: загрузка, ADR, операционные расходы. Выплаты — по итогам операционных периодов согласно договору; фактические показатели видны в портале." },
+        { q: "Могу ли я выйти из инвестиции?", a: "Да. Доля в структуре — актив, который можно продать: самостоятельно или через нас. Портал с историей объекта упрощает проверку для покупателя и ускоряет сделку." },
+      ].map((it, i) => ({
+        ...it,
+        rot: (this.state.faqOpen === i) ? "45deg" : "0deg",
+        aRows: (this.state.faqOpen === i) ? "1fr" : "0fr",
+        aO: (this.state.faqOpen === i) ? 1 : 0,
+        aTrans: (() => {
+          // duration scales with answer length so the divider travels at the same px/s on every item
+          const dur = Math.round(220 + it.a.length * 0.85);
+          return (this.state.faqOpen === i)
+            ? `grid-template-rows ${dur}ms cubic-bezier(.16,1,.3,1), opacity 0.4s ease-out 0.15s`
+            : `grid-template-rows ${dur}ms cubic-bezier(.16,1,.3,1) 0.1s, opacity 0.12s ease-out`;
+        })(),
+        onToggle: () => this.setState(s => ({ faqOpen: s.faqOpen === i ? null : i })),
+      })),
+      ctaT1Y: this.state.ctaVisible ? 0 : 100, ctaT1O: this.state.ctaVisible ? 1 : 0,
+      ctaT2Y: this.state.ctaVisible ? 0 : 100, ctaT2O: this.state.ctaVisible ? 1 : 0,
+      ctaT3Y: this.state.ctaVisible ? 0 : 100, ctaT3O: this.state.ctaVisible ? 1 : 0,
+      ctaLine: this.state.ctaLinesVisible ? 1 : 0,
+      ctaFormO: this.state.ctaFormVisible ? 1 : 0,
+      ctaFormY: this.state.ctaFormVisible ? 0 : 24,
+      footO: this.state.footVisible ? 1 : 0,
+      footY: this.state.footVisible ? 0 : 32,
+      footerVideo: !!this.state.footerVideo,
+      footerVideoRef: this.footerVideoRef,
+      footerCols: [
+        { title: "Проекты", links: [{ label: "Roya Dreamland" }, { label: "Ocean" }, { label: "Balicopter" }, { label: "Sanatorium" }] },
+        { title: "Инвестиции", links: [{ label: "Почему Бали" }, { label: "Калькулятор ROI" }, { label: "Правовая база" }] },
+        { title: "О компании", links: [{ label: "Наша история" }, { label: "Команда" }, { label: "Устойчивое развитие" }] },
+      ],
+      ...(() => {
+        const testimonials = [
+          { name: "Александр К.", role: "Инвестор из Москвы", initials: "АК", color: "rgb(43,58,39)", photo: "./assets/investor-1.png", quote: "«Это первый девелопер, который дал мне полный юридический пакет ещё до подписания чего-либо. Именно это и решило.»" },
+          { name: "Марина С.", role: "Инвестор из Москвы", initials: "МС", color: "rgb(61,42,34)", photo: "./assets/investor-3.png", quote: "«Прозрачность процессов поразила с первой встречи. Investor Portal — это не просто красивый интерфейс, это реальный контроль над своим активом.»" },
+          { name: "Дмитрий Л.", role: "Инвестор из Дубая", initials: "ДЛ", color: "rgb(138,122,104)", photo: "./assets/investor-2.png", quote: "«Мы рассматривали 8 проектов на Бали. Everville — единственные, кто показал структуру сделки раньше, чем рендеры.»" },
+          { name: "Елена В.", role: "Партнёр проекта", initials: "ЕВ", color: "rgb(138,70,70)", photo: "./assets/investor-4.png", quote: "«Каждое обновление приходит с документом-основанием. За два года — ни одного вопроса без ответа.»" },
+        ];
+        testimonials.forEach(t => { t.bg = t.photo ? "transparent" : t.color; t.noPhoto = !t.photo; });
+        const tstCardW = isMob ? 327 : this.CARD_W;
+        const tstGap = isMob ? 12 : this.CARD_GAP;
+        const tstStep = tstCardW + tstGap;
+        const tstViewportW = this.state.tstViewportW || 1320;
+        const tstMaxScroll = Math.max(0, testimonials.length * tstStep - tstGap - tstViewportW + (isMob ? 16 : 76));
+        const tstMaxIndex = Math.min(testimonials.length - 1, Math.ceil(tstMaxScroll / tstStep));
+        const tstIdx = Math.min(this.state.tstIndex || 0, tstMaxIndex);
+        return {
+          testimonials,
+          tstRef: this.tstRef,
+          tstViewportRef: this.tstViewportRef,
+          tstCardW: tstCardW + "px",
+          tstGap: tstGap + "px",
+          tstCardPad: isMob ? "24px 20px" : "36px",
+          tstCardGap: isMob ? "20px" : "32px",
+          tstAvatar: isMob ? "72px" : "98px",
+          tstHeadW: isMob ? "100%" : "733px",
+          tstColW: isMob ? "100%" : "auto",
+          tstTitleColW: isMob ? "100%" : "auto",
+          tstHeadH: isMob ? "auto" : "62px",
+          tstAvatarGap: isMob ? "16px" : "32px",
+          tstAvatarFont: isMob ? "22px" : "40px",
+          tstNameFont: isMob ? "16px" : "18px",
+          tstNameLH: isMob ? "1.3" : "normal",
+          tstRoleFont: isMob ? "14px" : "17px",
+          tstQuoteFont: isMob ? "15px" : "18px",
+          tstOffset: -Math.min(tstIdx * tstStep, tstMaxScroll),
+          tstFadeL: tstIdx > 0 ? (isMob ? "16px" : "56px") : "0px",
+          tstFadeR: tstIdx < tstMaxIndex ? (isMob ? "16px" : "80px") : "0px",
+          tstDots: Array.from({ length: tstMaxIndex + 1 }, (_, i) => ({ opacity: i === tstIdx ? 1 : 0.35, width: i === tstIdx ? 48 : 20 })),
+          tstPrevOpacity: tstIdx === 0 ? 0.4 : 1,
+          tstNextOpacity: tstIdx === tstMaxIndex ? 0.4 : 1,
+          tstPrevPointer: tstIdx === 0 ? "none" : "auto",
+          tstNextPointer: tstIdx === tstMaxIndex ? "none" : "auto",
+          onTstPrev: () => this.setState(s => ({ tstIndex: Math.max(0, (s.tstIndex || 0) - 1) })),
+          onTstNext: () => this.setState(s => ({ tstIndex: Math.min(tstMaxIndex, (s.tstIndex || 0) + 1) })),
+          tstTitleY: this.state.tstVisible ? 0 : 100,
+          tstTitleO: this.state.tstVisible ? 1 : 0,
+          tstLine: this.state.tstLinesVisible ? 1 : 0,
+          tstCardsY: this.state.tstCardsVisible ? 0 : 32,
+          tstCardsO: this.state.tstCardsVisible ? 1 : 0,
+        };
+      })(),
       legY: this.state.legacyVisible ? 0 : 40,
       legS: this.state.legacyVisible ? 1 : 0.96,
       legO: this.state.legacyVisible ? 1 : 0,
-      legT1Y: this.state.legacyVisible ? 0 : 100, legT1O: this.state.legacyVisible ? 1 : 0, legT1B: this.state.legacyVisible ? 0 : 4,
-      legT2Y: this.state.legacyVisible ? 0 : 100, legT2O: this.state.legacyVisible ? 1 : 0, legT2B: this.state.legacyVisible ? 0 : 4,
-      legT3Y: this.state.legacyVisible ? 0 : 100, legT3O: this.state.legacyVisible ? 1 : 0, legT3B: this.state.legacyVisible ? 0 : 4,
+      legT1Y: this.state.legacyVisible ? 0 : 100, legT1O: this.state.legacyVisible ? 1 : 0, legT1B: this.state.legacyVisible ? 0 : 0,
+      legT2Y: this.state.legacyVisible ? 0 : 100, legT2O: this.state.legacyVisible ? 1 : 0, legT2B: this.state.legacyVisible ? 0 : 0,
+      legT3Y: this.state.legacyVisible ? 0 : 100, legT3O: this.state.legacyVisible ? 1 : 0, legT3B: this.state.legacyVisible ? 0 : 0,
       legLine: this.state.legacyVisible ? 1 : 0,
-      parT1Y: this.state.partnersVisible ? 0 : 100, parT1O: this.state.partnersVisible ? 1 : 0, parT1B: this.state.partnersVisible ? 0 : 4,
-      parT2Y: this.state.partnersVisible ? 0 : 100, parT2O: this.state.partnersVisible ? 1 : 0, parT2B: this.state.partnersVisible ? 0 : 4,
-      parT3Y: this.state.partnersVisible ? 0 : 100, parT3O: this.state.partnersVisible ? 1 : 0, parT3B: this.state.partnersVisible ? 0 : 4,
+      parT1Y: this.state.partnersVisible ? 0 : 100, parT1O: this.state.partnersVisible ? 1 : 0, parT1B: this.state.partnersVisible ? 0 : 0,
+      parT2Y: this.state.partnersVisible ? 0 : 100, parT2O: this.state.partnersVisible ? 1 : 0, parT2B: this.state.partnersVisible ? 0 : 0,
+      parT3Y: this.state.partnersVisible ? 0 : 100, parT3O: this.state.partnersVisible ? 1 : 0, parT3B: this.state.partnersVisible ? 0 : 0,
       parLine: this.state.partnersVisible ? 1 : 0,
       parMarqO: this.state.marqueeVisible ? 1 : 0,
       parMarqY: this.state.marqueeVisible ? 0 : 28,
