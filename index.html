@@ -770,7 +770,7 @@ class Component extends DCLogic {
       chkLineOrigin: isMob ? "left" : "right",
       chkDescCol: isMob ? "1" : "2",
       chkDescRow: isMob ? "3" : "2",
-      faqHeadPos: isMob ? "static" : "sticky",
+      faqHeadPos: (isMob || isTab) ? "static" : "sticky",
       ctaFont: isMob ? "22px" : "clamp(26px,calc(8px + 3.33vw),56px)",
       footDir: isMob ? "column" : "row",
       footPadTop: isMob ? "64px" : "clamp(64px,8.33vw,120px)",
