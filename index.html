@@ -65,7 +65,7 @@
   </div>
 </div>
 <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
-<div style="width: 100%; height: 100vh; overflow: hidden; position: relative; background-color: #EBEAE6" data-om-label="hero" data-screen-label="Hero (desktop)">
+<div style="width: 100%; height: 100vh; max-height: {{ heroMaxH }}; overflow: hidden; position: relative; background-color: #EBEAE6" data-om-label="hero" data-screen-label="Hero (desktop)">
 <div style="position: relative; width: 100%; height: 100%; overflow: hidden; border-radius: 0px; font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; box-sizing: border-box">
   <img src="./assets/layer-bg.webp" alt="" style="position: absolute; inset: 0; width: 100%; height: 110%; object-fit: cover; top: -80px; opacity: {{ bgOpacity }}; transform: scale({{ bgScale }}); transition: opacity 0.9s ease-out, transform 1.2s ease-out">
   <img src="./assets/logo-hero.svg" alt="" style="position: absolute; left: {{ logoLeft }}px; top: {{ logoTop }}px; width: {{ logoWidth }}px; height: auto; opacity: {{ logoOpacity }}; transform: translateY({{ logoOffsetY }}px) scale({{ logoScale }}); transform-origin: center; transition: opacity 0.6s ease-out, transform 0.7s ease-out" data-om-label="logo">
@@ -201,16 +201,16 @@
       <div style="display: flex; align-items: center; justify-content: center; gap: clamp(10px,1.6vw,20px); flex-wrap: nowrap"><span style="flex: 0 1 clamp(52px,8.7vw,121px); min-width: 20px; height: 1.5px; background: rgb(25,35,22); display: block; transform: scaleX({{ lineScale2 }}); transform-origin: right; transition: transform 0.7s cubic-bezier(.16,1,.3,1)"></span><span style="font-weight: 200; white-space: nowrap;">Все факты — в одном месте.</span></div>
     </div>
     <span style="font-size: 16px; line-height: 1.5; max-width: 536px; flex: 1 1 320px; font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; color: #2D2D2D"><b>В одном месте</b> — документы, бюджеты, юридические заключения, строительная отчётность, операционные сводки и список ответственных. Публичный сайт показывает стандарт. Закрытые каналы открывают файлы.</span>
-  </div><div style="display: flex; flex-direction: row; gap: 24px; width: 100%; max-width: 1320px; flex-wrap: wrap">
-    <div style="border-radius: 16px; background: rgb(43,58,39); display: flex; flex-direction: column; gap: 16px; padding: 24px; box-sizing: border-box; flex: 1 1 300px">
+  </div><div style="display: flex; flex-direction: row; gap: {{ chk3Gap }}; width: 100%; max-width: 1320px; flex-wrap: wrap">
+    <div style="border-radius: 16px; background: rgb(43,58,39); display: flex; flex-direction: column; gap: 16px; padding: 24px; box-sizing: border-box; flex: 1 1 {{ chk3Basis }}">
       <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: clamp(18px,1.67vw,20px); text-transform: uppercase; color: #fff; line-height: 1.15">Всё по одному активу</span>
       <span style="font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 300; font-size: 14px; line-height: 1.5; color: #E9E9E9; height: 100%; text-align: left">Договоры, исходные файлы, допущения, обновления и открытые вопросы собраны в одном деле.</span>
     </div>
-    <div style="border-radius: 16px; background: rgb(61,42,34); display: flex; flex-direction: column; gap: 16px; padding: 24px; box-sizing: border-box; flex: 1 1 300px">
+    <div style="border-radius: 16px; background: rgb(61,42,34); display: flex; flex-direction: column; gap: 16px; padding: 24px; box-sizing: border-box; flex: 1 1 {{ chk3Basis }}">
       <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: clamp(18px,1.67vw,20px); text-transform: uppercase; color: #fff; line-height: 1.15">Отчётность понятна</span>
       <span style="font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 300; font-size: 14px; line-height: 1.5; color: #E9E9E9; text-align: left">Инвестор не собирает картину по фрагментам. Каждое обновление показывает, что изменилось, что это значит и на каком документе основано.</span>
     </div>
-    <div style="border-radius: 16px; background: rgb(138,122,104); display: flex; flex-direction: column; gap: 16px; padding: 24px; box-sizing: border-box; flex: 1 1 300px; line-height: 1.5">
+    <div style="border-radius: 16px; background: rgb(138,122,104); display: flex; flex-direction: column; gap: 16px; padding: 24px; box-sizing: border-box; flex: 1 1 {{ chk3Basis }}; line-height: 1.5">
       <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: clamp(18px,1.67vw,20px); text-transform: uppercase; color: #fff; line-height: 1.15">Следующий шаг ясен</span>
       <span style="font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 300; font-size: 14px; line-height: 1.5; color: #E9E9E9; text-align: left">Документ называет открытый вопрос, ответственного и решение, которого ждут — от команды или от инвестора.</span>
     </div>
@@ -229,7 +229,7 @@
           <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: clamp(20px,calc(-5.1px + 3.27vw),42px); color: rgb(25,35,22); white-space: nowrap">ПРОЕКТЫ</span>
         </div></div>
       </div>
-      <div style="width: 100%; max-width: 648px; flex: 1 1 420px; display: flex; flex-direction: column; gap: 8px; align-items: flex-end; transform: translateY({{ projTitleY }}%); opacity: {{ projTitleO }}; filter: blur({{ projTitleB }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1) 120ms, opacity 0.9s ease-out 120ms, filter 0.9s ease-out 120ms">
+      <div style="width: 100%; max-width: {{ projColMax }}; flex: 1 1 420px; display: flex; flex-direction: column; gap: 8px; align-items: flex-end; transform: translateY({{ projTitleY }}%); opacity: {{ projTitleO }}; filter: blur({{ projTitleB }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1) 120ms, opacity 0.9s ease-out 120ms, filter 0.9s ease-out 120ms">
         <span style="font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 400; font-size: clamp(14px,calc(9.43px + 0.595vw),16px); line-height: 1.5; color: #2D2D2D; align-self: stretch"><b>В Everville каждый проект</b> — это часть большой картины жизни на Бали. Мы создаём не просто объекты, а звенья единой цепи, которые усиливают друг друга. Это жизнь в формате 360: честная, прозрачная и наполненная всеми привилегиями острова, собранными в одну систему для наших гостей и партнёров</span>
         <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; width: 100%; flex-wrap: wrap; gap: 16px">
           <div style="display: flex; flex-direction: row; gap: 12px; align-items: center">
@@ -413,7 +413,7 @@
       <input type="text" placeholder="Ваше имя" style="flex: 1 1 240px; min-width: 0; height: 53px; border: none; outline: none; border-radius: 10px; background: rgb(235,234,230); padding: 0 16px; box-sizing: border-box; font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 600; font-size: 16px; color: rgb(25,35,22)">
       <input type="email" placeholder="Ваш e-mail" style="flex: 1 1 240px; min-width: 0; height: 53px; border: none; outline: none; border-radius: 10px; background: rgb(235,234,230); padding: 0 16px; box-sizing: border-box; font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 600; font-size: 16px; color: rgb(25,35,22)">
       <div style="flex: 1 1 200px; height: 53px; border-radius: 8px; background: rgb(43,58,39); display: flex; flex-direction: row; gap: 10px; justify-content: center; align-items: center; cursor: pointer; transition: background 0.2s ease-out" style-hover="background: rgb(30,41,27)">
-        <span style="font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 700; font-size: 14px; text-transform: uppercase; color: #fff; white-space: nowrap">Стать партнером</span>
+        <span style="font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 700; font-size: 14px; text-transform: none; color: #fff; white-space: nowrap">Стать партнером</span>
         <svg width="18" height="12" viewBox="0 0 24 14" fill="none"><path d="M 1 7 L 23 7 M 16 1 L 23 7 L 16 13" stroke="#fff" stroke-width="1.5" fill="none"></path></svg>
       </div>
     </div>
@@ -544,10 +544,14 @@ class Component extends DCLogic {
       const scale = Math.max(boxW / this.IMG_W, boxH / this.IMG_H);
       const displayedW = this.IMG_W * scale, displayedH = this.IMG_H * scale;
       const cropLeft = (displayedW - boxW) / 2, cropTop = (displayedH - boxH) / 2;
+      let logoW = this.FW * displayedW, logoL = this.FX * displayedW - cropLeft;
+      let logoT = this.FY * displayedH - cropTop + this.BOX_TOP_PX;
+      // keep the wordmark's bottom edge on the horizon when it's clamped narrower (svg is 624x90)
+      if (tab) { const origW = logoW; logoW = Math.min(logoW, cw * 0.72); logoL = (cw - logoW) / 2; logoT += (origW - logoW) * (90 / 624); }
       this.setState({
-        logoTop: this.FY * displayedH - cropTop + this.BOX_TOP_PX,
-        logoLeft: this.FX * displayedW - cropLeft,
-        logoWidth: this.FW * displayedW,
+        logoTop: logoT,
+        logoLeft: logoL,
+        logoWidth: logoW,
       });
       this.measureMobileLogo();
     };
@@ -737,6 +741,10 @@ class Component extends DCLogic {
       projFadeR: Math.min(this.state.carouselIndex, maxIndex) < maxIndex ? (isMob ? "16px" : "80px") : "0px",
       mobileHeaderDisplay: (isMob || isTab) ? "block" : "none",
       desktopHeaderDisplay: isTab ? "none" : "grid",
+      heroMaxH: "none",
+      chk3Basis: isTab ? "0%" : "300px",
+      chk3Gap: isTab ? "12px" : "24px",
+      projColMax: isTab ? "100%" : "648px",
       barTop: this.state.menuOpen ? "translateY(4.25px) rotate(45deg)" : "none",
       barMid: this.state.menuOpen ? "scaleX(0.4)" : "none",
       barMidO: this.state.menuOpen ? 0 : 1,
