@@ -8,6 +8,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>EVERVILLE — гостиничная недвижимость на Бали</title>
 <meta name="description" content="Гостиничная недвижимость на Бали, подотчётная инвестору. Юридическая структура, финансовая модель и отчётность — в одном портале Everville.">
+<meta property="og:title" content="EVERVILLE — гостиничная недвижимость на Бали">
+<meta property="og:description" content="Гостиничная недвижимость на Бали, подотчётная инвестору. Юридическая структура, финансовая модель и отчётность — в одном портале Everville.">
+<meta property="og:type" content="website">
 <link rel="preload" href="./fonts/HeadingNow-84Regular.otf" as="font" type="font/otf" crossorigin>
 <link rel="preload" href="./fonts/HeadingNow-82Light.otf" as="font" type="font/otf" crossorigin>
 <meta name="ext-resource-dependency" content="./assets/roya-resort.webp" data-resource-id="roya-resort" />
@@ -31,8 +34,8 @@
   </style>
 </helmet>
 <div style="width: {{ mobileWidth }}; margin: 0 auto; position: relative; background: #EBEAE6">
-<div style="display: {{ mobileHeaderDisplay }}; position: sticky; top: {{ headerTop }}; height: 0; z-index: 400">
-  <div data-export-hide="true" style="position: relative; margin: 0 12px; z-index: 500; border-radius: 14px; background: rgba(0,0,0,0.32); backdrop-filter: blur(24px); display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 10px 10px 14px; box-sizing: border-box; opacity:{{ headerOpacity }}; transform:translateY({{ headerOffsetY }}px); transition: opacity 0.6s ease-out, transform 0.6s ease-out">
+<div style="display: {{ mobileHeaderDisplay }}; position: fixed; left: 0; right: 0; top: {{ headerTop }}; height: 0; z-index: 400">
+  <div ref="{{ hdrRef }}" data-export-hide="true" style="position: relative; margin: 0 12px; z-index: 500; border-radius: 14px; background: rgba(0,0,0,0.32); backdrop-filter: blur(24px); transform: translateY(0); transition: transform 0.4s cubic-bezier(.16,1,.3,1); display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 10px 10px 14px; box-sizing: border-box; opacity:{{ headerOpacity }}; transform:translateY({{ headerOffsetY }}px); transition: opacity 0.6s ease-out, transform 0.6s ease-out">
     <a href="./" style="display: block; flex-shrink: 0"><img src="./assets/logo-mobile.svg" alt="EVERVILLE" style="width: 120px; height: 36px; display: block"></a>
     <div style="display: flex; flex-direction: row; align-items: center; gap: 6px">
       <div style="display: flex; flex-direction: row; gap: 4px; align-items: center; padding: 12px 10px; border-radius: 8px; cursor: pointer">
@@ -51,7 +54,7 @@
   <div style="transform: {{ menuTransform }}; pointer-events: {{ menuPointer }}; visibility: {{ menuVis }}; transition: transform 0.55s cubic-bezier(.16,1,.3,1), visibility 0.55s linear; position: {{ menuPosition }}; left: 0; width: 100%; top: {{ menuTop }}; height: {{ menuHeight }}; z-index: 200; background: rgb(25,35,22); display: flex; flex-direction: column; padding-top: {{ menuTopPad }}; padding-left: 16px; padding-right: 16px; padding-bottom: 16px; box-sizing: border-box; font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif">
       <div style="display: flex; flex-direction: column; gap: 4px; flex: 1 1 auto; justify-content: center; align-items: center">
         <sc-for list="{{ navItems }}" as="nav" hint-placeholder-count="5">
-          <span style="font-family: 'HeadingNow-82Light'; font-weight: 200; font-size: 28px; line-height: 1.6; color: #fff; text-transform: uppercase; cursor: pointer">{{ nav.label }}</span>
+          <span onClick="{{ nav.onClick }}" style="font-family: 'HeadingNow-82Light'; font-weight: 200; font-size: 28px; line-height: 1.6; color: #fff; text-transform: uppercase; cursor: pointer">{{ nav.label }}</span>
         </sc-for>
       </div>
       <div style="display: flex; flex-direction: column; gap: 10px; align-items: stretch">
@@ -74,7 +77,7 @@
   <div style="position: fixed; left: clamp(12px,2.5vw,36px); right: clamp(12px,2.5vw,36px); top: clamp(10px,2vw,24px); z-index: 100; border-radius: 16px; background: rgba(0,0,0,0.3); backdrop-filter: blur(24px); display: {{ desktopHeaderDisplay }}; grid-template-columns: auto 1fr auto; padding: clamp(10px,1.2vw,16px) clamp(10px,1.2vw,16px) clamp(10px,1.2vw,16px) clamp(14px,1.8vw,24px); align-items: center; box-sizing: border-box; gap: 16px; opacity:{{ headerOpacity }}; transform:translateY({{ headerOffsetY }}px); transition: opacity 0.6s ease-out, transform 0.6s ease-out;">
     <a href="./" style="width: 131px; justify-self: start; flex-shrink: 0; display: block; height: 42px; align-self: flex-end; flex-direction: column-reverse"><img src="./assets/logo.svg" alt="EVERVILLE" style="width: 128px; height: 40px; display: block"></a>
     <div style="display:flex; flex-direction:row; gap:clamp(10px,1.8vw,36px); align-items:center; flex-wrap:nowrap; justify-self:start; margin-left:clamp(8px,1.2vw,20px); min-width:0; overflow:hidden;">
-      <span style="font-size: clamp(11px,0.97vw,16px); font-weight: 400; line-height: 21px; color: #fff; text-transform: none; white-space: nowrap; cursor: pointer; transition: color 0.2s ease-out" style-hover="color: rgba(255,255,255,0.65)">Проекты</span>
+      <span style="font-size: clamp(11px,0.97vw,16px); font-weight: 400; line-height: 21px; color: #fff; text-transform: none; white-space: nowrap; cursor: pointer; transition: color 0.2s ease-out" onClick="{{ goProjects }}" style-hover="color: rgba(255,255,255,0.65)">Проекты</span>
       <span style="font-size: clamp(11px,0.97vw,16px); font-weight: 400; line-height: 21px; color: #fff; text-transform: none; white-space: nowrap; cursor: pointer; transition: color 0.2s ease-out" style-hover="color: rgba(255,255,255,0.65)">Инвестиции</span>
       <span style="font-size: clamp(11px,0.97vw,16px); font-weight: 400; line-height: 21px; color: #fff; text-transform: none; white-space: nowrap; cursor: pointer; transition: color 0.2s ease-out" style-hover="color: rgba(255,255,255,0.65)">Юридика</span>
       <span style="font-size: clamp(11px,0.97vw,16px); font-weight: 400; line-height: 21px; color: #fff; text-transform: none; white-space: nowrap; cursor: pointer; transition: color 0.2s ease-out" style-hover="color: rgba(255,255,255,0.65)">О компании</span>
@@ -106,7 +109,7 @@
       <div style="display: flex; flex-direction: row; gap: 12px; align-items: center; flex-wrap: wrap; justify-content: center">
         <div style="border-radius: 8px; background: #fff; display: flex; padding: clamp(14px,2.5vh,20px) clamp(28px,6vw,48px); justify-content: center; align-items: center; box-sizing: border-box; padding-top: 16px; padding-bottom: 16px; padding-left: 24px; padding-right: 24px; cursor: pointer; transition: background 0.2s ease-out" style-hover="background: rgb(206,210,199)">
           <span style="font-weight: 700; font-size: clamp(13px,calc(11.43px + 0.179vw),16px); line-height: 21px; color: rgb(43,58,39); text-transform: none; white-space: nowrap">Инвестировать</span>
-        </div><div style="border-radius: 8px; background: rgba(43,58,39,0.6); display: flex; padding: clamp(14px,2.5vh,20px) clamp(28px,6vw,48px); justify-content: center; align-items: center; box-sizing: border-box; padding-top: 16px; padding-bottom: 16px; padding-left: 24px; padding-right: 24px; cursor: pointer; transition: background 0.2s ease-out" style-hover="background: rgba(30,41,27,0.75)">
+        </div><div style="border-radius: 8px; background: rgba(43,58,39,0.6); display: flex; padding: clamp(14px,2.5vh,20px) clamp(28px,6vw,48px); justify-content: center; align-items: center; box-sizing: border-box; padding-top: 16px; padding-bottom: 16px; padding-left: 24px; padding-right: 24px; cursor: pointer; transition: background 0.2s ease-out" onClick="{{ goProjects }}" style-hover="background: rgba(30,41,27,0.75)">
           <span style="font-weight: 700; font-size: clamp(13px,calc(11.43px + 0.179vw),16px); line-height: 21px; color: #fff; text-transform: none; white-space: nowrap">Смотреть проекты</span>
         </div>
         
@@ -138,7 +141,7 @@
         <div style="border-radius: 8px; background: #fff; display: flex; padding: 18px 24px; justify-content: center; align-items: center; box-sizing: border-box; cursor: pointer">
           <span style="font-weight: 700; font-size: 15px; line-height: 21px; color: rgb(43,58,39)">Инвестировать</span>
         </div>
-        <div style="border-radius: 8px; background: rgba(43,58,39,0.65); display: flex; padding: 18px 24px; justify-content: center; align-items: center; box-sizing: border-box; cursor: pointer">
+        <div onClick="{{ goProjects }}" style="border-radius: 8px; background: rgba(43,58,39,0.65); display: flex; padding: 18px 24px; justify-content: center; align-items: center; box-sizing: border-box; cursor: pointer">
           <span style="font-weight: 700; font-size: 15px; line-height: 21px; color: #fff">Смотреть проекты</span>
         </div>
       </div>
@@ -269,7 +272,7 @@
           </div>
         </sc-for>
       </div>
-    </div><div style="border-radius: 8px; background: rgb(43,58,39); display: flex; padding: 16px 24px; justify-content: center; align-items: center; align-self: center; cursor: pointer; transition: background 0.2s ease-out" style-hover="background: rgb(30,41,27)">
+    </div><div onClick="{{ goProjects }}" style="border-radius: 8px; background: rgb(43,58,39); display: flex; padding: 16px 24px; justify-content: center; align-items: center; align-self: center; cursor: pointer; transition: background 0.2s ease-out" style-hover="background: rgb(30,41,27)">
       <span style="font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 700; font-size: 14px; text-transform: none; color: #fff; white-space: nowrap">Все проекты</span>
     </div></div></div>
     
@@ -525,7 +528,27 @@ class Component extends DCLogic {
     // never hold the intro hostage to a slow network
     Promise.race([ready, new Promise(res => setTimeout(res, 2500))]).then(run);
   }
+  hdrRef = React.createRef();
+  _hdrHidden = false;
+  applyHdr = () => {
+    const n = this.hdrRef.current;
+    if (!n) return;
+    n.style.transform = this._hdrHidden ? "translateY(-" + (n.offsetHeight + 24) + "px)" : "translateY(0)";
+  };
   componentDidMount() {
+    this._readY = () => window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    this._lastY = this._readY();
+    this._onHdrScroll = () => {
+      const y = this._readY();
+      const d = y - this._lastY;
+      if (Math.abs(d) < 3) return;
+      this._lastY = y;
+      let hide = d > 0 && !this.state.menuOpen;
+      if (y <= 80) hide = false;
+      this._hdrHidden = hide;
+      this.applyHdr();
+    };
+    window.addEventListener("scroll", this._onHdrScroll, { passive: true });
     this._unmounted = false;
     this.bindLazyImages();
     this.startIntro();
@@ -642,7 +665,8 @@ class Component extends DCLogic {
     this.handleMouseMove = (e) => this.dragMove(e.clientX);
     this.handleMouseUp = () => this.dragEnd();
   }
-  componentDidUpdate() { if (this._attachReveal) this._attachReveal(); if (this._attachItems) this._attachItems(); this.bindLazyImages(); if (this._heroWatch) this._heroWatch(); this.measureMobileLogo(); }
+  componentDidUpdate() {
+    this.applyHdr(); if (this._attachReveal) this._attachReveal(); if (this._attachItems) this._attachItems(); this.bindLazyImages(); if (this._heroWatch) this._heroWatch(); this.measureMobileLogo(); }
   bindLazyImages() {
     const root = (this.rootEl && this.rootEl.ownerDocument) ? this.rootEl : document;
     document.querySelectorAll("img[data-lazysrc]").forEach(img => {
@@ -651,6 +675,7 @@ class Component extends DCLogic {
     });
   }
   componentWillUnmount() {
+    window.removeEventListener("scroll", this._onHdrScroll);
     this._unmounted = true;
     (this._timers || []).forEach(clearTimeout);
     if (this._heroRO) this._heroRO.disconnect();
@@ -779,9 +804,15 @@ class Component extends DCLogic {
       footColAlign: isMob ? "center" : "stretch",
       footTextAlign: isMob ? "center" : "left",
       isDesktop: forceView === "desktop" || (forceView !== "mobile" && !this.state.mobile),
+      hdrRef: this.hdrRef,
       menuOpen: !!this.state.menuOpen,
-      onToggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
-      navItems: [{ label: "Проекты" }, { label: "Инвестиции" }, { label: "Юридика" }, { label: "О компании" }, { label: "Контакты" }],
+      onToggleMenu: () => { this._hdrHidden = false; this.applyHdr(); this.setState(s => ({ menuOpen: !s.menuOpen })); },
+      goProjects: () => {
+        const w = window.innerWidth;
+        const page = w >= 1024 ? "projects.html" : w >= 768 ? "projects-tablet.html" : "projects-mobile.html";
+        window.location.href = "./" + page;
+      },
+      navItems: [{ label: "Проекты", onClick: () => { window.location.href = "./" + (window.innerWidth >= 1024 ? "projects.html" : window.innerWidth >= 768 ? "projects-tablet.html" : "projects-mobile.html"); } }, { label: "Инвестиции" }, { label: "Юридика" }, { label: "О компании" }, { label: "Контакты" }],
       h1Y: this.state.sec1Visible ? 0 : 100,
       h1O: this.state.sec1Visible ? 1 : 0,
       h2Y: this.state.sec1Visible ? 0 : 100,

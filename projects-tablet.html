@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Проекты EVERVILLE — курорты, марина, wellness на Бали</title>
+<meta name="description" content="Проекты холдинга Everville: Roya Resort, Roya Desa, Marina, Balicopter, Sanatorium — рендеры, доходность и статус продаж.">
+<meta property="og:title" content="Проекты EVERVILLE — курорты, марина, wellness на Бали">
+<meta property="og:description" content="Проекты холдинга Everville: Roya Resort, Roya Desa, Marina, Balicopter, Sanatorium — рендеры, доходность и статус продаж.">
+<meta property="og:type" content="website">
+<link rel="preload" href="./fonts/HeadingNow-84Regular.otf" as="font" type="font/otf" crossorigin>
+<link rel="preload" href="./fonts/HeadingNow-82Light.otf" as="font" type="font/otf" crossorigin>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    @font-face { font-family: "HeadingNow-84Regular"; src: url("./fonts/HeadingNow-84Regular.otf") format("opentype"); font-weight: 400; }
+    @font-face { font-family: "HeadingNow-82Light"; src: url("./fonts/HeadingNow-82Light.otf") format("opentype"); font-weight: 200; }
+    @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap");
+    html, body { margin: 0; background: #EBEAE6; overflow-x: hidden; scroll-behavior: smooth; }
+    a { color: rgb(25,35,22); text-decoration: none; }
+    a:hover { color: rgba(25,35,22,0.7); }
+  </style>
+</helmet>
+<div style="width: 100%; position: relative; background: #EBEAE6; font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif">
+
+  <div style="position: fixed; left: 0; right: 0; top: calc(env(safe-area-inset-top, 0px) + 12px); height: 0; z-index: 400" data-om-label="header-tablet">
+    <div ref="{{ hdrRef }}" style="position: relative; margin: 0 16px; z-index: 500; border-radius: 14px; background: rgba(0,0,0,0.32); backdrop-filter: blur(24px); transform: translateY(0); transition: transform 0.4s cubic-bezier(.16,1,.3,1); display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 10px 10px 14px; box-sizing: border-box">
+      <a href="./index.html" style="display: block; flex-shrink: 0"><img src="./assets/logo.svg" alt="EVERVILLE" style="width: 128px; height: 40px; display: block"></a>
+      <div style="display: flex; flex-direction: row; align-items: center; gap: 6px">
+        <div style="display: flex; flex-direction: row; gap: 4px; align-items: center; padding: 12px 10px; border-radius: 8px; cursor: pointer">
+          <span style="font-weight: 700; font-size: 13px; color: #fff">RU</span>
+          <svg width="12" height="6" viewBox="0 0 14 7" fill="#fff"><path d="M 7 7 L 0.938 1.75 L 13.062 1.75 L 7 7 Z"></path></svg>
+        </div>
+        <div onClick="{{ onToggleMenu }}" style="width: 48px; height: 48px; border-radius: 10px; background: rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center; cursor: pointer; flex-shrink: 0">
+          <div style="position: relative; width: 22px; height: 22px; flex-shrink: 0">
+            <span style="position: absolute; left: 1px; top: 6px; width: 20px; height: 1.5px; border-radius: 1px; background: #fff; transform: {{ barTop }}; transition: transform 0.4s cubic-bezier(.16,1,.3,1)"></span>
+            <span style="position: absolute; left: 1px; top: 10.25px; width: 20px; height: 1.5px; border-radius: 1px; background: #fff; opacity: {{ barMidO }}; transform: {{ barMid }}; transition: opacity 0.2s ease-out, transform 0.4s cubic-bezier(.16,1,.3,1)"></span>
+            <span style="position: absolute; left: 1px; top: 14.5px; width: 20px; height: 1.5px; border-radius: 1px; background: #fff; transform: {{ barBot }}; transition: transform 0.4s cubic-bezier(.16,1,.3,1)"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="transform: {{ menuTransform }}; pointer-events: {{ menuPointer }}; visibility: {{ menuVis }}; transition: transform 0.55s cubic-bezier(.16,1,.3,1), visibility 0.55s linear; position: fixed; left: 0; width: 100%; top: 0; height: 100svh; z-index: 200; background: rgb(25,35,22); display: flex; flex-direction: column; padding: calc(env(safe-area-inset-top, 0px) + 92px) 16px 16px; box-sizing: border-box">
+      <div style="display: flex; flex-direction: column; gap: 4px; flex: 1 1 auto; justify-content: center; align-items: center">
+        <span onClick="{{ goProjects }}" style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 28px; line-height: 1.6; color: #fff; text-transform: uppercase; cursor: pointer">Проекты</span>
+        <span style="font-family: 'HeadingNow-82Light'; font-weight: 200; font-size: 28px; line-height: 1.6; color: #fff; text-transform: uppercase; cursor: pointer">Инвестиции</span>
+        <span style="font-family: 'HeadingNow-82Light'; font-weight: 200; font-size: 28px; line-height: 1.6; color: #fff; text-transform: uppercase; cursor: pointer">Юридика</span>
+        <span style="font-family: 'HeadingNow-82Light'; font-weight: 200; font-size: 28px; line-height: 1.6; color: #fff; text-transform: uppercase; cursor: pointer">О компании</span>
+        <span style="font-family: 'HeadingNow-82Light'; font-weight: 200; font-size: 28px; line-height: 1.6; color: #fff; text-transform: uppercase; cursor: pointer">Контакты</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 10px; align-items: stretch">
+        <div style="border-radius: 8px; background: #fff; display: flex; padding: 18px 24px; justify-content: center; align-items: center; box-sizing: border-box; cursor: pointer">
+          <span style="font-weight: 700; font-size: 15px; line-height: 21px; color: rgb(43,58,39)">Инвестировать</span>
+        </div>
+        <div style="border-radius: 8px; background: rgba(43,58,39,0.65); display: flex; padding: 18px 24px; justify-content: center; align-items: center; box-sizing: border-box; cursor: pointer">
+          <span style="font-weight: 700; font-size: 15px; line-height: 21px; color: #fff">Войти</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="position: relative; width: 100%; height: 136vw; overflow: hidden; background: #fff" data-om-label="hero" data-screen-label="Hero — Избранные проекты (tablet)">
+    <img src="./assets/projects-hero.webp" alt="" style="position: absolute; left: 0; right: 0; top: 110px; width: 100%; height: calc(136vw - 110px); object-fit: cover; object-position: center top; display: block; -webkit-mask-image: linear-gradient(to bottom, transparent 0, rgba(0,0,0,0.35) 14vw, #000 30vw); mask-image: linear-gradient(to bottom, transparent 0, rgba(0,0,0,0.35) 14vw, #000 30vw); opacity: {{ heroImg.o }}; transform: scale({{ heroImg.s }}); transform-origin: center top; transition: opacity 0.9s ease-out, transform 0.18s linear; background-color: rgba(255,255,255,0.55)">
+    <div style="position: absolute; left: 0; right: 0; top: 22vw; margin: 0 auto; transform: translateY({{ hero.y }}px); opacity: {{ hero.o }}; filter: blur({{ hero.b }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1), opacity 0.9s ease-out, filter 0.9s ease-out; display: flex; flex-direction: column; gap: 16px; align-items: center; text-align: center; width: min(641px, 92vw)">
+      <div style="display: flex; flex-direction: column; gap: 6px; align-items: center; width: 100%">
+        <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: clamp(34px,4.6vw,48px); line-height: 110%; color: rgb(0,0,0); text-transform: uppercase">развитие</span>
+        <span style="font-family: 'HeadingNow-82Light'; font-weight: 200; font-size: clamp(34px,4.6vw,48px); line-height: 110%; color: rgb(0,0,0); text-transform: uppercase">через единство</span>
+      </div>
+      <span style="font-weight: 400; font-size: 15px; text-transform: lowercase; letter-spacing: 0.02em; color: rgb(25,35,22)">наши проекты</span>
+    </div>
+    <div data-reveal="pintro" style="position: absolute; left: 0; right: 0; margin: 0 auto; width: min(1100px, calc(100% - 10vw)); top: 40vw; font-size: clamp(15px,2.1vw,24px); line-height: 1.5; text-transform: uppercase; color: rgb(25,35,22); display: flex; flex-direction: column; gap: 0.4vw; align-items: center; text-align: center; transform: translateY({{ pintro.y }}px); opacity: {{ pintro.o }}; filter: blur({{ pintro.b }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1), opacity 0.9s ease-out, filter 0.9s ease-out">
+      <div style="display: flex; align-items: center; justify-content: center; gap: clamp(12px,1.8vw,24px); width: 100%; flex-wrap: nowrap"><span style="white-space: nowrap"><span style="font-family: 'HeadingNow-82Light'; font-weight: 200">Проекты Everville, объединенные в </span><span style="font-family: 'HeadingNow-84Regular'; font-weight: 400">единую</span></span><span style="flex: 0 0 auto; width: clamp(40px,7vw,120px); height: 1.5px; background: rgb(25,35,22); display: block; transform: scaleX({{ pLine }}); transform-origin: left; transition: transform 0.7s cubic-bezier(.16,1,.3,1) 200ms"></span></div>
+      <div style="display: flex; align-items: center; justify-content: center; gap: clamp(12px,1.8vw,24px); width: 100%; flex-wrap: nowrap"><span style="white-space: nowrap"><span style="font-family: 'HeadingNow-84Regular'; font-weight: 400">экосистему</span><span style="font-family: 'HeadingNow-82Light'; font-weight: 200">, расширяют ваш стиль жизни и</span></span></div>
+      <div style="display: flex; align-items: center; justify-content: center; gap: clamp(12px,1.8vw,24px); width: 100%; flex-wrap: nowrap"><span style="flex: 0 0 auto; width: clamp(40px,7vw,120px); height: 1.5px; background: rgb(25,35,22); display: block; transform: scaleX({{ pLine }}); transform-origin: right; transition: transform 0.7s cubic-bezier(.16,1,.3,1) 300ms"></span><span style="white-space: nowrap"><span style="font-family: 'HeadingNow-82Light'; font-weight: 200">непрерывно </span><span style="font-family: 'HeadingNow-84Regular'; font-weight: 400">повышают ценность бренда и капитала</span></span></div>
+      <div style="display: flex; flex-direction: row; gap: 12px; align-items: center; justify-content: center; margin-top: 24px; ">
+        <div onClick="{{ goInvest }}" style="border-radius: 8px; background: #fff; box-shadow: 0 6px 24px rgba(25,35,22,0.12); display: flex; padding: 15px 26px; justify-content: center; align-items: center; box-sizing: border-box; cursor: pointer"><span style="font-weight: 700; font-size: 15px; color: rgb(43,58,39); text-transform: none; white-space: nowrap">Инвестировать</span></div>
+        <div onClick="{{ scrollToProjects }}" style="border-radius: 8px; background: rgb(43,58,39); display: flex; padding: 15px 26px; justify-content: center; align-items: center; box-sizing: border-box; cursor: pointer"><span style="font-weight: 700; font-size: 15px; color: #fff; text-transform: none; white-space: nowrap">Смотреть проекты</span></div>
+      </div>
+    </div>
+    <div data-reveal="pcard0" data-px="1" style="position: absolute; left: 58vw; top: 68vw; width: 36vw; display: flex; flex-direction: row; gap: 2vw; align-items: center; transform: translateX(var(--px,0px)) translateY({{ pc0.y }}px); opacity: {{ pc0.o }}; transition: transform 0.35s ease-out, opacity 0.9s ease-out">
+      <div style="flex: 0 0 18vw; border-radius: 14px; backdrop-filter: blur(24px) saturate(1.15); min-height: 7vw; display: flex; align-items: center; justify-content: center; padding: 1.2vw 1.5vw; box-sizing: border-box; background-color: rgba(255,255,255,0.55)"><span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: clamp(16px,2.1vw,28px); text-transform: uppercase; color: rgb(25,35,22); white-space: nowrap">ROYA DESA</span></div>
+      <span style="font-weight: 400; font-size: clamp(12px,1.5vw,17px); line-height: 1.35; color: rgb(25,35,22); max-width: 16vw">масштабирует прибрежную среду</span>
+    </div>
+    <div data-reveal="pcard1" data-px="-1" style="position: absolute; left: 6vw; top: 76vw; width: 36vw; display: flex; flex-direction: row; gap: 2vw; align-items: center; justify-content: flex-end; transform: translateX(var(--px,0px)) translateY({{ pc1.y }}px); opacity: {{ pc1.o }}; transition: transform 0.35s ease-out, opacity 0.9s ease-out">
+      <span style="font-weight: 400; font-size: clamp(12px,1.5vw,17px); line-height: 1.35; color: rgb(25,35,22); max-width: 16vw; text-align: right">задаёт первый стандарт девелопмента</span>
+      <div style="flex: 0 0 18vw; border-radius: 14px; backdrop-filter: blur(24px) saturate(1.15); min-height: 7vw; display: flex; align-items: center; justify-content: center; padding: 1.2vw 1.5vw; box-sizing: border-box; background-color: rgba(255,255,255,0.55)"><span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: clamp(16px,2.1vw,28px); text-transform: uppercase; color: rgb(25,35,22); white-space: nowrap">ROYA RESORT</span></div>
+    </div>
+    <div data-reveal="pcard2" data-px="1" style="position: absolute; left: 58vw; top: 84vw; width: 36vw; display: flex; flex-direction: row; gap: 2vw; align-items: center; transform: translateX(var(--px,0px)) translateY({{ pc2.y }}px); opacity: {{ pc2.o }}; transition: transform 0.35s ease-out, opacity 0.9s ease-out">
+      <div style="flex: 0 0 18vw; border-radius: 14px; backdrop-filter: blur(24px) saturate(1.15); min-height: 7vw; display: flex; align-items: center; justify-content: center; padding: 1.2vw 1.5vw; box-sizing: border-box; background-color: rgba(255,255,255,0.55)"><span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: clamp(16px,2.1vw,28px); text-transform: uppercase; color: rgb(25,35,22); white-space: nowrap">BALICOPTER</span></div>
+      <span style="font-weight: 400; font-size: clamp(12px,1.5vw,17px); line-height: 1.35; color: rgb(25,35,22); max-width: 16vw">открывает труднодоступные локации</span>
+    </div>
+    <div data-reveal="pcard3" data-px="-1" style="position: absolute; left: 6vw; top: 92vw; width: 36vw; display: flex; flex-direction: row; gap: 2vw; align-items: center; justify-content: flex-end; transform: translateX(var(--px,0px)) translateY({{ pc3.y }}px); opacity: {{ pc3.o }}; transition: transform 0.35s ease-out, opacity 0.9s ease-out">
+      <span style="font-weight: 400; font-size: clamp(12px,1.5vw,17px); line-height: 1.35; color: rgb(25,35,22); max-width: 16vw; text-align: right">добавляет морскую инфраструктуру</span>
+      <div style="flex: 0 0 18vw; border-radius: 14px; backdrop-filter: blur(24px) saturate(1.15); min-height: 7vw; display: flex; align-items: center; justify-content: center; padding: 1.2vw 1.5vw; box-sizing: border-box; background-color: rgba(255,255,255,0.55)"><span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: clamp(16px,2.1vw,28px); text-transform: uppercase; color: rgb(25,35,22); white-space: nowrap">MARINA</span></div>
+    </div>
+    <div data-reveal="pcard4" data-px="1" style="position: absolute; left: 58vw; top: 100vw; width: 36vw; display: flex; flex-direction: row; gap: 2vw; align-items: center; transform: translateX(var(--px,0px)) translateY({{ pc4.y }}px); opacity: {{ pc4.o }}; transition: transform 0.35s ease-out, opacity 0.9s ease-out">
+      <div style="flex: 0 0 18vw; border-radius: 14px; backdrop-filter: blur(24px) saturate(1.15); min-height: 7vw; display: flex; align-items: center; justify-content: center; padding: 1.2vw 1.5vw; box-sizing: border-box; background-color: rgba(255,255,255,0.55)"><span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: clamp(16px,2.1vw,28px); text-transform: uppercase; color: rgb(25,35,22); white-space: nowrap">SANATORIUM</span></div>
+      <span style="font-weight: 400; font-size: clamp(12px,1.5vw,17px); line-height: 1.35; color: rgb(25,35,22); max-width: 16vw">формирует wellness-слой</span>
+    </div>
+    <div data-reveal="pcard5" style="position: absolute; left: 5vw; right: 5vw; top: 112vw; display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 2vw; transform: translateY({{ pc5.y }}px); opacity: {{ pc5.o }}; transition: transform 0.9s cubic-bezier(.16,1,.3,1), opacity 0.9s ease-out">
+      <div style="border-radius: 14px; backdrop-filter: blur(24px) saturate(1.15); display: flex; flex-direction: column; gap: 1.2vw; align-items: center; justify-content: center; text-align: center; padding: 3vw 1.5vw; box-sizing: border-box; background-color: rgba(255,255,255,0.55)">
+        <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: clamp(15px,2vw,26px); line-height: 1.15; text-transform: uppercase; color: rgb(25,35,22)">EVERVILLE ESTATE</span>
+        <span style="font-weight: 400; font-size: clamp(12px,1.4vw,17px); line-height: 1.35; color: rgb(25,35,22)">создает проекты<br>как наследие</span>
+      </div>
+      <div style="border-radius: 14px; backdrop-filter: blur(24px) saturate(1.15); display: flex; flex-direction: column; gap: 1.2vw; align-items: center; justify-content: center; text-align: center; padding: 3vw 1.5vw; box-sizing: border-box; background-color: rgba(255,255,255,0.55)">
+        <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: clamp(15px,2vw,26px); line-height: 1.15; text-transform: uppercase; color: rgb(25,35,22)">EVERVILLE CAPITAL</span>
+        <span style="font-weight: 400; font-size: clamp(12px,1.4vw,17px); line-height: 1.35; color: rgb(25,35,22)">обеспечивает<br>надежность проектам</span>
+      </div>
+      <div style="border-radius: 14px; backdrop-filter: blur(24px) saturate(1.15); display: flex; flex-direction: column; gap: 1.2vw; align-items: center; justify-content: center; text-align: center; padding: 3vw 1.5vw; box-sizing: border-box; background-color: rgba(255,255,255,0.55)">
+        <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: clamp(15px,2vw,26px); line-height: 1.15; text-transform: uppercase; color: rgb(25,35,22)">EVERVILLE ARCHITECTS</span>
+        <span style="font-weight: 400; font-size: clamp(12px,1.4vw,17px); line-height: 1.35; color: rgb(25,35,22)">задает стандарт<br>в дизайне</span>
+      </div>
+    </div>
+  </div>
+
+  <sc-for list="{{ projects }}" as="pr" hint-placeholder-count="3">
+    <div style="background: {{ pr.bg }}; padding: clamp(56px,7vw,96px) 40px; box-sizing: border-box; display: {{ pr.display }}; flex-direction: column; align-items: center" data-om-label="project-{{ pr.id }}" data-screen-label="Проект — {{ pr.fullTitle }}">
+      <div style="width: 100%; display: flex; flex-direction: column; gap: clamp(28px,3vw,40px)">
+        <div data-reveal="prj{{ pr.i }}h" style="display: flex; flex-direction: row; justify-content: space-between; align-items: flex-end; gap: 32px; flex-wrap: wrap; transform: translateY({{ pr.head.y }}px); opacity: {{ pr.head.o }}; filter: blur({{ pr.head.b }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1), opacity 0.9s ease-out, filter 0.9s ease-out">
+          <div style="display: flex; flex-direction: column; gap: 8px; flex: 0 0 auto">
+            <div style="display: flex; flex-direction: column; gap: 0px">
+              <div style="overflow: hidden"><span style="display: block; font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: clamp(30px,4.2vw,44px); color: rgb(25,35,22); text-transform: uppercase; white-space: nowrap">{{ pr.titleA }}</span></div>
+              <sc-if value="{{ pr.hasB }}" hint-placeholder-val="{{ true }}">
+                <div style="display: flex; align-items: center; gap: 20px"><span style="flex: 0 0 auto; width: clamp(60px,8vw,120px); height: 1.5px; background: rgb(25,35,22); display: block; transform: scaleX({{ pr.line }}); transform-origin: right; transition: transform 0.7s cubic-bezier(.16,1,.3,1) 200ms"></span><span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: clamp(30px,4.2vw,44px); color: rgb(25,35,22); text-transform: uppercase; white-space: nowrap">{{ pr.titleB }}</span></div>
+              </sc-if>
+              <sc-if value="{{ pr.noB }}" hint-placeholder-val="{{ false }}">
+                <div style="display: flex; align-items: center; gap: 20px; height: 12px"><span style="flex: 0 0 auto; width: clamp(60px,8vw,120px); height: 1.5px; background: rgb(25,35,22); display: block; transform: scaleX({{ pr.line }}); transform-origin: left; transition: transform 0.7s cubic-bezier(.16,1,.3,1) 200ms"></span></div>
+              </sc-if>
+            </div><span style="font-weight: 400; font-size: clamp(13px,1.4vw,16px); color: rgb(138,70,70)">{{ pr.status }}</span>
+          </div>
+          <div style="width: 100%; max-width: 100%; flex: 1 1 380px; display: flex; flex-direction: column; gap: 16px; align-items: flex-end; justify-content: space-between">
+            <span style="font-weight: 400; font-size: clamp(14px,1.5vw,16px); line-height: 1.5; color: #2D2D2D; align-self: stretch; text-align: right"><b>{{ pr.lead }}</b> {{ pr.desc }}</span>
+            <div style="display: flex; flex-direction: row; gap: 8px; align-items: center">
+              <svg width="12" height="17" viewBox="0 0 11.783 17.288" fill="rgb(138,70,70)"><path d="M 5.892 0 C 9.146 0 11.783 2.638 11.783 5.892 C 11.783 9.146 5.892 17.288 5.892 17.288 C 5.892 17.288 0 9.146 0 5.892 C 0 2.638 2.638 0 5.892 0 Z M 5.892 3.422 C 4.528 3.422 3.422 4.528 3.422 5.892 C 3.422 7.255 4.528 8.361 5.892 8.361 C 7.256 8.361 8.361 7.255 8.361 5.892 C 8.361 4.528 7.256 3.422 5.892 3.422 Z" fill-rule="nonzero"></path></svg>
+              <span style="font-weight: 400; font-size: clamp(13px,1.4vw,16px); white-space: nowrap; color: rgb(138,70,70)">{{ pr.loc }}</span>
+            </div>
+          </div>
+        </div>
+        <div data-reveal="prj{{ pr.i }}g" style="display: flex; flex-direction: column; gap: 20px; transform: translateY({{ pr.gal.y }}px); opacity: {{ pr.gal.o }}; filter: blur({{ pr.gal.b }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1), opacity 0.9s ease-out, filter 0.9s ease-out" data-om-label="{{ pr.id }}-gallery">
+          <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap">
+            <div style="display: flex; flex-direction: row; gap: 12px; align-items: center">
+              <sc-for list="{{ pr.dots }}" as="dot" hint-placeholder-count="3">
+                <span style="width: {{ dot.width }}px; height: 2px; background: rgb(25,35,22); display: block; opacity: {{ dot.opacity }}; transition: width 0.3s ease-out, opacity 0.3s ease-out"></span>
+              </sc-for>
+            </div>
+            <div style="display: flex; flex-direction: row; gap: clamp(20px,3.5vw,48px); align-items: center">
+              <span style="font-weight: 400; font-size: clamp(14px,1.5vw,16px); text-transform: lowercase; letter-spacing: 0.02em; color: rgb(25,35,22); white-space: nowrap">галерея проекта</span>
+              <div style="display: flex; flex-direction: row; gap: 8px; align-items: center">
+                <div onClick="{{ pr.onPrev }}" style="width: 52px; height: 52px; border-radius: 50%; box-shadow: inset 0 0 0 1px rgb(25,35,22); display: flex; align-items: center; justify-content: center; cursor: pointer; opacity: {{ pr.prevOpacity }}; pointer-events: {{ pr.prevPointer }}; transition: box-shadow 0.2s ease-out" style-hover="box-shadow: inset 0 0 0 1.5px rgb(25,35,22)">
+                  <svg width="24" height="14" viewBox="0 0 24 14" fill="none"><path d="M 1 7 L 23 7 M 8 1 L 1 7 L 8 13" stroke="rgb(25,35,22)" stroke-width="1.5" fill="none"></path></svg>
+                </div>
+                <div onClick="{{ pr.onNext }}" style="width: 52px; height: 52px; border-radius: 50%; box-shadow: inset 0 0 0 1px rgb(25,35,22); display: flex; align-items: center; justify-content: center; cursor: pointer; opacity: {{ pr.nextOpacity }}; pointer-events: {{ pr.nextPointer }}; transition: box-shadow 0.2s ease-out" style-hover="box-shadow: inset 0 0 0 1.5px rgb(25,35,22)">
+                  <svg width="24" height="14" viewBox="0 0 24 14" fill="none"><path d="M 1 7 L 23 7 M 16 1 L 23 7 L 16 13" stroke="rgb(25,35,22)" stroke-width="1.5" fill="none"></path></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div ref="{{ pr.vpRef }}" style="position: relative; width: 100%; overflow: hidden; -webkit-mask-image: {{ pr.mask }}; mask-image: {{ pr.mask }}; transition: -webkit-mask-image 0.3s ease-out, mask-image 0.3s ease-out">
+            <div ref="{{ pr.trRef }}" onMouseDown="{{ pr.onDragStart }}" onTouchStart="{{ pr.onDragStart }}" onTouchMove="{{ pr.onDragMove }}" onTouchEnd="{{ pr.onDragEnd }}" style="display: flex; flex-direction: row; gap: 20px; align-items: flex-start; transform: translateX({{ pr.offset }}px); transition: {{ pr.transition }}; cursor: {{ pr.cursor }}; user-select: none; touch-action: pan-y">
+              <sc-for list="{{ pr.photos }}" as="ph" hint-placeholder-count="1">
+                <img data-lazysrc="{{ ph.src }}" alt="{{ ph.alt }}" draggable="{{ false }}" onClick="{{ ph.onOpen }}" style="cursor: zoom-in; flex: 0 0 84%; width: 84%; height: clamp(300px,46vw,540px); object-fit: cover; border-radius: 16px; display: block">
+              </sc-for>
+            </div>
+          </div>
+        </div>
+        <div data-reveal="prj{{ pr.i }}s" style="display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); align-items: stretch; gap: clamp(16px,2.5vw,32px); transform: translateY({{ pr.stat.y }}px); opacity: {{ pr.stat.o }}; filter: blur({{ pr.stat.b }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1), opacity 0.9s ease-out, filter 0.9s ease-out">
+          <sc-for list="{{ pr.stats }}" as="st" hint-placeholder-count="3">
+            <div style="display: flex; flex-direction: column; gap: 12px; border-top: 1.5px solid rgb(25,35,22); padding-top: 16px">
+              <span style="font-weight: 400; font-size: clamp(13px,1.5vw,17px); line-height: 1.1; color: #2D2D2D">{{ st.label }}</span>
+              <span style="font-weight: 500; font-size: clamp(28px,4vw,44px); line-height: 1.1; color: rgb(25,35,22); white-space: nowrap">{{ st.value }}</span>
+            </div>
+          </sc-for>
+          <div style="display: flex; flex-direction: column; gap: 12px; border-top: 1.5px solid transparent; padding-top: 16px; align-items: flex-start; justify-content: flex-end">
+            <div style="border-radius: 8px; background: rgb(43,58,39); display: flex; flex-direction: row; gap: 10px; padding: 16px 24px; justify-content: center; align-items: center; cursor: pointer; transition: background 0.2s ease-out" style-hover="background: rgb(30,41,27)">
+              <span style="font-weight: 700; font-size: 14px; color: #fff; white-space: nowrap">Подробнее о проекте</span>
+              <svg width="18" height="12" viewBox="0 0 24 14" fill="none"><path d="M 1 7 L 23 7 M 16 1 L 23 7 L 16 13" stroke="#fff" stroke-width="1.5" fill="none"></path></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </sc-for>
+
+  <sc-if value="{{ showMoreBtn }}" hint-placeholder-val="{{ true }}">
+    <div style="background: #fff; padding: 0 40px clamp(56px,7vw,96px); box-sizing: border-box; display: flex; justify-content: center" data-om-label="show-all">
+      <div onClick="{{ onShowAll }}" style="display: flex; flex-direction: row; gap: 12px; align-items: center; padding: 18px 36px; border-radius: 8px; box-shadow: inset 0 0 0 1.5px rgb(25,35,22); cursor: pointer; transition: box-shadow 0.2s ease-out, background 0.2s ease-out" style-hover="box-shadow: inset 0 0 0 2px rgb(25,35,22); background: rgba(25,35,22,0.04)">
+        <span style="font-weight: 700; font-size: 14px; color: rgb(25,35,22); white-space: nowrap">Показать все проекты</span>
+        <svg width="14" height="8" viewBox="0 0 14 8" fill="none"><path d="M 1 1 L 7 7 L 13 1" stroke="rgb(25,35,22)" stroke-width="1.5" fill="none"></path></svg>
+      </div>
+    </div>
+  </sc-if>
+
+  <div style="position: relative; overflow: hidden; background: rgb(25,35,22); box-sizing: border-box; display: flex; flex-direction: column; align-items: center; width: 100%; height: clamp(560px,70vw,720px)" data-om-label="cta" data-screen-label="Личный доступ (CTA)">
+    <img src="./assets/cta-bg.webp" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; pointer-events: none">
+    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15,20,13,0.35), rgba(15,20,13,0.15) 45%, rgba(15,20,13,0.4)); display: flex; justify-content: center; align-items: center; padding: 0 40px; box-sizing: border-box"><div style="position: relative; width: 100%; max-width: 820px; display: flex; flex-direction: column; gap: 24px">
+      <div data-reveal="ctahead" style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: clamp(28px,4.4vw,44px); line-height: 1.2; text-transform: uppercase; color: #fff; display: flex; flex-direction: column; gap: 6px">
+        <div style="overflow: hidden"><span style="display: block; white-space: nowrap; transform: translateY({{ ctaT1Y }}%); opacity: {{ ctaT1O }}; transition: transform 0.9s cubic-bezier(.16,1,.3,1) 0ms, opacity 0.9s ease-out 0ms">Ваш личный доступ</span></div>
+        <div style="overflow: hidden"><div style="display: flex; flex-direction: row; align-items: center; gap: clamp(16px,2.5vw,32px); margin-left: clamp(16px,4vw,48px); transform: translateY({{ ctaT2Y }}%); opacity: {{ ctaT2O }}; transition: transform 0.9s cubic-bezier(.16,1,.3,1) 120ms, opacity 0.9s ease-out 120ms"><span style="flex: 0 0 auto; width: clamp(70px,11vw,150px); height: 1.5px; background: #fff; display: block; transform: scaleX({{ ctaLine }}); transform-origin: right; transition: transform 0.7s cubic-bezier(.16,1,.3,1) 200ms"></span><span style="white-space: nowrap; font-family: HeadingNow-82Light">К возможностям</span></div></div>
+        <div style="overflow: hidden"><div style="display: flex; flex-direction: row; align-items: center; gap: clamp(16px,2.5vw,32px); margin-left: clamp(28px,6vw,80px); transform: translateY({{ ctaT3Y }}%); opacity: {{ ctaT3O }}; transition: transform 0.9s cubic-bezier(.16,1,.3,1) 240ms, opacity 0.9s ease-out 240ms"><span style="white-space: nowrap; font-family: HeadingNow-82Light">Острова</span><span style="flex: 0 1 clamp(110px,18vw,240px); min-width: 40px; height: 1.5px; background: #fff; display: block; transform: scaleX({{ ctaLine }}); transform-origin: left; transition: transform 0.7s cubic-bezier(.16,1,.3,1) 300ms"></span></div></div>
+      </div>
+      <span style="max-width: 640px; font-weight: 400; font-size: clamp(15px,1.8vw,18px); line-height: 1.4; color: #fff; opacity: {{ ctaFormO }}; transform: translateY({{ ctaFormY }}px); transition: transform 0.8s cubic-bezier(.16,1,.3,1) 200ms, opacity 0.8s ease-out 200ms">Познакомьтесь с инфраструктурой Everville лично. Мы ответим на все вопросы о девелопменте, юридической структуре Capital и эксклюзивных сервисах холдинга</span>
+      <div data-reveal="ctaform" style="display: flex; flex-direction: row; gap: 10px; align-items: stretch; flex-wrap: wrap; margin-top: 16px; opacity: {{ ctaFormO }}; transform: translateY({{ ctaFormY }}px); transition: transform 0.8s cubic-bezier(.16,1,.3,1) 300ms, opacity 0.8s ease-out 300ms">
+        <input type="text" placeholder="Ваше имя" style="flex: 1 1 220px; min-width: 0; height: 53px; border: none; outline: none; border-radius: 10px; background: rgb(235,234,230); padding: 0 16px; box-sizing: border-box; font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 600; font-size: 16px; color: rgb(25,35,22)">
+        <input type="email" placeholder="Ваш e-mail" style="flex: 1 1 220px; min-width: 0; height: 53px; border: none; outline: none; border-radius: 10px; background: rgb(235,234,230); padding: 0 16px; box-sizing: border-box; font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 600; font-size: 16px; color: rgb(25,35,22)">
+        <div style="flex: 1 1 200px; height: 53px; border-radius: 8px; background: rgb(43,58,39); display: flex; flex-direction: row; gap: 10px; justify-content: center; align-items: center; cursor: pointer; transition: background 0.2s ease-out" style-hover="background: rgb(30,41,27)">
+          <span style="font-weight: 700; font-size: 14px; color: #fff; white-space: nowrap">Стать партнером</span>
+          <svg width="18" height="12" viewBox="0 0 24 14" fill="none"><path d="M 1 7 L 23 7 M 16 1 L 23 7 L 16 13" stroke="#fff" stroke-width="1.5" fill="none"></path></svg>
+        </div>
+      </div>
+    </div></div>
+  </div>
+
+  <div style="position: relative; overflow: hidden; background: url('./assets/footer-beach.webp') center / cover no-repeat, rgb(25,35,22); padding: clamp(56px,7vw,96px) 40px clamp(140px,20vw,240px); box-sizing: border-box; display: flex; flex-direction: column; align-items: center" data-om-label="footer" data-screen-label="Футер">
+    <sc-if value="{{ footerVideo }}"><video ref="{{ footerVideoRef }}" src="./assets/footer-video.mp4" poster="./assets/footer-beach.webp" loop="{{ true }}" muted="{{ true }}" playsInline="{{ true }}" autoPlay="{{ true }}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; pointer-events: none"></video></sc-if>
+    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,18,12,0.85), rgba(10,18,12,0.6) 55%, rgba(10,18,12,0.35)); pointer-events: none"></div>
+    <div data-reveal="foot" style="position: relative; width: 100%; display: flex; flex-direction: row; justify-content: space-between; align-items: flex-start; gap: 36px; flex-wrap: wrap; opacity: {{ footO }}; transform: translateY({{ footY }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1), opacity 0.9s ease-out">
+      <a href="./index.html" style="display: block; flex: 0 0 auto"><img src="./assets/logo.svg" alt="EVERVILLE" style="width: 131px; height: auto; display: block"></a>
+      <sc-for list="{{ footerCols }}" as="col" hint-placeholder-count="3">
+        <div style="display: flex; flex-direction: column; gap: 24px; flex: 0 1 auto; min-width: 150px">
+          <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 17px; line-height: 1.2; text-transform: uppercase; color: #fff">{{ col.title }}</span>
+          <div style="display: flex; flex-direction: column; gap: 14px">
+            <sc-for list="{{ col.links }}" as="lnk" hint-placeholder-count="3">
+              <span style="font-weight: 400; font-size: 15px; line-height: 1.1; color: #fff; cursor: pointer; transition: opacity 0.2s ease-out" style-hover="opacity: 0.65">{{ lnk.label }}</span>
+            </sc-for>
+          </div>
+        </div>
+      </sc-for>
+      <div style="display: flex; flex-direction: column; gap: 24px; flex: 0 1 auto; min-width: 200px">
+        <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 17px; line-height: 1.2; text-transform: uppercase; color: #fff">Контакты</span>
+        <div style="display: flex; flex-direction: row; gap: 4px; align-items: center">
+          <div style="width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s ease-out" style-hover="background: rgba(255,255,255,0.12)" title="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"></rect><circle cx="12" cy="12" r="4.5"></circle><circle cx="17.6" cy="6.4" r="1.2" fill="#fff" stroke="none"></circle></svg>
+          </div>
+          <div style="width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s ease-out" style-hover="background: rgba(255,255,255,0.12)" title="Facebook">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M 13.5 21 L 13.5 13.5 L 16.2 13.5 L 16.6 10.3 L 13.5 10.3 L 13.5 8.2 C 13.5 7.3 13.8 6.6 15.1 6.6 L 16.7 6.6 L 16.7 3.7 C 16.4 3.7 15.4 3.6 14.3 3.6 C 11.9 3.6 10.2 5.1 10.2 7.9 L 10.2 10.3 L 7.5 10.3 L 7.5 13.5 L 10.2 13.5 L 10.2 21 Z"></path></svg>
+          </div>
+          <div style="width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s ease-out" style-hover="background: rgba(255,255,255,0.12)" title="Telegram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M 21.5 3.4 L 2.9 10.6 C 2 10.9 2 11.5 2.8 11.7 L 7.5 13.2 L 9.3 18.7 C 9.5 19.3 9.4 19.6 10.1 19.6 C 10.6 19.6 10.8 19.4 11.1 19.1 C 11.3 18.9 12.4 17.8 13.6 16.6 L 18.5 20.2 C 19.4 20.7 20 20.4 20.3 19.4 L 23.5 4.9 C 23.8 3.6 22.9 3 21.5 3.4 Z M 8.5 12.9 L 18.9 6.4 C 19.4 6.1 19.9 6.2 19.5 6.6 L 10.6 14.6 L 10.3 18.2 Z"></path></svg>
+          </div>
+          <div style="width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s ease-out" style-hover="background: rgba(255,255,255,0.12)" title="WhatsApp">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M 12 2 C 6.5 2 2 6.4 2 11.9 C 2 13.7 2.5 15.4 3.4 16.9 L 2 22 L 7.3 20.6 C 8.7 21.4 10.3 21.8 12 21.8 C 17.5 21.8 22 17.4 22 11.9 C 22 6.4 17.5 2 12 2 Z M 12 20 C 10.5 20 9 19.6 7.8 18.9 L 7.5 18.7 L 4.4 19.5 L 5.2 16.5 L 5 16.2 C 4.2 14.9 3.8 13.4 3.8 11.9 C 3.8 7.4 7.5 3.8 12 3.8 C 16.5 3.8 20.2 7.4 20.2 11.9 C 20.2 16.4 16.5 20 12 20 Z M 16.5 14.1 C 16.3 14 15.1 13.4 14.9 13.3 C 14.6 13.2 14.5 13.2 14.3 13.4 C 14.1 13.7 13.6 14.2 13.5 14.4 C 13.3 14.6 13.2 14.6 12.9 14.5 C 11.4 13.7 10.4 13.1 9.4 11.4 C 9.1 10.9 9.7 11 10.2 10 C 10.3 9.8 10.2 9.6 10.2 9.5 C 10.1 9.4 9.6 8.2 9.4 7.7 C 9.2 7.2 9 7.3 8.8 7.3 C 8.7 7.3 8.5 7.3 8.3 7.3 C 8.1 7.3 7.8 7.3 7.6 7.6 C 7.3 7.9 6.6 8.5 6.6 9.7 C 6.6 11 7.6 12.2 7.7 12.4 C 7.8 12.5 9.6 15.3 12.3 16.5 C 14 17.2 14.7 17.3 15.6 17.2 C 16.1 17.1 17.1 16.6 17.3 16 C 17.5 15.4 17.5 14.9 17.4 14.8 C 17.4 14.7 17.2 14.6 16.9 14.5 Z"></path></svg>
+          </div>
+          <div style="width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s ease-out" style-hover="background: rgba(255,255,255,0.12)" title="Google">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M 21.8 12.2 C 21.8 11.5 21.7 10.9 21.6 10.2 L 12 10.2 L 12 14 L 17.5 14 C 17.3 15.2 16.6 16.3 15.5 17 L 15.5 19.5 L 18.7 19.5 C 20.6 17.8 21.8 15.3 21.8 12.2 Z M 12 22 C 14.7 22 17 21.1 18.7 19.5 L 15.5 17 C 14.6 17.6 13.4 18 12 18 C 9.4 18 7.2 16.3 6.4 13.9 L 3.1 13.9 L 3.1 16.5 C 4.8 19.8 8.1 22 12 22 Z M 6.4 13.9 C 6.2 13.3 6.1 12.7 6.1 12 C 6.1 11.3 6.2 10.7 6.4 10.1 L 6.4 7.5 L 3.1 7.5 C 2.4 8.9 2 10.4 2 12 C 2 13.6 2.4 15.1 3.1 16.5 Z M 12 6 C 13.5 6 14.8 6.5 15.8 7.5 L 18.8 4.5 C 17 2.9 14.7 2 12 2 C 8.1 2 4.8 4.2 3.1 7.5 L 6.4 10.1 C 7.2 7.7 9.4 6 12 6 Z"></path></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <sc-if value="{{ lbOpen }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ lbClose }}" style="position: fixed; inset: 0; z-index: 400; background: rgba(12,16,11,0.82); backdrop-filter: blur(10px); display: flex; align-items: center; justify-content: center; padding: clamp(24px,4vw,56px); box-sizing: border-box; cursor: zoom-out; opacity: {{ lb.o }}; transition: opacity 0.3s ease-out">
+      <img data-lazysrc="{{ lbSrc }}" alt="{{ lbAlt }}" onClick="{{ lbStop }}" style="width: calc(100% - clamp(104px,11vw,160px)); aspect-ratio: 16 / 9; max-height: 100%; object-fit: cover; border-radius: 12px; display: block; cursor: default; transform: scale({{ lb.s }}); opacity: {{ lb.o }}; transition: transform 0.45s cubic-bezier(.16,1,.3,1), opacity 0.3s ease-out">
+      <div onClick="{{ lbPrev }}" style="position: fixed; left: clamp(16px,2.5vw,32px); top: 50%; transform: translateY(-50%); width: 48px; height: 48px; border-radius: 50%; background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.28); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s ease-out" style-hover="background: rgba(255,255,255,0.28)">
+        <svg width="10" height="16" viewBox="0 0 10 16" fill="none"><path d="M9 1L2 8l7 7" stroke="#fff" stroke-width="1.6"></path></svg>
+      </div>
+      <div onClick="{{ lbNext }}" style="position: fixed; right: clamp(16px,2.5vw,32px); top: 50%; transform: translateY(-50%); width: 48px; height: 48px; border-radius: 50%; background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.28); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s ease-out" style-hover="background: rgba(255,255,255,0.28)">
+        <svg width="10" height="16" viewBox="0 0 10 16" fill="none"><path d="M1 1l7 7-7 7" stroke="#fff" stroke-width="1.6"></path></svg>
+      </div>
+      <div onClick="{{ lbClose }}" style="position: fixed; right: clamp(16px,2.5vw,32px); top: clamp(16px,2.5vw,32px); width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.28); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s ease-out" style-hover="background: rgba(255,255,255,0.28)">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 1l12 12M13 1L1 13" stroke="#fff" stroke-width="1.6"></path></svg>
+      </div>
+      <div style="position: fixed; left: clamp(20px,4vw,56px); right: clamp(80px,7vw,110px); top: clamp(16px,2.5vw,32px); display: flex; flex-direction: row; align-items: flex-start; justify-content: space-between; gap: 24px; pointer-events: none">
+        <div style="display: flex; flex-direction: column; gap: 6px">
+          <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: clamp(18px,2.2vw,24px); letter-spacing: 0.01em; color: #fff; text-transform: uppercase">{{ lbTitle }}</span>
+          <div style="display: flex; flex-direction: row; align-items: center; gap: 10px">
+            <svg width="11" height="16" viewBox="0 0 11.783 17.288" fill="rgb(214,158,158)" style="flex: 0 0 auto"><path d="M 5.892 0 C 9.146 0 11.783 2.638 11.783 5.892 C 11.783 9.146 5.892 17.288 5.892 17.288 C 5.892 17.288 0 9.146 0 5.892 C 0 2.638 2.638 0 5.892 0 Z M 5.892 3.422 C 4.528 3.422 3.422 4.528 3.422 5.892 C 3.422 7.255 4.528 8.361 5.892 8.361 C 7.256 8.361 8.361 7.255 8.361 5.892 C 8.361 4.528 7.256 3.422 5.892 3.422 Z" fill-rule="nonzero"></path></svg>
+            <span style="font-weight: 400; font-size: 13px; color: rgba(255,255,255,0.72)">{{ lbLoc }}</span>
+            <span style="width: 1px; height: 12px; background: rgba(255,255,255,0.35); display: block"></span>
+            <span style="font-weight: 400; font-size: 13px; color: rgb(214,158,158)">{{ lbStatus }}</span>
+          </div>
+        </div>
+      </div>
+      <div style="position: fixed; left: 50%; bottom: clamp(16px,2.5vw,28px); transform: translateX(-50%); display: flex; flex-direction: row; align-items: center; gap: 14px; pointer-events: none">
+        <span style="font-weight: 400; font-size: 14px; color: #fff">{{ lbPlace }}</span>
+        <span style="width: 1px; height: 12px; background: rgba(255,255,255,0.35); display: block"></span>
+        <span style="font-weight: 400; font-size: 13px; letter-spacing: 0.04em; color: rgba(255,255,255,0.65)">{{ lbCounter }}</span>
+      </div>
+    </div>
+  </sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:834,&quot;height&quot;:1194},&quot;autoRedirect&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Просмотр&quot;}}">
+class Component extends DCLogic {
+  state = { showAll: false, galIdx: {}, dragging: false, dragProj: null, dragStartX: 0, dragStartOffset: 0, dragDeltaX: 0, lbProj: null, lbIdx: null, lbIn: false, rv: {}, footerVideo: false, heroV: false, heroImgV: false, menuOpen: false };
+  footerVideoRef = React.createRef();
+  GAP = 20;
+  PROJECTS = [
+    { id: "roya-resort", titleA: "ROYA", titleB: "RESORT", status: "продажи открыты",
+      lead: "Резорт · сёрф · гольф.", desc: "Флагманский курорт Everville на первой линии Dreamland Beach — гостиничная недвижимость с прозрачной отчётностью и полным юридическим пакетом до сделки.",
+      loc: "Dreamland Beach, Бали",
+      stats: [{ label: "вход от", value: "$250 000" }, { label: "прогноз ROI", value: "14–18%" }, { label: "продано", value: "70%" }],
+      photos: [
+        { src: "./assets/projects/ext-5-1.webp", alt: "ROYA Resort ночью — вид с высоты", place: "курорт с высоты" },
+        { src: "./assets/projects/ext-2-2.webp", alt: "Фасад корпуса", place: "фасад" },
+        { src: "./assets/projects/ext-3-3.webp", alt: "Террасы на закате", place: "террасы" },
+        { src: "./assets/projects/int-cam-27.webp", alt: "Лобби курорта", place: "лобби" },
+        { src: "./assets/projects/int-rest-cam-1-1.webp", alt: "Ресторан", place: "ресторан" },
+      ] },
+    { id: "roya-desa", titleA: "ROYA", titleB: "DESA", status: "старт продаж — Q4 2026",
+      lead: "Прибрежный город · марина.", desc: "Новый прибрежный район Everville: жилые кварталы, набережная и городская инфраструктура, которые масштабируют среду вокруг курортов холдинга.",
+      loc: "Бали, юго-западное побережье",
+      stats: [{ label: "вход от", value: "$180 000" }, { label: "прогноз ROI", value: "12–16%" }, { label: "очередь", value: "1 из 3" }],
+      photos: [
+        { src: "./assets/projects/ext-4-1.webp", alt: "ROYA DESA — жилой корпус", place: "фасад" },
+        { src: "./assets/projects/ext-3-1-1.webp", alt: "Террасы резиденций", place: "террасы" },
+        { src: "./assets/projects/ext-7-2.webp", alt: "Въездная группа", place: "въезд" },
+        { src: "./assets/projects/int-cam1-2.webp", alt: "Лобби с лифтом", place: "лобби" },
+      ] },
+    { id: "balicopter", titleA: "BALICOPTER", titleB: "", status: "сервис запущен",
+      lead: "Частная авиация.", desc: "Вертолётные маршруты между проектами холдинга и труднодоступными локациями острова — время в пути сокращается с часов до минут.",
+      loc: "Бали, хабы Everville",
+      stats: [{ label: "вход от", value: "$50 000" }, { label: "прогноз ROI", value: "10–14%" }, { label: "маршрутов", value: "12" }],
+      photos: [
+        { src: "./assets/projects/ext-5-3.webp", alt: "Ночной фасад хаба", place: "хаб" },
+        { src: "./assets/projects/int-19-1.webp", alt: "Лаунж", place: "лаунж" },
+        { src: "./assets/projects/int-cam-30.webp", alt: "Зона ожидания", place: "зона ожидания" },
+      ] },
+    { id: "marina", titleA: "MARINA", titleB: "", status: "в проектировании",
+      lead: "Морская инфраструктура.", desc: "Яхтенная марина с причалами, сервисом и береговым клубом — добавляет морское измерение экосистеме Everville.",
+      loc: "Бали, южное побережье",
+      stats: [{ label: "вход от", value: "$120 000" }, { label: "прогноз ROI", value: "11–15%" }, { label: "причалов", value: "120" }],
+      photos: [
+        { src: "./assets/projects/ext-2-4-1.webp", alt: "Береговой клуб на закате", place: "береговой клуб" },
+        { src: "./assets/projects/int-rest-cam-9-2-1.webp", alt: "Ресторан клуба", place: "ресторан" },
+        { src: "./assets/projects/int-rest-cam-11-1.webp", alt: "Бар", place: "бар" },
+      ] },
+    { id: "sanatorium", titleA: "SANATORIUM", titleB: "", status: "скоро в продаже",
+      lead: "Wellness · долголетие.", desc: "Санаторно-курортный комплекс превентивной медицины и восстановления — формирует wellness-слой экосистемы для резидентов и гостей.",
+      loc: "Убуд, Бали",
+      stats: [{ label: "вход от", value: "$95 000" }, { label: "прогноз ROI", value: "9–13%" }, { label: "номеров", value: "140" }],
+      photos: [
+        { src: "./assets/projects/int-03-7.webp", alt: "Интерьер комплекса", place: "холл" },
+        { src: "./assets/projects/int-cam5-1.webp", alt: "Зона восстановления", place: "зона восстановления" },
+        { src: "./assets/projects/int-17.webp", alt: "Резиденции", place: "резиденции" },
+        { src: "./assets/projects/int-cam-33-2.webp", alt: "Спа", place: "спа" },
+      ] },
+  ];
+  _vpEls = {}; _trEls = {}; _vpRefs = {}; _trRefs = {};
+  vpRef(i) { if (!this._vpRefs[i]) this._vpRefs[i] = (el) => { this._vpEls[i] = el; }; return this._vpRefs[i]; }
+  trRef(i) { if (!this._trRefs[i]) this._trRefs[i] = (el) => { this._trEls[i] = el; }; return this._trRefs[i]; }
+  bindLazyImages() {
+    document.querySelectorAll("img[data-lazysrc]").forEach(img => {
+      const src = img.getAttribute("data-lazysrc");
+      if (src && !src.includes("{{") && img.getAttribute("src") !== src) img.setAttribute("src", src);
+    });
+  }
+  attachReveal = () => {
+    if (!this._revealSeen) this._revealSeen = new WeakSet();
+    document.querySelectorAll("[data-reveal]").forEach((el) => {
+      if (this._revealSeen.has(el)) return;
+      this._revealSeen.add(el);
+      const key = el.getAttribute("data-reveal");
+      if (!key || key.includes("{{")) { this._revealSeen.delete(el); return; }
+      const io = new IntersectionObserver((ents) => {
+        if (!ents[0].isIntersecting) return;
+        this.setState(s => ({ rv: Object.assign({}, s.rv, { [key]: true }) }));
+        setTimeout(() => this.setState(s => ({ rv: Object.assign({}, s.rv, { [key + "L"]: true }) })), 450);
+        io.disconnect();
+      }, { threshold: 0.2, rootMargin: "0px 0px -8% 0px" });
+      io.observe(el);
+    });
+  };
+  onScrollParallax = () => {
+    if (this._pRaf) return;
+    this._pRaf = requestAnimationFrame(() => {
+      this._pRaf = null;
+      const vh = Math.max(1, window.innerHeight);
+      document.querySelectorAll("[data-px]").forEach(el => {
+        const dir = parseFloat(el.getAttribute("data-px")) || 0;
+        const r = el.getBoundingClientRect();
+        const p = ((vh / 2) - (r.top + r.height / 2)) / vh;
+        el.style.setProperty("--px", (Math.max(-1, Math.min(1, p)) * dir * 60).toFixed(1) + "px");
+      });
+    });
+  };
+  hdrRef = React.createRef();
+  _hdrHidden = false;
+  applyHdr = () => {
+    const n = this.hdrRef.current;
+    if (!n) return;
+    n.style.transform = this._hdrHidden ? "translateY(-" + (n.offsetHeight + 24) + "px)" : "translateY(0)";
+  };
+  componentDidMount() {
+    this._readY = () => window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    this._lastY = this._readY();
+    this._onHdrScroll = () => {
+      const y = this._readY();
+      const d = y - this._lastY;
+      if (Math.abs(d) < 3) return;
+      this._lastY = y;
+      let hide = d > 0 && !this.state.menuOpen;
+      if (y <= 80) hide = false;
+      this._hdrHidden = hide;
+      this.applyHdr();
+    };
+    window.addEventListener("scroll", this._onHdrScroll, { passive: true });
+    this._route = () => {
+      if ((this.props.autoRedirect ?? true) && window.innerWidth >= 1024) window.location.replace("./projects.html");
+    };
+    this._route();
+    window.addEventListener("resize", this._route);
+    this.bindLazyImages();
+    document.addEventListener("scroll", this.onScrollParallax, { capture: true, passive: true });
+    window.addEventListener("keydown", this.onLbKey);
+    this.onScrollParallax();
+    requestAnimationFrame(() => requestAnimationFrame(() => this.setState({ heroV: true, heroImgV: true })));
+    this.attachReveal();
+    requestAnimationFrame(this.attachReveal);
+    setTimeout(this.attachReveal, 400);
+    this._measure = () => this.forceUpdate();
+    window.addEventListener("resize", this._measure);
+    setTimeout(this._measure, 400);
+    this._mm = (e) => this.dragMove(e.clientX);
+    this._mu = () => this.dragEnd();
+    fetch("./assets/footer-video.mp4", { method: "HEAD" }).then(r => {
+      if (r.ok) this.setState({ footerVideo: true }, () => {
+        const v = this.footerVideoRef.current;
+        if (v) { v.muted = true; v.play().catch(() => {}); }
+      });
+    }).catch(() => {});
+  }
+  componentDidUpdate() {
+    this.applyHdr(); this.bindLazyImages(); this.attachReveal(); }
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this._onHdrScroll);
+    window.removeEventListener("resize", this._route);
+    window.removeEventListener("resize", this._measure);
+    document.removeEventListener("scroll", this.onScrollParallax, { capture: true });
+    window.removeEventListener("keydown", this.onLbKey);
+    window.removeEventListener("mousemove", this._mm);
+    window.removeEventListener("mouseup", this._mu);
+  }
+  idxOf(i) { return this.state.galIdx[i] || 0; }
+  maxIdx(i) { return this.PROJECTS[i].photos.length - 1; }
+  clampIdx(i, v) { return Math.max(0, Math.min(this.maxIdx(i), v)); }
+  setIdx(i, v) { this.setState(s => ({ galIdx: Object.assign({}, s.galIdx, { [i]: this.clampIdx(i, v) }) })); }
+  metrics(i) {
+    const vp = this._vpEls[i], tr = this._trEls[i];
+    if (vp && tr && tr.children.length) {
+      return { stepW: tr.children[0].offsetWidth + this.GAP, maxScroll: Math.max(0, tr.scrollWidth - vp.clientWidth) };
+    }
+    return { stepW: 1000, maxScroll: 0 };
+  }
+  offsetFor(i, idx) {
+    const m = this.metrics(i);
+    const vp = this._vpEls[i], tr = this._trEls[i];
+    const peekHalf = (vp && tr && tr.children.length) ? Math.max(0, (vp.clientWidth - tr.children[0].offsetWidth) / 2) : 0;
+    return -Math.max(0, Math.min(idx * m.stepW - peekHalf, m.maxScroll));
+  }
+  getX(e) {
+    if (e.touches && e.touches.length) return e.touches[0].clientX;
+    if (e.changedTouches && e.changedTouches.length) return e.changedTouches[0].clientX;
+    return e.clientX;
+  }
+  dragStart(i, e) {
+    if (e.type === "mousedown") {
+      e.preventDefault();
+      window.addEventListener("mousemove", this._mm);
+      window.addEventListener("mouseup", this._mu);
+    }
+    this.setState({ dragging: true, dragProj: i, dragStartX: this.getX(e), dragStartOffset: this.offsetFor(i, this.idxOf(i)), dragDeltaX: 0 });
+  }
+  dragMove(x) {
+    if (!this.state.dragging) return;
+    const d = (typeof x === "number" ? x : this.getX(x)) - this.state.dragStartX;
+    if (Math.abs(d) > 6) this._moved = true;
+    this.setState({ dragDeltaX: d });
+  }
+  dragEnd() {
+    if (!this.state.dragging) return;
+    window.removeEventListener("mousemove", this._mm);
+    window.removeEventListener("mouseup", this._mu);
+    const i = this.state.dragProj;
+    const m = this.metrics(i);
+    const raw = Math.min(0, Math.max(-m.maxScroll, this.state.dragStartOffset + this.state.dragDeltaX));
+    this.setState(s => ({ dragging: false, dragDeltaX: 0, galIdx: Object.assign({}, s.galIdx, { [i]: this.clampIdx(i, Math.round(-raw / m.stepW)) }) }));
+  }
+  openLb(i, pi) {
+    if (this._moved) { this._moved = false; return; }
+    this.setState({ lbProj: i, lbIdx: pi, lbIn: false });
+    requestAnimationFrame(() => requestAnimationFrame(() => this.setState({ lbIn: true })));
+  }
+  closeLb() {
+    this.setState({ lbIn: false });
+    setTimeout(() => this.setState({ lbProj: null, lbIdx: null }), 260);
+  }
+  lbStep(d) {
+    this.setState(s => {
+      if (s.lbProj === null) return null;
+      const n = this.PROJECTS[s.lbProj].photos.length;
+      return { lbIdx: (s.lbIdx + d + n) % n };
+    });
+  }
+  onLbKey = (e) => {
+    if (this.state.lbProj === null) return;
+    if (e.key === "Escape") this.closeLb();
+    if (e.key === "ArrowLeft") this.lbStep(-1);
+    if (e.key === "ArrowRight") this.lbStep(1);
+  };
+  mask(idx, maxIdx) {
+    const w = "clamp(70px,9vw,160px)";
+    const ease = [[0, 0], [0.15, 0.03], [0.3, 0.11], [0.45, 0.24], [0.6, 0.45], [0.75, 0.7], [0.88, 0.89], [1, 1]];
+    const left = idx > 0
+      ? ease.map(([p, a]) => "rgba(0,0,0," + a + ") calc(" + w + " * " + p + ")").join(", ")
+      : "#000 0";
+    const right = idx < maxIdx
+      ? ease.slice().reverse().map(([p, a]) => "rgba(0,0,0," + a + ") calc(100% - " + w + " * " + p + ")").join(", ")
+      : "#000 100%";
+    return "linear-gradient(90deg, " + left + ", " + right + ")";
+  }
+  renderVals() {
+    const s = this.state;
+    const rvv = (v) => ({ y: v ? 0 : 28, o: v ? 1 : 0, b: 0 });
+    const projects = this.PROJECTS.map((p, i) => {
+      const idx = this.idxOf(i);
+      const maxIdx = this.maxIdx(i);
+      const m = this.metrics(i);
+      const dragging = s.dragging && s.dragProj === i;
+      return {
+        i, id: p.id, bg: i % 2 === 0 ? "#fff" : "#EBEAE6",
+        display: (s.showAll || i < 3) ? "flex" : "none",
+        titleA: p.titleA, titleB: p.titleB, hasB: !!p.titleB, noB: !p.titleB,
+        fullTitle: p.titleA + (p.titleB ? " " + p.titleB : ""),
+        status: p.status, lead: p.lead, desc: p.desc, loc: p.loc, stats: p.stats,
+        head: rvv(s.rv["prj" + i + "h"]),
+        line: s.rv["prj" + i + "hL"] ? 1 : 0,
+        gal: rvv(s.rv["prj" + i + "g"]),
+        stat: rvv(s.rv["prj" + i + "s"]),
+        photos: p.photos.map((ph, pi) => Object.assign({}, ph, { onOpen: () => this.openLb(i, pi) })),
+        dots: p.photos.map((_, pi) => ({ width: pi === idx ? 32 : 12, opacity: pi === idx ? 1 : 0.35 })),
+        vpRef: this.vpRef(i), trRef: this.trRef(i),
+        offset: dragging ? Math.min(0, Math.max(-m.maxScroll, s.dragStartOffset + s.dragDeltaX)) : this.offsetFor(i, idx),
+        transition: dragging ? "none" : "transform 0.5s cubic-bezier(.16,1,.3,1)",
+        cursor: dragging ? "grabbing" : "grab",
+        mask: this.mask(idx, maxIdx),
+        onPrev: () => this.setIdx(i, idx - 1),
+        onNext: () => this.setIdx(i, idx + 1),
+        onDragStart: (e) => this.dragStart(i, e),
+        onDragMove: (e) => this.dragMove(e),
+        onDragEnd: () => this.dragEnd(),
+        prevOpacity: idx <= 0 ? 0.3 : 1, prevPointer: idx <= 0 ? "none" : "auto",
+        nextOpacity: idx >= maxIdx ? 0.3 : 1, nextPointer: idx >= maxIdx ? "none" : "auto",
+      };
+    });
+    const lbP = s.lbProj !== null ? this.PROJECTS[s.lbProj] : null;
+    const lbPh = lbP && s.lbIdx !== null ? lbP.photos[s.lbIdx] : null;
+    return {
+      goInvest: () => { window.location.href = "./" + (window.innerWidth >= 1024 ? "index.html" : "index.html") + "#invest"; },
+      scrollToProjects: () => {
+        const el = document.querySelector('[data-om-label^="project-"]');
+        if (!el) return;
+        const sc = document.body.scrollHeight > document.body.clientHeight + 4 ? document.body : (document.scrollingElement || document.documentElement);
+        const y = el.getBoundingClientRect().top + sc.scrollTop - 90;
+        sc.scrollTo({ top: y, behavior: "smooth" });
+      },
+      hero: rvv(s.heroV),
+      heroImg: { o: s.heroImgV ? 1 : 0, s: s.heroImgV ? 1 : 1.06 },
+      pintro: rvv(s.rv.pintro),
+      pLine: s.rv.pintroL ? 1 : 0,
+      pc0: rvv(s.rv.pcard0), pc1: rvv(s.rv.pcard1), pc2: rvv(s.rv.pcard2),
+      pc3: rvv(s.rv.pcard3), pc4: rvv(s.rv.pcard4), pc5: rvv(s.rv.pcard5),
+      projects,
+      showMoreBtn: !s.showAll,
+      onShowAll: () => this.setState({ showAll: true }, () => { this.attachReveal(); this.forceUpdate(); }),
+      goProjects: () => { const w = window.innerWidth; const p = w >= 1024 ? "projects.html" : w >= 768 ? "projects-tablet.html" : "projects-mobile.html"; window.location.href = "./" + p; },
+      goHome: () => { window.location.href = "./" + (window.innerWidth >= 1024 ? "index.html" : "index.html"); },
+      hdrRef: this.hdrRef,
+      menuOpen: !!s.menuOpen,
+      onToggleMenu: () => { this._hdrHidden = false; this.applyHdr(); this.setState(st => ({ menuOpen: !st.menuOpen })); },
+      barTop: s.menuOpen ? "translateY(4.25px) rotate(45deg)" : "none",
+      barMid: s.menuOpen ? "scaleX(0.4)" : "none",
+      barMidO: s.menuOpen ? 0 : 1,
+      barBot: s.menuOpen ? "translateY(-4.25px) rotate(-45deg)" : "none",
+      menuTransform: s.menuOpen ? "translateX(0)" : "translateX(100%)",
+      menuPointer: s.menuOpen ? "auto" : "none",
+      menuVis: s.menuOpen ? "visible" : "hidden",
+      ctaT1Y: s.rv.ctahead ? 0 : 100, ctaT1O: s.rv.ctahead ? 1 : 0,
+      ctaT2Y: s.rv.ctahead ? 0 : 100, ctaT2O: s.rv.ctahead ? 1 : 0,
+      ctaT3Y: s.rv.ctahead ? 0 : 100, ctaT3O: s.rv.ctahead ? 1 : 0,
+      ctaLine: s.rv.ctaheadL ? 1 : 0,
+      ctaFormO: s.rv.ctaform ? 1 : 0,
+      ctaFormY: s.rv.ctaform ? 0 : 24,
+      footO: s.rv.foot ? 1 : 0,
+      footY: s.rv.foot ? 0 : 32,
+      footerVideo: !!s.footerVideo,
+      footerVideoRef: this.footerVideoRef,
+      footerCols: [
+        { title: "Проекты", links: [{ label: "Roya Dreamland" }, { label: "Ocean" }, { label: "Balicopter" }, { label: "Sanatorium" }] },
+        { title: "Инвестиции", links: [{ label: "Почему Бали" }, { label: "Калькулятор ROI" }, { label: "Правовая база" }] },
+        { title: "О компании", links: [{ label: "Наша история" }, { label: "Команда" }, { label: "Устойчивое развитие" }] },
+      ],
+      lbOpen: s.lbProj !== null,
+      lbSrc: lbPh ? lbPh.src : "",
+      lbAlt: lbPh ? lbPh.alt : "",
+      lbPlace: lbPh ? lbPh.place : "",
+      lbCounter: lbP ? (s.lbIdx + 1) + " / " + lbP.photos.length : "",
+      lbTitle: lbP ? lbP.titleA + (lbP.titleB ? " " + lbP.titleB : "") : "",
+      lbLoc: lbP ? lbP.loc : "",
+      lbStatus: lbP ? lbP.status : "",
+      lb: { o: s.lbIn ? 1 : 0, s: s.lbIn ? 1 : 0.94 },
+      lbClose: () => this.closeLb(),
+      lbStop: (e) => e.stopPropagation(),
+      lbPrev: (e) => { e.stopPropagation(); this.lbStep(-1); },
+      lbNext: (e) => { e.stopPropagation(); this.lbStep(1); },
+    };
+  }
+}
+</script>
+</body>
+</html>
