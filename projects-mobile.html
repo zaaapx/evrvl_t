@@ -64,20 +64,22 @@
 
   <div style="position: relative; width: 100%; background: #fff" data-om-label="hero" data-screen-label="Hero — Избранные проекты (mobile)">
     <div style="position: relative; display: flex; flex-direction: column; gap: 48px; padding: 132px 16px 56px; box-sizing: border-box">
-      <div style="min-height: calc(100svh - 188px); display: flex; flex-direction: column; justify-content: center; gap: 44px; box-sizing: border-box">
-      <div style="display: flex; flex-direction: column; gap: 16px; align-items: center; text-align: center; transform: translateY({{ hero.y }}px); opacity: {{ hero.o }}; filter: blur({{ hero.b }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1), opacity 0.9s ease-out, filter 0.9s ease-out">
-        <div style="display: flex; flex-direction: column; gap: 4px; align-items: center">
-          <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 34px; line-height: 110%; color: rgb(0,0,0); text-transform: uppercase">развитие</span>
-          <span style="font-family: 'HeadingNow-82Light'; font-weight: 200; font-size: 34px; line-height: 110%; color: rgb(0,0,0); text-transform: uppercase">через единство</span>
-        </div>
-        <span style="font-weight: 400; font-size: 14px; text-transform: lowercase; letter-spacing: 0.02em; color: rgb(25,35,22)">наши проекты</span>
-      </div>
+      <div style="min-height: calc(100svh - 188px); display: flex; flex-direction: column; justify-content: center; gap: 32px; box-sizing: border-box">
+      <span style="font-weight: 400; font-size: 14px; text-transform: lowercase; letter-spacing: 0.02em; color: rgb(138,70,70); text-align: center; display: block; margin-bottom: 20px">наши проекты</span>
       <div data-reveal="pintro" style="font-size: 17px; line-height: 1.5; text-transform: uppercase; color: rgb(25,35,22); text-align: center; transform: translateY({{ pintro.y }}px); opacity: {{ pintro.o }}; filter: blur({{ pintro.b }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1), opacity 0.9s ease-out, filter 0.9s ease-out">
-        <span style="font-family: 'HeadingNow-82Light'; font-weight: 200">Проекты Everville, объединенные в </span><span style="font-family: 'HeadingNow-84Regular'; font-weight: 400">единую экосистему</span><span style="font-family: 'HeadingNow-82Light'; font-weight: 200">, расширяют ваш стиль жизни и непрерывно </span><span style="font-family: 'HeadingNow-84Regular'; font-weight: 400">повышают ценность бренда и капитала</span>
+        <div style="display: flex; flex-direction: column; gap: 2px; align-items: center">
+          <span style="font-family: 'HeadingNow-82Light'; font-weight: 200; font-size: 22px">ПРОЕКТЫ EVERVILLE,</span>
+          <span style="font-family: 'HeadingNow-82Light'; font-weight: 200; font-size: 22px">ОБЪЕДИНЕННЫЕ</span>
+          <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 22px">В ЕДИНУЮ ЭКОСИСТЕМУ.</span>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 2px; align-items: center; margin-top: 16px">
+          <span style="font-family: 'HeadingNow-82Light'; font-weight: 200; font-size: 15px">РАСШИРЯЮТ ВАШ СТИЛЬ ЖИЗНИ И НЕПРЕРЫВНО </span>
+          <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 15px">повышают ценность бренда и капитала</span>
+        </div>
       </div>
 <div style="display: flex; flex-direction: column; gap: 12px; align-items: center; justify-content: center; margin-top: 18px; width: 100%;">
-        <div onClick="{{ goInvest }}" style="width: 100%; border-radius: 8px; background: #fff; box-shadow: 0 6px 24px rgba(25,35,22,0.12); display: flex; padding: 14px 22px; justify-content: center; align-items: center; box-sizing: border-box; cursor: pointer"><span style="font-weight: 700; font-size: 14px; color: rgb(43,58,39); text-transform: none; white-space: nowrap">Инвестировать</span></div>
-        <div onClick="{{ scrollToProjects }}" style="width: 100%; border-radius: 8px; background: rgb(43,58,39); display: flex; padding: 14px 22px; justify-content: center; align-items: center; box-sizing: border-box; cursor: pointer"><span style="font-weight: 700; font-size: 14px; color: #fff; text-transform: none; white-space: nowrap">Смотреть проекты</span></div>
+        <div onClick="{{ goInvest }}" style="width: 100%; border-radius: 8px; background: rgb(43,58,39); display: flex; padding: 14px 22px; justify-content: center; align-items: center; box-sizing: border-box; cursor: pointer"><span style="font-weight: 700; font-size: 14px; color: #fff; text-transform: none; white-space: nowrap">Инвестировать</span></div>
+        <div onClick="{{ scrollToProjects }}" style="width: 100%; border-radius: 8px; background: rgba(255,255,255,0.55); backdrop-filter: blur(8px) saturate(1.08); display: flex; padding: 14px 22px; justify-content: center; align-items: center; box-sizing: border-box; cursor: pointer"><span style="font-weight: 700; font-size: 14px; color: rgb(43,58,39); text-transform: none; white-space: nowrap">Смотреть проекты</span></div>
       </div>
       </div>
       <div style="position: relative">
@@ -86,39 +88,39 @@
       </div>
       <div style="position: relative; z-index: 1; display: flex; flex-direction: column; gap: 48px">
       <div style="display: flex; flex-direction: column; gap: 20px">
-        <div data-reveal="pcard0" style="align-self: flex-start; width: 62%; border-radius: 14px; backdrop-filter: blur(24px) saturate(1.15); background-color: rgba(255,255,255,0.55); display: flex; flex-direction: column; gap: 4px; align-items: flex-start; justify-content: center; text-align: left; padding: 16px 18px; box-sizing: border-box; transform: translateY({{ pc0.y }}px); opacity: {{ pc0.o }}; transition: transform 0.9s cubic-bezier(.16,1,.3,1), opacity 0.9s ease-out">
+        <div data-reveal="pcard0" style="align-self: flex-start; width: 62%; border-radius: 14px; backdrop-filter: blur(8px) saturate(1.08); background-color: rgba(255,255,255,0.55); display: flex; flex-direction: column; gap: 4px; align-items: flex-start; justify-content: center; text-align: left; padding: 16px 18px; box-sizing: border-box; transform: translateY({{ pc0.y }}px); opacity: {{ pc0.o }}; transition: transform 0.9s cubic-bezier(.16,1,.3,1), opacity 0.9s ease-out">
           <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 19px; text-transform: uppercase; color: rgb(25,35,22); white-space: nowrap">ROYA DESA</span>
           <span style="font-weight: 400; font-size: 12px; line-height: 1.35; color: rgb(25,35,22)">масштабирует прибрежную среду</span>
         </div>
-        <div data-reveal="pcard1" style="align-self: flex-end; width: 62%; border-radius: 14px; backdrop-filter: blur(24px) saturate(1.15); background-color: rgba(255,255,255,0.55); display: flex; flex-direction: column; gap: 4px; align-items: flex-end; justify-content: center; text-align: right; padding: 16px 18px; box-sizing: border-box; transform: translateY({{ pc1.y }}px); opacity: {{ pc1.o }}; transition: transform 0.9s cubic-bezier(.16,1,.3,1), opacity 0.9s ease-out">
+        <div data-reveal="pcard1" style="align-self: flex-end; width: 62%; border-radius: 14px; backdrop-filter: blur(8px) saturate(1.08); background-color: rgba(255,255,255,0.55); display: flex; flex-direction: column; gap: 4px; align-items: flex-end; justify-content: center; text-align: right; padding: 16px 18px; box-sizing: border-box; transform: translateY({{ pc1.y }}px); opacity: {{ pc1.o }}; transition: transform 0.9s cubic-bezier(.16,1,.3,1), opacity 0.9s ease-out">
           <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 19px; text-transform: uppercase; color: rgb(25,35,22); white-space: nowrap">ROYA RESORT</span>
           <span style="font-weight: 400; font-size: 12px; line-height: 1.35; color: rgb(25,35,22)">задаёт первый стандарт девелопмента</span>
         </div>
-        <div data-reveal="pcard2" style="align-self: flex-start; width: 62%; border-radius: 14px; backdrop-filter: blur(24px) saturate(1.15); background-color: rgba(255,255,255,0.55); display: flex; flex-direction: column; gap: 4px; align-items: flex-start; justify-content: center; text-align: left; padding: 16px 18px; box-sizing: border-box; transform: translateY({{ pc2.y }}px); opacity: {{ pc2.o }}; transition: transform 0.9s cubic-bezier(.16,1,.3,1), opacity 0.9s ease-out">
+        <div data-reveal="pcard2" style="align-self: flex-start; width: 62%; border-radius: 14px; backdrop-filter: blur(8px) saturate(1.08); background-color: rgba(255,255,255,0.55); display: flex; flex-direction: column; gap: 4px; align-items: flex-start; justify-content: center; text-align: left; padding: 16px 18px; box-sizing: border-box; transform: translateY({{ pc2.y }}px); opacity: {{ pc2.o }}; transition: transform 0.9s cubic-bezier(.16,1,.3,1), opacity 0.9s ease-out">
           <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 19px; text-transform: uppercase; color: rgb(25,35,22); white-space: nowrap">BALICOPTER</span>
           <span style="font-weight: 400; font-size: 12px; line-height: 1.35; color: rgb(25,35,22)">открывает труднодоступные локации</span>
         </div>
-        <div data-reveal="pcard3" style="align-self: flex-end; width: 62%; border-radius: 14px; backdrop-filter: blur(24px) saturate(1.15); background-color: rgba(255,255,255,0.55); display: flex; flex-direction: column; gap: 4px; align-items: flex-end; justify-content: center; text-align: right; padding: 16px 18px; box-sizing: border-box; transform: translateY({{ pc3.y }}px); opacity: {{ pc3.o }}; transition: transform 0.9s cubic-bezier(.16,1,.3,1), opacity 0.9s ease-out">
+        <div data-reveal="pcard3" style="align-self: flex-end; width: 62%; border-radius: 14px; backdrop-filter: blur(8px) saturate(1.08); background-color: rgba(255,255,255,0.55); display: flex; flex-direction: column; gap: 4px; align-items: flex-end; justify-content: center; text-align: right; padding: 16px 18px; box-sizing: border-box; transform: translateY({{ pc3.y }}px); opacity: {{ pc3.o }}; transition: transform 0.9s cubic-bezier(.16,1,.3,1), opacity 0.9s ease-out">
           <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 19px; text-transform: uppercase; color: rgb(25,35,22); white-space: nowrap">MARINA</span>
           <span style="font-weight: 400; font-size: 12px; line-height: 1.35; color: rgb(25,35,22)">добавляет морскую инфраструктуру</span>
         </div>
-        <div data-reveal="pcard4" style="align-self: flex-start; width: 62%; border-radius: 14px; backdrop-filter: blur(24px) saturate(1.15); background-color: rgba(255,255,255,0.55); display: flex; flex-direction: column; gap: 4px; align-items: flex-start; justify-content: center; text-align: left; padding: 16px 18px; box-sizing: border-box; transform: translateY({{ pc4.y }}px); opacity: {{ pc4.o }}; transition: transform 0.9s cubic-bezier(.16,1,.3,1), opacity 0.9s ease-out">
+        <div data-reveal="pcard4" style="align-self: flex-start; width: 62%; border-radius: 14px; backdrop-filter: blur(8px) saturate(1.08); background-color: rgba(255,255,255,0.55); display: flex; flex-direction: column; gap: 4px; align-items: flex-start; justify-content: center; text-align: left; padding: 16px 18px; box-sizing: border-box; transform: translateY({{ pc4.y }}px); opacity: {{ pc4.o }}; transition: transform 0.9s cubic-bezier(.16,1,.3,1), opacity 0.9s ease-out">
           <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 19px; text-transform: uppercase; color: rgb(25,35,22); white-space: nowrap">SANATORIUM</span>
           <span style="font-weight: 400; font-size: 12px; line-height: 1.35; color: rgb(25,35,22)">формирует wellness-слой</span>
         </div>
       </div>
       <div data-reveal="pcard5" style="display: flex; flex-direction: column; gap: 12px; transform: translateY({{ pc5.y }}px); opacity: {{ pc5.o }}; transition: transform 0.9s cubic-bezier(.16,1,.3,1), opacity 0.9s ease-out">
-        <div style="border-radius: 14px; backdrop-filter: blur(24px) saturate(1.15); background-color: rgba(255,255,255,0.55); display: flex; flex-direction: column; gap: 6px; align-items: center; justify-content: center; text-align: center; padding: 24px 20px; box-sizing: border-box">
+        <div style="border-radius: 14px; backdrop-filter: blur(0.9px) saturate(1.08); background-color: rgba(255,255,255,0.55); display: flex; flex-direction: column; gap: 6px; align-items: center; justify-content: center; text-align: center; padding: 20px 16px; box-sizing: border-box">
           <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 18px; line-height: 1.15; text-transform: uppercase; color: rgb(25,35,22)">EVERVILLE ESTATE</span>
-          <span style="font-weight: 400; font-size: 13px; line-height: 1.35; color: rgb(25,35,22)">создает проекты как наследие</span>
+          <span style="font-weight: 400; font-size: 12px; line-height: 1.35; color: rgb(25,35,22)">создает проекты<br>как наследие</span>
         </div>
-        <div style="border-radius: 14px; backdrop-filter: blur(24px) saturate(1.15); background-color: rgba(255,255,255,0.55); display: flex; flex-direction: column; gap: 6px; align-items: center; justify-content: center; text-align: center; padding: 24px 20px; box-sizing: border-box">
+        <div style="border-radius: 14px; backdrop-filter: blur(0.9px) saturate(1.08); background-color: rgba(255,255,255,0.55); display: flex; flex-direction: column; gap: 6px; align-items: center; justify-content: center; text-align: center; padding: 20px 16px; box-sizing: border-box">
           <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 18px; line-height: 1.15; text-transform: uppercase; color: rgb(25,35,22)">EVERVILLE CAPITAL</span>
-          <span style="font-weight: 400; font-size: 13px; line-height: 1.35; color: rgb(25,35,22)">обеспечивает надежность проектам</span>
+          <span style="font-weight: 400; font-size: 12px; line-height: 1.35; color: rgb(25,35,22)">обеспечивает<br>надежность проектам</span>
         </div>
-        <div style="border-radius: 14px; backdrop-filter: blur(24px) saturate(1.15); background-color: rgba(255,255,255,0.55); display: flex; flex-direction: column; gap: 6px; align-items: center; justify-content: center; text-align: center; padding: 24px 20px; box-sizing: border-box">
+        <div style="border-radius: 14px; backdrop-filter: blur(0.9px) saturate(1.08); background-color: rgba(255,255,255,0.55); display: flex; flex-direction: column; gap: 6px; align-items: center; justify-content: center; text-align: center; padding: 20px 16px; box-sizing: border-box">
           <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 18px; line-height: 1.15; text-transform: uppercase; color: rgb(25,35,22)">EVERVILLE ARCHITECTS</span>
-          <span style="font-weight: 400; font-size: 13px; line-height: 1.35; color: rgb(25,35,22)">задает стандарт в дизайне</span>
+          <span style="font-weight: 400; font-size: 12px; line-height: 1.35; color: rgb(25,35,22)">задает стандарт<br>в дизайне</span>
         </div>
       </div>
       </div>
@@ -127,7 +129,7 @@
   </div>
 
   <sc-for list="{{ projects }}" as="pr" hint-placeholder-count="3">
-    <div style="background: {{ pr.bg }}; padding: 64px 16px; box-sizing: border-box; display: {{ pr.display }}; flex-direction: column; gap: 24px" data-om-label="project-{{ pr.id }}" data-screen-label="Проект — {{ pr.fullTitle }}">
+    <div style="background: {{ pr.bg }}; padding: 40px 16px 64px; box-sizing: border-box; display: {{ pr.display }}; flex-direction: column; gap: 24px" data-om-label="project-{{ pr.id }}" data-screen-label="Проект — {{ pr.fullTitle }}">
       <div data-reveal="prj{{ pr.i }}h" style="display: flex; flex-direction: column; gap: 16px; transform: translateY({{ pr.head.y }}px); opacity: {{ pr.head.o }}; filter: blur({{ pr.head.b }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1), opacity 0.9s ease-out, filter 0.9s ease-out">
         <div style="display: flex; flex-direction: column; gap: 8px">
           <div style="display: flex; flex-direction: column; gap: 0px">
