@@ -216,8 +216,8 @@
       <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 18px; line-height: 1.2; text-transform: uppercase; color: #fff">Проекты</span>
       <div style="display: flex; flex-direction: column; gap: 14px">
         <a href="./roya.html" style="font-weight: 400; font-size: 16px; line-height: 1.1; color: #fff; transition: opacity 0.2s ease-out" style-hover="opacity: 0.65">Roya Resort</a>
-        <a href="./projects.html" style="font-weight: 400; font-size: 16px; line-height: 1.1; color: #fff; transition: opacity 0.2s ease-out" style-hover="opacity: 0.65">Roya Desa</a>
-        <a href="./projects.html" style="font-weight: 400; font-size: 16px; line-height: 1.1; color: #fff; transition: opacity 0.2s ease-out" style-hover="opacity: 0.65">Balicopter</a>
+        <a href="./roya-desa.html" style="font-weight: 400; font-size: 16px; line-height: 1.1; color: #fff; transition: opacity 0.2s ease-out" style-hover="opacity: 0.65">Roya Desa</a>
+        <a href="./balicopter.html" style="font-weight: 400; font-size: 16px; line-height: 1.1; color: #fff; transition: opacity 0.2s ease-out" style-hover="opacity: 0.65">Balicopter</a>
       </div>
     </div>
     <div style="display: flex; flex-direction: column; gap: clamp(24px,2.5vw,24px); flex: 0 1 auto; min-width: 160px">
@@ -358,7 +358,7 @@ class Component extends DCLogic {
         { src: "./assets/projects/int-cam-27.webp", alt: "Лобби курорта", place: "лобби" },
         { src: "./assets/projects/int-rest-cam-1-1.webp", alt: "Ресторан", place: "ресторан" },
       ] },
-    { id: "roya-desa", titleA: "ROYA", titleB: "DESA", status: "старт продаж — Q4 2026",
+    { id: "roya-desa", href: "./roya-desa.html", titleA: "ROYA", titleB: "DESA", status: "старт продаж — Q4 2026",
       lead: "Прибрежный город · марина.", desc: "Новый прибрежный район Everville: жилые кварталы, набережная и городская инфраструктура, которые масштабируют среду вокруг курортов холдинга.",
       loc: "Бали, юго-западное побережье",
       stats: [{ label: "вход от", value: "$180 000" }, { label: "прогноз ROI", value: "12–16%" }, { label: "очередь", value: "1 из 3" }],
@@ -368,7 +368,7 @@ class Component extends DCLogic {
         { src: "./assets/projects/ext-7-2.webp", alt: "Въездная группа", place: "въезд" },
         { src: "./assets/projects/int-cam1-2.webp", alt: "Лобби с лифтом", place: "лобби" },
       ] },
-    { id: "balicopter", titleA: "BALICOPTER", titleB: "", status: "сервис запущен",
+    { id: "balicopter", href: "./balicopter.html", titleA: "BALICOPTER", titleB: "", status: "сервис запущен",
       lead: "Частная авиация.", desc: "Вертолётные маршруты между проектами холдинга и труднодоступными локациями острова — время в пути сокращается с часов до минут.",
       loc: "Бали, хабы Everville",
       stats: [{ label: "вход от", value: "$50 000" }, { label: "прогноз ROI", value: "10–14%" }, { label: "маршрутов", value: "12" }],
@@ -377,7 +377,7 @@ class Component extends DCLogic {
         { src: "./assets/projects/int-19-1.webp", alt: "Лаунж", place: "лаунж" },
         { src: "./assets/projects/int-cam-30.webp", alt: "Зона ожидания", place: "зона ожидания" },
       ] },
-    { id: "marina", titleA: "MARINA", titleB: "", status: "в проектировании",
+    { id: "marina", href: "./marina.html", titleA: "MARINA", titleB: "", status: "в проектировании",
       lead: "Морская инфраструктура.", desc: "Яхтенная марина с причалами, сервисом и береговым клубом — добавляет морское измерение экосистеме Everville.",
       loc: "Бали, южное побережье",
       stats: [{ label: "вход от", value: "$120 000" }, { label: "прогноз ROI", value: "11–15%" }, { label: "причалов", value: "120" }],
@@ -386,7 +386,7 @@ class Component extends DCLogic {
         { src: "./assets/projects/int-rest-cam-9-2-1.webp", alt: "Ресторан клуба", place: "ресторан" },
         { src: "./assets/projects/int-rest-cam-11-1.webp", alt: "Бар", place: "бар" },
       ] },
-    { id: "sanatorium", titleA: "SANATORIUM", titleB: "", status: "скоро в продаже",
+    { id: "sanatorium", href: "./sanatorium.html", titleA: "SANATORIUM", titleB: "", status: "скоро в продаже",
       lead: "Wellness · долголетие.", desc: "Санаторно-курортный комплекс превентивной медицины и восстановления — формирует wellness-слой экосистемы для резидентов и гостей.",
       loc: "Убуд, Бали",
       stats: [{ label: "вход от", value: "$95 000" }, { label: "прогноз ROI", value: "9–13%" }, { label: "номеров", value: "140" }],
@@ -606,7 +606,7 @@ class Component extends DCLogic {
     });
     const lbP = s.lbProj !== null ? this.PROJECTS[s.lbProj] : null;
     const lbPh = lbP && s.lbIdx !== null ? lbP.photos[s.lbIdx] : null;
-    return {
+    return { ...this.evrvlVals(),
       goInvest: () => { window.location.href = "./" + (window.innerWidth >= 1024 ? "index.html" : "index.html") + "#invest"; },
       scrollToProjects: () => {
         const el = document.querySelector('[data-om-label^="project-"]');
@@ -649,8 +649,8 @@ class Component extends DCLogic {
       footerCols: [
         { title: "Проекты", links: [
           { label: "Roya Resort", onClick: () => { window.location.href = "./roya.html"; } },
-          { label: "Roya Desa", onClick: () => { window.location.href = "./projects.html"; } },
-          { label: "Balicopter", onClick: () => { window.location.href = "./projects.html"; } },
+          { label: "Roya Desa", onClick: () => { window.location.href = "./roya-desa.html"; } },
+          { label: "Balicopter", onClick: () => { window.location.href = "./balicopter.html"; } },
         ] },
         { title: "Инвестору", links: [
           { label: "Инвестиции", onClick: () => { window.location.href = "./investments.html"; } },

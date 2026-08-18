@@ -19,9 +19,9 @@
 </helmet>
 <div style="width: 100%; position: relative; background: #EBEAE6; font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif">
 
-  <div style="position: fixed; left: 0; right: 0; top: calc(env(safe-area-inset-top, 0px) + 12px); height: 0; z-index: 400" data-om-label="header-mobile">
-    <div ref="{{ hdrRef }}" style="position: relative; margin: 0 12px; z-index: 500; border-radius: 14px; background: rgba(0,0,0,0.32); backdrop-filter: blur(24px); transform: translateY(0); transition: transform 0.4s cubic-bezier(.16,1,.3,1); display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 10px 10px 14px; box-sizing: border-box">
-      <a href="./index.html" style="display: block; flex-shrink: 0"><img src="./assets/logo-mobile.svg" alt="EVERVILLE" style="width: 120px; height: 36px; display: block"></a>
+  <div style="position: fixed; left: 0; right: 0; top: calc(env(safe-area-inset-top, 0px) + 12px); height: 0; z-index: 400" data-om-label="header-tablet">
+    <div ref="{{ hdrRef }}" style="position: relative; margin: 0 16px; z-index: 500; border-radius: 14px; background: rgba(0,0,0,0.32); backdrop-filter: blur(24px); transform: translateY(0); transition: transform 0.4s cubic-bezier(.16,1,.3,1); display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 10px 10px 14px; box-sizing: border-box">
+      <a href="./index.html" style="display: block; flex-shrink: 0"><img src="./assets/logo.svg" alt="EVERVILLE" style="width: 128px; height: 40px; display: block"></a>
       <div style="display: flex; flex-direction: row; align-items: center; gap: 6px">
         <div style="display: flex; flex-direction: row; gap: 4px; align-items: center; padding: 12px 10px; border-radius: 8px; cursor: pointer">
           <span style="font-weight: 700; font-size: 13px; color: #fff">RU</span>
@@ -39,10 +39,10 @@
     <div style="transform: {{ menuTransform }}; pointer-events: {{ menuPointer }}; visibility: {{ menuVis }}; transition: transform 0.55s cubic-bezier(.16,1,.3,1), visibility 0.55s linear; position: fixed; left: 0; width: 100%; top: 0; height: 100svh; z-index: 200; background: rgb(25,35,22); display: flex; flex-direction: column; padding: calc(env(safe-area-inset-top, 0px) + 92px) 16px 16px; box-sizing: border-box">
       <div style="display: flex; flex-direction: column; gap: 4px; flex: 1 1 auto; justify-content: center; align-items: center">
         <span onClick="{{ goProjects }}" style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 28px; line-height: 1.6; color: #fff; text-transform: uppercase; cursor: pointer">Проекты</span>
-        <a href="./investments.html" style="font-family: 'HeadingNow-82Light'; font-weight: 200; font-size: 28px; line-height: 1.6; color: #fff; text-transform: uppercase; cursor: pointer">Инвестиции</a>
-        <a href="./legal.html" style="font-family: 'HeadingNow-82Light'; font-weight: 200; font-size: 28px; line-height: 1.6; color: #fff; text-transform: uppercase; cursor: pointer">Юридика</a>
-        <a href="./about.html" style="font-family: 'HeadingNow-82Light'; font-weight: 200; font-size: 28px; line-height: 1.6; color: #fff; text-transform: uppercase; cursor: pointer">О компании</a>
-        <a href="./contacts.html" style="font-family: 'HeadingNow-82Light'; font-weight: 200; font-size: 28px; line-height: 1.6; color: #fff; text-transform: uppercase; cursor: pointer">Контакты</a>
+        <a href="./investments.html" style="font-family: 'HeadingNow-82Light'; font-weight: 200; font-size: 28px; line-height: 1.6; color: #fff; text-transform: uppercase; ">Инвестиции</a>
+        <a href="./legal.html" style="font-family: 'HeadingNow-82Light'; font-weight: 200; font-size: 28px; line-height: 1.6; color: #fff; text-transform: uppercase; ">Юридика</a>
+        <a href="./about.html" style="font-family: 'HeadingNow-82Light'; font-weight: 200; font-size: 28px; line-height: 1.6; color: #fff; text-transform: uppercase; ">О компании</a>
+        <a href="./contacts.html" style="font-family: 'HeadingNow-82Light'; font-weight: 200; font-size: 28px; line-height: 1.6; color: #fff; text-transform: uppercase; ">Контакты</a>
       </div>
       <div style="display: flex; flex-direction: column; gap: 10px; align-items: stretch">
         <div onClick="{{ openInvest }}" style="border-radius: 8px; background: #fff; display: flex; padding: 18px 24px; justify-content: center; align-items: center; box-sizing: border-box; cursor: pointer"><span style="font-weight: 700; font-size: 15px; line-height: 21px; color: rgb(43,58,39)">Инвестировать</span></div>
@@ -51,160 +51,171 @@
     </div>
   </div>
 
-  <div style="position: relative; width: 100%; height: 100svh; overflow: hidden; background: rgb(25,35,22)" data-om-label="hero" data-screen-label="ROYA RESORT — Hero (mobile)">
-    <img ref="{{ heroImgRef }}" src="./assets/projects/ext-5-1.webp" alt="ROYA RESORT" style="position: absolute; left: 0; right: 0; top: -8%; height: 118%; will-change: transform; width: 100%; object-fit: cover; object-position: center; display: block; opacity: {{ heroImg.o }}; transform: scale({{ heroImg.s }}); transition: opacity 1.1s ease-out, transform 1.4s cubic-bezier(.16,1,.3,1)">
-    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(12,18,11,0.62), rgba(12,18,11,0.3) 34%, rgba(12,18,11,0.9)); pointer-events: none"></div>
-    <div data-reveal="hero" style="position: relative; width: 100%; box-sizing: border-box; padding: 88px 16px 24px; display: flex; flex-direction: column; gap: 16px; height: 100%; justify-content: center; opacity: {{ heroBlk.o }}; transform: translateY({{ heroBlk.y }}px); transition: transform 1s cubic-bezier(.16,1,.3,1), opacity 1s ease-out">
-      <div style="display: flex; flex-direction: row; align-items: center; gap: 8px; font-size: 12px; font-weight: 400; flex-wrap: wrap" data-om-label="breadcrumbs">
+  <div style="position: relative; width: 100%; min-height: 100svh; overflow: hidden; background: rgb(25,35,22)" data-om-label="hero" data-screen-label="MARINA — Hero (tablet)">
+    <img ref="{{ heroImgRef }}" src="./assets/projects/ext-2-4-1.webp" alt="MARINA" style="position: absolute; left: 0; right: 0; top: -8%; height: 118%; will-change: transform; width: 100%; object-fit: cover; object-position: center; display: block; opacity: {{ heroImg.o }}; transform: scale({{ heroImg.s }}); transition: opacity 1.1s ease-out, transform 1.4s cubic-bezier(.16,1,.3,1)">
+    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(12,18,11,0.62), rgba(12,18,11,0.3) 38%, rgba(12,18,11,0.86)); pointer-events: none"></div>
+    <div style="position: absolute; z-index: 2; left: 30px; top: calc(env(safe-area-inset-top, 0px) + 12px + 60px + 24px); display: flex; flex-direction: row; align-items: center; gap: 10px; font-size: 13px; font-weight: 400" data-om-label="breadcrumbs">
         <a href="./index.html" style="color: rgba(255,255,255,0.65); text-decoration: none">Главная</a>
         <span style="color: rgba(255,255,255,0.4)">/</span>
-        <a href="./projects-mobile.html" style="color: rgba(255,255,255,0.65); text-decoration: none">Проекты</a>
+        <a href="./projects-tablet.html" style="color: rgba(255,255,255,0.65); text-decoration: none">Проекты</a>
         <span style="color: rgba(255,255,255,0.4)">/</span>
-        <span style="color: #fff">ROYA RESORT</span>
-      </div>
-      <div style="display: flex; flex-direction: column; gap: 12px">
-        <span style="font-weight: 400; font-size: 13px; letter-spacing: 0.02em; color: rgb(214,158,158); opacity: {{ heroFadeO }}; transform: translateY({{ heroFadeY }}px); transition: opacity 0.8s ease-out 60ms, transform 0.8s cubic-bezier(.16,1,.3,1) 60ms">продажи открыты</span>
-        <div style="display: flex; flex-direction: column; gap: 2px">
-          <div style="overflow: hidden"><span style="display: block; font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 38px; line-height: 1; color: #fff; text-transform: uppercase; transform: translateY({{ heroT1 }}%); transition: transform 1s cubic-bezier(.16,1,.3,1) 120ms">ROYA</span></div>
-          <div style="display: flex; align-items: center; gap: 14px"><span style="flex: 0 0 auto; width: 48px; height: 1.5px; background: #fff; display: block; transform: scaleX({{ heroLine }}); transform-origin: right; transition: transform 0.7s cubic-bezier(.16,1,.3,1) 250ms"></span><span style="display: block; overflow: hidden"><span style="display: block; font-family: 'HeadingNow-82Light'; font-weight: 200; font-size: 38px; line-height: 1; color: #fff; text-transform: uppercase; transform: translateY({{ heroT2 }}%); transition: transform 1s cubic-bezier(.16,1,.3,1) 260ms">RESORT</span></span></div>
+        <span style="color: #fff">MARINA</span>
+    </div>
+    <div data-reveal="hero" style="position: relative; width: 100%; box-sizing: border-box; padding: 150px 24px 48px; display: flex; flex-direction: column; gap: 28px; min-height: 100svh; justify-content: center; opacity: {{ heroBlk.o }}; transform: translateY({{ heroBlk.y }}px); transition: transform 1s cubic-bezier(.16,1,.3,1), opacity 1s ease-out">
+      <div style="display: flex; flex-direction: column; gap: 22px">
+        <span style="font-weight: 400; font-size: 14px; letter-spacing: 0.02em; color: rgb(214,158,158); opacity: {{ heroFadeO }}; transform: translateY({{ heroFadeY }}px); transition: opacity 0.8s ease-out 60ms, transform 0.8s cubic-bezier(.16,1,.3,1) 60ms">в проектировании</span>
+        <div style="display: flex; flex-direction: column; gap: 4px">
+          <div style="overflow: hidden"><span style="display: block; font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 62px; line-height: 1; color: #fff; text-transform: uppercase; transform: translateY({{ heroT1 }}%); transition: transform 1s cubic-bezier(.16,1,.3,1) 120ms">EVERVILLE</span></div>
+          <div style="display: flex; align-items: center; gap: 22px"><span style="flex: 0 0 auto; width: 88px; height: 1.5px; background: #fff; display: block; transform: scaleX({{ heroLine }}); transform-origin: right; transition: transform 0.7s cubic-bezier(.16,1,.3,1) 250ms"></span><span style="display: block; overflow: hidden"><span style="display: block; font-family: 'HeadingNow-82Light'; font-weight: 200; font-size: 62px; line-height: 1; color: #fff; text-transform: uppercase; transform: translateY({{ heroT2 }}%); transition: transform 1s cubic-bezier(.16,1,.3,1) 260ms">MARINA</span></span></div>
         </div>
-        <span style="font-family: 'HeadingNow-82Light'; font-weight: 200; font-size: 15px; letter-spacing: 0.04em; text-transform: uppercase; color: rgba(255,255,255,0.9); opacity: {{ heroFadeO }}; transform: translateY({{ heroFadeY }}px); transition: opacity 0.8s ease-out 420ms, transform 0.8s cubic-bezier(.16,1,.3,1) 420ms">Premium house · golf &amp; surf</span>
-        <div style="display: flex; flex-direction: row; gap: 8px; align-items: flex-start; opacity: {{ heroFadeO }}; transform: translateY({{ heroFadeY }}px); transition: opacity 0.8s ease-out 540ms, transform 0.8s cubic-bezier(.16,1,.3,1) 540ms">
-          <svg width="11" height="16" viewBox="0 0 11.783 17.288" fill="rgb(214,158,158)" style="flex-shrink: 0; margin-top: 2px"><path d="M 5.892 0 C 9.146 0 11.783 2.638 11.783 5.892 C 11.783 9.146 5.892 17.288 5.892 17.288 C 5.892 17.288 0 9.146 0 5.892 C 0 2.638 2.638 0 5.892 0 Z M 5.892 3.422 C 4.528 3.422 3.422 4.528 3.422 5.892 C 3.422 7.255 4.528 8.361 5.892 8.361 C 7.256 8.361 8.361 7.255 8.361 5.892 C 8.361 4.528 7.256 3.422 5.892 3.422 Z" fill-rule="nonzero"></path></svg>
-          <span style="font-weight: 400; font-size: 14px; line-height: 1.4; color: rgba(255,255,255,0.85)">Dreamland Beach, New Kuta Golf, Pecatu, Бали</span>
+        <span style="font-family: 'HeadingNow-82Light'; font-weight: 200; font-size: 21px; letter-spacing: 0.04em; text-transform: uppercase; color: rgba(255,255,255,0.9); opacity: {{ heroFadeO }}; transform: translateY({{ heroFadeY }}px); transition: opacity 0.8s ease-out 420ms, transform 0.8s cubic-bezier(.16,1,.3,1) 420ms">Yachting · sea infrastructure</span>
+        <div style="display: flex; flex-direction: row; gap: 8px; align-items: center; opacity: {{ heroFadeO }}; transform: translateY({{ heroFadeY }}px); transition: opacity 0.8s ease-out 540ms, transform 0.8s cubic-bezier(.16,1,.3,1) 540ms">
+          <svg width="12" height="17" viewBox="0 0 11.783 17.288" fill="rgb(214,158,158)"><path d="M 5.892 0 C 9.146 0 11.783 2.638 11.783 5.892 C 11.783 9.146 5.892 17.288 5.892 17.288 C 5.892 17.288 0 9.146 0 5.892 C 0 2.638 2.638 0 5.892 0 Z M 5.892 3.422 C 4.528 3.422 3.422 4.528 3.422 5.892 C 3.422 7.255 4.528 8.361 5.892 8.361 C 7.256 8.361 8.361 7.255 8.361 5.892 C 8.361 4.528 7.256 3.422 5.892 3.422 Z" fill-rule="nonzero"></path></svg>
+          <span style="font-weight: 400; font-size: 15px; color: rgba(255,255,255,0.85)">Южное побережье, Бали</span>
         </div>
       </div>
-      <div style="border-radius: 14px; background: rgba(255,255,255,0.14); backdrop-filter: blur(14px) saturate(1.08); padding: 12px; box-sizing: border-box; display: flex; flex-direction: column; gap: 10px; opacity: {{ heroCardO }}; transform: translateY({{ heroCardY }}px); transition: opacity 0.9s ease-out 380ms, transform 0.9s cubic-bezier(.16,1,.3,1) 380ms">
-        <img data-lazysrc="./assets/projects/int-cam-27.webp" alt="Лобби курорта" style="width: 100%; height: 104px; object-fit: cover; border-radius: 10px; display: block">
-        <span style="font-weight: 400; font-size: 13px; line-height: 1.4; color: rgba(255,255,255,0.85)">Гостиничная недвижимость под управлением международного оператора. Полный юридический пакет — до подписания.</span>
-        <div style="display: flex; flex-direction: column; gap: 8px">
-          <div onClick="{{ openInvest }}" style="border-radius: 8px; background: #fff; display: flex; padding: 14px 20px; justify-content: center; align-items: center; cursor: pointer"><span style="font-weight: 700; font-size: 14px; color: rgb(43,58,39)">Инвестировать</span></div>
-          <a href="https://royaresort.com/en" target="_blank" rel="noopener" style="border-radius: 8px; background: rgb(43,58,39); display: flex; padding: 14px 20px; justify-content: center; align-items: center; cursor: pointer; text-decoration: none"><span style="font-weight: 700; font-size: 14px; color: #fff">Сайт ROYA RESORT</span></a>
+      <div style="border-radius: 16px; background: rgba(255,255,255,0.14); backdrop-filter: blur(14px) saturate(1.08); padding: 18px; box-sizing: border-box; display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 18px; align-items: center; opacity: {{ heroCardO }}; transform: translateY({{ heroCardY }}px); transition: opacity 0.9s ease-out 380ms, transform 0.9s cubic-bezier(.16,1,.3,1) 380ms">
+        <img data-lazysrc="./assets/projects/int-rest-cam-11-1.webp" alt="Береговой клуб" style="width: 100%; height: 176px; object-fit: cover; border-radius: 10px; display: block">
+        <div style="display: flex; flex-direction: column; gap: 14px">
+          <span style="font-weight: 400; font-size: 15px; line-height: 1.45; color: rgba(255,255,255,0.85)">Яхтенная гавань со 120 причалами, сервисной зоной и береговым клубом. Ранний вход на стадии проектирования.</span>
+          <div style="display: flex; flex-direction: column; gap: 8px">
+            <div onClick="{{ openInvest }}" style="border-radius: 8px; background: #fff; display: flex; padding: 15px 20px; justify-content: center; align-items: center; cursor: pointer"><span style="font-weight: 700; font-size: 14px; color: rgb(43,58,39); white-space: nowrap">Инвестировать</span></div>
+            <a href="./projects-tablet.html" style="border-radius: 8px; background: rgb(43,58,39); display: flex; padding: 15px 20px; justify-content: center; align-items: center; cursor: pointer; text-decoration: none"><span style="font-weight: 700; font-size: 14px; color: #fff; white-space: nowrap">Все проекты</span></a>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
-  <div style="background: #fff; padding: 48px 16px; box-sizing: border-box" data-om-label="data" data-screen-label="Цифры проекта">
-    <div data-reveal="data" style="width: 100%; display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 22px 16px; opacity: {{ dataBlk.o }}; transform: translateY({{ dataBlk.y }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1), opacity 0.9s ease-out">
+  <div style="background: #fff; padding: 64px 24px; box-sizing: border-box; display: flex; justify-content: center" data-om-label="data" data-screen-label="Цифры проекта">
+    <div data-reveal="data" style="width: 100%; display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 26px 24px; opacity: {{ dataBlk.o }}; transform: translateY({{ dataBlk.y }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1), opacity 0.9s ease-out">
       <sc-for list="{{ figures }}" as="f" hint-placeholder-count="8">
-        <div style="display: flex; flex-direction: column; gap: 8px; border-top: 1.5px solid rgb(25,35,22); padding-top: 12px; opacity: {{ f.o }}; transform: translateY({{ f.y }}px); transition: opacity 0.7s ease-out {{ f.delay }}, transform 0.7s cubic-bezier(.16,1,.3,1) {{ f.delay }}">
-          <span style="font-weight: 400; font-size: 13px; line-height: 1.15; color: #2D2D2D">{{ f.label }}</span>
-          <span style="font-weight: 500; font-size: 24px; line-height: 1.1; color: rgb(25,35,22); white-space: nowrap">{{ f.value }}</span>
+        <div style="display: flex; flex-direction: column; gap: 10px; border-top: 1.5px solid rgb(25,35,22); padding-top: 14px; opacity: {{ f.o }}; transform: translateY({{ f.y }}px); transition: opacity 0.7s ease-out {{ f.delay }}, transform 0.7s cubic-bezier(.16,1,.3,1) {{ f.delay }}">
+          <span style="font-weight: 400; font-size: 14px; line-height: 1.1; color: #2D2D2D">{{ f.label }}</span>
+          <span style="font-weight: 500; font-size: 30px; line-height: 1.1; color: rgb(25,35,22); white-space: nowrap">{{ f.value }}</span>
         </div>
       </sc-for>
     </div>
   </div>
 
-  <div style="background: #EBEAE6; padding: 48px 16px; box-sizing: border-box" data-om-label="concept" data-screen-label="Концепция">
-    <div data-reveal="concept" style="width: 100%; display: flex; flex-direction: column; gap: 24px; opacity: {{ conBlk.o }}; transform: translateY({{ conBlk.y }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1), opacity 0.9s ease-out">
-      <img data-lazysrc="./assets/projects/ext-3-3.webp" alt="Территория курорта" style="width: 100%; height: 260px; object-fit: cover; border-radius: 14px; display: block">
-      <div style="display: flex; flex-direction: column; gap: 18px">
-        <span style="font-weight: 400; font-size: 13px; text-transform: lowercase; letter-spacing: 0.02em; color: rgb(138,70,70)">концепция</span>
-        <div style="display: flex; flex-direction: column; gap: 4px">
-          <span style="font-family: 'HeadingNow-82Light'; font-weight: 200; font-size: 26px; line-height: 1.1; text-transform: uppercase; color: rgb(25,35,22)">Жизнь на стыке</span>
-          <div style="display: flex; align-items: center; gap: 14px"><span style="flex: 0 0 auto; width: 56px; height: 1.5px; background: rgb(25,35,22); display: block; transform: scaleX({{ conLine }}); transform-origin: right; transition: transform 0.7s cubic-bezier(.16,1,.3,1) 200ms"></span><span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 26px; line-height: 1.1; text-transform: uppercase; color: rgb(25,35,22)">двух миров</span></div>
+  <div style="background: #EBEAE6; padding: 64px 24px; box-sizing: border-box; display: flex; justify-content: center" data-om-label="concept" data-screen-label="Концепция">
+    <div data-reveal="concept" style="width: 100%; display: flex; flex-direction: column; gap: 32px; opacity: {{ conBlk.o }}; transform: translateY({{ conBlk.y }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1), opacity 0.9s ease-out">
+      <img data-lazysrc="./assets/projects/ext-5-1.webp" alt="Побережье с высоты" style="width: 100%; height: 340px; object-fit: cover; border-radius: 16px; display: block">
+      <div style="display: flex; flex-direction: column; gap: 22px; align-items: flex-start">
+        <span style="font-weight: 400; font-size: 14px; text-transform: lowercase; letter-spacing: 0.02em; color: rgb(138,70,70)">концепция</span>
+        <div style="display: flex; flex-direction: column; gap: 6px; align-items: flex-start">
+          <span style="font-family: 'HeadingNow-82Light'; font-weight: 200; font-size: 34px; line-height: 1.1; text-transform: uppercase; color: rgb(25,35,22)">Море как</span>
+          <div style="display: flex; align-items: center; gap: 20px"><span style="flex: 0 0 auto; width: 110px; height: 1.5px; background: rgb(25,35,22); display: block; transform: scaleX({{ conLine }}); transform-origin: right; transition: transform 0.7s cubic-bezier(.16,1,.3,1) 200ms"></span><span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 34px; line-height: 1.1; text-transform: uppercase; color: rgb(25,35,22)">актив</span></div>
         </div>
-        <span style="font-weight: 400; font-size: 15px; line-height: 1.55; color: #2D2D2D">ROYA RESORT создаёт исключительную жилую среду на стыке двух легендарных направлений — Dreamland Beach и New Kuta Golf. Гольф и сёрф в одном месте: концепция, которой нет больше нигде на Бали.</span>
-        <span style="font-weight: 400; font-size: 15px; line-height: 1.55; color: #2D2D2D">Проект объединяет высококлассную жилую недвижимость с сервисом пятизвёздочного курорта, создавая ценность и для владельцев резиденций, и для гостей.</span>
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 24px">
+          <span style="font-weight: 400; font-size: 15px; line-height: 1.55; color: #2D2D2D">MARINA добавляет Бали то, чего острову не хватало: современную яхтенную гавань со 120 причалами, сервисной зоной и береговым клубом мирового уровня.</span>
+          <span style="font-weight: 400; font-size: 15px; line-height: 1.55; color: #2D2D2D">Инфраструктурный актив холдинга: долгосрочные контракты аренды причалов, сервисные услуги и клубная программа формируют устойчивый денежный поток.</span>
+        </div>
       </div>
     </div>
   </div>
 
-  <div style="background: #fff; padding: 48px 0 48px 16px; box-sizing: border-box; overflow: hidden" data-om-label="gallery" data-screen-label="Галерея">
-    <div data-reveal="gal" style="width: 100%; display: flex; flex-direction: column; gap: 20px; opacity: {{ galBlk.o }}; transform: translateY({{ galBlk.y }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1), opacity 0.9s ease-out">
-      <div style="display: flex; flex-direction: column; gap: 8px; padding-right: 16px">
-        <span style="font-weight: 400; font-size: 13px; text-transform: lowercase; letter-spacing: 0.02em; color: rgb(138,70,70)">галерея</span>
-        <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 26px; line-height: 1.1; text-transform: uppercase; color: rgb(25,35,22)">Проект вблизи</span>
-      </div>
-      <div style="display: flex; flex-direction: row; gap: 8px; align-items: center; overflow-x: auto; padding-right: 16px; scrollbar-width: none">
-        <sc-for list="{{ tabs }}" as="tb" hint-placeholder-count="4">
-          <div onClick="{{ tb.onPick }}" style="border-radius: 8px; padding: 12px 16px; cursor: pointer; flex: 0 0 auto; background: {{ tb.bg }}; box-shadow: {{ tb.ring }}; transition: background 0.2s ease-out, box-shadow 0.2s ease-out"><span style="font-weight: 700; font-size: 13px; color: {{ tb.color }}; white-space: nowrap">{{ tb.label }}</span></div>
-        </sc-for>
-      </div>
-      <div ref="{{ vpRef }}" style="position: relative; width: 100%; overflow: hidden; -webkit-mask-image: {{ mask }}; mask-image: {{ mask }}; transition: -webkit-mask-image 0.3s ease-out, mask-image 0.3s ease-out">
-        <div ref="{{ trRef }}" onMouseDown="{{ onDragStart }}" onTouchStart="{{ onDragStart }}" onTouchMove="{{ onDragMove }}" onTouchEnd="{{ onDragEnd }}" style="display: flex; flex-direction: row; gap: 12px; align-items: flex-start; transform: translateX({{ offset }}px); transition: {{ transition }}; cursor: {{ cursor }}; user-select: none; touch-action: pan-y">
-          <sc-for list="{{ photos }}" as="ph" hint-placeholder-count="2">
-            <img data-lazysrc="{{ ph.src }}" alt="{{ ph.alt }}" draggable="{{ false }}" onClick="{{ ph.onOpen }}" style="cursor: zoom-in; flex: 0 0 calc(100% - 44px); width: calc(100% - 44px); height: 230px; object-fit: cover; border-radius: 14px; display: block">
+  <div style="background: #fff; padding: 64px 24px; box-sizing: border-box; display: flex; justify-content: center" data-om-label="gallery" data-screen-label="Галерея">
+    <div data-reveal="gal" style="width: 100%; display: flex; flex-direction: column; gap: 26px; opacity: {{ galBlk.o }}; transform: translateY({{ galBlk.y }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1), opacity 0.9s ease-out">
+      <div style="display: flex; flex-direction: column; gap: 20px">
+        <div style="display: flex; flex-direction: column; gap: 10px">
+          <span style="font-weight: 400; font-size: 14px; text-transform: lowercase; letter-spacing: 0.02em; color: rgb(138,70,70)">галерея</span>
+          <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 34px; line-height: 1.1; text-transform: uppercase; color: rgb(25,35,22)">Проект вблизи</span>
+        </div>
+        <div style="display: flex; flex-direction: row; gap: 8px; align-items: center; flex-wrap: wrap">
+          <sc-for list="{{ tabs }}" as="tb" hint-placeholder-count="4">
+            <div onClick="{{ tb.onPick }}" style="border-radius: 8px; padding: 12px 18px; cursor: pointer; background: {{ tb.bg }}; box-shadow: {{ tb.ring }}; transition: background 0.2s ease-out, box-shadow 0.2s ease-out"><span style="font-weight: 700; font-size: 14px; color: {{ tb.color }}; white-space: nowrap">{{ tb.label }}</span></div>
           </sc-for>
         </div>
       </div>
-      <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; gap: 16px; padding-right: 16px">
-        <div style="display: flex; flex-direction: row; gap: 8px; align-items: center">
+      <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; gap: 20px">
+        <div style="display: flex; flex-direction: row; gap: 10px; align-items: center">
           <sc-for list="{{ dots }}" as="dot" hint-placeholder-count="4">
             <span style="width: {{ dot.width }}px; height: 2px; background: rgb(25,35,22); display: block; opacity: {{ dot.opacity }}; transition: width 0.3s ease-out, opacity 0.3s ease-out"></span>
           </sc-for>
         </div>
         <div style="display: flex; flex-direction: row; gap: 8px; align-items: center">
-          <div onClick="{{ onPrev }}" style="width: 46px; height: 46px; border-radius: 50%; box-shadow: inset 0 0 0 1px rgb(25,35,22); display: flex; align-items: center; justify-content: center; cursor: pointer; opacity: {{ prevOpacity }}; pointer-events: {{ prevPointer }}">
-            <svg width="20" height="12" viewBox="0 0 24 14" fill="none"><path d="M 1 7 L 23 7 M 8 1 L 1 7 L 8 13" stroke="rgb(25,35,22)" stroke-width="1.5" fill="none"></path></svg>
+          <div onClick="{{ onPrev }}" style="width: 52px; height: 52px; border-radius: 50%; box-shadow: inset 0 0 0 1px rgb(25,35,22); display: flex; align-items: center; justify-content: center; cursor: pointer; opacity: {{ prevOpacity }}; pointer-events: {{ prevPointer }}">
+            <svg width="22" height="13" viewBox="0 0 24 14" fill="none"><path d="M 1 7 L 23 7 M 8 1 L 1 7 L 8 13" stroke="rgb(25,35,22)" stroke-width="1.5" fill="none"></path></svg>
           </div>
-          <div onClick="{{ onNext }}" style="width: 46px; height: 46px; border-radius: 50%; box-shadow: inset 0 0 0 1px rgb(25,35,22); display: flex; align-items: center; justify-content: center; cursor: pointer; opacity: {{ nextOpacity }}; pointer-events: {{ nextPointer }}">
-            <svg width="20" height="12" viewBox="0 0 24 14" fill="none"><path d="M 1 7 L 23 7 M 16 1 L 23 7 L 16 13" stroke="rgb(25,35,22)" stroke-width="1.5" fill="none"></path></svg>
+          <div onClick="{{ onNext }}" style="width: 52px; height: 52px; border-radius: 50%; box-shadow: inset 0 0 0 1px rgb(25,35,22); display: flex; align-items: center; justify-content: center; cursor: pointer; opacity: {{ nextOpacity }}; pointer-events: {{ nextPointer }}">
+            <svg width="22" height="13" viewBox="0 0 24 14" fill="none"><path d="M 1 7 L 23 7 M 16 1 L 23 7 L 16 13" stroke="rgb(25,35,22)" stroke-width="1.5" fill="none"></path></svg>
           </div>
+        </div>
+      </div>
+      <div ref="{{ vpRef }}" style="position: relative; width: 100%; overflow: hidden; -webkit-mask-image: {{ mask }}; mask-image: {{ mask }}; transition: -webkit-mask-image 0.3s ease-out, mask-image 0.3s ease-out">
+        <div ref="{{ trRef }}" onMouseDown="{{ onDragStart }}" onTouchStart="{{ onDragStart }}" onTouchMove="{{ onDragMove }}" onTouchEnd="{{ onDragEnd }}" style="display: flex; flex-direction: row; gap: 16px; align-items: flex-start; transform: translateX({{ offset }}px); transition: {{ transition }}; cursor: {{ cursor }}; user-select: none; touch-action: pan-y">
+          <sc-for list="{{ photos }}" as="ph" hint-placeholder-count="2">
+            <img data-lazysrc="{{ ph.src }}" alt="{{ ph.alt }}" draggable="{{ false }}" onClick="{{ ph.onOpen }}" style="cursor: zoom-in; flex: 0 0 calc((100% - 16px) * 0.78); width: calc((100% - 16px) * 0.78); height: 300px; object-fit: cover; border-radius: 16px; display: block">
+          </sc-for>
         </div>
       </div>
     </div>
   </div>
 
-  <div style="position: relative; overflow: hidden; background: rgb(25,35,22); box-sizing: border-box; padding: 56px 16px" data-om-label="indicators" data-screen-label="Инвестиционные показатели">
-    <img src="./assets/projects/ext-7-2.webp" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; pointer-events: none">
-    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(12,18,11,0.85), rgba(12,18,11,0.66) 45%, rgba(12,18,11,0.88)); pointer-events: none"></div>
-    <div data-reveal="ind" style="position: relative; width: 100%; display: flex; flex-direction: column; gap: 28px; opacity: {{ indBlk.o }}; transform: translateY({{ indBlk.y }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1), opacity 0.9s ease-out">
-      <div style="display: flex; flex-direction: column; gap: 8px">
-        <span style="font-weight: 400; font-size: 13px; text-transform: lowercase; letter-spacing: 0.02em; color: rgb(214,158,158)">показатели</span>
-        <div style="display: flex; flex-direction: column; gap: 2px">
-          <span style="font-family: 'HeadingNow-82Light'; font-weight: 200; font-size: 26px; line-height: 1.1; text-transform: uppercase; color: #fff">Инвестиционная</span>
-          <div style="display: flex; align-items: center; gap: 14px"><span style="flex: 0 0 auto; width: 52px; height: 1.5px; background: #fff; display: block; transform: scaleX({{ indLine }}); transform-origin: left; transition: transform 0.7s cubic-bezier(.16,1,.3,1) 200ms"></span><span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 26px; line-height: 1.1; text-transform: uppercase; color: #fff">модель</span></div>
+  <div style="position: relative; overflow: hidden; background: rgb(25,35,22); box-sizing: border-box; display: flex; justify-content: center; padding: 72px 24px" data-om-label="indicators" data-screen-label="Инвестиционные показатели">
+    <img src="./assets/projects/ext-3-3.webp" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; pointer-events: none">
+    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(12,18,11,0.82), rgba(12,18,11,0.62) 45%, rgba(12,18,11,0.86)); pointer-events: none"></div>
+    <div data-reveal="ind" style="position: relative; width: 100%; display: flex; flex-direction: column; gap: 36px; opacity: {{ indBlk.o }}; transform: translateY({{ indBlk.y }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1), opacity 0.9s ease-out">
+      <div style="display: flex; flex-direction: column; gap: 24px">
+        <div style="display: flex; flex-direction: column; gap: 10px">
+          <span style="font-weight: 400; font-size: 14px; text-transform: lowercase; letter-spacing: 0.02em; color: rgb(214,158,158)">показатели</span>
+          <div style="display: flex; flex-direction: column; gap: 4px">
+            <span style="font-family: 'HeadingNow-82Light'; font-weight: 200; font-size: 34px; line-height: 1.1; text-transform: uppercase; color: #fff">Инвестиционная</span>
+            <div style="display: flex; align-items: center; gap: 20px"><span style="flex: 0 0 auto; width: 96px; height: 1.5px; background: #fff; display: block; transform: scaleX({{ indLine }}); transform-origin: left; transition: transform 0.7s cubic-bezier(.16,1,.3,1) 200ms"></span><span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 34px; line-height: 1.1; text-transform: uppercase; color: #fff">модель</span></div>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: row; gap: 10px; align-items: stretch">
+          <div onClick="{{ openInvest }}" style="flex: 1 1 0; border-radius: 8px; background: #fff; display: flex; padding: 16px 20px; justify-content: center; align-items: center; cursor: pointer"><span style="font-weight: 700; font-size: 14px; color: rgb(43,58,39); text-align: center">Запланировать встречу</span></div>
+          <a href="./projects-tablet.html" style="flex: 1 1 0; border-radius: 8px; background: rgb(43,58,39); display: flex; padding: 16px 20px; justify-content: center; align-items: center; cursor: pointer; text-decoration: none"><span style="font-weight: 700; font-size: 14px; color: #fff; text-align: center">Все проекты</span></a>
         </div>
       </div>
-      <div style="display: flex; flex-direction: column; gap: 22px">
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 26px 24px">
         <sc-for list="{{ indicators }}" as="ind" hint-placeholder-count="4">
-          <div style="display: flex; flex-direction: column; gap: 10px; border-top: 1.5px solid rgba(255,255,255,0.5); padding-top: 14px; opacity: {{ ind.o }}; transform: translateY({{ ind.y }}px); transition: opacity 0.7s ease-out {{ ind.delay }}, transform 0.7s cubic-bezier(.16,1,.3,1) {{ ind.delay }}">
-            <span style="font-weight: 400; font-size: 13px; color: rgb(214,158,158)">{{ ind.label }}</span>
-            <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 21px; line-height: 1.1; color: #fff">{{ ind.value }}</span>
+          <div style="display: flex; flex-direction: column; gap: 12px; border-top: 1.5px solid rgba(255,255,255,0.5); padding-top: 16px; opacity: {{ ind.o }}; transform: translateY({{ ind.y }}px); transition: opacity 0.7s ease-out {{ ind.delay }}, transform 0.7s cubic-bezier(.16,1,.3,1) {{ ind.delay }}">
+            <span style="font-weight: 400; font-size: 14px; color: rgb(214,158,158)">{{ ind.label }}</span>
+            <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 24px; line-height: 1.1; color: #fff">{{ ind.value }}</span>
             <span style="font-weight: 400; font-size: 14px; line-height: 1.5; color: rgba(255,255,255,0.72)">{{ ind.note }}</span>
           </div>
         </sc-for>
       </div>
-      <div style="display: flex; flex-direction: column; gap: 8px">
-        <div onClick="{{ openInvest }}" style="border-radius: 8px; background: #fff; display: flex; padding: 17px 20px; justify-content: center; align-items: center; cursor: pointer"><span style="font-weight: 700; font-size: 14px; color: rgb(43,58,39)">Запланировать встречу</span></div>
-        <a href="https://royaresort.com/en" target="_blank" rel="noopener" style="border-radius: 8px; background: rgb(43,58,39); display: flex; padding: 17px 20px; justify-content: center; align-items: center; cursor: pointer; text-decoration: none"><span style="font-weight: 700; font-size: 14px; color: #fff">Сайт ROYA RESORT</span></a>
-      </div>
     </div>
   </div>
 
-  <div style="background: #EBEAE6; padding: 48px 16px; box-sizing: border-box" data-om-label="services" data-screen-label="Сервисы и amenities">
-    <div data-reveal="srv" style="width: 100%; display: flex; flex-direction: column; gap: 24px; opacity: {{ srvBlk.o }}; transform: translateY({{ srvBlk.y }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1), opacity 0.9s ease-out">
-      <div style="display: flex; flex-direction: column; gap: 12px">
-        <span style="font-weight: 400; font-size: 13px; text-transform: lowercase; letter-spacing: 0.02em; color: rgb(138,70,70)">инфраструктура</span>
-        <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 26px; line-height: 1.1; text-transform: uppercase; color: rgb(25,35,22)">Сервисы и amenities</span>
-        <span style="font-weight: 400; font-size: 15px; line-height: 1.55; color: #2D2D2D">Сервисная программа курорта работает и для гостей, и для владельцев резиденций — круглый год.</span>
+  <div style="background: #EBEAE6; padding: 64px 24px; box-sizing: border-box; display: flex; justify-content: center" data-om-label="services" data-screen-label="Сервисы и amenities">
+    <div data-reveal="srv" style="width: 100%; display: flex; flex-direction: column; gap: 32px; opacity: {{ srvBlk.o }}; transform: translateY({{ srvBlk.y }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1), opacity 0.9s ease-out">
+      <div style="display: flex; flex-direction: column; gap: 16px">
+        <div style="display: flex; flex-direction: column; gap: 10px">
+          <span style="font-weight: 400; font-size: 14px; text-transform: lowercase; letter-spacing: 0.02em; color: rgb(138,70,70)">инфраструктура</span>
+          <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 34px; line-height: 1.1; text-transform: uppercase; color: rgb(25,35,22)">Сервисы и amenities</span>
+        </div>
+        <span style="max-width: 520px; font-weight: 400; font-size: 15px; line-height: 1.55; color: #2D2D2D">Марина проектируется как полный цикл сервиса — от стоянки и обслуживания яхт до клубной жизни на берегу.</span>
       </div>
-      <div style="display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1px; background: rgba(25,35,22,0.18)">
+      <div style="display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 1px; background: rgba(25,35,22,0.18)">
         <sc-for list="{{ services }}" as="sv" hint-placeholder-count="12">
-          <div style="background: #EBEAE6; padding: 14px; box-sizing: border-box; min-height: 78px; display: flex; align-items: flex-end; opacity: {{ sv.o }}; transform: translateY({{ sv.y }}px); transition: opacity 0.6s ease-out {{ sv.delay }}, transform 0.6s cubic-bezier(.16,1,.3,1) {{ sv.delay }}">
-            <span style="font-weight: 400; font-size: 14px; line-height: 1.25; color: rgb(25,35,22)">{{ sv.label }}</span>
+          <div style="background: #EBEAE6; padding: 18px; box-sizing: border-box; min-height: 96px; display: flex; align-items: flex-end; opacity: {{ sv.o }}; transform: translateY({{ sv.y }}px); transition: opacity 0.6s ease-out {{ sv.delay }}, transform 0.6s cubic-bezier(.16,1,.3,1) {{ sv.delay }}">
+            <span style="font-weight: 400; font-size: 15px; line-height: 1.25; color: rgb(25,35,22)">{{ sv.label }}</span>
           </div>
         </sc-for>
-        <img data-lazysrc="./assets/projects/int-19-1.webp" alt="Лаунж" style="width: 100%; height: 100%; min-height: 78px; object-fit: cover; display: block">
-        <img data-lazysrc="./assets/projects/int-cam-33-2.webp" alt="Спа" style="width: 100%; height: 100%; min-height: 78px; object-fit: cover; display: block">
+        <img data-lazysrc="./assets/projects/int-19-1.webp" alt="Лаунж" style="width: 100%; height: 100%; min-height: 96px; object-fit: cover; display: block">
+        <img data-lazysrc="./assets/projects/int-cam-33-2.webp" alt="Спа" style="width: 100%; height: 100%; min-height: 96px; object-fit: cover; display: block">
+        <img data-lazysrc="./assets/projects/int-rest-cam-1-1.webp" alt="Ресторан" style="width: 100%; height: 100%; min-height: 96px; object-fit: cover; display: block">
       </div>
     </div>
   </div>
 
 
-  <div style="background: #EBEAE6; padding: 40px 16px; box-sizing: border-box" data-om-label="partners" data-screen-label="Партнёры проекта">
-    <div data-reveal="prt" style="width: 100%; display: flex; flex-direction: column; gap: 24px; opacity: {{ prtBlk.o }}; transform: translateY({{ prtBlk.y }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1), opacity 0.9s ease-out">
-      <div style="position: relative; width: 100%; border-radius: 14px; overflow: hidden">
-        <img data-lazysrc="./assets/projects/ext-2-4-1.webp" alt="Локация проекта" style="width: 100%; height: 280px; object-fit: cover; display: block">
+  <div style="background: #EBEAE6; padding: 56px 24px; box-sizing: border-box; display: flex; justify-content: center" data-om-label="partners" data-screen-label="Партнёры проекта">
+    <div data-reveal="prt" style="width: 100%; display: flex; flex-direction: column; gap: 32px; opacity: {{ prtBlk.o }}; transform: translateY({{ prtBlk.y }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1), opacity 0.9s ease-out">
+      <div style="position: relative; width: 100%; border-radius: 16px; overflow: hidden">
+        <img data-lazysrc="./assets/projects/ext-7-2.webp" alt="Локация проекта" style="width: 100%; height: 340px; object-fit: cover; display: block">
         <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(12,18,11,0.35), rgba(12,18,11,0.1) 45%, rgba(12,18,11,0.45)); pointer-events: none"></div>
       </div>
-      <div style="display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 20px 16px">
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 24px">
       <sc-for list="{{ partners }}" as="p" hint-placeholder-count="4">
-        <div style="display: flex; flex-direction: column; gap: 8px; border-top: 1.5px solid rgb(25,35,22); padding-top: 12px; opacity: {{ p.o }}; transform: translateY({{ p.y }}px); transition: opacity 0.7s ease-out {{ p.delay }}, transform 0.7s cubic-bezier(.16,1,.3,1) {{ p.delay }}">
-          <span style="font-weight: 400; font-size: 12px; text-transform: lowercase; letter-spacing: 0.02em; color: rgb(138,70,70)">{{ p.role }}</span>
-          <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 16px; line-height: 1.15; text-transform: uppercase; color: rgb(25,35,22)">{{ p.name }}</span>
+        <div style="display: flex; flex-direction: column; gap: 10px; border-top: 1.5px solid rgb(25,35,22); padding-top: 14px; opacity: {{ p.o }}; transform: translateY({{ p.y }}px); transition: opacity 0.7s ease-out {{ p.delay }}, transform 0.7s cubic-bezier(.16,1,.3,1) {{ p.delay }}">
+          <span style="font-weight: 400; font-size: 13px; text-transform: lowercase; letter-spacing: 0.02em; color: rgb(138,70,70)">{{ p.role }}</span>
+          <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 20px; line-height: 1.15; text-transform: uppercase; color: rgb(25,35,22)">{{ p.name }}</span>
         </div>
       </sc-for>
       </div>
@@ -212,49 +223,48 @@
   </div>
 
   <sc-if value="{{ showOther }}" hint-placeholder-val="{{ true }}">
-    <div style="background: #fff; padding: 48px 16px; box-sizing: border-box" data-om-label="other" data-screen-label="Другие проекты">
-      <div data-reveal="oth" style="width: 100%; display: flex; flex-direction: column; gap: 22px; opacity: {{ othBlk.o }}; transform: translateY({{ othBlk.y }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1), opacity 0.9s ease-out">
-        <div style="display: flex; flex-direction: column; gap: 12px; border-top: 1.5px solid rgb(138,70,70); padding-top: 14px">
-          <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 24px; line-height: 1.1; text-transform: uppercase; color: rgb(25,35,22)">Другие проекты</span>
+    <div style="background: #fff; padding: 64px 24px; box-sizing: border-box; display: flex; justify-content: center" data-om-label="other" data-screen-label="Другие проекты">
+      <div data-reveal="oth" style="width: 100%; display: flex; flex-direction: column; gap: 28px; opacity: {{ othBlk.o }}; transform: translateY({{ othBlk.y }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1), opacity 0.9s ease-out">
+        <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: flex-end; gap: 20px; border-top: 1.5px solid rgb(138,70,70); padding-top: 18px">
+          <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 30px; line-height: 1.1; text-transform: uppercase; color: rgb(25,35,22)">Другие проекты</span>
+          <a href="./projects-tablet.html" style="font-weight: 700; font-size: 14px; color: rgb(25,35,22); display: flex; flex-direction: row; gap: 10px; align-items: center; white-space: nowrap">Все проекты
+            <svg width="18" height="12" viewBox="0 0 24 14" fill="none"><path d="M 1 7 L 23 7 M 16 1 L 23 7 L 16 13" stroke="rgb(25,35,22)" stroke-width="1.5" fill="none"></path></svg>
+          </a>
         </div>
-        <div style="display: flex; flex-direction: column; gap: 22px">
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 24px">
           <sc-for list="{{ others }}" as="o" hint-placeholder-count="3">
-            <a href="{{ o.href }}" style="display: flex; flex-direction: column; gap: 12px; cursor: pointer; opacity: {{ o.o }}; transform: translateY({{ o.y }}px); transition: opacity 0.7s ease-out {{ o.delay }}, transform 0.7s cubic-bezier(.16,1,.3,1) {{ o.delay }}">
-              <span style="display: block; width: 100%; height: 200px; border-radius: 14px; overflow: hidden"><img data-lazysrc="{{ o.src }}" alt="{{ o.title }}" style="width: 100%; height: 100%; object-fit: cover; display: block"></span>
+            <a href="{{ o.href }}" style="display: flex; flex-direction: column; gap: 14px; cursor: pointer; opacity: {{ o.o }}; transform: translateY({{ o.y }}px); transition: opacity 0.7s ease-out {{ o.delay }}, transform 0.7s cubic-bezier(.16,1,.3,1) {{ o.delay }}">
+              <span style="display: block; width: 100%; height: 220px; border-radius: 16px; overflow: hidden"><img data-lazysrc="{{ o.src }}" alt="{{ o.title }}" style="width: 100%; height: 100%; object-fit: cover; display: block"></span>
               <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: baseline; gap: 12px">
-                <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 18px; text-transform: uppercase; color: rgb(25,35,22)">{{ o.title }}</span>
+                <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 20px; text-transform: uppercase; color: rgb(25,35,22)">{{ o.title }}</span>
                 <span style="font-weight: 400; font-size: 12px; color: rgb(138,70,70); text-align: right">{{ o.status }}</span>
               </div>
             </a>
           </sc-for>
         </div>
-        <a href="./projects-mobile.html" style="border-radius: 8px; background: rgb(43,58,39); display: flex; flex-direction: row; gap: 10px; padding: 16px 20px; justify-content: center; align-items: center; text-decoration: none; box-sizing: border-box">
-          <span style="font-weight: 700; font-size: 14px; color: #fff">Все проекты</span>
-          <svg width="18" height="12" viewBox="0 0 24 14" fill="none"><path d="M 1 7 L 23 7 M 16 1 L 23 7 L 16 13" stroke="#fff" stroke-width="1.5" fill="none"></path></svg>
-        </a>
       </div>
     </div>
   </sc-if>
 
-  <div style="position: relative; overflow: hidden; background: rgb(25,35,22); box-sizing: border-box; width: 100%; min-height: 100svh; display: flex" data-om-label="cta" data-screen-label="Личный доступ (CTA)">
+  <div style="position: relative; overflow: hidden; background: rgb(25,35,22); box-sizing: border-box; display: flex; flex-direction: column; align-items: center; width: 100%; min-height: 640px" data-om-label="cta" data-screen-label="Личный доступ (CTA)">
     <img src="./assets/cta-bg.webp" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; pointer-events: none">
-    <div style="position: relative; width: 100%; background: linear-gradient(180deg, rgba(15,20,13,0.45), rgba(15,20,13,0.2) 45%, rgba(15,20,13,0.5)); display: flex; flex-direction: column; justify-content: center; padding: 56px 16px; box-sizing: border-box; gap: 22px">
-      <div data-reveal="ctahead" style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 27px; line-height: 1.2; text-transform: uppercase; color: #fff; display: flex; flex-direction: column; gap: 4px">
-        <div style="overflow: hidden"><span style="display: block; transform: translateY({{ ctaT1Y }}%); opacity: {{ ctaT1O }}; transition: transform 0.9s cubic-bezier(.16,1,.3,1) 0ms, opacity 0.9s ease-out 0ms">Ваш личный доступ</span></div>
-        <div style="overflow: hidden"><div style="display: flex; flex-direction: row; align-items: center; gap: 14px; margin-left: 16px; transform: translateY({{ ctaT2Y }}%); opacity: {{ ctaT2O }}; transition: transform 0.9s cubic-bezier(.16,1,.3,1) 120ms, opacity 0.9s ease-out 120ms"><span style="flex: 0 0 auto; width: 44px; height: 1.5px; background: #fff; display: block; transform: scaleX({{ ctaLine }}); transform-origin: right; transition: transform 0.7s cubic-bezier(.16,1,.3,1) 200ms"></span><span style="white-space: nowrap; font-family: HeadingNow-82Light">К возможностям</span></div></div>
-        <div style="overflow: hidden"><div style="display: flex; flex-direction: row; align-items: center; gap: 14px; margin-left: 32px; transform: translateY({{ ctaT3Y }}%); opacity: {{ ctaT3O }}; transition: transform 0.9s cubic-bezier(.16,1,.3,1) 240ms, opacity 0.9s ease-out 240ms"><span style="white-space: nowrap; font-family: HeadingNow-82Light">Острова</span><span style="flex: 1 1 auto; min-width: 24px; height: 1.5px; background: #fff; display: block; transform: scaleX({{ ctaLine }}); transform-origin: left; transition: transform 0.7s cubic-bezier(.16,1,.3,1) 300ms"></span></div></div>
+    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15,20,13,0.4), rgba(15,20,13,0.2) 45%, rgba(15,20,13,0.45)); display: flex; justify-content: center; align-items: center; padding: 64px 24px; box-sizing: border-box"><div style="position: relative; width: 100%; display: flex; flex-direction: column; gap: 26px">
+      <div data-reveal="ctahead" style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 36px; line-height: 1.2; text-transform: uppercase; color: #fff; display: flex; flex-direction: column; gap: 6px">
+        <div style="overflow: hidden"><span style="display: block; white-space: nowrap; transform: translateY({{ ctaT1Y }}%); opacity: {{ ctaT1O }}; transition: transform 0.9s cubic-bezier(.16,1,.3,1) 0ms, opacity 0.9s ease-out 0ms">Ваш личный доступ</span></div>
+        <div style="overflow: hidden"><div style="display: flex; flex-direction: row; align-items: center; gap: 24px; margin-left: 32px; transform: translateY({{ ctaT2Y }}%); opacity: {{ ctaT2O }}; transition: transform 0.9s cubic-bezier(.16,1,.3,1) 120ms, opacity 0.9s ease-out 120ms"><span style="flex: 0 0 auto; width: 110px; height: 1.5px; background: #fff; display: block; transform: scaleX({{ ctaLine }}); transform-origin: right; transition: transform 0.7s cubic-bezier(.16,1,.3,1) 200ms"></span><span style="white-space: nowrap; font-family: HeadingNow-82Light">К возможностям</span></div></div>
+        <div style="overflow: hidden"><div style="display: flex; flex-direction: row; align-items: center; gap: 24px; margin-left: 56px; transform: translateY({{ ctaT3Y }}%); opacity: {{ ctaT3O }}; transition: transform 0.9s cubic-bezier(.16,1,.3,1) 240ms, opacity 0.9s ease-out 240ms"><span style="white-space: nowrap; font-family: HeadingNow-82Light">Острова</span><span style="flex: 0 1 180px; min-width: 40px; height: 1.5px; background: #fff; display: block; transform: scaleX({{ ctaLine }}); transform-origin: left; transition: transform 0.7s cubic-bezier(.16,1,.3,1) 300ms"></span></div></div>
       </div>
-      <span style="font-weight: 400; font-size: 15px; line-height: 1.45; color: #fff; opacity: {{ ctaFormO }}; transform: translateY({{ ctaFormY }}px); transition: transform 0.8s cubic-bezier(.16,1,.3,1) 200ms, opacity 0.8s ease-out 200ms">Познакомьтесь с ROYA RESORT лично. Мы ответим на все вопросы о девелопменте, юридической структуре и сервисной программе курорта</span>
-      <div data-reveal="ctaform" style="display: flex; flex-direction: column; gap: 10px; margin-top: 8px; opacity: {{ ctaFormO }}; transform: translateY({{ ctaFormY }}px); transition: transform 0.8s cubic-bezier(.16,1,.3,1) 300ms, opacity 0.8s ease-out 300ms">
-        <input type="text" ref="{{ ctaNameRef }}" placeholder="Ваше имя *" style="width: 100%; height: 53px; border: none; outline: none; border-radius: 10px; background: rgb(235,234,230); padding: 0 16px; box-sizing: border-box; font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 600; font-size: 16px; color: rgb(25,35,22); box-shadow: {{ ctaNameRing }}">
-        <input type="email" ref="{{ ctaMailRef }}" placeholder="Ваш e-mail *" style="width: 100%; height: 53px; border: none; outline: none; border-radius: 10px; background: rgb(235,234,230); padding: 0 16px; box-sizing: border-box; font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 600; font-size: 16px; color: rgb(25,35,22); box-shadow: {{ ctaMailRing }}">
-        <input type="tel" ref="{{ ctaPhoneRef }}" placeholder="Телефон или Telegram *" style="width: 100%; height: 53px; border: none; outline: none; border-radius: 10px; background: rgb(235,234,230); padding: 0 16px; box-sizing: border-box; font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 600; font-size: 16px; color: rgb(25,35,22); box-shadow: {{ ctaPhoneRing }}">
-        <div onClick="{{ submitCta }}" style="width: 100%; height: 53px; border-radius: 8px; background: rgb(43,58,39); display: flex; flex-direction: row; gap: 10px; justify-content: center; align-items: center; cursor: pointer">
-          <span style="font-weight: 700; font-size: 14px; color: #fff">Записаться на просмотр</span>
+      <span style="max-width: 620px; font-weight: 400; font-size: 16px; line-height: 1.4; color: #fff; opacity: {{ ctaFormO }}; transform: translateY({{ ctaFormY }}px); transition: transform 0.8s cubic-bezier(.16,1,.3,1) 200ms, opacity 0.8s ease-out 200ms">Познакомьтесь с проектом MARINA лично. Мы ответим на все вопросы о мастер-плане, модели доходности и условиях раннего входа</span>
+      <div data-reveal="ctaform" style="display: flex; flex-direction: row; gap: 10px; align-items: stretch; flex-wrap: wrap; margin-top: 18px; opacity: {{ ctaFormO }}; transform: translateY({{ ctaFormY }}px); transition: transform 0.8s cubic-bezier(.16,1,.3,1) 300ms, opacity 0.8s ease-out 300ms">
+        <input type="text" ref="{{ ctaNameRef }}" placeholder="Ваше имя *" style="flex: 1 1 200px; min-width: 0; height: 53px; border: none; outline: none; border-radius: 10px; background: rgb(235,234,230); padding: 0 16px; box-sizing: border-box; font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 600; font-size: 16px; color: rgb(25,35,22); box-shadow: {{ ctaNameRing }}">
+        <input type="email" ref="{{ ctaMailRef }}" placeholder="Ваш e-mail *" style="flex: 1 1 200px; min-width: 0; height: 53px; border: none; outline: none; border-radius: 10px; background: rgb(235,234,230); padding: 0 16px; box-sizing: border-box; font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 600; font-size: 16px; color: rgb(25,35,22); box-shadow: {{ ctaMailRing }}">
+        <input type="tel" ref="{{ ctaPhoneRef }}" placeholder="Телефон или Telegram *" style="flex: 1 1 200px; min-width: 0; height: 53px; border: none; outline: none; border-radius: 10px; background: rgb(235,234,230); padding: 0 16px; box-sizing: border-box; font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 600; font-size: 16px; color: rgb(25,35,22); box-shadow: {{ ctaPhoneRing }}">
+        <div onClick="{{ submitCta }}" style="flex: 1 1 100%; height: 53px; border-radius: 8px; background: rgb(43,58,39); display: flex; flex-direction: row; gap: 10px; justify-content: center; align-items: center; cursor: pointer">
+          <span style="font-weight: 700; font-size: 14px; color: #fff; white-space: nowrap">Записаться на просмотр</span>
           <svg width="18" height="12" viewBox="0 0 24 14" fill="none"><path d="M 1 7 L 23 7 M 16 1 L 23 7 L 16 13" stroke="#fff" stroke-width="1.5" fill="none"></path></svg>
         </div>
       </div>
-    </div>
+    </div></div>
   </div>
 
   <div style="position: relative; overflow: hidden; background: url('./assets/footer-beach.webp') center / cover no-repeat, rgb(25,35,22); padding: clamp(64px,8.33vw,120px) clamp(24px,6vw,88px) clamp(180px,23.3vw,336px); box-sizing: border-box; display: flex; flex-direction: column; align-items: center" data-om-label="footer" data-screen-label="Футер">
@@ -307,21 +317,21 @@
 </div>
 
   <sc-if value="{{ lbOpen }}" hint-placeholder-val="{{ false }}">
-    <div onClick="{{ lbClose }}" style="position: fixed; inset: 0; z-index: 600; background: rgba(12,16,11,0.88); backdrop-filter: blur(10px); display: flex; align-items: center; justify-content: center; padding: 16px; box-sizing: border-box; cursor: zoom-out; opacity: {{ lb.o }}; transition: opacity 0.3s ease-out">
-      <img data-lazysrc="{{ lbSrc }}" alt="{{ lbAlt }}" onClick="{{ lbStop }}" style="width: 100%; aspect-ratio: 3 / 4; max-height: 100%; object-fit: cover; border-radius: 12px; display: block; cursor: default; transform: scale({{ lb.s }}); opacity: {{ lb.o }}; transition: transform 0.45s cubic-bezier(.16,1,.3,1), opacity 0.3s ease-out">
-      <div onClick="{{ lbPrev }}" style="position: fixed; left: 12px; top: 50%; transform: translateY(-50%); width: 46px; height: 46px; border-radius: 50%; background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.28); display: flex; align-items: center; justify-content: center; cursor: pointer">
+    <div onClick="{{ lbClose }}" style="position: fixed; inset: 0; z-index: 600; background: rgba(12,16,11,0.85); backdrop-filter: blur(10px); display: flex; align-items: center; justify-content: center; padding: 24px; box-sizing: border-box; cursor: zoom-out; opacity: {{ lb.o }}; transition: opacity 0.3s ease-out">
+      <img data-lazysrc="{{ lbSrc }}" alt="{{ lbAlt }}" onClick="{{ lbStop }}" style="width: 100%; aspect-ratio: 4 / 3; max-height: 100%; object-fit: cover; border-radius: 12px; display: block; cursor: default; transform: scale({{ lb.s }}); opacity: {{ lb.o }}; transition: transform 0.45s cubic-bezier(.16,1,.3,1), opacity 0.3s ease-out">
+      <div onClick="{{ lbPrev }}" style="position: fixed; left: 16px; top: 50%; transform: translateY(-50%); width: 48px; height: 48px; border-radius: 50%; background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.28); display: flex; align-items: center; justify-content: center; cursor: pointer">
         <svg width="10" height="16" viewBox="0 0 10 16" fill="none"><path d="M9 1L2 8l7 7" stroke="#fff" stroke-width="1.6"></path></svg>
       </div>
-      <div onClick="{{ lbNext }}" style="position: fixed; right: 12px; top: 50%; transform: translateY(-50%); width: 46px; height: 46px; border-radius: 50%; background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.28); display: flex; align-items: center; justify-content: center; cursor: pointer">
+      <div onClick="{{ lbNext }}" style="position: fixed; right: 16px; top: 50%; transform: translateY(-50%); width: 48px; height: 48px; border-radius: 50%; background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.28); display: flex; align-items: center; justify-content: center; cursor: pointer">
         <svg width="10" height="16" viewBox="0 0 10 16" fill="none"><path d="M1 1l7 7-7 7" stroke="#fff" stroke-width="1.6"></path></svg>
       </div>
-      <div onClick="{{ lbClose }}" style="position: fixed; right: 12px; top: calc(env(safe-area-inset-top, 0px) + 12px); width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.28); display: flex; align-items: center; justify-content: center; cursor: pointer">
+      <div onClick="{{ lbClose }}" style="position: fixed; right: 16px; top: 16px; width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.28); display: flex; align-items: center; justify-content: center; cursor: pointer">
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 1l12 12M13 1L1 13" stroke="#fff" stroke-width="1.6"></path></svg>
       </div>
-      <div style="position: fixed; left: 50%; bottom: 18px; transform: translateX(-50%); display: flex; flex-direction: row; align-items: center; gap: 10px; pointer-events: none">
-        <span style="font-weight: 400; font-size: 13px; color: #fff">{{ lbPlace }}</span>
+      <div style="position: fixed; left: 50%; bottom: 20px; transform: translateX(-50%); display: flex; flex-direction: row; align-items: center; gap: 12px; pointer-events: none">
+        <span style="font-weight: 400; font-size: 14px; color: #fff">{{ lbPlace }}</span>
         <span style="width: 1px; height: 12px; background: rgba(255,255,255,0.35); display: block"></span>
-        <span style="font-weight: 400; font-size: 12px; letter-spacing: 0.04em; color: rgba(255,255,255,0.65)">{{ lbCounter }}</span>
+        <span style="font-weight: 400; font-size: 13px; letter-spacing: 0.04em; color: rgba(255,255,255,0.65)">{{ lbCounter }}</span>
       </div>
     </div>
   </sc-if>
@@ -380,63 +390,63 @@
     </div>
   </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:390,&quot;height&quot;:844},&quot;autoRedirect&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Поведение&quot;},&quot;showOther&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Секции&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:834,&quot;height&quot;:1112},&quot;showOther&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Секции&quot;}}">
 class Component extends DCLogic {
   state = { tab: "все", idx: 0, dragging: false, dragStartX: 0, dragStartOffset: 0, dragDeltaX: 0, lbIdx: null, lbIn: false, rv: {}, heroV: false, footerVideo: false, menuOpen: false };
   footerVideoRef = React.createRef();
   heroImgRef = React.createRef();
   hdrRef = React.createRef();
   _hdrHidden = false;
-  GAP = 12;
+  GAP = 16;
   applyHdr = () => {
     const n = this.hdrRef.current;
     if (!n) return;
     n.style.transform = this._hdrHidden ? "translateY(-" + (n.offsetHeight + 24) + "px)" : "translateY(0)";
   };
   FIGURES = [
-    { label: "вход от", value: "$250 000" },
-    { label: "резиденции", value: "143" },
-    { label: "площадь застройки", value: "6 945 м²" },
-    { label: "год сдачи", value: "2027" },
-    { label: "прогноз ROI", value: "10–12%" },
+    { label: "вход от", value: "$120 000" },
+    { label: "причалов", value: "120" },
+    { label: "береговой клуб", value: "4 200 м²" },
+    { label: "статус", value: "проектирование" },
+    { label: "прогноз ROI", value: "11–15%" },
     { label: "рост капитала", value: "15–20%" },
-    { label: "продано на старте", value: "47%" },
+    { label: "сервисных доков", value: "8" },
     { label: "управление", value: "EVERVILLE" },
   ];
-  TABS = ["все", "территория", "резиденции", "интерьеры"];
+  TABS = ["все", "гавань", "клуб", "интерьеры"];
   PHOTOS = [
-    { src: "./assets/projects/ext-5-1.webp", alt: "ROYA RESORT — вид с высоты", place: "курорт с высоты", tab: "территория" },
-    { src: "./assets/projects/ext-2-2.webp", alt: "Фасад корпуса", place: "фасад", tab: "территория" },
-    { src: "./assets/projects/ext-3-3.webp", alt: "Террасы на закате", place: "террасы", tab: "резиденции" },
-    { src: "./assets/projects/ext-3-1-1.webp", alt: "Террасы резиденций", place: "террасы резиденций", tab: "резиденции" },
-    { src: "./assets/projects/int-cam-27.webp", alt: "Лобби курорта", place: "лобби", tab: "интерьеры" },
-    { src: "./assets/projects/int-rest-cam-1-1.webp", alt: "Ресторан", place: "ресторан", tab: "интерьеры" },
-    { src: "./assets/projects/int-cam-33-2.webp", alt: "Спа", place: "спа", tab: "интерьеры" },
+    { src: "./assets/projects/ext-2-4-1.webp", alt: "Береговая линия марины", place: "береговая линия", tab: "гавань" },
+    { src: "./assets/projects/ext-5-1.webp", alt: "Побережье с высоты", place: "побережье", tab: "гавань" },
+    { src: "./assets/projects/ext-7-2.webp", alt: "Акватория", place: "акватория", tab: "гавань" },
+    { src: "./assets/projects/int-rest-cam-11-1.webp", alt: "Бар берегового клуба", place: "бар клуба", tab: "клуб" },
+    { src: "./assets/projects/int-19-1.webp", alt: "Лаунж клуба", place: "лаунж", tab: "клуб" },
+    { src: "./assets/projects/int-cam-27.webp", alt: "Лобби", place: "лобби", tab: "интерьеры" },
+    { src: "./assets/projects/int-cam-33-2.webp", alt: "Спа-зона", place: "спа", tab: "интерьеры" },
   ];
   INDICATORS = [
-    { label: "юридическая структура", value: "PT PMA / Hak Pakai", note: "Оптимальная структура подбирается индивидуально вместе с Good Guys Group." },
-    { label: "потенциальная доходность", value: "10–12% годовых", note: "Рентный доход от краткосрочной аренды под управлением оператора." },
-    { label: "управление", value: "5★ оператор", note: "Международный оператор класса люкс и программа доходности для владельцев." },
-    { label: "рост капитализации", value: "15–20% в год", note: "По данным анализа рынка Dreamland Beach за 2022–2025 гг." },
+    { label: "юридическая структура", value: "PT PMA / Hak Pakai", note: "Инфраструктурный актив; структура владения — вместе с Good Guys Group." },
+    { label: "потенциальная доходность", value: "11–15% годовых", note: "Долгосрочная аренда причалов и доход берегового клуба." },
+    { label: "ранний вход", value: "стадия проекта", note: "Минимальная цена входа до начала строительства." },
+    { label: "дефицит предложения", value: "марина юга Бали", note: "Современных яхтенных гаваней такого класса на юге острова нет." },
   ];
-  SERVICES = ["Консьерж 24/7", "Частная авиация", "Spa & wellness", "Гольф-членство", "Sleep Lab", "Рестораны", "Сёрф-станция", "Трансфер Balicopter", "Фитнес-центр", "Детский клуб", "Охрана 24/7", "Beach club"].map(label => ({ label }));
+  SERVICES = ["Причалы 12–40 м", "Заправка и сервис", "Береговой клуб", "Рестораны", "Яхт-менеджмент", "Школа парусного спорта", "Хранение и док", "Таможенное оформление", "Beach club", "Трансфер Balicopter", "Консьерж 24/7", "Охрана 24/7"].map(label => ({ label }));
   PINS = [
-    { x: "8%", y: "20%", label: "Dreamland Beach" },
-    { x: "50%", y: "12%", label: "New Kuta Golf" },
-    { x: "26%", y: "48%", label: "ROYA RESORT" },
-    { x: "44%", y: "68%", label: "Uluwatu — 15 мин" },
-    { x: "8%", y: "82%", label: "Аэропорт — 40 мин" },
+    { x: "10%", y: "22%", label: "Dreamland Beach" },
+    { x: "56%", y: "14%", label: "New Kuta Golf" },
+    { x: "34%", y: "50%", label: "ROYA RESORT" },
+    { x: "62%", y: "68%", label: "Uluwatu — 15 мин" },
+    { x: "12%", y: "78%", label: "Аэропорт — 40 мин" },
   ];
   PARTNERS = [
-    { role: "архитектура", name: "Anna Lutaeva Studio" },
+    { role: "морская инженерия", name: "Archetype Group" },
     { role: "юридика", name: "Good Guys Group" },
     { role: "управление", name: "Everville" },
-    { role: "строительство", name: "Archetype Group" },
+    { role: "архитектура", name: "Anna Lutaeva Studio" },
   ];
   OTHERS = [
+    { title: "ROYA RESORT", status: "продажи открыты", src: "./assets/projects/ext-5-1.webp", href: "./roya.html" },
     { title: "ROYA DESA", status: "старт продаж — Q4 2026", src: "./assets/projects/ext-4-1.webp", href: "./roya-desa.html" },
     { title: "BALICOPTER", status: "сервис запущен", src: "./assets/projects/ext-5-3.webp", href: "./balicopter.html" },
-    { title: "SANATORIUM", status: "скоро в продаже", src: "./assets/projects/int-03-7.webp", href: "./sanatorium.html" },
   ];
   visible() { return this.state.tab === "все" ? this.PHOTOS : this.PHOTOS.filter(p => p.tab === this.state.tab); }
   bindLazyImages() {
@@ -452,7 +462,7 @@ class Component extends DCLogic {
       const key = el.getAttribute("data-reveal");
       if (!key || key.includes("{{") || this.state.rv[key]) return;
       const r = el.getBoundingClientRect();
-      if (r.top < vh * 0.94) {
+      if (r.top < vh * 0.92) {
         (next = next || {})[key] = true;
         setTimeout(() => this.setState(st => ({ rv: Object.assign({}, st.rv, { [key + "L"]: true }) })), 400);
       }
@@ -467,7 +477,7 @@ class Component extends DCLogic {
       if (!el) return;
       const sc = document.body.scrollHeight > document.body.clientHeight + 4 ? document.body : (document.scrollingElement || document.documentElement);
       const y = Math.min(sc.scrollTop, window.innerHeight);
-      el.style.transform = "scale(" + (this.state.heroV ? 1.04 : 1.1) + ") translateY(" + (y * 0.08).toFixed(1) + "px)";
+      el.style.transform = "scale(" + (this.state.heroV ? 1.04 : 1.1) + ") translateY(" + (y * 0.1).toFixed(1) + "px)";
     });
   };
   onScroll = () => {
@@ -496,8 +506,7 @@ class Component extends DCLogic {
     this._route = () => {
       if (!(this.props.autoRedirect ?? true)) return;
       const w = window.innerWidth;
-      if (w >= 1024) window.location.replace("./roya.html");
-      else if (w >= 768) window.location.replace("./roya-tablet.html");
+      if (w >= 1024) window.location.replace("./marina.html");
     };
     this._route();
     window.addEventListener("resize", this._route);
@@ -537,16 +546,12 @@ class Component extends DCLogic {
     if (this._vp && this._tr && this._tr.children.length) {
       return { stepW: this._tr.children[0].offsetWidth + this.GAP, maxScroll: Math.max(0, this._tr.scrollWidth - this._vp.clientWidth) };
     }
-    return { stepW: 320, maxScroll: 0 };
-  }
-  maxIdx() {
-    const m = this.metrics();
-    if (!m.maxScroll) return 0;
-    return Math.max(0, Math.ceil(m.maxScroll / m.stepW));
+    return { stepW: 600, maxScroll: 0 };
   }
   offsetFor(idx) {
     const m = this.metrics();
-    return -Math.max(0, Math.min(idx * m.stepW, m.maxScroll));
+    const peekHalf = (this._vp && this._tr && this._tr.children.length) ? Math.max(0, (this._vp.clientWidth - this._tr.children[0].offsetWidth) / 2) : 0;
+    return -Math.max(0, Math.min(idx * m.stepW - peekHalf, m.maxScroll));
   }
   getX(e) {
     if (e.touches && e.touches.length) return e.touches[0].clientX;
@@ -573,7 +578,13 @@ class Component extends DCLogic {
     window.removeEventListener("mouseup", this._mu);
     const m = this.metrics();
     const raw = Math.min(0, Math.max(-m.maxScroll, this.state.dragStartOffset + this.state.dragDeltaX));
-    this.setState({ dragging: false, dragDeltaX: 0, idx: Math.max(0, Math.min(this.maxIdx(), Math.round(-raw / m.stepW))) });
+    const max = this.maxIdx();
+    this.setState({ dragging: false, dragDeltaX: 0, idx: Math.max(0, Math.min(max, Math.round(-raw / m.stepW))) });
+  }
+  maxIdx() {
+    const m = this.metrics();
+    if (!m.maxScroll) return 0;
+    return Math.max(0, Math.ceil(m.maxScroll / m.stepW));
   }
   openLb(i) {
     if (this._moved) { this._moved = false; return; }
@@ -595,15 +606,15 @@ class Component extends DCLogic {
     if (e.key === "ArrowRight") this.lbStep(1);
   };
   mask(idx, maxIdx) {
-    const w = "28px";
-    const ease = [[0, 0], [0.15, 0.45], [0.4, 0.82], [1, 1]];
+    const w = "clamp(34px,3.6vw,72px)";
+    const ease = [[0, 0], [0.1, 0.34], [0.22, 0.6], [0.38, 0.8], [0.56, 0.92], [0.78, 0.98], [1, 1]];
     const left = idx > 0 ? ease.map(([p, a]) => "rgba(0,0,0," + a + ") calc(" + w + " * " + p + ")").join(", ") : "#000 0";
     const right = idx < maxIdx ? ease.slice().reverse().map(([p, a]) => "rgba(0,0,0," + a + ") calc(100% - " + w + " * " + p + ")").join(", ") : "#000 100%";
     return "linear-gradient(90deg, " + left + ", " + right + ")";
   }
   renderVals() {
     const s = this.state;
-    const rvv = v => ({ y: v ? 0 : 24, o: v ? 1 : 0 });
+    const rvv = v => ({ y: v ? 0 : 28, o: v ? 1 : 0 });
     const photos = this.visible();
     const maxIdx = this.maxIdx();
     const idx = Math.min(s.idx, maxIdx);
@@ -621,7 +632,7 @@ class Component extends DCLogic {
       menuTransform: s.menuOpen ? "translateX(0)" : "translateX(100%)",
       menuPointer: s.menuOpen ? "auto" : "none",
       menuVis: s.menuOpen ? "visible" : "hidden",
-      goProjects: () => { this.setState({ menuOpen: false }); window.location.href = "./projects-mobile.html"; },
+      goProjects: () => { this.setState({ menuOpen: false }); window.location.href = "./projects-tablet.html"; },
       heroImg: { o: s.heroV ? 1 : 0, s: s.heroV ? 1.04 : 1.1 },
       heroImgRef: this.heroImgRef,
       heroT1: s.rv.hero ? 0 : 105,
@@ -629,7 +640,7 @@ class Component extends DCLogic {
       heroFadeO: s.rv.hero ? 1 : 0,
       heroFadeY: s.rv.hero ? 0 : 16,
       heroCardO: s.rv.hero ? 1 : 0,
-      heroCardY: s.rv.hero ? 0 : 30,
+      heroCardY: s.rv.hero ? 0 : 34,
       heroBlk: rvv(s.rv.hero), heroLine: s.rv.heroL ? 1 : 0,
       dataBlk: rvv(s.rv.data),
       conBlk: rvv(s.rv.concept), conLine: s.rv.conceptL ? 1 : 0,
@@ -639,12 +650,12 @@ class Component extends DCLogic {
       rtBlk: rvv(s.rv.route),
       prtBlk: rvv(s.rv.prt),
       othBlk: rvv(s.rv.oth),
-      figures: this.FIGURES.map((it, i) => Object.assign({}, it, { delay: (i * 50) + "ms", o: s.rv.data ? 1 : 0, y: s.rv.data ? 0 : 18 })),
-      indicators: this.INDICATORS.map((it, i) => Object.assign({}, it, { delay: (i * 60) + "ms", o: s.rv.ind ? 1 : 0, y: s.rv.ind ? 0 : 18 })),
-      services: this.SERVICES.map((it, i) => Object.assign({}, it, { delay: (i * 40) + "ms", o: s.rv.srv ? 1 : 0, y: s.rv.srv ? 0 : 14 })),
-      pins: this.PINS.map((p, i) => Object.assign({}, p, { delay: (200 + i * 100) + "ms", o: s.rv.prt ? 1 : 0, s: s.rv.prt ? 1 : 0.85 })),
-      partners: this.PARTNERS.map((it, i) => Object.assign({}, it, { delay: (i * 60) + "ms", o: s.rv.prt ? 1 : 0, y: s.rv.prt ? 0 : 16 })),
-      others: this.OTHERS.map((it, i) => Object.assign({}, it, { delay: (i * 70) + "ms", o: s.rv.oth ? 1 : 0, y: s.rv.oth ? 0 : 22 })),
+      figures: this.FIGURES.map((it, i) => Object.assign({}, it, { delay: (i * 60) + "ms", o: s.rv.data ? 1 : 0, y: s.rv.data ? 0 : 22 })),
+      indicators: this.INDICATORS.map((it, i) => Object.assign({}, it, { delay: (i * 70) + "ms", o: s.rv.ind ? 1 : 0, y: s.rv.ind ? 0 : 22 })),
+      services: this.SERVICES.map((it, i) => Object.assign({}, it, { delay: (i * 50) + "ms", o: s.rv.srv ? 1 : 0, y: s.rv.srv ? 0 : 18 })),
+      pins: this.PINS.map((p, i) => Object.assign({}, p, { delay: (200 + i * 110) + "ms", o: s.rv.prt ? 1 : 0, s: s.rv.prt ? 1 : 0.85 })),
+      partners: this.PARTNERS.map((it, i) => Object.assign({}, it, { delay: (i * 70) + "ms", o: s.rv.prt ? 1 : 0, y: s.rv.prt ? 0 : 20 })),
+      others: this.OTHERS.map((it, i) => Object.assign({}, it, { delay: (i * 70) + "ms", o: s.rv.oth ? 1 : 0, y: s.rv.oth ? 0 : 26 })),
       tabs: this.TABS.map(t => ({
         label: t,
         bg: t === s.tab ? "rgb(43,58,39)" : "transparent",
@@ -653,7 +664,7 @@ class Component extends DCLogic {
         onPick: () => this.setState({ tab: t, idx: 0 }),
       })),
       photos: photos.map((p, i) => Object.assign({}, p, { onOpen: () => this.openLb(i) })),
-      dots: Array.from({ length: maxIdx + 1 }, (_, i) => ({ width: i === idx ? 32 : 14, opacity: i === idx ? 1 : 0.35 })),
+      dots: Array.from({ length: maxIdx + 1 }, (_, i) => ({ width: i === idx ? 40 : 18, opacity: i === idx ? 1 : 0.35 })),
       vpRef: el => { this._vp = el; },
       trRef: el => { this._tr = el; },
       offset: s.dragging ? Math.min(0, Math.max(-m.maxScroll, s.dragStartOffset + s.dragDeltaX)) : this.offsetFor(idx),
@@ -671,8 +682,8 @@ class Component extends DCLogic {
       ctaT2Y: s.rv.ctahead ? 0 : 100, ctaT2O: s.rv.ctahead ? 1 : 0,
       ctaT3Y: s.rv.ctahead ? 0 : 100, ctaT3O: s.rv.ctahead ? 1 : 0,
       ctaLine: s.rv.ctaheadL ? 1 : 0,
-      ctaFormO: s.rv.ctaform ? 1 : 0, ctaFormY: s.rv.ctaform ? 0 : 20,
-      footO: s.rv.foot ? 1 : 0, footY: s.rv.foot ? 0 : 28,
+      ctaFormO: s.rv.ctaform ? 1 : 0, ctaFormY: s.rv.ctaform ? 0 : 24,
+      footO: s.rv.foot ? 1 : 0, footY: s.rv.foot ? 0 : 32,
       footerVideo: !!s.footerVideo,
       footerVideoRef: this.footerVideoRef,
       footerCols: [
