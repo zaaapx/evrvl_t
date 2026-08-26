@@ -9,7 +9,7 @@
 <meta name="ext-resource-dependency" content="./assets/roya-resort.webp" data-resource-id="roya-resort" />
 <meta name="ext-resource-dependency" content="./assets/roya-desa.webp" data-resource-id="roya-desa" />
 <meta name="ext-resource-dependency" content="./assets/balicopter.webp" data-resource-id="balicopter" />
-<script>(function(){var w=window.innerWidth,d=w>=1024?"desktop":w>=768?"tablet":"mobile";if(d!=="desktop"){var s={desktop:"index.html",tablet:"index-tablet.html",mobile:"index-mobile.html"};window.location.replace(s[d]);}})();</script>
+<script>(function(){var w=window.innerWidth,d=w>=1024?"desktop":w>=768?"tablet":"mobile";if(d!=="tablet"){var s={desktop:"index.html",tablet:"index-tablet.html",mobile:"index-mobile.html"};window.location.replace(s[d]);}})();</script>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -29,14 +29,16 @@
 </helmet>
 <div style="width: {{ mobileWidth }}; margin: 0 auto; position: relative; background: #EBEAE6">
 <div style="display: {{ mobileHeaderDisplay }}; position: fixed; left: 0; right: 0; top: {{ headerTop }}; height: 0; z-index: 400">
-  <div ref="{{ hdrRef }}" data-export-hide="true" style="position: relative; margin: 0 12px; z-index: 500; border-radius: 14px; background: rgba(0,0,0,0.32); backdrop-filter: blur(24px); transform: translateY(0); transition: transform 0.4s cubic-bezier(.16,1,.3,1); display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 10px 10px 14px; box-sizing: border-box; opacity:{{ headerOpacity }}; transform:translateY({{ headerOffsetY }}px); transition: opacity 0.6s ease-out, transform 0.6s ease-out">
-    <a href="./" style="display: block; flex-shrink: 0"><img src="./assets/logo-mobile.svg" alt="EVERVILLE" style="width: 120px; height: 36px; display: block"></a>
-    <div style="display: flex; flex-direction: row; align-items: center; gap: 6px">
-      <div style="display: flex; flex-direction: row; gap: 4px; align-items: center; padding: 12px 10px; border-radius: 8px; cursor: pointer">
+  <div ref="{{ hdrRef }}" data-export-hide="true" style="position: relative; margin: 0 12px; z-index: 500; border-radius: 16px; background: rgba(0,0,0,0.3); backdrop-filter: blur(24px); transform: translateY(0); transition: transform 0.4s cubic-bezier(.16,1,.3,1); display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 12px 12px 20px; box-sizing: border-box; overflow: hidden; opacity:{{ headerOpacity }}; transform:translateY({{ headerOffsetY }}px); transition: opacity 0.6s ease-out, transform 0.6s ease-out">
+    <a href="./" style="display: block; flex-shrink: 0"><img src="./assets/logo.svg" alt="EVERVILLE" style="width: 128px; height: 40px; display: block"></a>
+    <div style="display: flex; flex-direction: row; align-items: center; gap: 8px">
+      <div onClick="{{ openInvest }}" style="border-radius: 8px; background: #fff; display: inline-flex; padding: 12px 18px; justify-content: center; align-items: center; box-sizing: border-box; cursor: pointer; transition: background 0.2s ease-out" style-hover="background: rgb(206,210,199)"><span style="font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 700; font-size: 14px; line-height: 21px; color: rgb(43,58,39); white-space: nowrap">Инвестировать</span></div>
+      <div onClick="{{ goLogin }}" style="border-radius: 8px; background: rgb(43,58,39); display: inline-flex; padding: 12px 18px; justify-content: center; align-items: center; box-sizing: border-box; cursor: pointer; transition: background 0.2s ease-out" style-hover="background: rgb(30,41,27)"><span style="font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 700; font-size: 14px; line-height: 21px; color: #fff; white-space: nowrap">Войти</span></div>
+      <div style="display: flex; flex-direction: row; gap: 4px; align-items: center; padding: 12px 12px; border-radius: 8px; cursor: pointer; transition: background-color 0.2s ease-out" style-hover="background-color: rgba(43,58,39,0.5)">
         <span style="font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 700; font-size: 13px; color: #fff">RU</span>
         <svg width="12" height="6" viewBox="0 0 14 7" fill="#fff"><path d="M 7 7 L 0.938 1.75 L 13.062 1.75 L 7 7 Z"></path></svg>
       </div>
-      <div onClick="{{ onToggleMenu }}" style="width: 48px; height: 48px; border-radius: 10px; background: rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center; cursor: pointer; flex-shrink: 0">
+      <div onClick="{{ onToggleMenu }}" style="width: 45px; height: 45px; border-radius: 8px; background: rgba(255,255,255,0.14); display: flex; align-items: center; justify-content: center; cursor: pointer; flex-shrink: 0">
         <div style="position: relative; width: 22px; height: 22px; flex-shrink: 0">
           <span style="position: absolute; left: 1px; top: 6px; width: 20px; height: 1.5px; border-radius: 1px; background: #fff; transform: {{ barTop }}; transition: transform 0.4s cubic-bezier(.16,1,.3,1)"></span>
           <span style="position: absolute; left: 1px; top: 10.25px; width: 20px; height: 1.5px; border-radius: 1px; background: #fff; opacity: {{ barMidO }}; transform: {{ barMid }}; transition: opacity 0.2s ease-out, transform 0.4s cubic-bezier(.16,1,.3,1)"></span>
@@ -72,10 +74,10 @@
     <a href="./" style="width: 131px; justify-self: start; flex-shrink: 0; display: block; height: 42px; align-self: flex-end; flex-direction: column-reverse"><img src="./assets/logo.svg" alt="EVERVILLE" style="width: 128px; height: 40px; display: block"></a>
     <div style="display:flex; flex-direction:row; gap:clamp(10px,1.8vw,36px); align-items:center; flex-wrap:nowrap; justify-self:start; margin-left:clamp(8px,1.2vw,20px); min-width:0; overflow:hidden;">
       <span style="font-size: clamp(11px,0.97vw,16px); font-weight: 400; line-height: 21px; color: #fff; text-transform: none; white-space: nowrap; cursor: pointer; transition: color 0.2s ease-out" onClick="{{ goProjects }}" style-hover="color: rgba(255,255,255,0.65)">Проекты</span>
-      <a href="./investments.html" style="font-size: clamp(11px,0.97vw,16px); font-weight: 400; line-height: 21px; color: #fff; text-transform: none; white-space: nowrap; transition: color 0.2s ease-out; text-decoration: none" style-hover="color: rgba(255,255,255,0.65)">Инвестиции</a>
-      <a href="./legal.html" style="font-size: clamp(11px,0.97vw,16px); font-weight: 400; line-height: 21px; color: #fff; text-transform: none; white-space: nowrap; transition: color 0.2s ease-out; text-decoration: none" style-hover="color: rgba(255,255,255,0.65)">Юридика</a>
-      <a href="./about.html" style="font-size: clamp(11px,0.97vw,16px); font-weight: 400; line-height: 21px; color: #fff; text-transform: none; white-space: nowrap; transition: color 0.2s ease-out; text-decoration: none" style-hover="color: rgba(255,255,255,0.65)">О компании</a>
-      <a href="./contacts.html" style="font-size: clamp(11px,0.97vw,16px); font-weight: 400; line-height: 21px; color: #fff; text-transform: none; white-space: nowrap; transition: color 0.2s ease-out; text-decoration: none" style-hover="color: rgba(255,255,255,0.65)">Контакты</a>
+      <a href="./investments-tablet.html" style="font-size: clamp(11px,0.97vw,16px); font-weight: 400; line-height: 21px; color: #fff; text-transform: none; white-space: nowrap; transition: color 0.2s ease-out; text-decoration: none" style-hover="color: rgba(255,255,255,0.65)">Инвестиции</a>
+      <a href="./legal-tablet.html" style="font-size: clamp(11px,0.97vw,16px); font-weight: 400; line-height: 21px; color: #fff; text-transform: none; white-space: nowrap; transition: color 0.2s ease-out; text-decoration: none" style-hover="color: rgba(255,255,255,0.65)">Юридика</a>
+      <a href="./about-tablet.html" style="font-size: clamp(11px,0.97vw,16px); font-weight: 400; line-height: 21px; color: #fff; text-transform: none; white-space: nowrap; transition: color 0.2s ease-out; text-decoration: none" style-hover="color: rgba(255,255,255,0.65)">О компании</a>
+      <a href="./contacts-tablet.html" style="font-size: clamp(11px,0.97vw,16px); font-weight: 400; line-height: 21px; color: #fff; text-transform: none; white-space: nowrap; transition: color 0.2s ease-out; text-decoration: none" style-hover="color: rgba(255,255,255,0.65)">Контакты</a>
     </div>
     <div style="display: flex; flex-direction: row; gap: 12px; align-items: center; flex-wrap: nowrap; justify-self: end; min-width: 0">
       <div style="display:flex; flex-direction:row; gap:8px; align-items:stretch;">
@@ -325,7 +327,7 @@
       <div style="display: flex; flex-direction: column; gap: 0px; flex: 0 0 auto; position: relative; width: {{ tstTitleColW }}">
         <div style="overflow: hidden"><div style="display: flex; align-items: center; gap: 20px; transform: translateY({{ tstTitleY }}%); opacity: {{ tstTitleO }}; transition: transform 0.9s cubic-bezier(.16,1,.3,1), opacity 0.9s ease-out; height: 46px">
           
-          <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: clamp(24px,calc(-12.5px + 4.76vw),36px); color: rgb(25,35,22); white-space: nowrap">НАМ</span><span style="flex: 0 0 auto; width: clamp(60px,8vw,120px); height: 2px; background: rgb(25,35,22); display: block; transform: scaleX({{ tstLine }}); transform-origin: left; transition: transform 0.7s cubic-bezier(.16,1,.3,1) 200ms"></span>
+          <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: clamp(24px,calc(-12.5px + 4.76vw),36px); color: rgb(25,35,22); white-space: nowrap">НАМ</span><span style="flex: 0 0 auto; width: 20px; height: 2px; background: rgb(25,35,22); display: block; transform: scaleX({{ tstLine }}); transform-origin: left; transition: transform 0.7s cubic-bezier(.16,1,.3,1) 200ms"></span>
         </div></div>
         <div style="overflow: hidden"><div style="display: flex; flex-direction: row; align-items: center; transform: translateY({{ tstTitleY }}%); opacity: {{ tstTitleO }}; transition: transform 0.9s cubic-bezier(.16,1,.3,1) 100ms, opacity 0.9s ease-out 100ms"><span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: clamp(24px,calc(-12.5px + 4.76vw),36px); color: rgb(25,35,22); white-space: nowrap">ДОВЕРЯЮТ</span></div></div>
       </div>
@@ -372,7 +374,7 @@
   <div style="width: 100%; max-width: 1320px; display: flex; flex-direction: row; justify-content: space-between; align-items: flex-start; gap: clamp(32px,4vw,64px); flex-wrap: wrap">
     <div data-reveal="faqhead" style="flex: 0 0 auto; font-size: clamp(28px,calc(21.7px + 0.62vw),42px); line-height: 1.3; text-transform: uppercase; color: rgb(25,35,22); display: flex; flex-direction: column; gap: 0px; position: {{ faqHeadPos }}; top: 120px">
       <div style="overflow: hidden"><div style="transform: translateY({{ faqT1Y }}%); opacity: {{ faqT1O }}; transition: transform 0.9s cubic-bezier(.16,1,.3,1) 0ms, opacity 0.9s ease-out 0ms"><span style="font-weight: 200; font-family: HeadingNow-82Light; font-size: clamp(24px,calc(-12.5px + 4.76vw),36px)">Частые</span></div></div>
-      <div style="overflow: hidden"><div style="display: flex; flex-direction: row; align-items: center; gap: clamp(20px,3vw,44px); transform: translateY({{ faqT2Y }}%); opacity: {{ faqT2O }}; transition: transform 0.9s cubic-bezier(.16,1,.3,1) 120ms, opacity 0.9s ease-out 120ms"><span style="flex: 0 0 auto; width: clamp(60px,8vw,120px); height: 2px; background: rgb(25,35,22); display: block; transform: scaleX({{ faqLine }}); transform-origin: right; transition: transform 0.7s cubic-bezier(.16,1,.3,1) 200ms"></span><span style="font-weight: 700; font-family: HeadingNow-84Regular; font-size: clamp(24px,calc(-12.5px + 4.76vw),36px); white-space: nowrap">Вопросы</span></div></div>
+      <div style="overflow: hidden"><div style="display: flex; flex-direction: row; align-items: center; gap: clamp(20px,3vw,44px); transform: translateY({{ faqT2Y }}%); opacity: {{ faqT2O }}; transition: transform 0.9s cubic-bezier(.16,1,.3,1) 120ms, opacity 0.9s ease-out 120ms"><span style="flex: 0 0 auto; width: 20px; height: 2px; background: rgb(25,35,22); display: block; transform: scaleX({{ faqLine }}); transform-origin: right; transition: transform 0.7s cubic-bezier(.16,1,.3,1) 200ms"></span><span style="font-weight: 700; font-family: HeadingNow-84Regular; font-size: clamp(24px,calc(-12.5px + 4.76vw),36px); white-space: nowrap">Вопросы</span></div></div>
     </div>
     <div data-reveal="faqitems" style="flex: 1 1 520px; max-width: 760px; display: flex; flex-direction: column; opacity: {{ faqItemsO }}; transform: translateY({{ faqItemsY }}px); transition: transform 0.8s cubic-bezier(.16,1,.3,1) 150ms, opacity 0.8s ease-out 150ms">
       <sc-for list="{{ faqItems }}" as="f" hint-placeholder-count="5">
@@ -397,15 +399,15 @@
   <img src="./assets/cta-bg.webp" alt="" loading="lazy" decoding="async" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; pointer-events: none">
   <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15,20,13,0.35), rgba(15,20,13,0.15) 45%, rgba(15,20,13,0.4)); display: flex; justify-content: center; align-items: center; padding: 0 {{ padX }}; box-sizing: border-box"><div style="position: relative; width: 100%; max-width: 1000px; display: flex; flex-direction: column; gap: clamp(24px,2.2vw,32px)">
     <div data-reveal="ctahead" style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: {{ ctaFont }}; line-height: 1.2; text-transform: uppercase; color: #fff; display: flex; flex-direction: column; align-items: center; gap: 6px">
-      <div style="overflow: hidden"><div style="display: flex; flex-direction: row; align-items: center; gap: clamp(20px,3vw,24px)"><span style="display: block; white-space: nowrap; transform: translateY({{ ctaT1Y }}%); opacity: {{ ctaT1O }}; transition: transform 0.9s cubic-bezier(.16,1,.3,1) 0ms, opacity 0.9s ease-out 0ms">Финансовая модель</span><span style="flex: 0 0 auto; width: clamp(90px,20vw,299px); height: 2px; background: #fff; display: block; transform: scaleX({{ ctaLine }}); transform-origin: left; transition: transform 0.7s cubic-bezier(.16,1,.3,1) 200ms"></span></div></div>
-      <div style="overflow: hidden"><div style="display: flex; flex-direction: row; align-items: center; gap: clamp(20px,3vw,24px); transform: translateY({{ ctaT2Y }}%); opacity: {{ ctaT2O }}; transition: transform 0.9s cubic-bezier(.16,1,.3,1) 120ms, opacity 0.9s ease-out 120ms"><span style="flex: 0 0 auto; width: clamp(90px,20vw,299px); height: 2px; background: #fff; display: block; transform: scaleX({{ ctaLine }}); transform-origin: right; transition: transform 0.7s cubic-bezier(.16,1,.3,1) 200ms"></span><span style="white-space: nowrap; font-family: HeadingNow-82Light">по вашему запросу</span></div></div>
+      <div style="overflow: hidden"><div style="display: flex; flex-direction: row; align-items: center; gap: clamp(20px,3vw,24px)"><span style="display: block; white-space: nowrap; transform: translateY({{ ctaT1Y }}%); opacity: {{ ctaT1O }}; transition: transform 0.9s cubic-bezier(.16,1,.3,1) 0ms, opacity 0.9s ease-out 0ms">Финансовая модель</span><span style="flex: 0 0 auto; width: 20px; height: 2px; background: #fff; display: block; transform: scaleX({{ ctaLine }}); transform-origin: left; transition: transform 0.7s cubic-bezier(.16,1,.3,1) 200ms"></span></div></div>
+      <div style="overflow: hidden"><div style="display: flex; flex-direction: row; align-items: center; gap: clamp(20px,3vw,24px); transform: translateY({{ ctaT2Y }}%); opacity: {{ ctaT2O }}; transition: transform 0.9s cubic-bezier(.16,1,.3,1) 120ms, opacity 0.9s ease-out 120ms"><span style="flex: 0 0 auto; width: 20px; height: 2px; background: #fff; display: block; transform: scaleX({{ ctaLine }}); transform-origin: right; transition: transform 0.7s cubic-bezier(.16,1,.3,1) 200ms"></span><span style="white-space: nowrap; font-family: HeadingNow-82Light">по вашему запросу</span></div></div>
       </div>
     <span style="max-width: 708px; margin: 0 auto; text-align: center; font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 400; font-size: clamp(15px,calc(12.1px + 0.38vw),20px); line-height: 1.4; color: #fff; opacity: {{ ctaFormO }}; transform: translateY({{ ctaFormY }}px); transition: transform 0.8s cubic-bezier(.16,1,.3,1) 200ms, opacity 0.8s ease-out 200ms">Оставьте контакты — пришлём модель проекта, юридическую структуру сделки и доступ к Invest Portal. Без звонков «по кругу»: один менеджер ведёт вас от знакомства до отчётности.</span>
-    <div data-reveal="ctaform" style="display: flex; flex-direction: row; gap: 10px; align-items: stretch; flex-wrap: wrap; margin-top: clamp(14px,2.6vw,38px); opacity: {{ ctaFormO }}; transform: translateY({{ ctaFormY }}px); transition: transform 0.8s cubic-bezier(.16,1,.3,1) 300ms, opacity 0.8s ease-out 300ms">
-      <input type="text" ref="{{ ctaNameRef }}" placeholder="Ваше имя *" style="flex: 1 1 240px; min-width: 0; height: 53px; border: none; outline: none; border-radius: 10px; background: rgb(235,234,230); padding: 0 16px; box-sizing: border-box; font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 600; font-size: 14px; color: rgb(25,35,22); box-shadow: {{ ctaNameRing }}">
-      <input type="email" ref="{{ ctaMailRef }}" placeholder="Ваш e-mail *" style="flex: 1 1 240px; min-width: 0; height: 53px; border: none; outline: none; border-radius: 10px; background: rgb(235,234,230); padding: 0 16px; box-sizing: border-box; font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 600; font-size: 14px; color: rgb(25,35,22); box-shadow: {{ ctaMailRing }}">
-        <input type="tel" ref="{{ ctaPhoneRef }}" placeholder="Телефон или Telegram *" style="flex: 1 1 240px; min-width: 0; height: 53px; border: none; outline: none; border-radius: 10px; background: rgb(235,234,230); padding: 0 16px; box-sizing: border-box; font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 600; font-size: 14px; color: rgb(25,35,22); box-shadow: {{ ctaPhoneRing }}">
-      <div onClick="{{ submitCta }}" style="flex: 1 1 200px; height: 53px; border-radius: 8px; background: rgb(43,58,39); display: flex; flex-direction: row; gap: 10px; justify-content: center; align-items: center; cursor: pointer; transition: background 0.2s ease-out" style-hover="background: rgb(30,41,27)">
+    <div data-reveal="ctaform" style="display: flex; flex-direction: column; gap: 10px; align-items: stretch; max-width: 520px; margin-left: auto; margin-right: auto; width: 100%; margin-top: clamp(14px,2.6vw,38px); opacity: {{ ctaFormO }}; transform: translateY({{ ctaFormY }}px); transition: transform 0.8s cubic-bezier(.16,1,.3,1) 300ms, opacity 0.8s ease-out 300ms">
+      <input type="text" ref="{{ ctaNameRef }}" placeholder="Ваше имя *" style="flex: 0 0 auto; width: 100%; min-width: 0; height: 53px; border: none; outline: none; border-radius: 10px; background: rgb(235,234,230); padding: 0 16px; box-sizing: border-box; font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 600; font-size: 14px; color: rgb(25,35,22); box-shadow: {{ ctaNameRing }}">
+      <input type="email" ref="{{ ctaMailRef }}" placeholder="Ваш e-mail *" style="flex: 0 0 auto; width: 100%; min-width: 0; height: 53px; border: none; outline: none; border-radius: 10px; background: rgb(235,234,230); padding: 0 16px; box-sizing: border-box; font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 600; font-size: 14px; color: rgb(25,35,22); box-shadow: {{ ctaMailRing }}">
+        <input type="tel" ref="{{ ctaPhoneRef }}" placeholder="Телефон или Telegram *" style="flex: 0 0 auto; width: 100%; min-width: 0; height: 53px; border: none; outline: none; border-radius: 10px; background: rgb(235,234,230); padding: 0 16px; box-sizing: border-box; font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 600; font-size: 14px; color: rgb(25,35,22); box-shadow: {{ ctaPhoneRing }}">
+      <div onClick="{{ submitCta }}" style="flex: 0 0 auto; width: 100%; height: 53px; border-radius: 8px; background: rgb(43,58,39); display: flex; flex-direction: row; gap: 10px; justify-content: center; align-items: center; cursor: pointer; transition: background 0.2s ease-out" style-hover="background: rgb(30,41,27)">
         <span style="font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 700; font-size: 14px; text-transform: none; color: #fff; white-space: nowrap">Получить модель</span>
         <svg width="18" height="12" viewBox="0 0 24 14" fill="none"><path d="M 1 7 L 23 7 M 16 1 L 23 7 L 16 13" stroke="#fff" stroke-width="1.5" fill="none"></path></svg>
       </div>
@@ -415,11 +417,11 @@
 </div><div style="position: relative; overflow: hidden; background: url('./assets/footer-beach.webp') center / cover no-repeat, rgb(25,35,22); padding: {{ footPadTop }} {{ padX }} {{ footPadBottom }}; box-sizing: border-box; display: flex; flex-direction: column; align-items: center" data-om-label="footer" data-screen-label="Футер" ref="{{ footRef }}">
   <sc-if value="{{ footerVideo }}"><video ref="{{ footerVideoRef }}" src="./assets/footer-video.mp4" poster="./assets/footer-beach.webp" preload="none" loop="{{ true }}" muted="{{ true }}" playsInline="{{ true }}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; pointer-events: none"></video></sc-if>
   <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,18,12,0.85), rgba(10,18,12,0.6) 55%, rgba(10,18,12,0.35)); pointer-events: none"></div>
-  <div data-reveal="foot" style="position: relative; width: 100%; max-width: 1320px; display: flex; flex-direction: {{ footDir }}; justify-content: space-between; align-items: {{ footAlign }}; gap: clamp(32px,4vw,56px); flex-wrap: wrap; opacity: {{ footO }}; transform: translateY({{ footY }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1), opacity 0.9s ease-out; font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif">
-    <a href="./" style="display: block; flex: 0 0 auto"><img src="./assets/logo.svg" alt="EVERVILLE" style="width: 131px; height: auto; display: block"></a>
+  <div data-reveal="foot" style="position: relative; width: 100%; max-width: 1320px; display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); justify-items: start; align-items: start; gap: clamp(16px,2.2vw,28px); opacity: {{ footO }}; transform: translateY({{ footY }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1), opacity 0.9s ease-out; font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif">
+    <a href="./index-tablet.html" style="display: block; grid-column: 1 / -1; justify-self: center; margin-bottom: 8px"><img src="./assets/logo.svg" alt="EVERVILLE" style="width: 131px; height: auto; display: block"></a>
     <sc-for list="{{ footerCols }}" as="col" hint-placeholder-count="3">
-      <div style="display: flex; flex-direction: column; gap: clamp(24px,2.5vw,24px); flex: 0 1 auto; min-width: 160px; align-items: {{ footColAlign }}; text-align: {{ footTextAlign }}">
-        <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 18px; line-height: 1.2; text-transform: uppercase; color: #fff">{{ col.title }}</span>
+      <div style="display: flex; flex-direction: column; gap: clamp(20px,2.2vw,24px); flex: 0 1 auto; min-width: 0; align-items: {{ footColAlign }}; text-align: {{ footTextAlign }}">
+        <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 15px; line-height: 1.2; text-transform: uppercase; color: #fff">{{ col.title }}</span>
         <div style="display: flex; flex-direction: column; gap: 14px">
           <sc-for list="{{ col.links }}" as="lnk" hint-placeholder-count="3">
             <span onClick="{{ lnk.onClick }}" style="font-weight: 400; font-size: 16px; line-height: 1.1; color: #fff; cursor: pointer; transition: opacity 0.2s ease-out" style-hover="opacity: 0.65">{{ lnk.label }}</span>
@@ -427,19 +429,19 @@
         </div>
       </div>
     </sc-for>
-    <div style="display: flex; flex-direction: column; gap: clamp(24px,2.5vw,16px); flex: 0 1 auto; min-width: 200px; align-items: {{ footColAlign }}; text-align: {{ footTextAlign }}">
-      <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 18px; line-height: 1.2; text-transform: uppercase; color: #fff">Контакты</span>
-      <div style="display: flex; flex-direction: row; gap: 4px; align-items: center">
-        <a href="https://t.me/everville_estate" target="_blank" rel="noopener" style="width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s ease-out" style-hover="background: rgba(255,255,255,0.12)" title="Telegram">
+    <div style="display: flex; flex-direction: column; gap: clamp(24px,2.5vw,16px); flex: 0 1 auto; min-width: 0; align-items: {{ footColAlign }}; text-align: {{ footTextAlign }}">
+      <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 15px; line-height: 1.2; text-transform: uppercase; color: #fff">Контакты</span>
+      <div style="display: flex; flex-direction: row; gap: 2px; align-items: center; flex-wrap: wrap; min-width: 0">
+        <a href="https://t.me/everville_estate" target="_blank" rel="noopener" style="width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; cursor: pointer; flex: 0 0 auto; transition: background 0.2s ease-out" style-hover="background: rgba(255,255,255,0.12)" title="Telegram">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M 21.5 3.4 L 2.9 10.6 C 2 10.9 2 11.5 2.8 11.7 L 7.5 13.2 L 9.3 18.7 C 9.5 19.3 9.4 19.6 10.1 19.6 C 10.6 19.6 10.8 19.4 11.1 19.1 C 11.3 18.9 12.4 17.8 13.6 16.6 L 18.5 20.2 C 19.4 20.7 20 20.4 20.3 19.4 L 23.5 4.9 C 23.8 3.6 22.9 3 21.5 3.4 Z M 8.5 12.9 L 18.9 6.4 C 19.4 6.1 19.9 6.2 19.5 6.6 L 10.6 14.6 L 10.3 18.2 Z"></path></svg>
         </a>
-        <a href="https://wa.me/62822555990" target="_blank" rel="noopener" style="width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s ease-out" style-hover="background: rgba(255,255,255,0.12)" title="WhatsApp">
+        <a href="https://wa.me/62822555990" target="_blank" rel="noopener" style="width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; cursor: pointer; flex: 0 0 auto; transition: background 0.2s ease-out" style-hover="background: rgba(255,255,255,0.12)" title="WhatsApp">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M 12 2 C 6.5 2 2 6.4 2 11.9 C 2 13.7 2.5 15.4 3.4 16.9 L 2 22 L 7.3 20.6 C 8.7 21.4 10.3 21.8 12 21.8 C 17.5 21.8 22 17.4 22 11.9 C 22 6.4 17.5 2 12 2 Z M 12 20 C 10.5 20 9 19.6 7.8 18.9 L 7.5 18.7 L 4.4 19.5 L 5.2 16.5 L 5 16.2 C 4.2 14.9 3.8 13.4 3.8 11.9 C 3.8 7.4 7.5 3.8 12 3.8 C 16.5 3.8 20.2 7.4 20.2 11.9 C 20.2 16.4 16.5 20 12 20 Z M 16.5 14.1 C 16.3 14 15.1 13.4 14.9 13.3 C 14.6 13.2 14.5 13.2 14.3 13.4 C 14.1 13.7 13.6 14.2 13.5 14.4 C 13.3 14.6 13.2 14.6 12.9 14.5 C 11.4 13.7 10.4 13.1 9.4 11.4 C 9.1 10.9 9.7 11 10.2 10 C 10.3 9.8 10.2 9.6 10.2 9.5 C 10.1 9.4 9.6 8.2 9.4 7.7 C 9.2 7.2 9 7.3 8.8 7.3 C 8.7 7.3 8.5 7.3 8.3 7.3 C 8.1 7.3 7.8 7.3 7.6 7.6 C 7.3 7.9 6.6 8.5 6.6 9.7 C 6.6 11 7.6 12.2 7.7 12.4 C 7.8 12.5 9.6 15.3 12.3 16.5 C 14 17.2 14.7 17.3 15.6 17.2 C 16.1 17.1 17.1 16.6 17.3 16 C 17.5 15.4 17.5 14.9 17.4 14.8 C 17.4 14.7 17.2 14.6 16.9 14.5 Z"></path></svg>
         </a>
-        <a href="https://www.instagram.com/everville.estate?igsh=OHVhd2gxdmZkamFz" target="_blank" rel="noopener" style="width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s ease-out" style-hover="background: rgba(255,255,255,0.12)" title="Instagram">
+        <a href="https://www.instagram.com/everville.estate?igsh=OHVhd2gxdmZkamFz" target="_blank" rel="noopener" style="width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; cursor: pointer; flex: 0 0 auto; transition: background 0.2s ease-out" style-hover="background: rgba(255,255,255,0.12)" title="Instagram">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"></rect><circle cx="12" cy="12" r="4.5"></circle><circle cx="17.6" cy="6.4" r="1.2" fill="#fff" stroke="none"></circle></svg>
         </a>
-        <a href="https://www.youtube.com/@everville.estate" target="_blank" rel="noopener" style="width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s ease-out" style-hover="background: rgba(255,255,255,0.12)" title="YouTube">
+        <a href="https://www.youtube.com/@everville.estate" target="_blank" rel="noopener" style="width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; cursor: pointer; flex: 0 0 auto; transition: background 0.2s ease-out" style-hover="background: rgba(255,255,255,0.12)" title="YouTube">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M 23 7.2 C 22.7 6 21.8 5.1 20.6 4.8 C 18.5 4.3 12 4.3 12 4.3 C 12 4.3 5.5 4.3 3.4 4.8 C 2.2 5.1 1.3 6 1 7.2 C 0.5 9.3 0.5 12 0.5 12 C 0.5 12 0.5 14.7 1 16.8 C 1.3 18 2.2 18.9 3.4 19.2 C 5.5 19.7 12 19.7 12 19.7 C 12 19.7 18.5 19.7 20.6 19.2 C 21.8 18.9 22.7 18 23 16.8 C 23.5 14.7 23.5 12 23.5 12 C 23.5 12 23.5 9.3 23 7.2 Z M 9.8 15.5 L 9.8 8.5 L 15.8 12 Z"></path></svg>
         </a>
       </div>
@@ -463,9 +465,9 @@
           <div style="display: flex; flex-direction: row; align-items: center; gap: clamp(18px,2.4vw,40px)"><span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; white-space: nowrap">на знакомство</span><span data-rule="right" style="flex: 1 1 auto; min-width: 40px; height: 2px; background: rgb(25,35,22); display: block; transform: scaleX(0); transform-origin: left center; transition: transform 0.9s cubic-bezier(.16,1,.3,1) 120ms"></span></div>
         </div>
         <div style="display: flex; flex-direction: column; gap: 10px">
-          <div style="display: flex; flex-direction: row; gap: 10px; flex-wrap: wrap">
-            <input ref="{{ nameRef }}" type="text" placeholder="Ваше имя *" style="flex: 1 1 220px; min-width: 0; box-shadow: {{ nameRing }}; height: 56px; border: none; outline: none; border-radius: 10px; background: #fff; padding: 0 18px; box-sizing: border-box; font-family: Outfit,sans-serif; font-weight: 500; font-size: 14px; color: rgb(25,35,22)">
-            <input ref="{{ mailRef }}" type="email" placeholder="E-mail *" style="flex: 1 1 220px; min-width: 0; box-shadow: {{ mailRing }}; height: 56px; border: none; outline: none; border-radius: 10px; background: #fff; padding: 0 18px; box-sizing: border-box; font-family: Outfit,sans-serif; font-weight: 500; font-size: 14px; color: rgb(25,35,22)">
+          <div style="display: flex; flex-direction: column; gap: 10px">
+            <input ref="{{ nameRef }}" type="text" placeholder="Ваше имя *" style="flex: 0 0 auto; width: 100%; min-width: 0; box-shadow: {{ nameRing }}; height: 56px; border: none; outline: none; border-radius: 10px; background: #fff; padding: 0 18px; box-sizing: border-box; font-family: Outfit,sans-serif; font-weight: 500; font-size: 14px; color: rgb(25,35,22)">
+            <input ref="{{ mailRef }}" type="email" placeholder="E-mail *" style="flex: 0 0 auto; width: 100%; min-width: 0; box-shadow: {{ mailRing }}; height: 56px; border: none; outline: none; border-radius: 10px; background: #fff; padding: 0 18px; box-sizing: border-box; font-family: Outfit,sans-serif; font-weight: 500; font-size: 14px; color: rgb(25,35,22)">
           </div>
           <input ref="{{ phoneRef }}" type="tel" placeholder="Телефон или Telegram *" style="width: 100%; box-shadow: {{ phoneRing }}; height: 56px; border: none; outline: none; border-radius: 10px; background: #fff; padding: 0 18px; box-sizing: border-box; font-family: Outfit,sans-serif; font-weight: 500; font-size: 14px; color: rgb(25,35,22)">
           <sc-if value="{{ investHasError }}">
@@ -503,9 +505,9 @@
     </div>
   </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;forceView&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;auto&quot;,&quot;desktop&quot;,&quot;tablet&quot;,&quot;mobile&quot;],&quot;default&quot;:&quot;auto&quot;,&quot;tsType&quot;:&quot;\&quot;auto\&quot; | \&quot;desktop\&quot; | \&quot;tablet\&quot; | \&quot;mobile\&quot;&quot;,&quot;section&quot;:&quot;Просмотр&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:834,&quot;height&quot;:1194},&quot;forceView&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;auto&quot;,&quot;desktop&quot;,&quot;tablet&quot;,&quot;mobile&quot;],&quot;default&quot;:&quot;tablet&quot;,&quot;tsType&quot;:&quot;\&quot;auto\&quot; | \&quot;desktop\&quot; | \&quot;tablet\&quot; | \&quot;mobile\&quot;&quot;,&quot;section&quot;:&quot;Просмотр&quot;}}">
 class Component extends DCLogic {
-  state = { logoTop: 287, logoLeft: 397, logoWidth: 526, carouselIndex: 0, bgOpacity: 0, bgScale: 1.08, topOpacity: 0, topScale: 1.1, logoOpacity: 0, logoScale: 0.92, logoOffsetY: 48, headerOpacity: 0, headerOffsetY: -24, bottomOpacity: 0, bottomTextOpacity: 0, bottomTextOffsetY: 24, dragging: false, dragStartX: 0, dragStartOffset: 0, dragDeltaX: 0, mobile: typeof window !== "undefined" && window.innerWidth <= 768, tablet: typeof window !== "undefined" && window.innerWidth > 768 && window.innerWidth <= 1200, menuOpen: false };
+  state = { logoTop: 287, logoLeft: 397, logoWidth: 526, carouselIndex: 0, bgOpacity: 0, bgScale: 1.08, topOpacity: 0, topScale: 1.1, logoOpacity: 0, logoScale: 0.92, logoOffsetY: 48, headerOpacity: 0, headerOffsetY: -24, bottomOpacity: 0, bottomTextOpacity: 0, bottomTextOffsetY: 24, dragging: false, dragStartX: 0, dragStartOffset: 0, dragDeltaX: 0, mobile: typeof window !== "undefined" && window.innerWidth <= 1024, tablet: typeof window !== "undefined" && window.innerWidth > 768 && window.innerWidth <= 1200, menuOpen: false };
   MOBILE_MAX = 768;
   TABLET_MAX = 1200;
   CARD_W = 536; CARD_GAP = 24;
@@ -760,7 +762,7 @@ class Component extends DCLogic {
     this.setState({ dragging: false, dragDeltaX: 0, carouselIndex: idx });
   }
   renderVals() {
-    const forceView = this.props.forceView || "auto";
+    const forceView = "tablet";
     const projects = [
       { tag: "стандарт девелопмента", title: "ROYA RESORT", subtitle: "резорт · сёрф · гольф", image: (window.__resources && window.__resources['roya-resort']) || './assets/roya-resort.webp', location: "Dreamland Beach, Бали" },
       { tag: "инфраструктура города", title: "ROYA DESA", subtitle: "прибрежный город · марина", image: (window.__resources && window.__resources['roya-desa']) || './assets/roya-desa.webp', location: "Чандидаса, Бали" },
@@ -853,10 +855,10 @@ class Component extends DCLogic {
       onToggleMenu: () => { this._hdrHidden = false; this.applyHdr(); this.setState(s => ({ menuOpen: !s.menuOpen })); },
       goProjects: () => {
         const w = window.innerWidth;
-        const page = w >= 1024 ? "projects.html" : w >= 768 ? "projects-tablet.html" : "projects-mobile.html";
+        const page = w >= 1024 ? "projects-tablet.html" : w >= 768 ? "projects-tablet.html" : "projects-mobile.html";
         window.location.href = "./" + page;
       },
-      navItems: [{ label: "Проекты", onClick: () => { window.location.href = "./" + (window.innerWidth >= 1024 ? "projects.html" : window.innerWidth >= 768 ? "projects-tablet.html" : "projects-mobile.html"); } }, { label: "Инвестиции" }, { label: "Юридика" }, { label: "О компании" }, { label: "Контакты" }],
+      navItems: [{ label: "Проекты", onClick: () => { window.location.href = "./" + (window.innerWidth >= 1024 ? "projects-tablet.html" : window.innerWidth >= 768 ? "projects-tablet.html" : "projects-mobile.html"); } }, { label: "Инвестиции" }, { label: "Юридика" }, { label: "О компании" }, { label: "Контакты" }],
       h1Y: this.state.sec1Visible ? 0 : 100,
       h1O: this.state.sec1Visible ? 1 : 0,
       h2Y: this.state.sec1Visible ? 0 : 100,
@@ -879,7 +881,7 @@ class Component extends DCLogic {
       projTitleO: this.state.projVisible ? 1 : 0,
       projTitleB: this.state.projVisible ? 0 : 0,
       lineScale3: this.state.projLinesVisible ? 1 : 0,
-      projects: projects.map(p => Object.assign({}, p, { onOpen: () => { if (this._movedCard) { this._movedCard = false; return; } const map = {"ROYA RESORT":"./roya.html","ROYA DESA":"./roya-desa.html","BALICOPTER":"./balicopter.html"}; if (map[p.title]) window.location.href = map[p.title]; } })),
+      projects: projects.map(p => Object.assign({}, p, { onOpen: () => { if (this._movedCard) { this._movedCard = false; return; } const map = {"ROYA RESORT":"./roya-tablet.html","ROYA DESA":"./roya-desa-tablet.html","BALICOPTER":"./balicopter-tablet.html"}; if (map[p.title]) window.location.href = map[p.title]; } })),
       cardW: cardW + "px",
       cardGap: gap + "px",
       pillLeft: isMob ? "12px" : "131px",
@@ -965,21 +967,21 @@ class Component extends DCLogic {
       footerVideoRef: this.footerVideoRef,
       footerCols: [
         { title: "Проекты", links: [
-          { label: "Roya Resort", onClick: () => { window.location.href = "./roya.html"; } },
-          { label: "Roya Desa", onClick: () => { window.location.href = "./roya-desa.html"; } },
-          { label: "Balicopter", onClick: () => { window.location.href = "./balicopter.html"; } },
-          { label: "Marina", onClick: () => { window.location.href = "./marina.html"; } },
-          { label: "Sanatorium", onClick: () => { window.location.href = "./sanatorium.html"; } },
+          { label: "Roya Resort", onClick: () => { window.location.href = "./roya-tablet.html"; } },
+          { label: "Roya Desa", onClick: () => { window.location.href = "./roya-desa-tablet.html"; } },
+          { label: "Balicopter", onClick: () => { window.location.href = "./balicopter-tablet.html"; } },
+          { label: "Marina", onClick: () => { window.location.href = "./marina-tablet.html"; } },
+          { label: "Sanatorium", onClick: () => { window.location.href = "./sanatorium-tablet.html"; } },
         ] },
         { title: "Инвестору", links: [
-          { label: "Инвестиции", onClick: () => { window.location.href = "./investments.html"; } },
-          { label: "Юридика", onClick: () => { window.location.href = "./legal.html"; } },
-          { label: "О компании", onClick: () => { window.location.href = "./about.html"; } },
+          { label: "Инвестиции", onClick: () => { window.location.href = "./investments-tablet.html"; } },
+          { label: "Юридика", onClick: () => { window.location.href = "./legal-tablet.html"; } },
+          { label: "О компании", onClick: () => { window.location.href = "./about-tablet.html"; } },
         ] },
         { title: "Legal", links: [
-          { label: "Политика конфиденциальности", onClick: () => { window.location.href = "./legal-privacy.html"; } },
-          { label: "Пользовательское соглашение", onClick: () => { window.location.href = "./legal-terms.html"; } },
-          { label: "Инвестиционный дисклеймер", onClick: () => { window.location.href = "./legal-disclaimer.html"; } },
+          { label: "Политика конфиденциальности", onClick: () => { window.location.href = "./legal-privacy-tablet.html"; } },
+          { label: "Пользовательское соглашение", onClick: () => { window.location.href = "./legal-terms-tablet.html"; } },
+          { label: "Инвестиционный дисклеймер", onClick: () => { window.location.href = "./legal-disclaimer-tablet.html"; } },
         ] },
       ],
 

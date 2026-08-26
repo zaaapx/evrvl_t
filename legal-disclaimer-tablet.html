@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script>(function(){var w=window.innerWidth,d=w>=1024?"desktop":w>=768?"tablet":"mobile";if(d!=="desktop"){var s={desktop:"legal-privacy.html",tablet:"legal-privacy-tablet.html",mobile:"legal-privacy-mobile.html"};window.location.replace(s[d]);}})();</script>
+<script>(function(){var w=window.innerWidth,d=w>=1024?"desktop":w>=768?"tablet":"mobile";if(d!=="tablet"){var s={desktop:"legal-disclaimer.html",tablet:"legal-disclaimer-tablet.html",mobile:"legal-disclaimer-mobile.html"};window.location.replace(s[d]);}})();</script>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -23,21 +23,21 @@
 
   <sc-if value="{{ evrvlIsDesk }}" hint-placeholder-val="{{ true }}">
   <div style="position: fixed; left: clamp(12px,2.5vw,36px); right: clamp(12px,2.5vw,36px); top: clamp(10px,2vw,24px); z-index: 100; border-radius: 16px; background: rgba(0,0,0,0.3); backdrop-filter: blur(24px); display: grid; grid-template-columns: auto 1fr auto; padding: clamp(10px,1.2vw,16px) clamp(10px,1.2vw,16px) clamp(10px,1.2vw,16px) clamp(14px,1.8vw,24px); align-items: center; box-sizing: border-box; gap: 16px; overflow: hidden" data-om-label="header">
-    <a href="./index.html" style="width: 131px; justify-self: start; flex-shrink: 0; display: block; height: 42px; text-decoration: none"><img src="./assets/logo.svg" alt="EVERVILLE" style="width: 128px; height: 40px; display: block"></a>
+    <a href="./index-tablet.html" style="width: 131px; justify-self: start; flex-shrink: 0; display: block; height: 42px; text-decoration: none"><img src="./assets/logo.svg" alt="EVERVILLE" style="width: 128px; height: 40px; display: block"></a>
     <div style="display: flex; flex-direction: row; gap: clamp(10px,1.8vw,36px); align-items: center; flex-wrap: wrap; justify-self: start; margin-left: clamp(8px,1.2vw,20px); min-width: 0">
-      <a href="./projects.html" style="font-size: clamp(11px,0.97vw,16px); font-weight: 400; line-height: 21px; color: #fff; white-space: nowrap; transition: color 0.2s ease-out; text-decoration: none" style-hover="color: rgba(255,255,255,0.65)">Проекты</a>
-      <a href="./investments.html" style="font-size: clamp(11px,0.97vw,16px); font-weight: 400; line-height: 21px; color: #fff; white-space: nowrap; transition: color 0.2s ease-out; text-decoration: none" style-hover="color: rgba(255,255,255,0.65)">Инвестиции</a>
-      <span style="position: relative; font-size: clamp(11px,0.97vw,16px); font-weight: 700; line-height: 21px; color: #fff; white-space: nowrap; cursor: pointer" onClick="{{ goLegal }}" style-after="content: ''; position: absolute; left: 50%; bottom: -5px; width: 4px; height: 4px; margin-left: -2px; border-radius: 50%; background: #fff">Юридика</span>
-      <a href="./about.html" style="font-size: clamp(11px,0.97vw,16px); font-weight: 400; line-height: 21px; color: #fff; white-space: nowrap; transition: color 0.2s ease-out; text-decoration: none" style-hover="color: rgba(255,255,255,0.65)">О компании</a>
-      <a href="./contacts.html" style="font-size: clamp(11px,0.97vw,16px); font-weight: 400; line-height: 21px; color: #fff; white-space: nowrap; transition: color 0.2s ease-out; text-decoration: none" style-hover="color: rgba(255,255,255,0.65)">Контакты</a>
+      <a href="./projects-tablet.html" style="font-size: clamp(11px,0.97vw,16px); font-weight: 400; line-height: 21px; color: #fff; transition: color 0.2s ease-out; text-decoration: none" style-hover="color: rgba(255,255,255,0.65)">Проекты</a>
+      <a href="./investments-tablet.html" style="font-size: clamp(11px,0.97vw,16px); font-weight: 400; line-height: 21px; color: #fff; transition: color 0.2s ease-out; text-decoration: none" style-hover="color: rgba(255,255,255,0.65)">Инвестиции</a>
+      <span style="position: relative; font-size: clamp(11px,0.97vw,16px); font-weight: 700; line-height: 21px; color: #fff; cursor: pointer" onClick="{{ goLegal }}" style-after="content: ''; position: absolute; left: 50%; bottom: -5px; width: 4px; height: 4px; margin-left: -2px; border-radius: 50%; background: #fff">Юридика</span>
+      <a href="./about-tablet.html" style="font-size: clamp(11px,0.97vw,16px); font-weight: 400; line-height: 21px; color: #fff; transition: color 0.2s ease-out; text-decoration: none" style-hover="color: rgba(255,255,255,0.65)">О компании</a>
+      <a href="./contacts-tablet.html" style="font-size: clamp(11px,0.97vw,16px); font-weight: 400; line-height: 21px; color: #fff; transition: color 0.2s ease-out; text-decoration: none" style-hover="color: rgba(255,255,255,0.65)">Контакты</a>
     </div>
     <div style="display: flex; flex-direction: row; gap: 12px; align-items: center; flex-wrap: nowrap; justify-self: end; min-width: 0">
       <div style="display: flex; flex-direction: row; gap: 8px; align-items: stretch">
         <div onClick="{{ openInvest }}" style="border-radius: 8px; background: #fff; display: inline-flex; padding: 12px 16px; justify-content: center; align-items: center; box-sizing: border-box; cursor: pointer; transition: background 0.2s ease-out" style-hover="background: rgb(206,210,199)">
-          <span style="font-weight: 700; font-size: clamp(11px,0.97vw,16px); line-height: 21px; color: rgb(43,58,39); white-space: nowrap">Инвестировать</span>
+          <span style="font-weight: 700; font-size: clamp(11px,0.97vw,16px); line-height: 21px; color: rgb(43,58,39)">Инвестировать</span>
         </div>
         <div onClick="{{ goLogin }}" style="border-radius: 8px; background: rgb(43,58,39); display: inline-flex; padding: 12px 16px; justify-content: center; align-items: center; box-sizing: border-box; cursor: pointer; transition: background 0.2s ease-out" style-hover="background: rgb(30,41,27)">
-          <span style="font-weight: 700; font-size: clamp(11px,0.97vw,16px); line-height: 21px; color: #fff; white-space: nowrap">Войти</span>
+          <span style="font-weight: 700; font-size: clamp(11px,0.97vw,16px); line-height: 21px; color: #fff">Войти</span>
         </div>
       </div>
       <div style="backdrop-filter: blur(12px); display: flex; flex-direction: row; gap: 4px; padding: 16px; align-items: center; box-sizing: border-box; cursor: pointer; width: 69px; height: 45px; border-radius: 8px; transition: background-color 0.2s ease-out" style-hover="background-color: rgba(43,58,39,0.5)">
@@ -51,14 +51,16 @@
 
   <sc-if value="{{ evrvlIsMobile }}" hint-placeholder-val="{{ false }}">
   <div style="position: fixed; left: 0; right: 0; top: calc(env(safe-area-inset-top, 0px) + 12px); height: 0; z-index: 400" data-om-label="header-mobile">
-    <div style="position: relative; margin: 0 12px; z-index: 500; border-radius: 14px; background: rgba(0,0,0,0.32); backdrop-filter: blur(24px); display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 10px 10px 14px; box-sizing: border-box">
-      <a href="./index.html" style="display: block; flex-shrink: 0; text-decoration: none"><img src="./assets/logo-mobile.svg" alt="EVERVILLE" style="width: 120px; height: 36px; display: block"></a>
-      <div style="display: flex; flex-direction: row; align-items: center; gap: 6px">
-        <div style="display: flex; flex-direction: row; gap: 4px; align-items: center; padding: 12px 10px; border-radius: 8px; cursor: pointer">
+    <div style="position: relative; margin: 0 clamp(12px,2.5vw,24px); z-index: 500; border-radius: 16px; background: rgba(0,0,0,0.3); backdrop-filter: blur(24px); display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 12px 12px 20px; box-sizing: border-box; overflow: hidden">
+      <a href="./index-tablet.html" style="display: block; flex-shrink: 0; text-decoration: none"><img src="./assets/logo.svg" alt="EVERVILLE" style="width: 128px; height: 40px; display: block"></a>
+      <div style="display: flex; flex-direction: row; align-items: center; gap: 8px">
+        <div onClick="{{ openInvest }}" style="border-radius: 8px; background: #fff; display: inline-flex; padding: 12px 18px; justify-content: center; align-items: center; box-sizing: border-box; cursor: pointer; transition: background 0.2s ease-out" style-hover="background: rgb(206,210,199)"><span style="font-weight: 700; font-size: 14px; line-height: 21px; color: rgb(43,58,39); white-space: nowrap">Инвестировать</span></div>
+        <div onClick="{{ goLogin }}" style="border-radius: 8px; background: rgb(43,58,39); display: inline-flex; padding: 12px 18px; justify-content: center; align-items: center; box-sizing: border-box; cursor: pointer; transition: background 0.2s ease-out" style-hover="background: rgb(30,41,27)"><span style="font-weight: 700; font-size: 14px; line-height: 21px; color: #fff; white-space: nowrap">Войти</span></div>
+        <div style="display: flex; flex-direction: row; gap: 4px; align-items: center; padding: 12px 12px; border-radius: 8px; cursor: pointer; transition: background-color 0.2s ease-out" style-hover="background-color: rgba(43,58,39,0.5)">
           <span style="font-weight: 700; font-size: 13px; color: #fff">RU</span>
           <svg width="12" height="6" viewBox="0 0 14 7" fill="#fff"><path d="M 7 7 L 0.938 1.75 L 13.062 1.75 L 7 7 Z"></path></svg>
         </div>
-        <div onClick="{{ evrvlToggleMenu }}" style="width: 48px; height: 48px; border-radius: 10px; background: rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center; cursor: pointer; flex-shrink: 0">
+        <div onClick="{{ evrvlToggleMenu }}" style="width: 45px; height: 45px; border-radius: 8px; background: rgba(255,255,255,0.14); display: flex; align-items: center; justify-content: center; cursor: pointer; flex-shrink: 0">
           <div style="position: relative; width: 22px; height: 22px; flex-shrink: 0">
             <span style="position: absolute; left: 1px; top: 6px; width: 20px; height: 1.5px; border-radius: 1px; background: #fff; transform: {{ evrvlBarTop }}; transition: transform 0.4s cubic-bezier(.16,1,.3,1)"></span>
             <span style="position: absolute; left: 1px; top: 10.25px; width: 20px; height: 1.5px; border-radius: 1px; background: #fff; opacity: {{ evrvlBarMidO }}; transform: {{ evrvlBarMid }}; transition: opacity 0.2s ease-out, transform 0.4s cubic-bezier(.16,1,.3,1)"></span>
@@ -66,14 +68,15 @@
           </div>
         </div>
       </div>
+      <div ref="{{ progressRef }}" style="position: absolute; left: 0; bottom: 0; height: 2px; width: 0%; background: rgba(255,255,255,0.75)"></div>
     </div>
     <div style="transform: {{ evrvlMenuT }}; pointer-events: {{ evrvlMenuPtr }}; visibility: {{ evrvlMenuVis }}; transition: transform 0.55s cubic-bezier(.16,1,.3,1), visibility 0.55s linear; position: fixed; left: 0; width: 100%; top: 0; height: 100svh; z-index: 200; background: rgb(25,35,22); display: flex; flex-direction: column; padding: calc(env(safe-area-inset-top, 0px) + 92px) 16px 16px; box-sizing: border-box">
       <div style="display: flex; flex-direction: column; gap: 4px; flex: 1 1 auto; justify-content: center; align-items: center">
-        <span onClick="{{ evrvlGoProjects }}" style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 28px; line-height: 1.6; color: #fff; text-transform: uppercase; cursor: pointer">Проекты</span>
-        <a href="./investments.html" style="font-family: 'HeadingNow-82Light'; font-weight: 200; font-size: 28px; line-height: 1.6; color: #fff; text-transform: uppercase; cursor: pointer; text-decoration: none">Инвестиции</a>
-        <a href="./legal.html" style="font-family: 'HeadingNow-82Light'; font-weight: 200; font-size: 28px; line-height: 1.6; color: #fff; text-transform: uppercase; cursor: pointer; text-decoration: none">Юридика</a>
-        <a href="./about.html" style="font-family: 'HeadingNow-82Light'; font-weight: 200; font-size: 28px; line-height: 1.6; color: #fff; text-transform: uppercase; cursor: pointer; text-decoration: none">О компании</a>
-        <a href="./contacts.html" style="font-family: 'HeadingNow-82Light'; font-weight: 200; font-size: 28px; line-height: 1.6; color: #fff; text-transform: uppercase; cursor: pointer; text-decoration: none">Контакты</a>
+        <span onClick="{{ evrvlGoProjects }}" style="font-family: 'HeadingNow-82Light'; font-weight: 200; font-size: 28px; line-height: 1.6; color: #fff; text-transform: uppercase; cursor: pointer">Проекты</span>
+        <a href="./investments-tablet.html" style="font-family: 'HeadingNow-82Light'; font-weight: 200; font-size: 28px; line-height: 1.6; color: #fff; text-transform: uppercase; cursor: pointer; text-decoration: none">Инвестиции</a>
+        <a href="./legal-tablet.html" style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 28px; line-height: 1.6; color: #fff; text-transform: uppercase; cursor: pointer; text-decoration: none">Юридика</a>
+        <a href="./about-tablet.html" style="font-family: 'HeadingNow-82Light'; font-weight: 200; font-size: 28px; line-height: 1.6; color: #fff; text-transform: uppercase; cursor: pointer; text-decoration: none">О компании</a>
+        <a href="./contacts-tablet.html" style="font-family: 'HeadingNow-82Light'; font-weight: 200; font-size: 28px; line-height: 1.6; color: #fff; text-transform: uppercase; cursor: pointer; text-decoration: none">Контакты</a>
       </div>
       <div style="display: flex; flex-direction: column; gap: 10px; align-items: stretch">
         <div onClick="{{ evrvlMenuInvest }}" style="border-radius: 8px; background: #fff; display: flex; padding: 18px 24px; justify-content: center; align-items: center; box-sizing: border-box; cursor: pointer"><span style="font-weight: 700; font-size: 15px; line-height: 21px; color: rgb(43,58,39)">Инвестировать</span></div>
@@ -84,20 +87,20 @@
   </sc-if>
 
 
-  <div style="position: relative; width: 100%; min-height: 100svh; overflow: hidden; background: rgb(25,35,22); display: flex; flex-direction: column; justify-content: center; padding: clamp(140px,14vw,200px) clamp(24px,6vw,88px) clamp(56px,6vw,96px); box-sizing: border-box" data-om-label="hero" data-screen-label="Hero — Политика конфиденциальности">
+  <div style="position: relative; width: 100%; min-height: 100svh; overflow: hidden; background: rgb(25,35,22); display: flex; flex-direction: column; justify-content: center; padding: clamp(140px,14vw,200px) clamp(24px,6vw,88px) clamp(56px,6vw,96px); box-sizing: border-box" data-om-label="hero" data-screen-label="Hero — Инвестиционный дисклеймер">
     <img src="./assets/sand-flower.webp" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; opacity: 0.5">
     <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,18,12,0.82), rgba(10,18,12,0.6) 45%, rgba(10,18,12,0.88)); pointer-events: none"></div>
     <div style="position: relative; width: 100%; max-width: 1320px; margin: 0 auto; display: flex; flex-direction: column; gap: clamp(24px,2.4vw,40px); align-items: center; text-align: center; opacity: {{ heroO }}; transform: translateY({{ heroY }}px); transition: opacity 0.9s ease-out, transform 0.9s cubic-bezier(.16,1,.3,1)">
       <span style="font-weight: 400; font-size: clamp(14px,calc(9.43px + 0.595vw),16px); letter-spacing: 0.02em; color: rgb(214,158,158)">legal</span>
       <div style="display: flex; flex-direction: column; gap: 4px; align-items: center; text-transform: uppercase; color: #fff">
-        <span style="font-family: 'HeadingNow-82Light'; font-weight: 200; font-size: clamp(28px,3.4vw,52px); line-height: 1.12">политика</span>
+        <span style="font-family: 'HeadingNow-82Light'; font-weight: 200; font-size: clamp(28px,3.4vw,52px); line-height: 1.12">инвестиционный</span>
         <div style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: clamp(18px,2.4vw,40px)">
-          <span style="flex: 0 0 auto; width: clamp(60px,9vw,170px); height: 2px; background: rgba(255,255,255,0.8); display: {{ evrvlHeroLineD }}"></span>
-          <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: clamp(28px,3.4vw,52px); line-height: 1.12; white-space: nowrap">конфиденциальности</span>
-          <span style="flex: 0 0 auto; width: clamp(60px,9vw,170px); height: 2px; background: rgba(255,255,255,0.8); display: {{ evrvlHeroLineD }}"></span>
+          <span style="flex: 0 0 auto; width: 20px; height: 2px; background: rgba(255,255,255,0.8); display: {{ evrvlHeroLineD }}"></span>
+          <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: clamp(28px,3.4vw,52px); line-height: 1.12">дисклеймер</span>
+          <span style="flex: 0 0 auto; width: 20px; height: 2px; background: rgba(255,255,255,0.8); display: {{ evrvlHeroLineD }}"></span>
         </div>
       </div>
-      <span style="max-width: 760px; margin: 0 auto; font-weight: 400; font-size: clamp(15px,1.15vw,18px); line-height: 1.55; color: rgba(255,255,255,0.85)">Как мы собираем, используем и защищаем персональные данные, переданные через сайт и формы EVERVILLE.</span>
+      <span style="max-width: 760px; margin: 0 auto; font-weight: 400; font-size: clamp(15px,1.15vw,18px); line-height: 1.55; color: rgba(255,255,255,0.85)">Границы информации на сайте: риски, прогнозы и то, что не является инвестиционной рекомендацией.</span>
       <span style="font-weight: 400; font-size: 14px; letter-spacing: 0.02em; color: rgba(255,255,255,0.6)">Обновлено: август 2026</span>
     </div>
   </div>
@@ -129,7 +132,7 @@
                   <div style="display: flex; flex-direction: column; gap: 10px; padding-top: 2px">
                     <sc-for list="{{ b.items }}" as="it" hint-placeholder-count="3">
                       <div style="display: flex; flex-direction: row; gap: 14px; align-items: baseline">
-                        <span style="flex: 0 0 auto; width: 14px; height: 2px; background: rgba(25,35,22,0.5); display: block; transform: translateY(-4px)"></span>
+                        <span style="flex: 0 0 auto; width: 20px; height: 2px; background: rgba(25,35,22,0.5); display: block; transform: translateY(-4px)"></span>
                         <span style="font-weight: 400; font-size: clamp(15px,1.05vw,17px); line-height: 1.55; color: #2D2D2D">{{ it.text }}</span>
                       </div>
                     </sc-for>
@@ -143,8 +146,8 @@
           <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: clamp(18px,1.6vw,24px); line-height: 1.2; text-transform: uppercase; color: #fff">остались вопросы по документам?</span>
           <span style="font-weight: 400; font-size: 15px; line-height: 1.55; color: rgba(255,255,255,0.8)">Напишите нам — пришлём исходные файлы по проекту и структуру сделки до любых обязательств.</span>
           <div style="display: flex; flex-direction: row; gap: 12px; align-items: center; flex-wrap: wrap; margin-top: 4px">
-            <a href="./contacts.html" style="border-radius: 8px; background: #fff; display: flex; padding: 16px 30px; justify-content: center; align-items: center; transition: background 0.2s ease-out; text-decoration: none" style-hover="background: rgb(206,210,199)">
-              <span style="font-weight: 700; font-size: 14px; color: rgb(43,58,39); white-space: nowrap">Связаться</span>
+            <a href="./contacts-tablet.html" style="border-radius: 8px; background: #fff; display: flex; padding: 16px 30px; justify-content: center; align-items: center; transition: background 0.2s ease-out; text-decoration: none" style-hover="background: rgb(206,210,199)">
+              <span style="font-weight: 700; font-size: 14px; color: rgb(43,58,39)">Связаться</span>
             </a>
             <a href="mailto:hello@everville.estate" style="font-size: 15px; color: rgba(255,255,255,0.85); transition: opacity 0.2s ease-out" style-hover="opacity: 0.65">hello@everville.estate</a>
           </div>
@@ -156,47 +159,47 @@
   <div style="position: relative; overflow: hidden; background: url('./assets/footer-beach.webp') center / cover no-repeat, rgb(25,35,22); padding: clamp(64px,8.33vw,120px) clamp(24px,6vw,88px) clamp(180px,23.3vw,336px); box-sizing: border-box; display: flex; flex-direction: column; align-items: center" data-om-label="footer" data-screen-label="Футер">
   <video src="./assets/footer-video.mp4" poster="./assets/footer-beach.webp" preload="metadata" autoPlay="{{ true }}" loop="{{ true }}" muted="{{ true }}" playsInline="{{ true }}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; pointer-events: none"></video>
   <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,18,12,0.85), rgba(10,18,12,0.6) 55%, rgba(10,18,12,0.35)); pointer-events: none"></div>
-  <div style="position: relative; width: 100%; max-width: 1320px; display: flex; flex-direction: row; justify-content: space-between; align-items: flex-start; gap: clamp(32px,4vw,56px); flex-wrap: wrap; font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif">
-    <a href="./index.html" style="display: block; flex: 0 0 auto; text-decoration: none"><img src="./assets/logo.svg" alt="EVERVILLE" style="width: 131px; height: auto; display: block"></a>
-    <div style="display: flex; flex-direction: column; gap: clamp(24px,2.5vw,24px); flex: 0 1 auto; min-width: 160px">
-      <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 18px; line-height: 1.2; text-transform: uppercase; color: #fff">Проекты</span>
+  <div style="position: relative; width: 100%; max-width: 1320px; display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); justify-items: start; align-items: start; gap: clamp(16px,2.2vw,28px); font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif">
+    <a href="./index-tablet.html" style="display: block; grid-column: 1 / -1; justify-self: center; margin-bottom: 8px; text-decoration: none"><img src="./assets/logo.svg" alt="EVERVILLE" style="width: 131px; height: auto; display: block"></a>
+    <div style="display: flex; flex-direction: column; gap: clamp(20px,2.2vw,24px); flex: 0 1 auto; min-width: 0">
+      <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 15px; line-height: 1.2; text-transform: uppercase; color: #fff">Проекты</span>
       <div style="display: flex; flex-direction: column; gap: 14px">
-        <a href="./roya.html" style="font-weight: 400; font-size: 16px; line-height: 1.1; color: #fff; transition: opacity 0.2s ease-out; text-decoration: none" style-hover="opacity: 0.65">Roya Resort</a>
-        <a href="./roya-desa.html" style="font-weight: 400; font-size: 16px; line-height: 1.1; color: #fff; transition: opacity 0.2s ease-out; text-decoration: none" style-hover="opacity: 0.65">Roya Desa</a>
-        <a href="./balicopter.html" style="font-weight: 400; font-size: 16px; line-height: 1.1; color: #fff; transition: opacity 0.2s ease-out; text-decoration: none" style-hover="opacity: 0.65">Balicopter</a>
-        <a href="./marina.html" style="font-weight: 400; font-size: 16px; line-height: 1.1; color: #fff; transition: opacity 0.2s ease-out; text-decoration: none" style-hover="opacity: 0.65">Marina</a>
-        <a href="./sanatorium.html" style="font-weight: 400; font-size: 16px; line-height: 1.1; color: #fff; transition: opacity 0.2s ease-out; text-decoration: none" style-hover="opacity: 0.65">Sanatorium</a>
+        <a href="./roya-tablet.html" style="font-weight: 400; font-size: 13.5px; line-height: 1.25; color: #fff; transition: opacity 0.2s ease-out; text-decoration: none" style-hover="opacity: 0.65">Roya Resort</a>
+        <a href="./roya-desa-tablet.html" style="font-weight: 400; font-size: 13.5px; line-height: 1.25; color: #fff; transition: opacity 0.2s ease-out; text-decoration: none" style-hover="opacity: 0.65">Roya Desa</a>
+        <a href="./balicopter-tablet.html" style="font-weight: 400; font-size: 13.5px; line-height: 1.25; color: #fff; transition: opacity 0.2s ease-out; text-decoration: none" style-hover="opacity: 0.65">Balicopter</a>
+        <a href="./marina-tablet.html" style="font-weight: 400; font-size: 13.5px; line-height: 1.25; color: #fff; transition: opacity 0.2s ease-out; text-decoration: none" style-hover="opacity: 0.65">Marina</a>
+        <a href="./sanatorium-tablet.html" style="font-weight: 400; font-size: 13.5px; line-height: 1.25; color: #fff; transition: opacity 0.2s ease-out; text-decoration: none" style-hover="opacity: 0.65">Sanatorium</a>
       </div>
     </div>
-    <div style="display: flex; flex-direction: column; gap: clamp(24px,2.5vw,24px); flex: 0 1 auto; min-width: 160px">
-      <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 18px; line-height: 1.2; text-transform: uppercase; color: #fff">Инвестору</span>
+    <div style="display: flex; flex-direction: column; gap: clamp(20px,2.2vw,24px); flex: 0 1 auto; min-width: 0">
+      <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 15px; line-height: 1.2; text-transform: uppercase; color: #fff">Инвестору</span>
       <div style="display: flex; flex-direction: column; gap: 14px">
-        <a href="./investments.html" style="font-weight: 400; font-size: 16px; line-height: 1.1; color: #fff; transition: opacity 0.2s ease-out; text-decoration: none" style-hover="opacity: 0.65">Инвестиции</a>
-        <a href="./legal.html" style="font-weight: 400; font-size: 16px; line-height: 1.1; color: #fff; transition: opacity 0.2s ease-out; text-decoration: none" style-hover="opacity: 0.65">Юридика</a>
-        <a href="./about.html" style="font-weight: 400; font-size: 16px; line-height: 1.1; color: #fff; transition: opacity 0.2s ease-out; text-decoration: none" style-hover="opacity: 0.65">О компании</a>
+        <a href="./investments-tablet.html" style="font-weight: 400; font-size: 13.5px; line-height: 1.25; color: #fff; transition: opacity 0.2s ease-out; text-decoration: none" style-hover="opacity: 0.65">Инвестиции</a>
+        <a href="./legal-tablet.html" style="font-weight: 400; font-size: 13.5px; line-height: 1.25; color: #fff; transition: opacity 0.2s ease-out; text-decoration: none" style-hover="opacity: 0.65">Юридика</a>
+        <a href="./about-tablet.html" style="font-weight: 400; font-size: 13.5px; line-height: 1.25; color: #fff; transition: opacity 0.2s ease-out; text-decoration: none" style-hover="opacity: 0.65">О компании</a>
       </div>
     </div>
-    <div style="display: flex; flex-direction: column; gap: clamp(24px,2.5vw,24px); flex: 0 1 auto; min-width: 160px">
-      <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 18px; line-height: 1.2; text-transform: uppercase; color: #fff">Legal</span>
+    <div style="display: flex; flex-direction: column; gap: clamp(20px,2.2vw,24px); flex: 0 1 auto; min-width: 0">
+      <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 15px; line-height: 1.2; text-transform: uppercase; color: #fff">Legal</span>
       <div style="display: flex; flex-direction: column; gap: 14px">
-        <a href="./legal-privacy.html" style="font-weight: 400; font-size: 16px; line-height: 1.1; color: #fff; transition: opacity 0.2s ease-out; text-decoration: none" style-hover="opacity: 0.65">Политика конфиденциальности</a>
-        <a href="./legal-terms.html" style="font-weight: 400; font-size: 16px; line-height: 1.1; color: #fff; transition: opacity 0.2s ease-out; text-decoration: none" style-hover="opacity: 0.65">Пользовательское соглашение</a>
-        <a href="./legal-disclaimer.html" style="font-weight: 400; font-size: 16px; line-height: 1.1; color: #fff; transition: opacity 0.2s ease-out; text-decoration: none" style-hover="opacity: 0.65">Инвестиционный дисклеймер</a>
+        <a href="./legal-privacy-tablet.html" style="font-weight: 400; font-size: 13.5px; line-height: 1.25; color: #fff; transition: opacity 0.2s ease-out; text-decoration: none" style-hover="opacity: 0.65">Политика конфиденциальности</a>
+        <a href="./legal-terms-tablet.html" style="font-weight: 400; font-size: 13.5px; line-height: 1.25; color: #fff; transition: opacity 0.2s ease-out; text-decoration: none" style-hover="opacity: 0.65">Пользовательское соглашение</a>
+        <a href="./legal-disclaimer-tablet.html" style="font-weight: 400; font-size: 13.5px; line-height: 1.25; color: #fff; transition: opacity 0.2s ease-out; text-decoration: none" style-hover="opacity: 0.65">Инвестиционный дисклеймер</a>
       </div>
     </div>
-    <div style="display: flex; flex-direction: column; gap: clamp(24px,2.5vw,16px); flex: 0 1 auto; min-width: 200px">
-      <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 18px; line-height: 1.2; text-transform: uppercase; color: #fff">Контакты</span>
-      <div style="display: flex; flex-direction: row; gap: 4px; align-items: center">
-        <a href="https://t.me/everville_estate" target="_blank" rel="noopener" style="width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s ease-out" style-hover="background: rgba(255,255,255,0.12)" title="Telegram">
+    <div style="display: flex; flex-direction: column; gap: clamp(24px,2.5vw,16px); flex: 0 1 auto; min-width: 0">
+      <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 15px; line-height: 1.2; text-transform: uppercase; color: #fff">Контакты</span>
+      <div style="display: flex; flex-direction: row; gap: 2px; align-items: center; flex-wrap: wrap; min-width: 0">
+        <a href="https://t.me/everville_estate" target="_blank" rel="noopener" style="width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; cursor: pointer; flex: 0 0 auto; transition: background 0.2s ease-out" style-hover="background: rgba(255,255,255,0.12)" title="Telegram">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M 21.5 3.4 L 2.9 10.6 C 2 10.9 2 11.5 2.8 11.7 L 7.5 13.2 L 9.3 18.7 C 9.5 19.3 9.4 19.6 10.1 19.6 C 10.6 19.6 10.8 19.4 11.1 19.1 C 11.3 18.9 12.4 17.8 13.6 16.6 L 18.5 20.2 C 19.4 20.7 20 20.4 20.3 19.4 L 23.5 4.9 C 23.8 3.6 22.9 3 21.5 3.4 Z M 8.5 12.9 L 18.9 6.4 C 19.4 6.1 19.9 6.2 19.5 6.6 L 10.6 14.6 L 10.3 18.2 Z"></path></svg>
         </a>
-        <a href="https://wa.me/62822555990" target="_blank" rel="noopener" style="width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s ease-out" style-hover="background: rgba(255,255,255,0.12)" title="WhatsApp">
+        <a href="https://wa.me/62822555990" target="_blank" rel="noopener" style="width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; cursor: pointer; flex: 0 0 auto; transition: background 0.2s ease-out" style-hover="background: rgba(255,255,255,0.12)" title="WhatsApp">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M 12 2 C 6.5 2 2 6.4 2 11.9 C 2 13.7 2.5 15.4 3.4 16.9 L 2 22 L 7.3 20.6 C 8.7 21.4 10.3 21.8 12 21.8 C 17.5 21.8 22 17.4 22 11.9 C 22 6.4 17.5 2 12 2 Z M 12 20 C 10.5 20 9 19.6 7.8 18.9 L 7.5 18.7 L 4.4 19.5 L 5.2 16.5 L 5 16.2 C 4.2 14.9 3.8 13.4 3.8 11.9 C 3.8 7.4 7.5 3.8 12 3.8 C 16.5 3.8 20.2 7.4 20.2 11.9 C 20.2 16.4 16.5 20 12 20 Z M 16.5 14.1 C 16.3 14 15.1 13.4 14.9 13.3 C 14.6 13.2 14.5 13.2 14.3 13.4 C 14.1 13.7 13.6 14.2 13.5 14.4 C 13.3 14.6 13.2 14.6 12.9 14.5 C 11.4 13.7 10.4 13.1 9.4 11.4 C 9.1 10.9 9.7 11 10.2 10 C 10.3 9.8 10.2 9.6 10.2 9.5 C 10.1 9.4 9.6 8.2 9.4 7.7 C 9.2 7.2 9 7.3 8.8 7.3 C 8.7 7.3 8.5 7.3 8.3 7.3 C 8.1 7.3 7.8 7.3 7.6 7.6 C 7.3 7.9 6.6 8.5 6.6 9.7 C 6.6 11 7.6 12.2 7.7 12.4 C 7.8 12.5 9.6 15.3 12.3 16.5 C 14 17.2 14.7 17.3 15.6 17.2 C 16.1 17.1 17.1 16.6 17.3 16 C 17.5 15.4 17.5 14.9 17.4 14.8 C 17.4 14.7 17.2 14.6 16.9 14.5 Z"></path></svg>
         </a>
-        <a href="https://www.instagram.com/everville.estate?igsh=OHVhd2gxdmZkamFz" target="_blank" rel="noopener" style="width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s ease-out" style-hover="background: rgba(255,255,255,0.12)" title="Instagram">
+        <a href="https://www.instagram.com/everville.estate?igsh=OHVhd2gxdmZkamFz" target="_blank" rel="noopener" style="width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; cursor: pointer; flex: 0 0 auto; transition: background 0.2s ease-out" style-hover="background: rgba(255,255,255,0.12)" title="Instagram">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"></rect><circle cx="12" cy="12" r="4.5"></circle><circle cx="17.6" cy="6.4" r="1.2" fill="#fff" stroke="none"></circle></svg>
         </a>
-        <a href="https://www.youtube.com/@everville.estate" target="_blank" rel="noopener" style="width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s ease-out" style-hover="background: rgba(255,255,255,0.12)" title="YouTube">
+        <a href="https://www.youtube.com/@everville.estate" target="_blank" rel="noopener" style="width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; cursor: pointer; flex: 0 0 auto; transition: background 0.2s ease-out" style-hover="background: rgba(255,255,255,0.12)" title="YouTube">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M 23 7.2 C 22.7 6 21.8 5.1 20.6 4.8 C 18.5 4.3 12 4.3 12 4.3 C 12 4.3 5.5 4.3 3.4 4.8 C 2.2 5.1 1.3 6 1 7.2 C 0.5 9.3 0.5 12 0.5 12 C 0.5 12 0.5 14.7 1 16.8 C 1.3 18 2.2 18.9 3.4 19.2 C 5.5 19.7 12 19.7 12 19.7 C 12 19.7 18.5 19.7 20.6 19.2 C 21.8 18.9 22.7 18 23 16.8 C 23.5 14.7 23.5 12 23.5 12 C 23.5 12 23.5 9.3 23 7.2 Z M 9.8 15.5 L 9.8 8.5 L 15.8 12 Z"></path></svg>
         </a>
         </div>
@@ -214,12 +217,12 @@
       <sc-if value="{{ investNotSent }}" hint-placeholder-val="{{ true }}">
         <div style="display: flex; flex-direction: column; gap: 2px; text-transform: uppercase; color: rgb(25,35,22); font-size: clamp(22px,2.2vw,32px); line-height: 1.2; padding-right: 40px">
           <span style="font-family: 'HeadingNow-82Light'; font-weight: 200">оставьте заявку</span>
-          <div style="display: flex; flex-direction: row; align-items: center; gap: clamp(18px,2.4vw,40px)"><span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; white-space: nowrap">на знакомство</span><span data-rule="right" style="flex: 1 1 auto; min-width: 40px; height: 2px; background: rgb(25,35,22); display: block; transform: scaleX(0); transform-origin: left center; transition: transform 0.9s cubic-bezier(.16,1,.3,1) 120ms"></span></div>
+          <div style="display: flex; flex-direction: row; align-items: center; gap: clamp(18px,2.4vw,40px)"><span style="font-family: 'HeadingNow-84Regular'; font-weight: 400">на знакомство</span><span data-rule="right" style="flex: 1 1 auto; min-width: 20px; height: 2px; background: rgb(25,35,22); display: block; transform: scaleX(0); transform-origin: left center; transition: transform 0.9s cubic-bezier(.16,1,.3,1) 120ms"></span></div>
         </div>
         <div style="display: flex; flex-direction: column; gap: 10px">
-          <div style="display: flex; flex-direction: row; gap: 10px; flex-wrap: wrap">
-            <input ref="{{ nameRef }}" type="text" placeholder="Ваше имя *" style="flex: 1 1 220px; min-width: 0; box-shadow: {{ nameRing }}; height: 56px; border: none; outline: none; border-radius: 10px; background: #fff; padding: 0 18px; box-sizing: border-box; font-family: Outfit,sans-serif; font-weight: 500; font-size: 14px; color: rgb(25,35,22)">
-            <input ref="{{ mailRef }}" type="email" placeholder="E-mail *" style="flex: 1 1 220px; min-width: 0; box-shadow: {{ mailRing }}; height: 56px; border: none; outline: none; border-radius: 10px; background: #fff; padding: 0 18px; box-sizing: border-box; font-family: Outfit,sans-serif; font-weight: 500; font-size: 14px; color: rgb(25,35,22)">
+          <div style="display: flex; flex-direction: column; gap: 10px">
+            <input ref="{{ nameRef }}" type="text" placeholder="Ваше имя *" style="flex: 0 0 auto; width: 100%; min-width: 0; box-shadow: {{ nameRing }}; height: 56px; border: none; outline: none; border-radius: 10px; background: #fff; padding: 0 18px; box-sizing: border-box; font-family: Outfit,sans-serif; font-weight: 500; font-size: 14px; color: rgb(25,35,22)">
+            <input ref="{{ mailRef }}" type="email" placeholder="E-mail *" style="flex: 0 0 auto; width: 100%; min-width: 0; box-shadow: {{ mailRing }}; height: 56px; border: none; outline: none; border-radius: 10px; background: #fff; padding: 0 18px; box-sizing: border-box; font-family: Outfit,sans-serif; font-weight: 500; font-size: 14px; color: rgb(25,35,22)">
           </div>
           <input ref="{{ phoneRef }}" type="tel" placeholder="Телефон или Telegram *" style="width: 100%; box-shadow: {{ phoneRing }}; height: 56px; border: none; outline: none; border-radius: 10px; background: #fff; padding: 0 18px; box-sizing: border-box; font-family: Outfit,sans-serif; font-weight: 500; font-size: 14px; color: rgb(25,35,22)">
           <sc-if value="{{ investHasError }}">
@@ -238,7 +241,7 @@
           <textarea placeholder="Коротко о задаче: сумма, горизонт, вопросы" rows="3" style="width: 100%; border: none; outline: none; border-radius: 10px; background: #fff; padding: 16px 18px; box-sizing: border-box; font-family: Outfit,sans-serif; font-weight: 500; font-size: 14px; line-height: 1.5; color: rgb(25,35,22); resize: vertical"></textarea>
           <div style="display: flex; flex-direction: row; gap: 16px; align-items: center; flex-wrap: wrap; padding-top: 6px">
             <div onClick="{{ submitInvest }}" style="border-radius: 8px; background: rgb(43,58,39); display: flex; flex-direction: row; gap: 10px; padding: 19px 36px; justify-content: center; align-items: center; cursor: pointer; transition: background 0.2s ease-out" style-hover="background: rgb(30,41,27)">
-              <span style="font-weight: 700; font-size: 15px; color: #fff; white-space: nowrap">Отправить заявку</span>
+              <span style="font-weight: 700; font-size: 15px; color: #fff">Отправить заявку</span>
               <svg width="18" height="12" viewBox="0 0 24 14" fill="none"><path d="M 1 7 L 23 7 M 16 1 L 23 7 L 16 13" stroke="#fff" stroke-width="1.5"></path></svg>
             </div>
             <span style="flex: 1 1 240px; font-size: 13px; line-height: 1.5; color: rgba(25,35,22,0.6)">Отправляя заявку, вы соглашаетесь на обработку данных. Мы не передаём контакты третьим лицам и не рассылаем спам.</span>
@@ -257,26 +260,21 @@
     </div>
   </div>
 </x-dc>
-<script data-dc-script>
+<script data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:834,&quot;height&quot;:1194}}">
 class Component extends DCLogic {
   state = { in: false };
   progressRef = React.createRef();
   SECTIONS = [
-  { title: "Общие положения", blocks: [{ text: "Настоящий документ описывает, как обрабатываются персональные данные, которые вы передаёте через формы на сайте everville.estate (далее — «Сайт») в связи с проектами экосистемы EVERVILLE." }, { text: "Используя Сайт, вы подтверждаете, что ознакомились с этим документом." }] },
-  { title: "Правовая база", blocks: [{ text: "Политика подчиняется законодательству Республики Индонезия, в том числе:" }, { items: ["Закону № 27 от 2022 года о защите персональных данных (PDPL)","применимым нормам об электронных системах и сделках с недвижимостью"] }] },
-  { title: "Какие данные мы собираем", blocks: [{ text: "Мы собираем данные, необходимые для качественного сервиса, безопасности и соблюдения закона." }, { text: "Данные, которые вы передаёте сами:" }, { items: ["имя и фамилия","адрес электронной почты","номер телефона, Telegram или WhatsApp","инвестиционные интересы и содержание запроса","любую информацию, отправленную через формы и переписку"] }, { text: "Данные, собираемые автоматически:" }, { items: ["IP-адрес","данные об устройстве и браузере","поведение на Сайте","cookie и аналитика"] }, { text: "Данные от третьих лиц — при необходимости мы можем получать информацию от финансовых организаций, сервисов верификации и партнёров." }] },
-  { title: "Цели обработки", blocks: [{ text: "Мы обрабатываем персональные данные только для того, чтобы:" }, { items: ["обрабатывать инвестиционные запросы","информировать о проектах экосистемы EVERVILLE","вести клиентские отношения и договорную работу","проводить проверки KYC/AML, где это требуется","улучшать работу Сайта и пользовательский опыт","направлять рассылки — с вашего согласия"] }] },
-  { title: "Правовые основания", blocks: [{ items: ["ваше согласие","исполнение договора или преддоговорных обязательств","соблюдение требований закона","наши законные интересы"] }] },
-  { title: "Передача данных", blocks: [{ text: "Мы не продаём персональные данные. Данные могут передаваться:" }, { items: ["проверенным подрядчикам (CRM, IT, маркетинг)","финансовым и платёжным организациям","государственным и регулирующим органам — когда это требуется по закону","юридическим и финансовым консультантам","партнёрам внутри проектов EVERVILLE"] }, { text: "Все третьи лица обязаны соблюдать конфиденциальность и стандарты защиты данных." }] },
-  { title: "Международная передача", blocks: [{ text: "Ваши данные могут обрабатываться за пределами Индонезии — например, в облачных сервисах. В таких случаях мы обеспечиваем соответствие требованиям PDPL и адекватный уровень защиты." }] },
-  { title: "Безопасность", blocks: [{ text: "Мы применяем отраслевые меры защиты:" }, { items: ["шифрование данных","контроль доступа","защищённую инфраструктуру","обязательства о конфиденциальности для сотрудников и подрядчиков"] }] },
-  { title: "Сроки хранения", blocks: [{ text: "Мы храним данные только столько, сколько необходимо: в соответствии с требованиями закона и нашими обязательствами по учёту и отчётности." }] },
-  { title: "Ваши права", blocks: [{ text: "По законодательству Индонезии вы имеете право:" }, { items: ["получить доступ к своим данным","требовать исправления","требовать удаления","отозвать согласие","ограничить обработку или возразить против неё","подать жалобу в надзорный орган"] }] },
-  { title: "Cookie", blocks: [{ text: "Мы используем cookie, чтобы улучшать работу Сайта и анализировать поведение пользователей. Вы можете отключить cookie в настройках браузера — это может повлиять на часть функций Сайта." }] },
-  { title: "Сервисы третьих лиц", blocks: [{ text: "Сайт может использовать внешние платформы (Google, Meta и другие). Мы не отвечаем за их политики конфиденциальности." }] },
-  { title: "Ограничение ответственности", blocks: [{ text: "Несмотря на принимаемые меры, ни одна система не гарантирует абсолютную безопасность. Компания не несёт ответственности за несанкционированный доступ, находящийся за пределами её разумного контроля." }] },
-  { title: "Изменения политики", blocks: [{ text: "Мы вправе изменять этот документ в любое время. Актуальная версия всегда опубликована на Сайте." }] },
-  { title: "Контакты", blocks: [{ text: "По вопросам, связанным с персональными данными, напишите на hello@everville.estate или используйте форму на Сайте. Сторона договора для договорной обработки указывается в соответствующей документации." }] }
+  { title: "Общие положения", blocks: [{ text: "Информация на everville.estate, включая материалы о проектах экосистемы EVERVILLE, публикуется исключительно в информационных и маркетинговых целях." }] },
+  { title: "Не является инвестиционной рекомендацией", blocks: [{ text: "Никакая информация на Сайте не является:" }, { items: ["инвестиционным советом или рекомендацией","финансовой консультацией","гарантией доходности"] }, { text: "До принятия инвестиционных решений рекомендуем получить независимую финансовую и юридическую консультацию." }] },
+  { title: "Инвестиционные риски", blocks: [{ text: "Любые инвестиции в недвижимость связаны с рисками, включая:" }, { items: ["рыночные колебания","изменения законодательства","валютные риски","операционные риски","риски ликвидности"] }] },
+  { title: "Отсутствие гарантий доходности", blocks: [{ text: "Любые прогнозы, показатели ROI, IRR и доходности:" }, { items: ["носят индикативный характер","основаны на текущих допущениях","не гарантируют фактического результата"] }, { text: "Фактические результаты могут существенно отличаться." }] },
+  { title: "Ответственность инвестора", blocks: [{ text: "Пользователь принимает инвестиционные решения самостоятельно и полностью отвечает за:" }, { items: ["анализ рисков","оценку соответствия инвестиции своим задачам","соотнесение с личными инвестиционными целями"] }] },
+  { title: "Преддоговорный характер информации", blocks: [{ text: "Информация на Сайте не заменяет:" }, { items: ["официальные договоры","юридическую документацию","инвестиционные соглашения"] }, { text: "Окончательные условия обязательны только в том виде, в котором они зафиксированы в подписанных документах." }] },
+  { title: "Регуляторные ограничения", blocks: [{ text: "Инвестиции могут регулироваться в разных юрисдикциях. Пользователь самостоятельно отвечает за соблюдение применимого законодательства." }] },
+  { title: "Сторона сделки", blocks: [{ text: "Сторона конкретной сделки определяется подписанными документами. Оферент по каждому проекту и связанным программам аренды указывается в проектном досье." }] },
+  { title: "Обновление информации", blocks: [{ text: "Компания не обязана обновлять информацию на Сайте, включая прогнозы и финансовые показатели." }] },
+  { title: "Применимое право", blocks: [{ text: "Настоящий дисклеймер регулируется законодательством Республики Индонезия." }] }
   ];
   componentDidMount() {
     this._ruleIO = new IntersectionObserver((es) => { es.forEach((e) => { if (e.isIntersecting) { e.target.style.transform = "none"; this._ruleIO.unobserve(e.target); } }); }, { threshold: 0.05 });
@@ -294,7 +292,7 @@ class Component extends DCLogic {
   renderVals() {
     return { ...this.evrvlVals(),
       progressRef: this.progressRef,
-      goLegal: () => { window.location.href = "./legal.html"; },
+      goLegal: () => { window.location.href = "./legal-tablet.html"; },
       heroO: this.state.in ? 1 : 0,
       heroY: this.state.in ? 0 : 24,
       sections: this.SECTIONS.map((s, i) => ({
@@ -349,11 +347,12 @@ class Component extends DCLogic {
 
   evrvlMenuOpen = false;
   evrvlMob() {
+    return true;
     if (!this._evrvlRespInit) {
       this._evrvlRespInit = true;
-      this._evrvlM = window.innerWidth <= 768;
+      this._evrvlM = window.innerWidth <= 1024;
       window.addEventListener("resize", () => {
-        const m = window.innerWidth <= 768;
+        const m = window.innerWidth <= 1024;
         if (m !== this._evrvlM) { this._evrvlM = m; this.evrvlMenuOpen = false; document.body.style.overflow = ""; this.forceUpdate(); }
       });
     }
@@ -376,7 +375,7 @@ class Component extends DCLogic {
       evrvlMenuT: this.evrvlMenuOpen ? "translateX(0)" : "translateX(100%)",
       evrvlMenuPtr: this.evrvlMenuOpen ? "auto" : "none",
       evrvlMenuVis: this.evrvlMenuOpen ? "visible" : "hidden",
-      evrvlGoProjects: () => { const w = window.innerWidth; window.location.href = "./" + (w >= 1024 ? "projects.html" : w >= 768 ? "projects-tablet.html" : "projects-mobile.html"); },
+      evrvlGoProjects: () => { const w = window.innerWidth; window.location.href = "./" + (w >= 1024 ? "projects-tablet.html" : w >= 768 ? "projects-tablet.html" : "projects-mobile.html"); },
       goLogin: () => window.open("https://portal.everville.estate/login", "_blank", "noopener"),
       openInvest: this.openInvest,
       closeInvest: this.closeInvest,

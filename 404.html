@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>(function(){var w=window.innerWidth,d=w>=1024?"desktop":w>=768?"tablet":"mobile";if(d!=="desktop"){var s={desktop:"404.html",tablet:"404-tablet.html",mobile:"404-mobile.html"};window.location.replace(s[d]);}})();</script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    @font-face { font-family: "HeadingNow-84Regular"; src: url("./fonts/HeadingNow-84Regular.otf") format("opentype"); font-weight: 400; font-display: swap; }
+    @font-face { font-family: "HeadingNow-82Light"; src: url("./fonts/HeadingNow-82Light.otf") format("opentype"); font-weight: 200; font-display: swap; }
+    @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap");
+    html, body { margin: 0; background: rgb(25,35,22); overflow-x: hidden; }
+    a { color: #fff; text-decoration: none; }
+    a:hover { color: rgba(255,255,255,0.7); }
+  </style>
+</helmet>
+<div style="position: relative; width: 100%; height: 100vh; min-height: 640px; overflow: hidden; background: rgb(25,35,22); font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif" data-om-label="404" data-screen-label="404 (desktop)">
+  <video src="./assets/footer-video.mp4" poster="./assets/footer-beach.webp" autoPlay="{{ true }}" loop="{{ true }}" muted="{{ true }}" playsInline="{{ true }}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; pointer-events: none"></video>
+  <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,18,12,0.82), rgba(10,18,12,0.55) 55%, rgba(10,18,12,0.72)); pointer-events: none"></div>
+  <div style="position: absolute; left: clamp(12px,2.5vw,36px); right: clamp(12px,2.5vw,36px); top: clamp(10px,2vw,24px); z-index: 100; border-radius: 16px; background: rgba(0,0,0,0.3); backdrop-filter: blur(24px); display: grid; grid-template-columns: auto 1fr auto; padding: clamp(10px,1.2vw,16px) clamp(10px,1.2vw,16px) clamp(10px,1.2vw,16px) clamp(14px,1.8vw,24px); align-items: center; box-sizing: border-box; gap: 16px" data-om-label="header">
+    <a href="./index.html" style="width: 131px; justify-self: start; flex-shrink: 0; display: block; height: 42px; text-decoration: none"><img src="./assets/logo.svg" alt="EVERVILLE" style="width: 128px; height: 40px; display: block"></a>
+    <div style="display: flex; flex-direction: row; gap: clamp(10px,1.8vw,36px); align-items: center; flex-wrap: nowrap; justify-self: start; margin-left: clamp(8px,1.2vw,20px); min-width: 0; overflow: visible">
+      <a href="./projects.html" style="font-size: clamp(11px,0.97vw,16px); font-weight: 400; line-height: 21px; color: #fff; white-space: nowrap; transition: color 0.2s ease-out; text-decoration: none" style-hover="color: rgba(255,255,255,0.65)">Проекты</a>
+      <a href="./investments.html" style="font-size: clamp(11px,0.97vw,16px); font-weight: 400; line-height: 21px; color: #fff; white-space: nowrap; transition: color 0.2s ease-out; text-decoration: none" style-hover="color: rgba(255,255,255,0.65)">Инвестиции</a>
+      <a href="./legal.html" style="font-size: clamp(11px,0.97vw,16px); font-weight: 400; line-height: 21px; color: #fff; white-space: nowrap; transition: color 0.2s ease-out; text-decoration: none" style-hover="color: rgba(255,255,255,0.65)">Юридика</a>
+      <a href="./about.html" style="font-size: clamp(11px,0.97vw,16px); font-weight: 400; line-height: 21px; color: #fff; white-space: nowrap; transition: color 0.2s ease-out; text-decoration: none" style-hover="color: rgba(255,255,255,0.65)">О компании</a>
+      <a href="./contacts.html" style="font-size: clamp(11px,0.97vw,16px); font-weight: 400; line-height: 21px; color: #fff; white-space: nowrap; transition: color 0.2s ease-out; text-decoration: none" style-hover="color: rgba(255,255,255,0.65)">Контакты</a>
+    </div>
+    <div style="display: flex; flex-direction: row; gap: 12px; align-items: center; flex-wrap: nowrap; justify-self: end; min-width: 0">
+      <div style="display: flex; flex-direction: row; gap: 8px; align-items: stretch">
+        <a href="./contacts.html" style="border-radius: 8px; background: #fff; display: inline-flex; padding: 12px 16px; justify-content: center; align-items: center; box-sizing: border-box; cursor: pointer; text-decoration: none; transition: background 0.2s ease-out" style-hover="background: rgb(206,210,199)">
+          <span style="font-weight: 700; font-size: clamp(11px,0.97vw,16px); line-height: 21px; color: rgb(43,58,39); white-space: nowrap">Инвестировать</span>
+        </a>
+        <div onClick="{{ goLogin }}" style="border-radius: 8px; background: rgb(43,58,39); display: inline-flex; padding: 12px 16px; justify-content: center; align-items: center; box-sizing: border-box; cursor: pointer; transition: background 0.2s ease-out" style-hover="background: rgb(30,41,27)">
+          <span style="font-weight: 700; font-size: clamp(11px,0.97vw,16px); line-height: 21px; color: #fff; white-space: nowrap">Войти</span>
+        </div>
+      </div>
+      <div style="backdrop-filter: blur(12px); display: flex; flex-direction: row; gap: 4px; padding: 16px; align-items: center; box-sizing: border-box; cursor: pointer; width: 69px; height: 45px; border-radius: 8px; transition: background-color 0.2s ease-out" style-hover="background-color: rgba(43,58,39,0.5)">
+        <span style="font-weight: 700; font-size: clamp(11px,0.97vw,14px); color: #fff">RU</span>
+        <svg width="14" height="7" viewBox="0 0 14 7" fill="#fff"><path d="M 7 7 L 0.938 1.75 L 13.062 1.75 L 7 7 Z"></path></svg>
+      </div>
+    </div>
+  </div>
+  <div style="position: relative; z-index: 5; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; gap: clamp(24px,2.4vw,36px); padding: 0 clamp(24px,6vw,88px); box-sizing: border-box">
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 10px">
+      <span style="font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 400; font-size: clamp(14px,1.04vw,16px); letter-spacing: 0.02em; color: rgb(214,158,158)">ошибка 404</span>
+      <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: clamp(96px,14vw,220px); line-height: 1; color: #fff">404</span>
+      <div style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: clamp(16px,2vw,32px)">
+        <span data-rule="left" style="flex: 0 0 auto; width: clamp(80px,9.3vw,178px); height: 2px; background: #fff; display: block; transform: scaleX(0); transform-origin: right center; transition: transform 0.9s cubic-bezier(.16,1,.3,1) 120ms"></span>
+        <span style="font-family: 'HeadingNow-82Light'; font-weight: 200; font-size: clamp(24px,2.5vw,44px); line-height: 1.2; text-transform: uppercase; color: #fff; white-space: nowrap">страница не найдена</span>
+        <span data-rule="right" style="flex: 0 0 auto; width: clamp(80px,9.3vw,178px); height: 2px; background: #fff; display: block; transform: scaleX(0); transform-origin: left center; transition: transform 0.9s cubic-bezier(.16,1,.3,1) 120ms"></span>
+      </div>
+    </div>
+    <span style="max-width: 560px; font-weight: 400; font-size: clamp(15px,1.1vw,18px); line-height: 1.55; color: rgba(255,255,255,0.85)">Возможно, страница была перемещена или адрес введён с ошибкой. Начните с главной — или напишите нам.</span>
+    <div style="display: flex; flex-direction: row; gap: 12px; align-items: center; flex-wrap: wrap; justify-content: center">
+      <a href="./index.html" style="border-radius: 8px; background: #fff; display: flex; padding: clamp(14px,1.4vw,20px) clamp(28px,3vw,48px); justify-content: center; align-items: center; box-sizing: border-box; cursor: pointer; text-decoration: none; transition: background 0.2s ease-out" style-hover="background: rgb(206,210,199)">
+        <span style="font-weight: 700; font-size: clamp(13px,1vw,16px); line-height: 21px; color: rgb(43,58,39); white-space: nowrap">На главную</span>
+      </a>
+      <a href="./contacts.html" style="border-radius: 8px; background: rgba(255,255,255,0.14); backdrop-filter: blur(8px); display: flex; padding: clamp(14px,1.4vw,20px) clamp(28px,3vw,48px); justify-content: center; align-items: center; box-sizing: border-box; cursor: pointer; text-decoration: none; transition: background 0.2s ease-out" style-hover="background: rgba(255,255,255,0.24)"><span style="font-weight: 700; font-size: clamp(13px,1vw,16px); line-height: 21px; color: #fff; white-space: nowrap">Связаться с нами</span></a>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    this._t = setTimeout(() => { document.querySelectorAll("[data-rule]").forEach((n) => { n.style.transform = "none"; }); }, 120);
+  }
+  componentWillUnmount() { clearTimeout(this._t); }
+  renderVals() { return { goLogin: () => window.open("https://portal.everville.estate/login", "_blank", "noopener") }; }
+}
+</script>
+</body>
+</html>

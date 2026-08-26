@@ -3,14 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>(function(){var w=window.innerWidth,d=w>=1024?"desktop":w>=768?"tablet":"mobile";if(d!=="mobile"){var s={desktop:"roya-desa.html",tablet:"roya-desa-tablet.html",mobile:"roya-desa-mobile.html"};window.location.replace(s[d]);}})();</script>
 <script src="./support.js"></script>
 </head>
 <body>
 <x-dc>
 <helmet>
   <style>
-    @font-face { font-family: "HeadingNow-84Regular"; src: url("./fonts/HeadingNow-84Regular.otf") format("opentype"); font-weight: 400; }
-    @font-face { font-family: "HeadingNow-82Light"; src: url("./fonts/HeadingNow-82Light.otf") format("opentype"); font-weight: 200; }
+    @font-face { font-family: "HeadingNow-84Regular"; src: url("./fonts/HeadingNow-84Regular.otf") format("opentype"); font-weight: 400; font-display: swap; }
+    @font-face { font-family: "HeadingNow-82Light"; src: url("./fonts/HeadingNow-82Light.otf") format("opentype"); font-weight: 200; font-display: swap; }
     @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap");
     html, body { margin: 0; background: #EBEAE6; overflow-x: hidden; scroll-behavior: smooth; }
     a { color: rgb(25,35,22); text-decoration: none; }
@@ -20,14 +21,14 @@
 <div style="width: 100%; position: relative; background: #EBEAE6; font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif">
 
   <div style="position: fixed; left: 0; right: 0; top: calc(env(safe-area-inset-top, 0px) + 12px); height: 0; z-index: 400" data-om-label="header-mobile">
-    <div ref="{{ hdrRef }}" style="position: relative; margin: 0 12px; z-index: 500; border-radius: 14px; background: rgba(0,0,0,0.32); backdrop-filter: blur(24px); transform: translateY(0); transition: transform 0.4s cubic-bezier(.16,1,.3,1); display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 10px 10px 14px; box-sizing: border-box">
-      <a href="./index.html" style="display: block; flex-shrink: 0"><img src="./assets/logo-mobile.svg" alt="EVERVILLE" style="width: 120px; height: 36px; display: block"></a>
+    <div ref="{{ hdrRef }}" style="position: relative; margin: 0 12px; z-index: 500; border-radius: 16px; background: rgba(0,0,0,0.3); backdrop-filter: blur(24px); transform: translateY(0); transition: transform 0.4s cubic-bezier(.16,1,.3,1); display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 10px 10px 14px; box-sizing: border-box">
+      <a href="./index-mobile.html" style="display: block; flex-shrink: 0; text-decoration: none"><img src="./assets/logo-mobile.svg" alt="EVERVILLE" style="width: 120px; height: 36px; display: block"></a>
       <div style="display: flex; flex-direction: row; align-items: center; gap: 6px">
-        <div style="display: flex; flex-direction: row; gap: 4px; align-items: center; padding: 12px 10px; border-radius: 8px; cursor: pointer">
+        <div style="display: flex; flex-direction: row; gap: 4px; align-items: center; padding: 12px 10px; border-radius: 8px; cursor: pointer; transition: background-color 0.2s ease-out" style-hover="background-color: rgba(43,58,39,0.5)">
           <span style="font-weight: 700; font-size: 13px; color: #fff">RU</span>
           <svg width="12" height="6" viewBox="0 0 14 7" fill="#fff"><path d="M 7 7 L 0.938 1.75 L 13.062 1.75 L 7 7 Z"></path></svg>
         </div>
-        <div onClick="{{ onToggleMenu }}" style="width: 48px; height: 48px; border-radius: 10px; background: rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center; cursor: pointer; flex-shrink: 0">
+        <div onClick="{{ onToggleMenu }}" style="width: 45px; height: 45px; border-radius: 8px; background: rgba(255,255,255,0.14); display: flex; align-items: center; justify-content: center; cursor: pointer; flex-shrink: 0">
           <div style="position: relative; width: 22px; height: 22px; flex-shrink: 0">
             <span style="position: absolute; left: 1px; top: 6px; width: 20px; height: 1.5px; border-radius: 1px; background: #fff; transform: {{ barTop }}; transition: transform 0.4s cubic-bezier(.16,1,.3,1)"></span>
             <span style="position: absolute; left: 1px; top: 10.25px; width: 20px; height: 1.5px; border-radius: 1px; background: #fff; opacity: {{ barMidO }}; transform: {{ barMid }}; transition: opacity 0.2s ease-out, transform 0.4s cubic-bezier(.16,1,.3,1)"></span>
@@ -39,10 +40,10 @@
     <div style="transform: {{ menuTransform }}; pointer-events: {{ menuPointer }}; visibility: {{ menuVis }}; transition: transform 0.55s cubic-bezier(.16,1,.3,1), visibility 0.55s linear; position: fixed; left: 0; width: 100%; top: 0; height: 100svh; z-index: 200; background: rgb(25,35,22); display: flex; flex-direction: column; padding: calc(env(safe-area-inset-top, 0px) + 92px) 16px 16px; box-sizing: border-box">
       <div style="display: flex; flex-direction: column; gap: 4px; flex: 1 1 auto; justify-content: center; align-items: center">
         <span onClick="{{ goProjects }}" style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 28px; line-height: 1.6; color: #fff; text-transform: uppercase; cursor: pointer">Проекты</span>
-        <a href="./investments.html" style="font-family: 'HeadingNow-82Light'; font-weight: 200; font-size: 28px; line-height: 1.6; color: #fff; text-transform: uppercase; cursor: pointer">Инвестиции</a>
-        <a href="./legal.html" style="font-family: 'HeadingNow-82Light'; font-weight: 200; font-size: 28px; line-height: 1.6; color: #fff; text-transform: uppercase; cursor: pointer">Юридика</a>
-        <a href="./about.html" style="font-family: 'HeadingNow-82Light'; font-weight: 200; font-size: 28px; line-height: 1.6; color: #fff; text-transform: uppercase; cursor: pointer">О компании</a>
-        <a href="./contacts.html" style="font-family: 'HeadingNow-82Light'; font-weight: 200; font-size: 28px; line-height: 1.6; color: #fff; text-transform: uppercase; cursor: pointer">Контакты</a>
+        <a href="./investments-mobile.html" style="font-family: 'HeadingNow-82Light'; font-weight: 200; font-size: 28px; line-height: 1.6; color: #fff; text-transform: uppercase; cursor: pointer; text-decoration: none">Инвестиции</a>
+        <a href="./legal-mobile.html" style="font-family: 'HeadingNow-82Light'; font-weight: 200; font-size: 28px; line-height: 1.6; color: #fff; text-transform: uppercase; cursor: pointer; text-decoration: none">Юридика</a>
+        <a href="./about-mobile.html" style="font-family: 'HeadingNow-82Light'; font-weight: 200; font-size: 28px; line-height: 1.6; color: #fff; text-transform: uppercase; cursor: pointer; text-decoration: none">О компании</a>
+        <a href="./contacts-mobile.html" style="font-family: 'HeadingNow-82Light'; font-weight: 200; font-size: 28px; line-height: 1.6; color: #fff; text-transform: uppercase; cursor: pointer; text-decoration: none">Контакты</a>
       </div>
       <div style="display: flex; flex-direction: column; gap: 10px; align-items: stretch">
         <div onClick="{{ openInvest }}" style="border-radius: 8px; background: #fff; display: flex; padding: 18px 24px; justify-content: center; align-items: center; box-sizing: border-box; cursor: pointer"><span style="font-weight: 700; font-size: 15px; line-height: 21px; color: rgb(43,58,39)">Инвестировать</span></div>
@@ -53,10 +54,10 @@
 
   <div style="position: relative; width: 100%; height: 100svh; overflow: hidden; background: rgb(25,35,22)" data-om-label="hero" data-screen-label="ROYA DESA — Hero (mobile)">
     <img ref="{{ heroImgRef }}" src="./assets/projects/ext-4-1.webp" alt="ROYA DESA" style="position: absolute; left: 0; right: 0; top: -8%; height: 118%; will-change: transform; width: 100%; object-fit: cover; object-position: center; display: block; opacity: {{ heroImg.o }}; transform: scale({{ heroImg.s }}); transition: opacity 1.1s ease-out, transform 1.4s cubic-bezier(.16,1,.3,1)">
-    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(12,18,11,0.62), rgba(12,18,11,0.3) 34%, rgba(12,18,11,0.9)); pointer-events: none"></div>
+    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(12,18,11,0.82), rgba(12,18,11,0.62) 34%, rgba(12,18,11,0.95)); pointer-events: none"></div>
     <div data-reveal="hero" style="position: relative; width: 100%; box-sizing: border-box; padding: 88px 16px 24px; display: flex; flex-direction: column; gap: 16px; height: 100%; justify-content: center; opacity: {{ heroBlk.o }}; transform: translateY({{ heroBlk.y }}px); transition: transform 1s cubic-bezier(.16,1,.3,1), opacity 1s ease-out">
       <div style="display: flex; flex-direction: row; align-items: center; gap: 8px; font-size: 12px; font-weight: 400; flex-wrap: wrap" data-om-label="breadcrumbs">
-        <a href="./index.html" style="color: rgba(255,255,255,0.65); text-decoration: none">Главная</a>
+        <a href="./index-mobile.html" style="color: rgba(255,255,255,0.65); text-decoration: none">Главная</a>
         <span style="color: rgba(255,255,255,0.4)">/</span>
         <a href="./projects-mobile.html" style="color: rgba(255,255,255,0.65); text-decoration: none">Проекты</a>
         <span style="color: rgba(255,255,255,0.4)">/</span>
@@ -65,8 +66,8 @@
       <div style="display: flex; flex-direction: column; gap: 12px">
         <span style="font-weight: 400; font-size: 13px; letter-spacing: 0.02em; color: rgb(214,158,158); opacity: {{ heroFadeO }}; transform: translateY({{ heroFadeY }}px); transition: opacity 0.8s ease-out 60ms, transform 0.8s cubic-bezier(.16,1,.3,1) 60ms">старт продаж — Q4 2026</span>
         <div style="display: flex; flex-direction: column; gap: 2px">
-          <div style="overflow: hidden"><span style="display: block; font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 38px; line-height: 1; color: #fff; text-transform: uppercase; transform: translateY({{ heroT1 }}%); transition: transform 1s cubic-bezier(.16,1,.3,1) 120ms">ROYA</span></div>
-          <div style="display: flex; align-items: center; gap: 14px"><span style="flex: 0 0 auto; width: 48px; height: 1.5px; background: #fff; display: block; transform: scaleX({{ heroLine }}); transform-origin: right; transition: transform 0.7s cubic-bezier(.16,1,.3,1) 250ms"></span><span style="display: block; overflow: hidden"><span style="display: block; font-family: 'HeadingNow-82Light'; font-weight: 200; font-size: 38px; line-height: 1; color: #fff; text-transform: uppercase; transform: translateY({{ heroT2 }}%); transition: transform 1s cubic-bezier(.16,1,.3,1) 260ms">DESA</span></span></div>
+          <div style="overflow: hidden"><span style="display: block; font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 38px; line-height: 1.36; color: #fff; text-transform: uppercase; transform: translateY({{ heroT1 }}%); transition: transform 1s cubic-bezier(.16,1,.3,1) 120ms">ROYA</span></div>
+          <div style="display: flex; align-items: center; gap: 14px"><span style="flex: 0 0 auto; width: 150px; height: 2px; background: #fff; display: block; transform: scaleX({{ heroLine }}); transform-origin: right; transition: transform 0.7s cubic-bezier(.16,1,.3,1) 250ms"></span><span style="display: block; overflow: hidden"><span style="display: block; font-family: 'HeadingNow-82Light'; font-weight: 200; font-size: 38px; line-height: 1.36; color: #fff; text-transform: uppercase; transform: translateY({{ heroT2 }}%); transition: transform 1s cubic-bezier(.16,1,.3,1) 260ms">DESA</span></span></div>
         </div>
         <span style="font-family: 'HeadingNow-82Light'; font-weight: 200; font-size: 15px; letter-spacing: 0.04em; text-transform: uppercase; color: rgba(255,255,255,0.9); opacity: {{ heroFadeO }}; transform: translateY({{ heroFadeY }}px); transition: opacity 0.8s ease-out 420ms, transform 0.8s cubic-bezier(.16,1,.3,1) 420ms">Coastal town · marina</span>
         <div style="display: flex; flex-direction: row; gap: 8px; align-items: flex-start; opacity: {{ heroFadeO }}; transform: translateY({{ heroFadeY }}px); transition: opacity 0.8s ease-out 540ms, transform 0.8s cubic-bezier(.16,1,.3,1) 540ms">
@@ -88,9 +89,9 @@
   <div style="background: #fff; padding: 48px 16px; box-sizing: border-box" data-om-label="data" data-screen-label="Цифры проекта">
     <div data-reveal="data" style="width: 100%; display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 22px 16px; opacity: {{ dataBlk.o }}; transform: translateY({{ dataBlk.y }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1), opacity 0.9s ease-out">
       <sc-for list="{{ figures }}" as="f" hint-placeholder-count="8">
-        <div style="display: flex; flex-direction: column; gap: 8px; border-top: 1.5px solid rgb(25,35,22); padding-top: 12px; opacity: {{ f.o }}; transform: translateY({{ f.y }}px); transition: opacity 0.7s ease-out {{ f.delay }}, transform 0.7s cubic-bezier(.16,1,.3,1) {{ f.delay }}">
+        <div style="position: relative; display: flex; flex-direction: column; gap: 8px; border-top: 2px solid transparent; padding-top: 12px; opacity: {{ f.o }}; transform: translateY({{ f.y }}px); transition: opacity 0.7s ease-out {{ f.delay }}, transform 0.7s cubic-bezier(.16,1,.3,1) {{ f.delay }}"><span data-rule="top" style="position: absolute; left: 0; top: -2px; width: 100%; height: 2px; background: rgb(25,35,22); transform: scaleX(0); transform-origin: left center; transition: transform 0.9s cubic-bezier(.16,1,.3,1) 120ms"></span>
           <span style="font-weight: 400; font-size: 13px; line-height: 1.15; color: #2D2D2D">{{ f.label }}</span>
-          <span style="font-weight: 500; font-size: 24px; line-height: 1.1; color: rgb(25,35,22); white-space: nowrap">{{ f.value }}</span>
+          <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 24px; line-height: 1.2; color: rgb(25,35,22); white-space: nowrap">{{ f.value }}</span>
         </div>
       </sc-for>
     </div>
@@ -102,8 +103,8 @@
       <div style="display: flex; flex-direction: column; gap: 18px">
         <span style="font-weight: 400; font-size: 13px; text-transform: lowercase; letter-spacing: 0.02em; color: rgb(138,70,70)">концепция</span>
         <div style="display: flex; flex-direction: column; gap: 4px">
-          <span style="font-family: 'HeadingNow-82Light'; font-weight: 200; font-size: 26px; line-height: 1.1; text-transform: uppercase; color: rgb(25,35,22)">Город у</span>
-          <div style="display: flex; align-items: center; gap: 14px"><span style="flex: 0 0 auto; width: 56px; height: 1.5px; background: rgb(25,35,22); display: block; transform: scaleX({{ conLine }}); transform-origin: right; transition: transform 0.7s cubic-bezier(.16,1,.3,1) 200ms"></span><span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 26px; line-height: 1.1; text-transform: uppercase; color: rgb(25,35,22)">кромки воды</span></div>
+          <span style="font-family: 'HeadingNow-82Light'; font-weight: 200; font-size: 26px; line-height: 1.2; text-transform: uppercase; color: rgb(25,35,22)">Город у</span>
+          <div style="display: flex; align-items: center; gap: 14px"><span style="flex: 0 0 auto; width: 90px; height: 2px; background: rgb(25,35,22); display: block; transform: scaleX({{ conLine }}); transform-origin: right; transition: transform 0.7s cubic-bezier(.16,1,.3,1) 200ms"></span><span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 26px; line-height: 1.2; text-transform: uppercase; color: rgb(25,35,22)">кромки воды</span></div>
         </div>
         <span style="font-weight: 400; font-size: 15px; line-height: 1.55; color: #2D2D2D">ROYA DESA — новый прибрежный район Everville: жилые кварталы, набережная, марина и городская инфраструктура, спроектированные как единая среда жизни у океана.</span>
         <span style="font-weight: 400; font-size: 15px; line-height: 1.55; color: #2D2D2D">Первая очередь объединяет резиденции и коммерческие пространства набережной — с пешеходным доступом ко всем сервисам района.</span>
@@ -115,7 +116,7 @@
     <div data-reveal="gal" style="width: 100%; display: flex; flex-direction: column; gap: 20px; opacity: {{ galBlk.o }}; transform: translateY({{ galBlk.y }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1), opacity 0.9s ease-out">
       <div style="display: flex; flex-direction: column; gap: 8px; padding-right: 16px">
         <span style="font-weight: 400; font-size: 13px; text-transform: lowercase; letter-spacing: 0.02em; color: rgb(138,70,70)">галерея</span>
-        <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 26px; line-height: 1.1; text-transform: uppercase; color: rgb(25,35,22)">Проект вблизи</span>
+        <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 26px; line-height: 1.2; text-transform: uppercase; color: rgb(25,35,22)">Проект вблизи</span>
       </div>
       <div style="display: flex; flex-direction: row; gap: 8px; align-items: center; overflow-x: auto; padding-right: 16px; scrollbar-width: none">
         <sc-for list="{{ tabs }}" as="tb" hint-placeholder-count="4">
@@ -154,15 +155,15 @@
       <div style="display: flex; flex-direction: column; gap: 8px">
         <span style="font-weight: 400; font-size: 13px; text-transform: lowercase; letter-spacing: 0.02em; color: rgb(214,158,158)">показатели</span>
         <div style="display: flex; flex-direction: column; gap: 2px">
-          <span style="font-family: 'HeadingNow-82Light'; font-weight: 200; font-size: 26px; line-height: 1.1; text-transform: uppercase; color: #fff">Инвестиционная</span>
-          <div style="display: flex; align-items: center; gap: 14px"><span style="flex: 0 0 auto; width: 52px; height: 1.5px; background: #fff; display: block; transform: scaleX({{ indLine }}); transform-origin: left; transition: transform 0.7s cubic-bezier(.16,1,.3,1) 200ms"></span><span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 26px; line-height: 1.1; text-transform: uppercase; color: #fff">модель</span></div>
+          <span style="font-family: 'HeadingNow-82Light'; font-weight: 200; font-size: 26px; line-height: 1.2; text-transform: uppercase; color: #fff">Инвестиционная</span>
+          <div style="display: flex; align-items: center; gap: 14px"><span style="flex: 0 0 auto; width: 150px; height: 2px; background: #fff; display: block; transform: scaleX({{ indLine }}); transform-origin: right; transition: transform 0.7s cubic-bezier(.16,1,.3,1) 200ms"></span><span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 26px; line-height: 1.2; text-transform: uppercase; color: #fff">модель</span></div>
         </div>
       </div>
       <div style="display: flex; flex-direction: column; gap: 22px">
         <sc-for list="{{ indicators }}" as="ind" hint-placeholder-count="4">
-          <div style="display: flex; flex-direction: column; gap: 10px; border-top: 1.5px solid rgba(255,255,255,0.5); padding-top: 14px; opacity: {{ ind.o }}; transform: translateY({{ ind.y }}px); transition: opacity 0.7s ease-out {{ ind.delay }}, transform 0.7s cubic-bezier(.16,1,.3,1) {{ ind.delay }}">
+          <div style="position: relative; display: flex; flex-direction: column; gap: 10px; border-top: 2px solid transparent; padding-top: 14px; opacity: {{ ind.o }}; transform: translateY({{ ind.y }}px); transition: opacity 0.7s ease-out {{ ind.delay }}, transform 0.7s cubic-bezier(.16,1,.3,1) {{ ind.delay }}"><span data-rule="top" style="position: absolute; left: 0; top: -2px; width: 100%; height: 2px; background: rgba(255,255,255,0.5); transform: scaleX(0); transform-origin: left center; transition: transform 0.9s cubic-bezier(.16,1,.3,1) 120ms"></span>
             <span style="font-weight: 400; font-size: 13px; color: rgb(214,158,158)">{{ ind.label }}</span>
-            <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 21px; line-height: 1.1; color: #fff">{{ ind.value }}</span>
+            <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 21px; line-height: 1.2; color: #fff">{{ ind.value }}</span>
             <span style="font-weight: 400; font-size: 14px; line-height: 1.5; color: rgba(255,255,255,0.72)">{{ ind.note }}</span>
           </div>
         </sc-for>
@@ -178,7 +179,7 @@
     <div data-reveal="srv" style="width: 100%; display: flex; flex-direction: column; gap: 24px; opacity: {{ srvBlk.o }}; transform: translateY({{ srvBlk.y }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1), opacity 0.9s ease-out">
       <div style="display: flex; flex-direction: column; gap: 12px">
         <span style="font-weight: 400; font-size: 13px; text-transform: lowercase; letter-spacing: 0.02em; color: rgb(138,70,70)">инфраструктура</span>
-        <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 26px; line-height: 1.1; text-transform: uppercase; color: rgb(25,35,22)">Сервисы и amenities</span>
+        <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 26px; line-height: 1.2; text-transform: uppercase; color: rgb(25,35,22)">Сервисы и amenities</span>
         <span style="font-weight: 400; font-size: 15px; line-height: 1.55; color: #2D2D2D">Инфраструктура района работает для жителей с первого дня: от марины и набережной до школы и пляжного клуба.</span>
       </div>
       <div style="display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1px; background: rgba(25,35,22,0.18)">
@@ -202,7 +203,7 @@
       </div>
       <div style="display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 20px 16px">
       <sc-for list="{{ partners }}" as="p" hint-placeholder-count="4">
-        <div style="display: flex; flex-direction: column; gap: 8px; border-top: 1.5px solid rgb(25,35,22); padding-top: 12px; opacity: {{ p.o }}; transform: translateY({{ p.y }}px); transition: opacity 0.7s ease-out {{ p.delay }}, transform 0.7s cubic-bezier(.16,1,.3,1) {{ p.delay }}">
+        <div style="position: relative; display: flex; flex-direction: column; gap: 8px; border-top: 2px solid transparent; padding-top: 12px; opacity: {{ p.o }}; transform: translateY({{ p.y }}px); transition: opacity 0.7s ease-out {{ p.delay }}, transform 0.7s cubic-bezier(.16,1,.3,1) {{ p.delay }}"><span data-rule="top" style="position: absolute; left: 0; top: -2px; width: 100%; height: 2px; background: rgb(25,35,22); transform: scaleX(0); transform-origin: left center; transition: transform 0.9s cubic-bezier(.16,1,.3,1) 120ms"></span>
           <span style="font-weight: 400; font-size: 12px; text-transform: lowercase; letter-spacing: 0.02em; color: rgb(138,70,70)">{{ p.role }}</span>
           <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 16px; line-height: 1.15; text-transform: uppercase; color: rgb(25,35,22)">{{ p.name }}</span>
         </div>
@@ -214,8 +215,8 @@
   <sc-if value="{{ showOther }}" hint-placeholder-val="{{ true }}">
     <div style="background: #fff; padding: 48px 16px; box-sizing: border-box" data-om-label="other" data-screen-label="Другие проекты">
       <div data-reveal="oth" style="width: 100%; display: flex; flex-direction: column; gap: 22px; opacity: {{ othBlk.o }}; transform: translateY({{ othBlk.y }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1), opacity 0.9s ease-out">
-        <div style="display: flex; flex-direction: column; gap: 12px; border-top: 1.5px solid rgb(138,70,70); padding-top: 14px">
-          <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 24px; line-height: 1.1; text-transform: uppercase; color: rgb(25,35,22)">Другие проекты</span>
+        <div style="display: flex; flex-direction: column; gap: 12px; padding-top: 14px">
+          <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 24px; line-height: 1.2; text-transform: uppercase; color: rgb(25,35,22)">Другие проекты</span>
         </div>
         <div style="display: flex; flex-direction: column; gap: 22px">
           <sc-for list="{{ others }}" as="o" hint-placeholder-count="3">
@@ -236,57 +237,58 @@
     </div>
   </sc-if>
 
-  <div style="position: relative; overflow: hidden; background: rgb(25,35,22); box-sizing: border-box; width: 100%; min-height: 100svh; display: flex" data-om-label="cta" data-screen-label="Личный доступ (CTA)">
-    <img src="./assets/cta-bg.webp" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; pointer-events: none">
-    <div style="position: relative; width: 100%; background: linear-gradient(180deg, rgba(15,20,13,0.45), rgba(15,20,13,0.2) 45%, rgba(15,20,13,0.5)); display: flex; flex-direction: column; justify-content: center; padding: 56px 16px; box-sizing: border-box; gap: 22px">
-      <div data-reveal="ctahead" style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 27px; line-height: 1.2; text-transform: uppercase; color: #fff; display: flex; flex-direction: column; gap: 4px">
-        <div style="overflow: hidden"><span style="display: block; transform: translateY({{ ctaT1Y }}%); opacity: {{ ctaT1O }}; transition: transform 0.9s cubic-bezier(.16,1,.3,1) 0ms, opacity 0.9s ease-out 0ms">Ваш личный доступ</span></div>
-        <div style="overflow: hidden"><div style="display: flex; flex-direction: row; align-items: center; gap: 14px; margin-left: 16px; transform: translateY({{ ctaT2Y }}%); opacity: {{ ctaT2O }}; transition: transform 0.9s cubic-bezier(.16,1,.3,1) 120ms, opacity 0.9s ease-out 120ms"><span style="flex: 0 0 auto; width: 44px; height: 1.5px; background: #fff; display: block; transform: scaleX({{ ctaLine }}); transform-origin: right; transition: transform 0.7s cubic-bezier(.16,1,.3,1) 200ms"></span><span style="white-space: nowrap; font-family: HeadingNow-82Light">К возможностям</span></div></div>
-        <div style="overflow: hidden"><div style="display: flex; flex-direction: row; align-items: center; gap: 14px; margin-left: 32px; transform: translateY({{ ctaT3Y }}%); opacity: {{ ctaT3O }}; transition: transform 0.9s cubic-bezier(.16,1,.3,1) 240ms, opacity 0.9s ease-out 240ms"><span style="white-space: nowrap; font-family: HeadingNow-82Light">Острова</span><span style="flex: 1 1 auto; min-width: 24px; height: 1.5px; background: #fff; display: block; transform: scaleX({{ ctaLine }}); transform-origin: left; transition: transform 0.7s cubic-bezier(.16,1,.3,1) 300ms"></span></div></div>
-      </div>
-      <span style="font-weight: 400; font-size: 15px; line-height: 1.45; color: #fff; opacity: {{ ctaFormO }}; transform: translateY({{ ctaFormY }}px); transition: transform 0.8s cubic-bezier(.16,1,.3,1) 200ms, opacity 0.8s ease-out 200ms">Познакомьтесь с ROYA DESA лично. Мы ответим на все вопросы о мастер-плане, очередях строительства и условиях ранних бронирований</span>
-      <div data-reveal="ctaform" style="display: flex; flex-direction: column; gap: 10px; margin-top: 8px; opacity: {{ ctaFormO }}; transform: translateY({{ ctaFormY }}px); transition: transform 0.8s cubic-bezier(.16,1,.3,1) 300ms, opacity 0.8s ease-out 300ms">
-        <input type="text" ref="{{ ctaNameRef }}" placeholder="Ваше имя *" style="width: 100%; height: 53px; border: none; outline: none; border-radius: 10px; background: rgb(235,234,230); padding: 0 16px; box-sizing: border-box; font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 600; font-size: 16px; color: rgb(25,35,22); box-shadow: {{ ctaNameRing }}">
-        <input type="email" ref="{{ ctaMailRef }}" placeholder="Ваш e-mail *" style="width: 100%; height: 53px; border: none; outline: none; border-radius: 10px; background: rgb(235,234,230); padding: 0 16px; box-sizing: border-box; font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 600; font-size: 16px; color: rgb(25,35,22); box-shadow: {{ ctaMailRing }}">
-        <input type="tel" ref="{{ ctaPhoneRef }}" placeholder="Телефон или Telegram *" style="width: 100%; height: 53px; border: none; outline: none; border-radius: 10px; background: rgb(235,234,230); padding: 0 16px; box-sizing: border-box; font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 600; font-size: 16px; color: rgb(25,35,22); box-shadow: {{ ctaPhoneRing }}">
-        <div onClick="{{ submitCta }}" style="width: 100%; height: 53px; border-radius: 8px; background: rgb(43,58,39); display: flex; flex-direction: row; gap: 10px; justify-content: center; align-items: center; cursor: pointer">
-          <span style="font-weight: 700; font-size: 14px; color: #fff">Записаться на просмотр</span>
-          <svg width="18" height="12" viewBox="0 0 24 14" fill="none"><path d="M 1 7 L 23 7 M 16 1 L 23 7 L 16 13" stroke="#fff" stroke-width="1.5" fill="none"></path></svg>
-        </div>
+  <div style="position: relative; overflow: hidden; background: rgb(25,35,22); box-sizing: border-box; display: flex; flex-direction: column; align-items: center; width: 100%; height: clamp(640px,56.25vw,810px)" data-om-label="cta" data-screen-label="Личный доступ (CTA)">
+  <img src="./assets/cta-bg.webp" alt="" loading="lazy" decoding="async" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; pointer-events: none">
+  <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15,20,13,0.35), rgba(15,20,13,0.15) 45%, rgba(15,20,13,0.4)); display: flex; justify-content: center; align-items: center; padding: 0 clamp(24px,6vw,88px); box-sizing: border-box"><div style="position: relative; width: 100%; max-width: 1000px; display: flex; flex-direction: column; gap: clamp(24px,2.2vw,32px)">
+    <div style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 22px; line-height: 1.2; text-transform: uppercase; color: #fff; display: flex; flex-direction: column; align-items: center; gap: 6px">
+      <div style="overflow: hidden; width: 100%; text-align: center"><div style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap"><span style="white-space: nowrap; max-width: 100%">Финансовая модель</span></div></div>
+      <div style="overflow: hidden; width: 100%; text-align: center"><div style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap"><span style="white-space: nowrap; font-family: HeadingNow-82Light">по вашему запросу</span></div></div>
+    </div>
+    <span style="max-width: 708px; margin: 0 auto; text-align: center; font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 400; font-size: clamp(15px,calc(12.1px + 0.38vw),20px); line-height: 1.4; color: #fff">Оставьте контакты — пришлём модель проекта, юридическую структуру сделки и доступ к Invest Portal. Без звонков «по кругу»: один менеджер ведёт вас от знакомства до отчётности.</span>
+    <div style="display: flex; flex-direction: row; gap: 10px; align-items: stretch; flex-wrap: wrap; margin-top: clamp(14px,2.6vw,38px)">
+      <input type="text" ref="{{ ctaNameRef }}" placeholder="Ваше имя *" style="flex: 1 1 100%; min-width: 0; min-width: 0; height: 53px; border: none; outline: none; border-radius: 10px; background: rgb(235,234,230); padding: 0 16px; box-sizing: border-box; font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 600; font-size: 14px; color: rgb(25,35,22); box-shadow: {{ ctaNameRing }}">
+      <input type="email" ref="{{ ctaMailRef }}" placeholder="Ваш e-mail *" style="flex: 1 1 100%; min-width: 0; min-width: 0; height: 53px; border: none; outline: none; border-radius: 10px; background: rgb(235,234,230); padding: 0 16px; box-sizing: border-box; font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 600; font-size: 14px; color: rgb(25,35,22); box-shadow: {{ ctaMailRing }}">
+      <input type="tel" ref="{{ ctaPhoneRef }}" placeholder="Телефон или Telegram *" style="flex: 1 1 100%; min-width: 0; min-width: 0; height: 53px; border: none; outline: none; border-radius: 10px; background: rgb(235,234,230); padding: 0 16px; box-sizing: border-box; font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 600; font-size: 14px; color: rgb(25,35,22); box-shadow: {{ ctaPhoneRing }}">
+      <div onClick="{{ submitCta }}" style="flex: 1 1 100%; min-width: 0; height: 53px; border-radius: 8px; background: rgb(43,58,39); display: flex; flex-direction: row; gap: 10px; justify-content: center; align-items: center; cursor: pointer; transition: background 0.2s ease-out" style-hover="background: rgb(30,41,27)">
+        <span style="font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 700; font-size: 14px; text-transform: none; color: #fff; white-space: nowrap">Получить модель</span>
+        <svg width="18" height="12" viewBox="0 0 24 14" fill="none"><path d="M 1 7 L 23 7 M 16 1 L 23 7 L 16 13" stroke="#fff" stroke-width="1.5" fill="none"></path></svg>
       </div>
     </div>
-  </div>
+  </div></div>
+</div>
 
   <div style="position: relative; overflow: hidden; background: url('./assets/footer-beach.webp') center / cover no-repeat, rgb(25,35,22); padding: clamp(64px,8.33vw,120px) clamp(24px,6vw,88px) clamp(180px,23.3vw,336px); box-sizing: border-box; display: flex; flex-direction: column; align-items: center" data-om-label="footer" data-screen-label="Футер">
   <video src="./assets/footer-video.mp4" poster="./assets/footer-beach.webp" preload="metadata" autoPlay="{{ true }}" loop="{{ true }}" muted="{{ true }}" playsInline="{{ true }}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; pointer-events: none"></video>
   <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,18,12,0.85), rgba(10,18,12,0.6) 55%, rgba(10,18,12,0.35)); pointer-events: none"></div>
-  <div style="position: relative; width: 100%; max-width: 1320px; display: flex; flex-direction: row; justify-content: space-between; align-items: flex-start; gap: clamp(32px,4vw,56px); flex-wrap: wrap; font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif">
-    <a href="./index.html" style="display: block; flex: 0 0 auto"><img src="./assets/logo.svg" alt="EVERVILLE" style="width: 131px; height: auto; display: block"></a>
-    <div style="display: flex; flex-direction: column; gap: clamp(24px,2.5vw,24px); flex: 0 1 auto; min-width: 160px">
+  <div style="position: relative; width: 100%; max-width: 1320px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 36px; font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif">
+    <a href="./index-mobile.html" style="display: block; flex: 0 0 auto; text-decoration: none"><img src="./assets/logo.svg" alt="EVERVILLE" style="width: 131px; height: auto; display: block"></a>
+    <div style="display: flex; flex-direction: column; gap: 16px; align-items: center; width: 100%">
       <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 18px; line-height: 1.2; text-transform: uppercase; color: #fff">Проекты</span>
-      <div style="display: flex; flex-direction: column; gap: 14px">
-        <a href="./roya.html" style="font-weight: 400; font-size: 16px; line-height: 1.1; color: #fff; transition: opacity 0.2s ease-out" style-hover="opacity: 0.65">Roya Resort</a>
-        <a href="./roya-desa.html" style="font-weight: 400; font-size: 16px; line-height: 1.1; color: #fff; transition: opacity 0.2s ease-out" style-hover="opacity: 0.65">Roya Desa</a>
-        <a href="./balicopter.html" style="font-weight: 400; font-size: 16px; line-height: 1.1; color: #fff; transition: opacity 0.2s ease-out" style-hover="opacity: 0.65">Balicopter</a>
+      <div style="display: flex; flex-direction: column; gap: 14px; align-items: center">
+        <a href="./roya-mobile.html" style="font-weight: 400; font-size: 16px; line-height: 1.1; color: #fff; transition: opacity 0.2s ease-out; text-decoration: none" style-hover="opacity: 0.65">Roya Resort</a>
+        <a href="./roya-desa-mobile.html" style="font-weight: 400; font-size: 16px; line-height: 1.1; color: #fff; transition: opacity 0.2s ease-out; text-decoration: none" style-hover="opacity: 0.65">Roya Desa</a>
+        <a href="./balicopter-mobile.html" style="font-weight: 400; font-size: 16px; line-height: 1.1; color: #fff; transition: opacity 0.2s ease-out; text-decoration: none" style-hover="opacity: 0.65">Balicopter</a>
+        <a href="./marina-mobile.html" style="font-weight: 400; font-size: 16px; line-height: 1.1; color: #fff; transition: opacity 0.2s ease-out; text-decoration: none" style-hover="opacity: 0.65">Marina</a>
+        <a href="./sanatorium-mobile.html" style="font-weight: 400; font-size: 16px; line-height: 1.1; color: #fff; transition: opacity 0.2s ease-out; text-decoration: none" style-hover="opacity: 0.65">Sanatorium</a>
       </div>
     </div>
-    <div style="display: flex; flex-direction: column; gap: clamp(24px,2.5vw,24px); flex: 0 1 auto; min-width: 160px">
+    <div style="display: flex; flex-direction: column; gap: 16px; align-items: center; width: 100%">
       <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 18px; line-height: 1.2; text-transform: uppercase; color: #fff">Инвестору</span>
-      <div style="display: flex; flex-direction: column; gap: 14px">
-        <a href="./investments.html" style="font-weight: 400; font-size: 16px; line-height: 1.1; color: #fff; transition: opacity 0.2s ease-out" style-hover="opacity: 0.65">Инвестиции</a>
-        <a href="./legal.html" style="font-weight: 400; font-size: 16px; line-height: 1.1; color: #fff; transition: opacity 0.2s ease-out" style-hover="opacity: 0.65">Юридика</a>
-        <a href="./about.html" style="font-weight: 400; font-size: 16px; line-height: 1.1; color: #fff; transition: opacity 0.2s ease-out" style-hover="opacity: 0.65">О компании</a>
+      <div style="display: flex; flex-direction: column; gap: 14px; align-items: center">
+        <a href="./investments-mobile.html" style="font-weight: 400; font-size: 16px; line-height: 1.1; color: #fff; transition: opacity 0.2s ease-out; text-decoration: none" style-hover="opacity: 0.65">Инвестиции</a>
+        <a href="./legal-mobile.html" style="font-weight: 400; font-size: 16px; line-height: 1.1; color: #fff; transition: opacity 0.2s ease-out; text-decoration: none" style-hover="opacity: 0.65">Юридика</a>
+        <a href="./about-mobile.html" style="font-weight: 400; font-size: 16px; line-height: 1.1; color: #fff; transition: opacity 0.2s ease-out; text-decoration: none" style-hover="opacity: 0.65">О компании</a>
       </div>
     </div>
-    <div style="display: flex; flex-direction: column; gap: clamp(24px,2.5vw,24px); flex: 0 1 auto; min-width: 160px">
+    <div style="display: flex; flex-direction: column; gap: 16px; align-items: center; width: 100%">
       <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 18px; line-height: 1.2; text-transform: uppercase; color: #fff">Legal</span>
-      <div style="display: flex; flex-direction: column; gap: 14px">
-        <a href="./legal-privacy.html" style="font-weight: 400; font-size: 16px; line-height: 1.1; color: #fff; transition: opacity 0.2s ease-out" style-hover="opacity: 0.65">Политика конфиденциальности</a>
-        <a href="./legal-terms.html" style="font-weight: 400; font-size: 16px; line-height: 1.1; color: #fff; transition: opacity 0.2s ease-out" style-hover="opacity: 0.65">Пользовательское соглашение</a>
-        <a href="./legal-disclaimer.html" style="font-weight: 400; font-size: 16px; line-height: 1.1; color: #fff; transition: opacity 0.2s ease-out" style-hover="opacity: 0.65">Инвестиционный дисклеймер</a>
+      <div style="display: flex; flex-direction: column; gap: 14px; align-items: center">
+        <a href="./legal-privacy-mobile.html" style="font-weight: 400; font-size: 16px; line-height: 1.1; color: #fff; transition: opacity 0.2s ease-out; text-decoration: none" style-hover="opacity: 0.65">Политика конфиденциальности</a>
+        <a href="./legal-terms-mobile.html" style="font-weight: 400; font-size: 16px; line-height: 1.1; color: #fff; transition: opacity 0.2s ease-out; text-decoration: none" style-hover="opacity: 0.65">Пользовательское соглашение</a>
+        <a href="./legal-disclaimer-mobile.html" style="font-weight: 400; font-size: 16px; line-height: 1.1; color: #fff; transition: opacity 0.2s ease-out; text-decoration: none" style-hover="opacity: 0.65">Инвестиционный дисклеймер</a>
       </div>
     </div>
-    <div style="display: flex; flex-direction: column; gap: clamp(24px,2.5vw,16px); flex: 0 1 auto; min-width: 200px">
+    <div style="display: flex; flex-direction: column; gap: 16px; align-items: center; width: 100%">
       <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 18px; line-height: 1.2; text-transform: uppercase; color: #fff">Контакты</span>
       <div style="display: flex; flex-direction: row; gap: 4px; align-items: center">
         <a href="https://t.me/everville_estate" target="_blank" rel="noopener" style="width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s ease-out" style-hover="background: rgba(255,255,255,0.12)" title="Telegram">
@@ -337,14 +339,14 @@
       <sc-if value="{{ investNotSent }}" hint-placeholder-val="{{ true }}">
         <div style="display: flex; flex-direction: column; gap: 2px; text-transform: uppercase; color: rgb(25,35,22); font-size: clamp(22px,2.2vw,32px); line-height: 1.2; padding-right: 40px">
           <span style="font-family: 'HeadingNow-82Light'; font-weight: 200">оставьте заявку</span>
-          <div style="display: flex; flex-direction: row; align-items: center; gap: clamp(18px,2.4vw,40px)"><span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; white-space: nowrap">на знакомство</span><span style="flex: 1 1 auto; min-width: 40px; height: 1.5px; background: rgb(25,35,22); display: block"></span></div>
+          <div style="display: flex; flex-direction: row; align-items: center; gap: clamp(18px,2.4vw,40px)"><span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; white-space: nowrap">на знакомство</span><span data-rule="right" style="flex: 0 0 auto; width: 150px; height: 2px; background: rgb(25,35,22); display: block; transform: scaleX(0); transform-origin: left center; transition: transform 0.9s cubic-bezier(.16,1,.3,1) 120ms"></span></div>
         </div>
         <div style="display: flex; flex-direction: column; gap: 10px">
           <div style="display: flex; flex-direction: row; gap: 10px; flex-wrap: wrap">
-            <input ref="{{ nameRef }}" type="text" placeholder="Ваше имя *" style="flex: 1 1 220px; min-width: 0; box-shadow: {{ nameRing }}; height: 56px; border: none; outline: none; border-radius: 10px; background: #fff; padding: 0 18px; box-sizing: border-box; font-family: Outfit,sans-serif; font-weight: 500; font-size: 16px; color: rgb(25,35,22)">
-            <input ref="{{ mailRef }}" type="email" placeholder="E-mail *" style="flex: 1 1 220px; min-width: 0; box-shadow: {{ mailRing }}; height: 56px; border: none; outline: none; border-radius: 10px; background: #fff; padding: 0 18px; box-sizing: border-box; font-family: Outfit,sans-serif; font-weight: 500; font-size: 16px; color: rgb(25,35,22)">
+            <input ref="{{ nameRef }}" type="text" placeholder="Ваше имя *" style="flex: 1 1 100%; min-width: 0; min-width: 0; box-shadow: {{ nameRing }}; height: 56px; border: none; outline: none; border-radius: 10px; background: #fff; padding: 0 18px; box-sizing: border-box; font-family: Outfit,sans-serif; font-weight: 500; font-size: 14px; color: rgb(25,35,22)">
+            <input ref="{{ mailRef }}" type="email" placeholder="E-mail *" style="flex: 1 1 100%; min-width: 0; min-width: 0; box-shadow: {{ mailRing }}; height: 56px; border: none; outline: none; border-radius: 10px; background: #fff; padding: 0 18px; box-sizing: border-box; font-family: Outfit,sans-serif; font-weight: 500; font-size: 14px; color: rgb(25,35,22)">
           </div>
-          <input ref="{{ phoneRef }}" type="tel" placeholder="Телефон или Telegram *" style="width: 100%; box-shadow: {{ phoneRing }}; height: 56px; border: none; outline: none; border-radius: 10px; background: #fff; padding: 0 18px; box-sizing: border-box; font-family: Outfit,sans-serif; font-weight: 500; font-size: 16px; color: rgb(25,35,22)">
+          <input ref="{{ phoneRef }}" type="tel" placeholder="Телефон или Telegram *" style="width: 100%; box-shadow: {{ phoneRing }}; height: 56px; border: none; outline: none; border-radius: 10px; background: #fff; padding: 0 18px; box-sizing: border-box; font-family: Outfit,sans-serif; font-weight: 500; font-size: 14px; color: rgb(25,35,22)">
           <sc-if value="{{ investHasError }}">
             <span style="font-size: 13px; line-height: 1.45; color: rgb(138,70,70)">Заполните обязательные поля: имя, e-mail и телефон.</span>
           </sc-if>
@@ -358,13 +360,13 @@
               </sc-for>
             </div>
           </div>
-          <textarea placeholder="Коротко о задаче: сумма, горизонт, вопросы" rows="3" style="width: 100%; border: none; outline: none; border-radius: 10px; background: #fff; padding: 16px 18px; box-sizing: border-box; font-family: Outfit,sans-serif; font-weight: 500; font-size: 16px; line-height: 1.5; color: rgb(25,35,22); resize: vertical"></textarea>
+          <textarea placeholder="Коротко о задаче: сумма, горизонт, вопросы" rows="3" style="width: 100%; border: none; outline: none; border-radius: 10px; background: #fff; padding: 16px 18px; box-sizing: border-box; font-family: Outfit,sans-serif; font-weight: 500; font-size: 14px; line-height: 1.5; color: rgb(25,35,22); resize: vertical"></textarea>
           <div style="display: flex; flex-direction: row; gap: 16px; align-items: center; flex-wrap: wrap; padding-top: 6px">
             <div onClick="{{ submitInvest }}" style="border-radius: 8px; background: rgb(43,58,39); display: flex; flex-direction: row; gap: 10px; padding: 19px 36px; justify-content: center; align-items: center; cursor: pointer; transition: background 0.2s ease-out" style-hover="background: rgb(30,41,27)">
               <span style="font-weight: 700; font-size: 15px; color: #fff; white-space: nowrap">Отправить заявку</span>
               <svg width="18" height="12" viewBox="0 0 24 14" fill="none"><path d="M 1 7 L 23 7 M 16 1 L 23 7 L 16 13" stroke="#fff" stroke-width="1.5"></path></svg>
             </div>
-            <span style="flex: 1 1 240px; font-size: 13px; line-height: 1.5; color: rgba(25,35,22,0.6)">Отправляя заявку, вы соглашаетесь на обработку данных. Мы не передаём контакты третьим лицам и не рассылаем спам.</span>
+            <span style="flex: 1 1 100%; min-width: 0; font-size: 13px; line-height: 1.5; color: rgba(25,35,22,0.6)">Отправляя заявку, вы соглашаетесь на обработку данных. Мы не передаём контакты третьим лицам и не рассылаем спам.</span>
           </div>
         </div>
       </sc-if>
@@ -434,9 +436,9 @@ class Component extends DCLogic {
     { role: "строительство", name: "Archetype Group" },
   ];
   OTHERS = [
-    { title: "ROYA RESORT", status: "продажи открыты", src: "./assets/projects/ext-5-1.webp", href: "./roya.html" },
-    { title: "BALICOPTER", status: "сервис запущен", src: "./assets/projects/ext-5-3.webp", href: "./balicopter.html" },
-    { title: "MARINA", status: "в проектировании", src: "./assets/projects/ext-2-4-1.webp", href: "./marina.html" },
+    { title: "ROYA RESORT", status: "продажи открыты", src: "./assets/projects/ext-5-1.webp", href: "./roya-mobile.html" },
+    { title: "BALICOPTER", status: "сервис запущен", src: "./assets/projects/ext-5-3.webp", href: "./balicopter-mobile.html" },
+    { title: "MARINA", status: "в проектировании", src: "./assets/projects/ext-2-4-1.webp", href: "./marina-mobile.html" },
   ];
   visible() { return this.state.tab === "все" ? this.PHOTOS : this.PHOTOS.filter(p => p.tab === this.state.tab); }
   bindLazyImages() {
@@ -476,6 +478,8 @@ class Component extends DCLogic {
     this._rRaf = requestAnimationFrame(() => { this._rRaf = null; this.attachReveal(); });
   };
   componentDidMount() {
+    this._ruleIO = new IntersectionObserver((es) => { es.forEach((e) => { if (e.isIntersecting) { e.target.style.transform = "none"; this._ruleIO.unobserve(e.target); } }); }, { threshold: 0.05 });
+    this._ruleTimer = setTimeout(() => { document.querySelectorAll("[data-rule]").forEach((n) => this._ruleIO.observe(n)); }, 60);
     this.bindLazyImages();
     document.addEventListener("scroll", this.onScroll, { capture: true, passive: true });
     window.addEventListener("scroll", this.onScroll, { passive: true });
@@ -496,7 +500,7 @@ class Component extends DCLogic {
     this._route = () => {
       if (!(this.props.autoRedirect ?? true)) return;
       const w = window.innerWidth;
-      if (w >= 1024) window.location.replace("./roya-desa.html");
+      if (w >= 1024) window.location.replace("./roya-desa-mobile.html");
       else if (w >= 768) window.location.replace("./roya-desa-tablet.html");
     };
     this._route();
@@ -677,19 +681,19 @@ class Component extends DCLogic {
       footerVideoRef: this.footerVideoRef,
       footerCols: [
         { title: "Проекты", links: [
-          { label: "Roya Resort", onClick: () => { window.location.href = "./roya.html"; } },
-          { label: "Roya Desa", onClick: () => { window.location.href = "./roya-desa.html"; } },
-          { label: "Balicopter", onClick: () => { window.location.href = "./balicopter.html"; } },
+          { label: "Roya Resort", onClick: () => { window.location.href = "./roya-mobile.html"; } },
+          { label: "Roya Desa", onClick: () => { window.location.href = "./roya-desa-mobile.html"; } },
+          { label: "Balicopter", onClick: () => { window.location.href = "./balicopter-mobile.html"; } },
         ] },
         { title: "Инвестору", links: [
-          { label: "Инвестиции", onClick: () => { window.location.href = "./investments.html"; } },
-          { label: "Юридика", onClick: () => { window.location.href = "./legal.html"; } },
-          { label: "О компании", onClick: () => { window.location.href = "./about.html"; } },
+          { label: "Инвестиции", onClick: () => { window.location.href = "./investments-mobile.html"; } },
+          { label: "Юридика", onClick: () => { window.location.href = "./legal-mobile.html"; } },
+          { label: "О компании", onClick: () => { window.location.href = "./about-mobile.html"; } },
         ] },
         { title: "Legal", links: [
-          { label: "Политика конфиденциальности", onClick: () => { window.location.href = "./legal-privacy.html"; } },
-          { label: "Пользовательское соглашение", onClick: () => { window.location.href = "./legal-terms.html"; } },
-          { label: "Инвестиционный дисклеймер", onClick: () => { window.location.href = "./legal-disclaimer.html"; } },
+          { label: "Политика конфиденциальности", onClick: () => { window.location.href = "./legal-privacy-mobile.html"; } },
+          { label: "Пользовательское соглашение", onClick: () => { window.location.href = "./legal-terms-mobile.html"; } },
+          { label: "Инвестиционный дисклеймер", onClick: () => { window.location.href = "./legal-disclaimer-mobile.html"; } },
         ] },
       ],
 
@@ -715,7 +719,20 @@ class Component extends DCLogic {
   phoneRef = React.createRef();
   EVRVL_TOPICS = ["Инвестиции в проект", "Юридический пакет", "Партнёрство", "Показ площадок"];
   openInvest = () => { this.evrvlInvestOpen = true; this.evrvlInvestSent = false; this.evrvlErr = {}; document.body.style.overflow = "hidden"; this.forceUpdate(); };
-  closeInvest = () => { this.evrvlInvestOpen = false; document.body.style.overflow = ""; this.forceUpdate(); };
+  closeInvest = () => {
+    this.evrvlInvestOpen = false;
+    document.body.style.overflow = "";
+    if (this.evrvlInvestSent) {
+      [this.nameRef, this.mailRef, this.phoneRef, this.ctaNameRef, this.ctaMailRef, this.ctaPhoneRef].forEach((r) => { if (r && r.current) r.current.value = ""; });
+      const root = this.phoneRef && this.phoneRef.current ? this.phoneRef.current.closest("x-dc") || document : document;
+      root.querySelectorAll("textarea").forEach((t) => { t.value = ""; });
+      this.evrvlTopic = 0;
+      this.evrvlErr = {};
+      this.ctaErr = {};
+      this.evrvlInvestSent = false;
+    }
+    this.forceUpdate();
+  };
   submitInvest = () => {
     const val = (r) => (r.current && r.current.value ? r.current.value.trim() : "");
     const err = {};
