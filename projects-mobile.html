@@ -58,9 +58,9 @@
   </div>
 
   <div style="position: relative; width: 100%; background: #fff" data-om-label="hero" data-screen-label="Hero — Избранные проекты (mobile)">
-    <div style="position: relative; display: flex; flex-direction: column; gap: 48px; padding: 132px 16px 56px; box-sizing: border-box">
-      <div style="min-height: calc(100svh - 188px); display: flex; flex-direction: column; justify-content: center; gap: 32px; box-sizing: border-box">
-      <span style="font-weight: 400; font-size: 14px; text-transform: lowercase; letter-spacing: 0.02em; color: rgb(138,70,70); text-align: center; display: block; margin-bottom: 20px">наши проекты</span>
+    <div style="position: relative; display: flex; flex-direction: column; gap: 48px; padding: 104px 16px 40px; box-sizing: border-box">
+      <div style="display: flex; flex-direction: column; justify-content: center; gap: 16px; box-sizing: border-box">
+      <span style="font-weight: 400; font-size: 14px; text-transform: lowercase; letter-spacing: 0.02em; color: rgb(138,70,70); text-align: center; display: block; margin-bottom: 8px">наши проекты</span>
       <div data-reveal="pintro" style="font-size: 17px; line-height: 1.5; text-transform: uppercase; color: rgb(25,35,22); text-align: center; transform: translateY({{ pintro.y }}px); opacity: {{ pintro.o }}; filter: blur({{ pintro.b }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1), opacity 0.9s ease-out, filter 0.9s ease-out">
         <div style="display: flex; flex-direction: column; gap: 2px; align-items: center">
           <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 22px">ПРОЕКТЫ EVERVILLE,</span>
@@ -72,18 +72,15 @@
           <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 15px">повышают ценность бренда,<br>капитала и каждого проекта в экосистеме</span>
         </div>
       </div>
-<div style="display: flex; flex-direction: column; gap: 12px; align-items: center; justify-content: center; margin-top: 18px; width: 100%;">
+      <span style="max-width: 560px; margin: 0 auto; margin-top: 4px; font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 400; font-size: 15px; line-height: 1.55; text-transform: none; text-align: center; color: #2D2D2D">Пять проектов одной экосистемы: вертолётный оператор, марина, резорт, деревня и wellness-резорт. Единая управляющая компания, общие стандарты юридической чистоты и отчётности.</span>
+<div style="display: flex; flex-direction: column; gap: 12px; align-items: center; justify-content: center; margin-top: 10px; width: 100%; position: relative; z-index: 2;">
         <div onClick="{{ openInvest }}" style="width: 100%; border-radius: 8px; background: rgb(43,58,39); display: flex; padding: 14px 22px; justify-content: center; align-items: center; box-sizing: border-box; cursor: pointer"><span style="font-weight: 700; font-size: 14px; color: #fff; text-transform: none; white-space: nowrap">Инвестировать</span></div>
         <div onClick="{{ scrollToProjects }}" style="width: 100%; border-radius: 8px; background: rgba(255,255,255,0.55); backdrop-filter: blur(8px) saturate(1.08); display: flex; padding: 14px 22px; justify-content: center; align-items: center; box-sizing: border-box; cursor: pointer"><span style="font-weight: 700; font-size: 14px; color: rgb(43,58,39); text-transform: none; white-space: nowrap">Смотреть проекты</span></div>
       </div>
-      <div onClick="{{ scrollToProjects }}" style="margin-top: 28px; display: flex; flex-direction: column; gap: 10px; align-items: center; cursor: pointer; z-index: 5">
-      <span style="font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 400; font-size: 12px; letter-spacing: 0.08em; text-transform: lowercase; color: rgb(25,35,22); opacity: 0.65">листайте вниз</span>
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="animation: evrvl-scroll 1.7s ease-in-out infinite"><path d="M 5 9 L 12 16 L 19 9" stroke="rgb(25,35,22)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-    </div>
       </div>
-      <div style="position: relative">
-      <div style="position: absolute; inset: 0 -16px -48px; z-index: 0; pointer-events: none">
-        <img src="./assets/projects-hero-v3.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: center bottom; display: block; -webkit-mask-image: linear-gradient(to bottom, transparent 0, rgba(0,0,0,0.55) 50px, #000 120px); mask-image: linear-gradient(to bottom, transparent 0, rgba(0,0,0,0.55) 50px, #000 120px); opacity: {{ heroImg.o }}; transition: opacity 0.9s ease-out">
+      <div style="position: relative; margin-top: 12px">
+      <div style="position: absolute; inset: -180px -16px -48px; z-index: 0; pointer-events: none">
+        <img src="./assets/projects-hero-v3.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: center bottom; display: block; opacity: {{ heroImg.o }}; transition: opacity 0.9s ease-out; -webkit-mask-image: linear-gradient(to bottom, transparent 0, rgba(0,0,0,0.5) 30px, #000 70px); mask-image: linear-gradient(to bottom, transparent 0, rgba(0,0,0,0.5) 30px, #000 70px)">
       </div>
       <div style="position: relative; z-index: 1; display: flex; flex-direction: column; gap: 48px">
       <div style="display: flex; flex-direction: column; gap: 20px">
@@ -176,7 +173,7 @@
         <sc-for list="{{ pr.stats }}" as="st" hint-placeholder-count="3">
           <div style="position: relative; display: flex; flex-direction: column; gap: 8px; border-top: 2px solid transparent; padding-top: 12px"><span data-rule="top" style="position: absolute; left: 0; top: -2px; width: 100%; height: 2px; background: rgb(25,35,22); transform: scaleX(0); transform-origin: left center; transition: transform 0.9s cubic-bezier(.16,1,.3,1) 120ms"></span>
             <span style="font-weight: 400; font-size: 13px; line-height: 1.1; color: #2D2D2D">{{ st.label }}</span>
-            <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 26px; line-height: 1.1; color: rgb(25,35,22); white-space: nowrap">{{ st.value }}</span>
+            <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 20px; line-height: 1.1; color: rgb(25,35,22); white-space: nowrap">{{ st.value }}</span>
           </div>
         </sc-for>
         <div style="grid-column: 1 / -1; margin-top: 8px">
@@ -398,9 +395,9 @@ class Component extends DCLogic {
         { src: "./assets/projects/int-rest-cam-11-1.webp", alt: "Бар", place: "бар" },
       ] },
     { id: "sanatorium", href: "./sanatorium-mobile.html", titleA: "SANATORIUM", titleB: "", status: "скоро в продаже",
-      lead: "Wellness · долголетие.", desc: "Санаторно-курортный комплекс превентивной медицины и восстановления — формирует wellness-слой экосистемы для резидентов и гостей.",
-      loc: "Убуд, Бали",
-      stats: [{ label: "вход от", value: "$95 000" }, { label: "прогноз ROI", value: "9–13%" }, { label: "номеров", value: "140" }],
+      lead: "Wellness · долголетие · Sanatorium AI OS.", desc: "Wellness-резорт и оператор долголетия у Dream Beach в Печату — восстановительная среда и цифровая платформа Sanatorium AI OS для резидентов и гостей.",
+      loc: "Печату, Улувату, Бали",
+      stats: [{ label: "номеров", value: "100" }, { label: "прогноз ROI", value: "20–37%" }, { label: "IRR", value: "35%" }],
       photos: [
         { src: "./assets/projects/int-03-7.webp", alt: "Интерьер комплекса", place: "холл" },
         { src: "./assets/projects/int-cam5-1.webp", alt: "Зона восстановления", place: "зона восстановления" },
@@ -457,7 +454,8 @@ class Component extends DCLogic {
     };
     window.addEventListener("scroll", this._onHdrScroll, { passive: true });
     this._route = () => {
-      if ((this.props.autoRedirect ?? true) && window.innerWidth >= 1024) window.location.replace("./projects-mobile.html");
+      if ((this.props.autoRedirect ?? true) && window.innerWidth >= 1024) window.location.replace("./projects.html");
+    else if ((this.props.autoRedirect ?? true) && window.innerWidth >= 768) window.location.replace("./projects-tablet.html");
     };
     this._route();
     window.addEventListener("resize", this._route);

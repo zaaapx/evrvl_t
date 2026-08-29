@@ -512,7 +512,8 @@ class Component extends DCLogic {
     this._route = () => {
       if (!(this.props.autoRedirect ?? true)) return;
       const w = window.innerWidth;
-      if (w >= 1024) window.location.replace("./marina-tablet.html");
+      if (w >= 1024) window.location.replace("./marina.html");
+      else if (w < 768) window.location.replace("./marina-mobile.html");
     };
     this._route();
     window.addEventListener("resize", this._route);

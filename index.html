@@ -23,6 +23,7 @@
     a { color: rgb(255,255,255); }
     a:hover { color: rgba(255,255,255,0.8); }
     @keyframes evrvl-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    @keyframes evrvl-clouds { from { transform: translate3d(0,0,0); } to { transform: translate3d(44px,0,0); } }
     @media print { [data-export-hide] { display: none !important; } }
     input::placeholder { color: rgba(0,0,0,0.5); opacity: 1; }
   </style>
@@ -64,9 +65,14 @@
 <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
 <div style="width: 100%; height: 100vh; max-height: {{ heroMaxH }}; overflow: hidden; position: relative; background-color: #EBEAE6" data-om-label="hero" data-screen-label="Hero (desktop)">
 <div style="position: relative; width: 100%; height: 100%; overflow: hidden; border-radius: 0px; font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; box-sizing: border-box">
-  <img src="./assets/layer-bg.webp" alt="" style="position: absolute; inset: 0; width: 100%; height: 110%; object-fit: cover; top: -80px; opacity: {{ bgOpacity }}; transform: scale({{ bgScale }}); transition: opacity 0.9s ease-out, transform 1.2s ease-out">
-  <img src="./assets/logo-hero.svg" alt="" style="position: absolute; left: {{ logoLeft }}px; top: {{ logoTop }}px; width: {{ logoWidth }}px; height: auto; opacity: {{ logoOpacity }}; transform: translateY({{ logoOffsetY }}px) scale({{ logoScale }}); transform-origin: center; transition: opacity 0.6s ease-out, transform 0.7s ease-out" data-om-label="logo">
-  <img src="./assets/layer-top.webp" alt="" style="position: absolute; inset: 0; width: 100%; height: 110%; object-fit: cover; top: -80px; opacity: {{ topOpacity }}; transform: scale({{ topScale }}); transition: opacity 0.9s ease-out, transform 1.2s ease-out">
+  <img src="./assets/hero-v3-bg.png" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 63%; opacity: {{ bgOpacity }}; transform: scale({{ heroZoom }}); transition: opacity 0.9s ease-out, transform 6s ease-out">
+  <div style="position: absolute; inset: -20px; pointer-events: none">
+    <div style="position: absolute; top: 0; bottom: 0; left: -140px; right: -140px; overflow: hidden; -webkit-mask-image: linear-gradient(180deg, black 0%, black 38%, transparent 47%); mask-image: linear-gradient(180deg, black 0%, black 38%, transparent 47%); animation: evrvl-clouds 10s ease-in-out 6s infinite alternate">
+      <img src="./assets/hero-v3-bg.png" alt="" style="position: absolute; top: 20px; left: 160px; width: calc(100% - 320px); height: calc(100% - 40px); object-fit: cover; object-position: 50% 63%; opacity: {{ bgOpacity }}; transform: scale({{ heroZoom }}); transition: opacity 0.9s ease-out, transform 6s ease-out">
+    </div>
+  </div>
+  <div style="position: absolute; inset: 0; backdrop-filter: blur(8px); -webkit-mask-image: radial-gradient(ellipse 75% 85% at 0% 100%, black 0%, black 45%, rgba(0,0,0,0.4) 70%, transparent 100%); mask-image: radial-gradient(ellipse 75% 85% at 0% 100%, black 0%, black 45%, rgba(0,0,0,0.4) 70%, transparent 100%); pointer-events: none; opacity: {{ bottomOpacity }}; transition: opacity 0.6s ease-out"></div>
+  <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(43,58,39,0) 0%, rgba(22,30,19,0.5) 59%); pointer-events: none; opacity: {{ bottomOpacity }}; transition: opacity 0.6s ease-out"></div>
 
   <div style="position: fixed; left: clamp(12px,2.5vw,36px); right: clamp(12px,2.5vw,36px); top: clamp(10px,2vw,24px); z-index: 100; border-radius: 16px; background: rgba(0,0,0,0.3); backdrop-filter: blur(24px); display: {{ desktopHeaderDisplay }}; grid-template-columns: auto 1fr auto; padding: clamp(10px,1.2vw,16px) clamp(10px,1.2vw,16px) clamp(10px,1.2vw,16px) clamp(14px,1.8vw,24px); align-items: center; box-sizing: border-box; gap: 16px; opacity:{{ headerOpacity }}; transform:translateY({{ headerOffsetY }}px); transition: opacity 0.6s ease-out, transform 0.6s ease-out;">
     <a href="./" style="width: 131px; justify-self: start; flex-shrink: 0; display: block; height: 42px; align-self: flex-end; flex-direction: column-reverse"><img src="./assets/logo.svg" alt="EVERVILLE" style="width: 128px; height: 40px; display: block"></a>
@@ -93,20 +99,26 @@
     </div>
   </div>
 
-  <div style="position: absolute; left: 0; bottom: 0; width: 100%; padding: clamp(30px,7.5vh,60px) clamp(24px,15.2vw,219px); box-sizing: border-box; padding-top: 64px; padding-bottom: 96px; padding-left: 60px; padding-right: 60px">
-    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, #2B3A2766, #161E1366, #161E1366, #161E13CC); backdrop-filter: blur(10px); -webkit-mask-image: linear-gradient(180deg, transparent 0%, black 60%, black 100%); mask-image: linear-gradient(180deg, transparent 0%, black 60%, black 100%); pointer-events: none; left: -9px; top: 30px; opacity: {{ bottomOpacity }}; transition: opacity 0.6s ease-out"></div>
-    <div style="position:relative; display:flex; flex-direction:column; gap:clamp(18px,4.5vh,36px); align-items:center; opacity: {{ bottomTextOpacity }}; transform: translateY({{ bottomTextOffsetY }}px); transition: opacity 0.6s ease-out, transform 0.6s ease-out;">
-      <div style="display: flex; flex-direction: column; gap: 8px; align-items: center; width: 100%">
-        <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: clamp(31px,2.92vw,42px); text-align: center; white-space: normal; line-height: 120%; color: #fff; text-transform: uppercase; width: 100%; align-self: auto; flex-grow: 0">гостиничная недвижимость на Бали</span>
-        <span style="font-family: 'HeadingNow-82Light'; font-weight: 200; font-size: clamp(31px,2.92vw,42px); text-align: center; white-space: normal; line-height: 120%; color: #fff; text-transform: uppercase; width: 100%">подотчётная инвестору</span>
-      </div>
-      <div style="display: flex; flex-direction: row; gap: 12px; align-items: center; flex-wrap: wrap; justify-content: center">
-        <div onClick="{{ openInvest }}" style="border-radius: 8px; background: #fff; display: flex; padding: clamp(14px,2.5vh,20px) clamp(28px,6vw,48px); justify-content: center; align-items: center; box-sizing: border-box; padding-top: 16px; padding-bottom: 16px; padding-left: 24px; padding-right: 24px; cursor: pointer; transition: background 0.2s ease-out" style-hover="background: rgb(206,210,199)">
-          <span style="font-weight: 700; font-size: clamp(13px,calc(11.43px + 0.179vw),16px); line-height: 21px; color: rgb(43,58,39); text-transform: none; white-space: nowrap">Инвестировать</span>
-        </div><div style="border-radius: 8px; background: rgba(43,58,39,0.6); display: flex; padding: clamp(14px,2.5vh,20px) clamp(28px,6vw,48px); justify-content: center; align-items: center; box-sizing: border-box; padding-top: 16px; padding-bottom: 16px; padding-left: 24px; padding-right: 24px; cursor: pointer; transition: background 0.2s ease-out" onClick="{{ goProjects }}" style-hover="background: rgba(30,41,27,0.75)">
-          <span style="font-weight: 700; font-size: clamp(13px,calc(11.43px + 0.179vw),16px); line-height: 21px; color: #fff; text-transform: none; white-space: nowrap">Смотреть проекты</span>
+  <div style="position: absolute; left: 0; bottom: 0; width: 100%; box-sizing: border-box; padding: clamp(40px,8vh,64px) clamp(32px,8.33vw,120px) clamp(56px,10vh,96px); height: 100%">
+
+    <div style="position: relative; display: flex; flex-direction: column; gap: clamp(24px,4.5vh,36px); align-items: flex-start; height: 789px; justify-content: center; width: 1148px">
+      <div style="display: flex; flex-direction: column; gap: 24px; align-items: flex-start">
+        <div style="display: flex; flex-direction: column; gap: 12px; align-items: flex-start">
+          <div style="overflow: hidden"><span style="display: block; font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: clamp(30px,3.33vw,48px); line-height: 106%; color: #fff; text-transform: uppercase; white-space: nowrap; transform: translateY({{ heroLY }}%); opacity: {{ heroLO }}; transition: transform 0.9s cubic-bezier(.16,1,.3,1) 0ms, opacity 0.9s ease-out 0ms">гостиничная недвижимость</span></div>
+          <div style="overflow: hidden"><div style="display: flex; flex-direction: row; gap: clamp(20px,2.5vw,36px); align-items: center; transform: translateY({{ heroLY }}%); opacity: {{ heroLO }}; transition: transform 0.9s cubic-bezier(.16,1,.3,1) 140ms, opacity 0.9s ease-out 140ms">
+            <span style="width: clamp(120px,16.5vw,238px); height: 1px; background: #fff; display: block; flex-shrink: 0; transform: scaleX({{ heroRule }}); transform-origin: left; transition: transform 0.7s cubic-bezier(.16,1,.3,1) 420ms"></span>
+            <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: clamp(30px,3.33vw,48px); line-height: 106%; color: #fff; text-transform: uppercase; white-space: nowrap">на Бали</span>
+          </div></div>
+          <div style="overflow: hidden"><span style="display: block; font-family: 'HeadingNow-82Light'; font-weight: 200; font-size: clamp(30px,3.33vw,48px); line-height: 106%; color: #fff; text-transform: uppercase; white-space: nowrap; transform: translateY({{ heroLY }}%); opacity: {{ heroLO }}; transition: transform 0.9s cubic-bezier(.16,1,.3,1) 280ms, opacity 0.9s ease-out 280ms">подотчётная инвестору</span></div>
         </div>
-        
+        <div style="overflow: hidden"><span style="display: block; font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 400; font-size: clamp(15px,1.25vw,18px); line-height: 1.4; color: rgba(255,255,255,0.8); max-width: 707px; text-align: left; transform: translateY({{ heroLY }}%); opacity: {{ heroLO }}; transition: transform 0.9s cubic-bezier(.16,1,.3,1) 420ms, opacity 0.9s ease-out 420ms">Курортная недвижимость — это отличный выбор как для комфортной жизни, так и для долгосрочных инвестиций. Она предлагает уникальные возможности для отдыха и стабильный доход от аренды в связке с ростом капитала.</span></div>
+      </div>
+      <div style="display: flex; flex-direction: row; gap: 16px; align-items: center; flex-wrap: wrap; opacity: {{ heroLO }}; transform: translateY({{ heroBtnY }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1) 560ms, opacity 0.9s ease-out 560ms">
+        <div onClick="{{ goProjects }}" style="border-radius: 8px; background: rgb(43,58,39); display: flex; padding: clamp(16px,2.5vh,20px) clamp(28px,3.33vw,48px); justify-content: center; align-items: center; box-sizing: border-box; cursor: pointer; transition: background 0.2s ease-out" style-hover="background: rgb(30,41,27)">
+          <span style="font-weight: 700; font-size: clamp(13px,calc(11.43px + 0.179vw),16px); line-height: 21px; color: #fff; text-transform: none; white-space: nowrap">Смотреть проекты</span>
+        </div><div onClick="{{ openInvest }}" style="border-radius: 8px; background: #fff; display: flex; padding: clamp(16px,2.5vh,20px) clamp(28px,3.33vw,48px); justify-content: center; align-items: center; box-sizing: border-box; cursor: pointer; transition: background 0.2s ease-out" style-hover="background: rgb(206,210,199)">
+          <span style="font-weight: 700; font-size: clamp(13px,calc(11.43px + 0.179vw),16px); line-height: 21px; color: rgb(43,58,39); text-transform: none; white-space: nowrap">Инвестировать</span>
+        </div>
       </div>
     </div>
   </div>
@@ -186,28 +198,38 @@
 </sc-if>
 
 <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
-<div style="background: #EBEAE6; padding: clamp(60px,8vw,120px) clamp(24px,15.2vw,219px) clamp(60px,10vw,140px); box-sizing: border-box; display: flex; flex-direction: column; gap: clamp(48px,6vw,80px); align-items: center; padding-right: 60px; padding-left: 60px; padding-top: clamp(64px,8.33vw,140px); padding-bottom: clamp(64px,8.33vw,140px)" ref="{{ sectionRef }}">
-  <div style="box-sizing: border-box; display: flex; flex-direction: column; gap: clamp(64px,7vw,110px); justify-content: normal; align-items: center"><div data-reveal="s1head" style="max-width: 1230px; font-size: clamp(34px,calc(28.8px + 0.515vw),36px); line-height: 1.3; text-transform: uppercase; color: rgb(25,35,22); text-align: center; display: flex; flex-direction: column; gap: 8px">
-    <div style="overflow: hidden"><div style="transform: translateY({{ h1Y }}%); opacity: {{ h1O }}; filter: blur({{ h1B }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1) 0ms, opacity 0.9s ease-out 0ms, filter 0.9s ease-out 0ms"><span style="font-weight: 400; font-family: HeadingNow-82Light; line-height: 1.5">Этот сайт — для тех, </span><span style="font-weight: 700; font-family: HeadingNow-84Regular; line-height: 1.5">кто уже в проекте.</span></div></div>
-    <div style="overflow: hidden"><div style="display: flex; align-items: center; justify-content: center; gap: clamp(16px,2.5vw,32px); width: 100%; flex-wrap: nowrap; transform: translateY({{ h2Y }}%); opacity: {{ h2O }}; filter: blur({{ h2B }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1) 120ms, opacity 0.9s ease-out 120ms, filter 0.9s ease-out 120ms"><span style="white-space: nowrap"><span style="font-weight: 400; font-family: HeadingNow-82Light; line-height: 1.5">И для тех, </span><span style="font-weight: 700; font-family: HeadingNow-84Regular; line-height: 1.5">кто верит фактам,</span></span><span style="flex: 0 1 clamp(90px,14vw,206px); min-width: 24px; height: 2px; background: rgb(25,35,22); display: block; transform: scaleX({{ lineScale }}); transform-origin: left; transition: transform 0.7s cubic-bezier(.16,1,.3,1)"></span></div></div>
-    <div style="overflow: hidden"><div style="display: flex; align-items: center; justify-content: center; gap: clamp(16px,2.5vw,32px); width: 100%; flex-wrap: nowrap; transform: translateY({{ h3Y }}%); opacity: {{ h3O }}; filter: blur({{ h3B }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1) 240ms, opacity 0.9s ease-out 240ms, filter 0.9s ease-out 240ms"><span style="flex: 0 1 clamp(140px,23vw,337px); min-width: 24px; height: 2px; background: rgb(25,35,22); display: block; transform: scaleX({{ lineScale }}); transform-origin: right; transition: transform 0.7s cubic-bezier(.16,1,.3,1)"></span><span style="font-weight: 700; white-space: nowrap; font-family: HeadingNow-84Regular; line-height: 1.5">а не обещаниям.</span></div></div>
-  </div><div data-reveal="s1cards" style="box-sizing: border-box; display: flex; flex-direction: column; gap: 56px; justify-content: flex-start; align-items: center; transform: translateY({{ secY }}px); opacity: {{ secO }}; filter: blur({{ secB }}px); transition: transform 0.7s cubic-bezier(.16,1,.3,1), opacity 0.7s ease-out, filter 0.7s ease-out">
-    
-    <span style="font-size: 16px; line-height: 1.5; font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; color: #2D2D2D; text-align: center; width: 100%; max-width: 536px"><b>В одном месте</b> — документы, бюджеты, юридические заключения, строительная отчётность, операционные сводки и список ответственных. Публичный сайт показывает стандарт. Закрытые каналы открывают файлы.</span>
-  <div style="display: flex; flex-direction: row; gap: {{ chk3Gap }}; width: 100%; max-width: 1320px; flex-wrap: wrap">
-    <div style="border-radius: 16px; background: rgb(43,58,39); display: flex; flex-direction: column; gap: 16px; padding: 24px; box-sizing: border-box; flex: 1 1 {{ chk3Basis }}">
-      <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: clamp(18px,1.67vw,20px); text-transform: uppercase; color: #fff; line-height: 1.15">Всё по одному активу</span>
-      <span style="font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 300; font-size: 14px; line-height: 1.5; color: #E9E9E9; height: 100%; text-align: left">Договоры, исходные файлы, допущения, обновления и открытые вопросы собраны в одном деле.</span>
+<div style="position: relative; overflow: hidden; background: rgb(25,35,22); padding: clamp(80px,9vw,150px) 60px; box-sizing: border-box; display: flex; justify-content: center" ref="{{ sectionRef }}">
+  <div style="position: relative; width: 100%; max-width: 1320px; display: flex; flex-direction: column; align-items: center; gap: clamp(40px,4.5vw,72px)">
+    <div data-reveal="s1head" style="font-size: clamp(26px,2.4vw,38px); line-height: 1.3; text-transform: uppercase; color: #fff; display: flex; flex-direction: column; gap: 4px; align-items: center; text-align: center">
+      <div style="overflow: hidden"><div style="transform: translateY({{ h1Y }}%); opacity: {{ h1O }}; filter: blur({{ h1B }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1) 0ms, opacity 0.9s ease-out 0ms, filter 0.9s ease-out 0ms"><span style="font-weight: 400; font-family: HeadingNow-82Light; white-space: nowrap">Этот сайт — для тех,</span></div></div>
+      <div style="overflow: hidden"><div style="display: flex; align-items: center; gap: 24px; flex-wrap: nowrap; transform: translateY({{ h2Y }}%); opacity: {{ h2O }}; filter: blur({{ h2B }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1) 120ms, opacity 0.9s ease-out 120ms, filter 0.9s ease-out 120ms"><span style="flex: 0 0 auto; width: clamp(60px,8vw,120px); height: 2px; background: #fff; display: block; transform: scaleX({{ lineScale }}); transform-origin: left; transition: transform 0.7s cubic-bezier(.16,1,.3,1)"></span><span style="font-weight: 700; font-family: HeadingNow-84Regular; white-space: nowrap">кто уже в проекте.</span></div></div>
+      <div style="overflow: hidden"><div style="transform: translateY({{ h3Y }}%); opacity: {{ h3O }}; filter: blur({{ h3B }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1) 240ms, opacity 0.9s ease-out 240ms, filter 0.9s ease-out 240ms"><span style="font-weight: 400; font-family: HeadingNow-82Light">И для тех, </span><span style="font-weight: 700; font-family: HeadingNow-84Regular">кто верит фактам,</span></div></div>
+      <div style="overflow: hidden"><div style="display: flex; align-items: center; gap: 24px; flex-wrap: nowrap; transform: translateY({{ h3Y }}%); opacity: {{ h3O }}; filter: blur({{ h3B }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1) 360ms, opacity 0.9s ease-out 360ms"><span style="font-weight: 700; font-family: HeadingNow-84Regular; white-space: nowrap">а не обещаниям.</span><span style="flex: 0 0 auto; width: clamp(60px,8vw,120px); height: 2px; background: #fff; display: block; transform: scaleX({{ lineScale }}); transform-origin: right; transition: transform 0.7s cubic-bezier(.16,1,.3,1)"></span></div></div>
     </div>
-    <div style="border-radius: 16px; background: #391011; display: flex; flex-direction: column; gap: 16px; padding: 24px; box-sizing: border-box; flex: 1 1 {{ chk3Basis }}">
-      <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: clamp(18px,1.67vw,20px); text-transform: uppercase; color: #fff; line-height: 1.15">Отчётность понятна</span>
-      <span style="font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 300; font-size: 14px; line-height: 1.5; color: #E9E9E9; text-align: left">Инвестор не собирает картину по фрагментам. Каждое обновление показывает, что изменилось, что это значит и на каком документе основано.</span>
+    <div data-reveal="s1cards" style="display: flex; flex-direction: column; align-items: center; gap: clamp(40px,4.5vw,64px); transform: translateY({{ secY }}px); opacity: {{ secO }}; filter: blur({{ secB }}px); transition: transform 0.7s cubic-bezier(.16,1,.3,1), opacity 0.7s ease-out, filter 0.7s ease-out; width: 100%">
+      <span style="font-size: 16px; line-height: 1.6; font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; color: #E9E9E9; max-width: 720px; text-align: center"><b style="color: #fff">В одном месте</b> — документы, бюджеты, юридические заключения, строительная отчётность, операционные сводки и список ответственных. Публичный сайт показывает стандарт. Закрытые каналы открывают файлы.</span>
+      <div style="width: 100%; max-width: 1180px; height: clamp(220px,24vw,340px); border-radius: 16px; overflow: hidden; position: relative">
+        <img src="./assets/roya-desa.webp" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 35%; display: block">
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: clamp(28px,3.5vw,56px); width: 100%; max-width: 1180px">
+        <div style="border-top: 1px solid rgba(255,255,255,0.3); padding-top: 24px; display: flex; flex-direction: column; gap: 14px">
+          <span style="font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 700; font-size: 14px; color: rgba(235,234,230,0.55)">01</span>
+          <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 20px; text-transform: uppercase; color: #fff; line-height: 1.25">Всё по одному активу</span>
+          <span style="font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 400; font-size: 14px; line-height: 1.6; color: #D9D8D4">Договоры, исходные файлы, допущения, обновления и открытые вопросы собраны в одном деле.</span>
+        </div>
+        <div style="border-top: 1px solid rgba(255,255,255,0.3); padding-top: 24px; display: flex; flex-direction: column; gap: 14px">
+          <span style="font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 700; font-size: 14px; color: rgba(235,234,230,0.55)">02</span>
+          <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 20px; text-transform: uppercase; color: #fff; line-height: 1.25">Отчётность понятна</span>
+          <span style="font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 400; font-size: 14px; line-height: 1.6; color: #D9D8D4">Инвестор не собирает картину по фрагментам. Каждое обновление показывает, что изменилось, что это значит и на каком документе основано.</span>
+        </div>
+        <div style="border-top: 1px solid rgba(255,255,255,0.3); padding-top: 24px; display: flex; flex-direction: column; gap: 14px">
+          <span style="font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 700; font-size: 14px; color: rgba(235,234,230,0.55)">03</span>
+          <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 20px; text-transform: uppercase; color: #fff; line-height: 1.25">Следующий шаг ясен</span>
+          <span style="font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 400; font-size: 14px; line-height: 1.6; color: #D9D8D4">Документ называет открытый вопрос, ответственного и решение, которого ждут — от команды или от инвестора.</span>
+        </div>
+      </div>
     </div>
-    <div style="border-radius: 16px; background: #8C7A6C; display: flex; flex-direction: column; gap: 16px; padding: 24px; box-sizing: border-box; flex: 1 1 {{ chk3Basis }}; line-height: 1.5">
-      <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: clamp(18px,1.67vw,20px); text-transform: uppercase; color: #fff; line-height: 1.15">Следующий шаг ясен</span>
-      <span style="font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 300; font-size: 14px; line-height: 1.5; color: #E9E9E9; text-align: left">Документ называет открытый вопрос, ответственного и решение, которого ждут — от команды или от инвестора.</span>
-    </div>
-  </div></div></div>
+  </div>
 </div>
 </sc-if>
 
@@ -301,21 +323,28 @@
 </div></div>
 
 <div style="background: #EBEAE6; padding: clamp(90px,10vw,160px) {{ padX }} 0; box-sizing: border-box; display: flex; flex-direction: column; align-items: center" data-om-label="checklist" ref="{{ checkRef }}">
-  <div style="width: 100%; max-width: 1320px; display: flex; flex-direction: column; gap: clamp(64px,7vw,110px)">
-    <div data-reveal="chkhead" style="font-size: clamp(28px,calc(21.7px + 0.62vw),42px); line-height: 1.3; text-transform: uppercase; color: rgb(25,35,22); display: flex; flex-direction: column; gap: 0px">
-      <div style="overflow: hidden"><div style="transform: translateY({{ chkT1Y }}%); opacity: {{ chkT1O }}; filter: blur({{ chkT1B }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1) 0ms, opacity 0.9s ease-out 0ms, filter 0.9s ease-out 0ms"><span style="font-weight: 200; font-family: HeadingNow-82Light; font-size: clamp(24px,calc(-12.5px + 4.76vw),36px)">Что инвестор</span></div></div>
-      <div style="overflow: hidden"><div style="transform: translateY({{ chkT2Y }}%); opacity: {{ chkT2O }}; filter: blur({{ chkT2B }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1) 120ms, opacity 0.9s ease-out 120ms, filter 0.9s ease-out 120ms"><span style="font-weight: 700; font-family: HeadingNow-84Regular; font-size: clamp(24px,calc(-12.5px + 4.76vw),36px)">Может проверить</span></div></div>
+  <div style="width: 100%; max-width: 1320px; display: grid; grid-template-columns: 7fr 5fr; gap: clamp(36px,4.5vw,80px); align-items: start">
+    <div style="display: flex; flex-direction: column; gap: clamp(40px,4.5vw,64px); min-width: 0">
+      <div data-reveal="chkhead" style="line-height: 1.3; text-transform: uppercase; color: rgb(25,35,22); display: flex; flex-direction: column; gap: 0px">
+        <div style="overflow: hidden"><div style="transform: translateY({{ chkT1Y }}%); opacity: {{ chkT1O }}; filter: blur({{ chkT1B }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1) 0ms, opacity 0.9s ease-out 0ms, filter 0.9s ease-out 0ms"><span style="font-weight: 200; font-family: HeadingNow-82Light; font-size: clamp(24px,calc(-12.5px + 4.76vw),36px)">Что инвестор</span></div></div>
+        <div style="overflow: hidden"><div style="transform: translateY({{ chkT2Y }}%); opacity: {{ chkT2O }}; filter: blur({{ chkT2B }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1) 120ms, opacity 0.9s ease-out 120ms, filter 0.9s ease-out 120ms"><span style="font-weight: 700; font-family: HeadingNow-84Regular; font-size: clamp(24px,calc(-12.5px + 4.76vw),36px)">Может проверить</span></div></div>
+      </div>
+      <div style="display: flex; flex-direction: column">
+        <sc-for list="{{ checkItems }}" as="item" hint-placeholder-count="5">
+          <div style="border-top: 1px solid rgba(25,35,22,0.25); padding: clamp(20px,2.4vw,32px) 0; display: grid; grid-template-columns: clamp(40px,4vw,64px) 1fr; gap: clamp(14px,1.8vw,28px); align-items: start" data-chk-item="{{ item.index }}">
+            <span style="font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 700; font-size: 14px; line-height: 2; color: rgb(43,58,39); opacity: {{ item.tO }}; transition: opacity 0.9s ease-out">{{ item.num }}</span>
+            <div style="display: flex; flex-direction: column; gap: 10px; min-width: 0">
+              <div style="overflow: hidden"><span style="display: block; font-family: HeadingNow-82Light; font-weight: 200; font-size: clamp(20px,1.8vw,26px); line-height: 1.25; text-transform: uppercase; color: rgb(25,35,22); transform: translateY({{ item.tY }}%); opacity: {{ item.tO }}; filter: blur({{ item.tB }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1), opacity 0.9s ease-out, filter 0.9s ease-out">{{ item.title }}</span></div>
+              <span style="font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-size: clamp(15px,1vw,17px); line-height: 1.55; color: #2D2D2D; display: block; max-width: 640px; opacity: {{ item.dO }}; transform: translateY({{ item.dY }}px); transition: transform 0.8s cubic-bezier(.16,1,.3,1) 200ms, opacity 0.8s ease-out 200ms">{{ item.text }}</span>
+            </div>
+          </div>
+        </sc-for>
+        <span style="display: block; width: 100%; height: 1px; background: rgba(25,35,22,0.25)"></span>
+      </div>
     </div>
-    <div style="display: flex; flex-direction: column; gap: clamp(40px,4.2vw,64px)">
-      <sc-for list="{{ checkItems }}" as="item" hint-placeholder-count="5">
-        <div style="display: grid; grid-template-columns: {{ chkCols }}; column-gap: clamp(12px,calc(-42.9px + 7.14vw),60px); align-items: start; min-height: clamp(80px,7.9vw,104px)" data-chk-item="{{ item.index }}">
-          <div style="grid-column: 1; grid-row: 1; overflow: hidden; padding-bottom: clamp(12px,1.2vw,18px)"><span style="display: block; font-family: HeadingNow-82Light; font-weight: 200; font-size: {{ chkTitleFont }}; line-height: 1.2; text-align: {{ chkTitleAlign }}; overflow-wrap: break-word; hyphens: auto; color: rgb(25,35,22); transform: translateY({{ item.tY }}%); opacity: {{ item.tO }}; filter: blur({{ item.tB }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1), opacity 0.9s ease-out, filter 0.9s ease-out">{{ item.title }}</span></div>
-          <span style="grid-column: 1; grid-row: 2; display: block; width: 100%; height: 2px; background: rgb(25,35,22); transform: scaleX({{ item.lineS }}); transform-origin: {{ chkLineOrigin }}; transition: transform 0.9s cubic-bezier(.16,1,.3,1) 220ms"></span>
-          <span style="grid-column: {{ chkDescCol }}; grid-row: {{ chkDescRow }}; margin-top: clamp(10px,1.1vw,16px); font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-size: clamp(16px,1.05vw,18px); line-height: 1.55; color: #2D2D2D; min-width: 0; display: block; opacity: {{ item.dO }}; transform: translateY({{ item.dY }}px); transition: transform 0.8s cubic-bezier(.16,1,.3,1) 320ms, opacity 0.8s ease-out 320ms">{{ item.text }}</span>
-        </div>
-      </sc-for>
+    <div style="position: sticky; top: clamp(90px,10vh,120px); border-radius: 16px; overflow: hidden; height: min(calc(100vh - 180px), 720px); min-height: 420px; opacity: {{ chkImgO }}; transform: translateY({{ chkImgY }}px); transition: transform 1s cubic-bezier(.16,1,.3,1) 200ms, opacity 1s ease-out 200ms">
+      <img src="./assets/foundation-clean.webp" alt="" loading="lazy" decoding="async" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 100%; display: block">
     </div>
-    <img src="./assets/foundation-clean.webp" alt="" loading="lazy" decoding="async" style="width: {{ imgBleedWidth }}; margin-left: {{ imgBleedMargin }}; height: clamp(220px,26vw,420px); object-fit: cover; object-position: center 82.7%; display: block; margin-top: clamp(40px,5vw,80px); opacity: {{ chkImgO }}; transform: translateY({{ chkImgY }}px); transition: transform 1s cubic-bezier(.16,1,.3,1) 200ms, opacity 1s ease-out 200ms">
   </div>
 </div>
 
@@ -550,7 +579,7 @@ class Component extends DCLogic {
       if (this._unmounted) return;
       // 1. plates settle in
       requestAnimationFrame(() => requestAnimationFrame(() => {
-        if (!this._unmounted) this.setState({ bgOpacity: 1, bgScale: 1, topOpacity: 1, topScale: 1 });
+        if (!this._unmounted) this.setState({ bgOpacity: 1, bgScale: 1, topOpacity: 1, topScale: 1, heroZoom: 1.2 });
       }));
       // 2. wordmark, 3. chrome + scrim, 4. headline + buttons — same cadence on both breakpoints
       const at = (ms, patch) => this._timers.push(setTimeout(() => { if (!this._unmounted) this.setState(patch); }, ms));
@@ -589,7 +618,8 @@ class Component extends DCLogic {
       this._hdrHidden = hide;
       this.applyHdr();
     };
-    window.addEventListener("scroll", this._onHdrScroll, { passive: true });
+    window.addEventListener("scroll", this._onHdrScroll, { passive: true, capture: true });
+
     this._unmounted = false;
     this.bindLazyImages();
     this.startIntro();
@@ -716,7 +746,8 @@ class Component extends DCLogic {
     });
   }
   componentWillUnmount() {
-    window.removeEventListener("scroll", this._onHdrScroll);
+    window.removeEventListener("scroll", this._onHdrScroll, { capture: true });
+
     this._unmounted = true;
     (this._timers || []).forEach(clearTimeout);
     if (this._heroRO) this._heroRO.disconnect();
@@ -783,6 +814,8 @@ class Component extends DCLogic {
       ...this.state,
       bgOpacity: this.state.bgOpacity ?? 1,
       bgScale: this.state.bgScale ?? 1,
+      heroZoom: this.state.heroZoom ?? 1,
+
       topOpacity: this.state.topOpacity ?? 1,
       topScale: this.state.topScale ?? 1,
       logoOpacity: this.state.logoOpacity ?? 0.85,
@@ -793,6 +826,10 @@ class Component extends DCLogic {
       bottomOpacity: this.state.bottomOpacity ?? 1,
       bottomTextOpacity: this.state.bottomTextOpacity ?? 1,
       bottomTextOffsetY: this.state.bottomTextOffsetY ?? 0,
+      heroLY: (this.state.bottomTextOpacity ?? 1) ? 0 : 100,
+      heroLO: (this.state.bottomTextOpacity ?? 1) ? 1 : 0,
+      heroRule: (this.state.bottomTextOpacity ?? 1) ? 1 : 0,
+      heroBtnY: (this.state.bottomTextOpacity ?? 1) ? 0 : 24,
       sectionRef: this.sectionRef,
       mobileWidth: forceView === "mobile" && !this.state.mobile ? "390px" : "100%",
       mobileHeroHeight: forceView === "mobile" && !this.state.mobile ? "780px" : "100svh",
@@ -853,10 +890,10 @@ class Component extends DCLogic {
       onToggleMenu: () => { this._hdrHidden = false; this.applyHdr(); this.setState(s => ({ menuOpen: !s.menuOpen })); },
       goProjects: () => {
         const w = window.innerWidth;
-        const page = w >= 1024 ? "projects.html" : w >= 768 ? "projects-tablet.html" : "projects-mobile.html";
+        const page = w >= 1024 ? "02 Projects desktop.dc.html" : w >= 768 ? "02 Projects tablet.dc.html" : "02 Projects mobile.dc.html";
         window.location.href = "./" + page;
       },
-      navItems: [{ label: "Проекты", onClick: () => { window.location.href = "./" + (window.innerWidth >= 1024 ? "projects.html" : window.innerWidth >= 768 ? "projects-tablet.html" : "projects-mobile.html"); } }, { label: "Инвестиции" }, { label: "Юридика" }, { label: "О компании" }, { label: "Контакты" }],
+      navItems: [{ label: "Проекты", onClick: () => { window.location.href = "./" + (window.innerWidth >= 1024 ? "02 Projects desktop.dc.html" : window.innerWidth >= 768 ? "02 Projects tablet.dc.html" : "02 Projects mobile.dc.html"); } }, { label: "Инвестиции" }, { label: "Юридика" }, { label: "О компании" }, { label: "Контакты" }],
       h1Y: this.state.sec1Visible ? 0 : 100,
       h1O: this.state.sec1Visible ? 1 : 0,
       h2Y: this.state.sec1Visible ? 0 : 100,
@@ -922,7 +959,7 @@ class Component extends DCLogic {
         { title: "Среда на Бали", text: "Индонезийское право, связи на Бали, местная операционная команда и партнёрская среда — часть актива, а не декорация." },
       ].map((it, i) => {
         const on = !!(this.state.chkShown || {})[i];
-        return { ...it, index: i, tY: on ? 0 : 100, tO: on ? 1 : 0, tB: on ? 0 : 0, lineS: on ? 1 : 0, dO: on ? 1 : 0, dY: on ? 0 : 16 };
+        return { ...it, index: i, num: "0" + (i + 1), tY: on ? 0 : 100, tO: on ? 1 : 0, tB: on ? 0 : 0, lineS: on ? 1 : 0, dO: on ? 1 : 0, dY: on ? 0 : 16 };
       }),
       partnersRef: this.partnersRef,
       ctaRef: this.ctaRef,

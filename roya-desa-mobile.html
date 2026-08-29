@@ -500,7 +500,8 @@ class Component extends DCLogic {
     this._route = () => {
       if (!(this.props.autoRedirect ?? true)) return;
       const w = window.innerWidth;
-      if (w >= 1024) window.location.replace("./roya-desa-mobile.html");
+      if (w >= 1024) window.location.replace("./roya-desa.html");
+      else if (w >= 768) window.location.replace("./roya-desa-tablet.html");
       else if (w >= 768) window.location.replace("./roya-desa-tablet.html");
     };
     this._route();

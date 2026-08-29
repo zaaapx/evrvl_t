@@ -22,7 +22,7 @@
 <div style="width: 100%; position: relative; background: #EBEAE6; font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif">
 
   <sc-if value="{{ evrvlIsDesk }}" hint-placeholder-val="{{ true }}">
-  <div style="position: fixed; left: clamp(12px,2.5vw,36px); right: clamp(12px,2.5vw,36px); top: clamp(10px,2vw,24px); z-index: 100; border-radius: 16px; background: rgba(0,0,0,0.3); backdrop-filter: blur(24px); display: grid; grid-template-columns: auto 1fr auto; padding: clamp(10px,1.2vw,16px) clamp(10px,1.2vw,16px) clamp(10px,1.2vw,16px) clamp(14px,1.8vw,24px); align-items: center; box-sizing: border-box; gap: 16px; overflow: hidden" data-om-label="header">
+  <div ref="{{ evrvlHdrRef }}" style="position: fixed; left: clamp(12px,2.5vw,36px); right: clamp(12px,2.5vw,36px); top: clamp(10px,2vw,24px); transform: translateY(0); transition: transform 0.4s cubic-bezier(.16,1,.3,1); z-index: 100; border-radius: 16px; background: rgba(0,0,0,0.3); backdrop-filter: blur(24px); display: grid; grid-template-columns: auto 1fr auto; padding: clamp(10px,1.2vw,16px) clamp(10px,1.2vw,16px) clamp(10px,1.2vw,16px) clamp(14px,1.8vw,24px); align-items: center; box-sizing: border-box; gap: 16px; overflow: hidden" data-om-label="header">
     <a href="./index-mobile.html" style="width: 131px; justify-self: start; flex-shrink: 0; display: block; height: 42px; text-decoration: none"><img src="./assets/logo.svg" alt="EVERVILLE" style="width: 128px; height: 40px; display: block"></a>
     <div style="display: flex; flex-direction: row; gap: clamp(10px,1.8vw,36px); align-items: center; flex-wrap: wrap; justify-self: start; margin-left: clamp(8px,1.2vw,20px); min-width: 0">
       <a href="./projects-mobile.html" style="font-size: clamp(11px,0.97vw,16px); font-weight: 400; line-height: 21px; color: #fff; transition: color 0.2s ease-out; text-decoration: none" style-hover="color: rgba(255,255,255,0.65)">Проекты</a>
@@ -45,13 +45,12 @@
         <svg width="14" height="7" viewBox="0 0 14 7" fill="#fff"><path d="M 7 7 L 0.938 1.75 L 13.062 1.75 L 7 7 Z"></path></svg>
       </div>
     </div>
-    <div ref="{{ progressRef }}" style="position: absolute; left: 0; bottom: 0; height: 2px; width: 0%; background: rgba(255,255,255,0.75)"></div>
   </div>
   </sc-if>
 
   <sc-if value="{{ evrvlIsMobile }}" hint-placeholder-val="{{ false }}">
   <div style="position: fixed; left: 0; right: 0; top: calc(env(safe-area-inset-top, 0px) + 12px); height: 0; z-index: 400" data-om-label="header-mobile">
-    <div style="position: relative; margin: 0 12px; z-index: 500; border-radius: 16px; background: rgba(0,0,0,0.3); backdrop-filter: blur(24px); display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 10px 10px 14px; box-sizing: border-box; overflow: hidden">
+    <div ref="{{ evrvlHdrRef }}" style="position: relative; margin: 0 12px; z-index: 500; transform: translateY(0); transition: transform 0.4s cubic-bezier(.16,1,.3,1); border-radius: 16px; background: rgba(0,0,0,0.3); backdrop-filter: blur(24px); display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 10px 10px 14px; box-sizing: border-box; overflow: hidden">
       <a href="./index-mobile.html" style="display: block; flex-shrink: 0; text-decoration: none"><img src="./assets/logo-mobile.svg" alt="EVERVILLE" style="width: 120px; height: 36px; display: block"></a>
       <div style="display: flex; flex-direction: row; align-items: center; gap: 6px">
         <div style="display: flex; flex-direction: row; gap: 4px; align-items: center; padding: 12px 10px; border-radius: 8px; cursor: pointer; transition: background-color 0.2s ease-out" style-hover="background-color: rgba(43,58,39,0.5)">
@@ -66,7 +65,6 @@
           </div>
         </div>
       </div>
-      <div ref="{{ progressRef }}" style="position: absolute; left: 0; bottom: 0; height: 2px; width: 0%; background: rgba(255,255,255,0.75)"></div>
     </div>
     <div style="transform: {{ evrvlMenuT }}; pointer-events: {{ evrvlMenuPtr }}; visibility: {{ evrvlMenuVis }}; transition: transform 0.55s cubic-bezier(.16,1,.3,1), visibility 0.55s linear; position: fixed; left: 0; width: 100%; top: 0; height: 100svh; z-index: 200; background: rgb(25,35,22); display: flex; flex-direction: column; padding: calc(env(safe-area-inset-top, 0px) + 92px) 16px 16px; box-sizing: border-box">
       <div style="display: flex; flex-direction: column; gap: 4px; flex: 1 1 auto; justify-content: center; align-items: center">
@@ -90,11 +88,11 @@
     <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,18,12,0.82), rgba(10,18,12,0.6) 45%, rgba(10,18,12,0.88)); pointer-events: none"></div>
     <div style="position: relative; width: 100%; max-width: 1320px; margin: 0 auto; display: flex; flex-direction: column; gap: clamp(24px,2.4vw,40px); align-items: center; text-align: center; opacity: {{ heroO }}; transform: translateY({{ heroY }}px); transition: opacity 0.9s ease-out, transform 0.9s cubic-bezier(.16,1,.3,1)">
       <span style="font-weight: 400; font-size: clamp(14px,calc(9.43px + 0.595vw),16px); letter-spacing: 0.02em; color: rgb(214,158,158)">legal</span>
-      <div style="display: flex; flex-direction: column; gap: 4px; align-items: center; text-transform: uppercase; color: #fff">
-        <span style="font-family: 'HeadingNow-82Light'; font-weight: 200; font-size: clamp(28px,3.4vw,52px); line-height: 1.12">инвестиционный</span>
+      <div style="display: flex; flex-direction: column; gap: 4px; align-items: center; text-transform: uppercase; color: #fff; width: 100%; max-width: 100%; container-type: inline-size">
+        <span style="font-family: 'HeadingNow-82Light'; font-weight: 200; font-size: min(44px, 5.4cqw); line-height: 1.12; max-width: 100%">инвестиционный</span>
         <div style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap">
           <span style="flex: 0 0 auto; width: 20px; height: 2px; background: rgba(255,255,255,0.8); display: {{ evrvlHeroLineD }}"></span>
-          <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: clamp(28px,3.4vw,52px); line-height: 1.12">дисклеймер</span>
+          <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: min(44px, 5.4cqw); line-height: 1.12; max-width: 100%">дисклеймер</span>
           <span style="flex: 0 0 auto; width: 20px; height: 2px; background: rgba(255,255,255,0.8); display: {{ evrvlHeroLineD }}"></span>
         </div>
       </div>
@@ -105,21 +103,21 @@
 
   <div style="width: 100%; background: #EBEAE6; padding: clamp(72px,8vw,130px) clamp(24px,6vw,88px) clamp(72px,8vw,120px); box-sizing: border-box; display: flex; flex-direction: column; align-items: center" data-om-label="document" data-screen-label="Текст документа">
     <div style="width: 100%; max-width: 1320px; display: grid; grid-template-columns: {{ evrvlDocCols }}; gap: clamp(32px,5vw,96px); align-items: start">
-      <div style="position: {{ evrvlTocPos }}; top: 120px; display: flex; flex-direction: column; gap: 14px">
+      <div style="position: {{ evrvlTocPos }}; top: 120px; display: flex; flex-direction: column; gap: 14px; align-items: flex-start; text-align: left">
         <span style="font-weight: 400; font-size: 14px; letter-spacing: 0.02em; color: rgb(138,70,70); margin-bottom: 6px">содержание</span>
         <sc-for list="{{ sections }}" as="s" hint-placeholder-count="8">
-          <a href="{{ s.href }}" style="display: flex; flex-direction: row; gap: 12px; align-items: baseline; font-size: 15px; line-height: 1.4; color: rgb(25,35,22); transition: opacity 0.2s ease-out" style-hover="opacity: 0.6">
-            <span style="font-family: 'HeadingNow-82Light'; font-weight: 200; font-size: 13px; color: rgba(25,35,22,0.5)">{{ s.n }}</span>
-            <span>{{ s.title }}</span>
+          <a href="{{ s.href }}" style="display: flex; flex-direction: row; gap: 0; align-items: baseline; text-align: left; font-size: 15px; line-height: 1.4; color: rgb(25,35,22); transition: opacity 0.2s ease-out" style-hover="opacity: 0.6">
+            <span style="font-family: 'HeadingNow-82Light'; font-weight: 200; font-size: 13px; color: rgba(25,35,22,0.5); flex: 0 0 28px; width: 28px; display: block; text-align: left; font-variant-numeric: tabular-nums">{{ s.n }}</span>
+            <span style="flex: 1 1 auto; display: block; min-width: 0">{{ s.title }}</span>
           </a>
         </sc-for>
       </div>
       <div style="display: flex; flex-direction: column; gap: clamp(40px,4vw,64px); max-width: 780px">
         <sc-for list="{{ sections }}" as="s" hint-placeholder-count="8">
           <div id="{{ s.id }}" style="display: flex; flex-direction: column; gap: 16px; scroll-margin-top: 120px">
-            <div style="display: flex; flex-direction: row; gap: clamp(14px,1.4vw,20px); align-items: baseline; border-bottom: 1.5px solid rgba(25,35,22,0.25); padding-bottom: 14px">
-              <span style="font-family: 'HeadingNow-82Light'; font-weight: 200; font-size: 15px; letter-spacing: 0.06em; color: rgb(138,70,70)">{{ s.n }}</span>
-              <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: clamp(18px,1.7vw,26px); line-height: 1.2; text-transform: uppercase; color: rgb(25,35,22)">{{ s.title }}</span>
+            <div style="display: flex; flex-direction: row; gap: 0; align-items: baseline; border-bottom: 1.5px solid rgba(25,35,22,0.25); padding-bottom: 14px">
+              <span style="font-family: 'HeadingNow-82Light'; font-weight: 200; font-size: 15px; letter-spacing: 0.06em; color: rgb(138,70,70); flex: 0 0 clamp(34px,3vw,48px); width: clamp(34px,3vw,48px); display: block; text-align: left; font-variant-numeric: tabular-nums">{{ s.n }}</span>
+              <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: clamp(18px,1.7vw,26px); line-height: 1.2; text-transform: uppercase; color: rgb(25,35,22); flex: 1 1 auto; display: block; min-width: 0">{{ s.title }}</span>
             </div>
             <sc-for list="{{ s.blocks }}" as="b" hint-placeholder-count="2">
               <div style="display: flex; flex-direction: column; gap: 10px">
@@ -272,9 +270,11 @@ class Component extends DCLogic {
   { title: "Регуляторные ограничения", blocks: [{ text: "Инвестиции могут регулироваться в разных юрисдикциях. Пользователь самостоятельно отвечает за соблюдение применимого законодательства." }] },
   { title: "Сторона сделки", blocks: [{ text: "Сторона конкретной сделки определяется подписанными документами. Оферент по каждому проекту и связанным программам аренды указывается в проектном досье." }] },
   { title: "Обновление информации", blocks: [{ text: "Компания не обязана обновлять информацию на Сайте, включая прогнозы и финансовые показатели." }] },
+  { title: "Валюта расчётов и цены", blocks: [{ text: "В соответствии с Законом Республики Индонезия о валюте № 7/2011 и Регламентом Банка Индонезии № 17/3/PBI/2015 индонезийская рупия (IDR) является единственной разрешённой валютой для платежей на территории страны." }, { items: ["все цены на Сайте указаны в IDR","справочные цены в USD, EUR и других валютах приведены исключительно для удобства","пересчёт выполняется по коммерческому курсу на момент оплаты","итоговая сумма платежа фиксируется в IDR в документах сделки"] }] },
   { title: "Применимое право", blocks: [{ text: "Настоящий дисклеймер регулируется законодательством Республики Индонезия." }] }
   ];
   componentDidMount() {
+    setTimeout(() => this._evrvlHdrInit(), 0);
     this._ruleIO = new IntersectionObserver((es) => { es.forEach((e) => { if (e.isIntersecting) { e.target.style.transform = "none"; this._ruleIO.unobserve(e.target); } }); }, { threshold: 0.05 });
     this._ruleTimer = setTimeout(() => { document.querySelectorAll("[data-rule]").forEach((n) => this._ruleIO.observe(n)); }, 60);
     this.onScroll = () => {
@@ -343,6 +343,31 @@ class Component extends DCLogic {
     this.forceUpdate();
   };
 
+  evrvlHdrRef = React.createRef();
+  _evrvlHdrHidden = false;
+  _evrvlApplyHdr = () => {
+    const n = this.evrvlHdrRef.current;
+    if (!n) return;
+    n.style.transform = this._evrvlHdrHidden ? "translateY(-" + (n.offsetHeight + 28) + "px)" : "translateY(0)";
+  };
+  _evrvlHdrInit = () => {
+    if (this._evrvlHdrBound) return;
+    this._evrvlHdrBound = true;
+    const readY = () => window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    this._evrvlLastY = readY();
+    this._evrvlOnScroll = () => {
+      const y = readY();
+      const d = y - this._evrvlLastY;
+      if (Math.abs(d) < 4) return;
+      this._evrvlLastY = y;
+      let hide = d > 0 && !this.evrvlMenuOpen;
+      if (y <= 80) hide = false;
+      if (hide === this._evrvlHdrHidden) return;
+      this._evrvlHdrHidden = hide;
+      this._evrvlApplyHdr();
+    };
+    window.addEventListener("scroll", this._evrvlOnScroll, { passive: true });
+  };
   evrvlMenuOpen = false;
   evrvlMob() {
     return true;
@@ -364,7 +389,8 @@ class Component extends DCLogic {
       evrvlTocPos: this.evrvlMob() ? "static" : "sticky",
       evrvlHeroLineD: this.evrvlMob() ? "none" : "block",
       evrvlIsDesk: !this.evrvlMob(),
-      evrvlToggleMenu: () => { this.evrvlMenuOpen = !this.evrvlMenuOpen; document.body.style.overflow = this.evrvlMenuOpen ? "hidden" : ""; this.forceUpdate(); },
+      evrvlHdrRef: this.evrvlHdrRef,
+      evrvlToggleMenu: () => { this._evrvlHdrHidden = false; this._evrvlApplyHdr(); this.evrvlMenuOpen = !this.evrvlMenuOpen; document.body.style.overflow = this.evrvlMenuOpen ? "hidden" : ""; this.forceUpdate(); },
       evrvlMenuInvest: () => { this.evrvlMenuOpen = false; this.openInvest(); },
       evrvlBarTop: this.evrvlMenuOpen ? "translateY(4.25px) rotate(45deg)" : "none",
       evrvlBarMid: this.evrvlMenuOpen ? "scaleX(0.4)" : "none",
