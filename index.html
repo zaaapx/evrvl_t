@@ -890,10 +890,10 @@ class Component extends DCLogic {
       onToggleMenu: () => { this._hdrHidden = false; this.applyHdr(); this.setState(s => ({ menuOpen: !s.menuOpen })); },
       goProjects: () => {
         const w = window.innerWidth;
-        const page = w >= 1024 ? "02 Projects desktop.dc.html" : w >= 768 ? "02 Projects tablet.dc.html" : "02 Projects mobile.dc.html";
+        const page = w >= 1024 ? "projects.html" : w >= 768 ? "projects-tablet.html" : "projects-mobile.html";
         window.location.href = "./" + page;
       },
-      navItems: [{ label: "Проекты", onClick: () => { window.location.href = "./" + (window.innerWidth >= 1024 ? "02 Projects desktop.dc.html" : window.innerWidth >= 768 ? "02 Projects tablet.dc.html" : "02 Projects mobile.dc.html"); } }, { label: "Инвестиции" }, { label: "Юридика" }, { label: "О компании" }, { label: "Контакты" }],
+      navItems: [{ label: "Проекты", onClick: () => { window.location.href = "./" + (window.innerWidth >= 1024 ? "projects.html" : window.innerWidth >= 768 ? "projects-tablet.html" : "projects-mobile.html"); } }, { label: "Инвестиции" }, { label: "Юридика" }, { label: "О компании" }, { label: "Контакты" }],
       h1Y: this.state.sec1Visible ? 0 : 100,
       h1O: this.state.sec1Visible ? 1 : 0,
       h2Y: this.state.sec1Visible ? 0 : 100,
