@@ -18,7 +18,9 @@
     a:hover { color: rgba(25,35,22,0.7); }
     input::placeholder { color: rgba(25,35,22,0.45); opacity: 1; }
     @keyframes evrvl-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-  </style>
+  @keyframes evrvl-scrollhint { 0% { transform: scaleY(0); transform-origin: top } 45% { transform: scaleY(1); transform-origin: top } 55% { transform: scaleY(1); transform-origin: bottom } 100% { transform: scaleY(0); transform-origin: bottom } }
+@keyframes evrvl-scrollhint-arrow { 0%, 35% { opacity: 0; transform: translateY(-4px) } 50%, 75% { opacity: 1; transform: translateY(0) } 100% { opacity: 0; transform: translateY(3px) } }
+</style>
 </helmet>
 <div style="width: 100%; position: relative; background: #EBEAE6; font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif">
 
@@ -84,10 +86,10 @@
   </sc-if>
 
 
-  <div style="position: relative; width: 100%; min-height: 100svh; overflow: hidden; background: rgb(25,35,22); display: flex; flex-direction: column; justify-content: flex-start; padding: clamp(150px,21vh,260px) clamp(24px,6vw,88px) clamp(48px,5vw,72px); box-sizing: border-box" data-om-label="hero" data-screen-label="Hero — О компании">
+  <div style="position: relative; width: 100%; min-height: 100svh; overflow: hidden; background: rgb(25,35,22); display: flex; flex-direction: column; justify-content: flex-start; padding: clamp(150px,21vh,260px) clamp(24px,6vw,88px) clamp(120px,16vh,180px); box-sizing: border-box" data-om-label="hero" data-screen-label="Hero — О компании">
     <img src="./assets/about-hero.webp" alt="" decoding="async" fetchpriority="high" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 78%; display: block">
     <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,18,12,0.65), rgba(10,18,12,0.5) 40%, rgba(10,18,12,0.81)); pointer-events: none"></div>
-    <div style="position: absolute; left: 0; right: 0; top: 12%; bottom: 8%; background: radial-gradient(70% 60% at 50% 45%, rgba(8,14,9,0.65), rgba(8,14,9,0.32) 65%, rgba(8,14,9,0) 100%); pointer-events: none"></div>
+    <div style="position: absolute; inset: 0; background: radial-gradient(70% 55% at 50% 45%, rgba(8,14,9,0.65), rgba(8,14,9,0.32) 65%, rgba(8,14,9,0) 100%); pointer-events: none"></div><div style="position: absolute; left: 50%; top: max(calc(100svh - 175px), 760px); transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 12px; z-index: 5; pointer-events: none"><span style="font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 400; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.7)">листайте вниз</span><span style="width: 1px; height: 40px; background: rgba(255,255,255,0.8); display: block; animation: evrvl-scrollhint 2.2s cubic-bezier(.45,0,.35,1) infinite"></span><svg width="11" height="7" viewBox="0 0 11 7" fill="none" style="display: block; margin-top: -10px; animation: evrvl-scrollhint-arrow 2.2s ease-out infinite"><path d="M1 0.8 L5.5 5.8 L10 0.8" stroke="rgba(255,255,255,0.8)" stroke-width="1.2" fill="none"></path></svg></div>
     <div data-reveal="1" style="position: relative; width: 75%; max-width: 1320px; margin: 0 auto; display: flex; flex-direction: column; gap: clamp(24px,2.4vw,40px); align-items: center; text-align: center; opacity: 0; transform: translateY(28px); filter: blur(6px); transition: opacity 0.9s ease-out, transform 0.9s cubic-bezier(.16,1,.3,1), filter 0.9s ease-out">
       <span style="font-weight: 400; font-size: clamp(14px,calc(9.43px + 0.595vw),16px); letter-spacing: 0.02em; color: rgb(214,158,158)">о компании</span>
       <div style="display: flex; flex-direction: column; gap: 8px; align-items: center; text-transform: uppercase; color: #fff; width: 1070px">
@@ -286,7 +288,7 @@
 </div>
 
   <div style="position: relative; overflow: hidden; background: url('./assets/footer-beach.webp') center / cover no-repeat, rgb(25,35,22); padding: clamp(64px,8.33vw,120px) clamp(24px,6vw,88px) clamp(180px,23.3vw,336px); box-sizing: border-box; display: flex; flex-direction: column; align-items: center" data-om-label="footer" data-screen-label="Футер">
-  <video src="./assets/footer-video.mp4" poster="./assets/footer-beach.webp" preload="none" autoPlay="{{ true }}" loop="{{ true }}" muted="{{ true }}" playsInline="{{ true }}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; pointer-events: none"></video>
+  <img src="./assets/footer-beach.webp" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; pointer-events: none">
   <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,18,12,0.85), rgba(10,18,12,0.6) 55%, rgba(10,18,12,0.35)); pointer-events: none"></div>
   <div style="position: relative; width: 100%; max-width: 1320px; display: flex; flex-direction: row; justify-content: space-between; align-items: flex-start; gap: clamp(32px,4vw,56px); flex-wrap: wrap; font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif">
     <a href="./index.html" style="display: block; flex: 0 0 auto; text-decoration: none"><img src="./assets/logo.svg" alt="EVERVILLE" style="width: 131px; height: auto; display: block"></a>
