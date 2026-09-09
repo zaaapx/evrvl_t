@@ -65,13 +65,12 @@
 <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
 <div style="width: 100%; height: 100vh; max-height: {{ heroMaxH }}; overflow: hidden; position: relative; background-color: #EBEAE6" data-om-label="hero" data-screen-label="Hero (desktop)">
 <div style="position: relative; width: 100%; height: 100%; overflow: hidden; border-radius: 0px; font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; box-sizing: border-box">
-  <img src="./assets/hero-v3-bg.png" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 63%; opacity: {{ bgOpacity }}; transform: scale({{ heroZoom }}); transition: opacity 0.9s ease-out, transform 6s ease-out">
+  <img src="./assets/hero-v4-bg.jpg" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; opacity: {{ bgOpacity }}; transition: opacity 0.9s ease-out">
   <div style="position: absolute; inset: -20px; pointer-events: none">
-    <div style="position: absolute; top: 0; bottom: 0; left: -140px; right: -140px; overflow: hidden; -webkit-mask-image: linear-gradient(180deg, black 0%, black 38%, transparent 47%); mask-image: linear-gradient(180deg, black 0%, black 38%, transparent 47%); animation: evrvl-clouds 10s ease-in-out 6s infinite alternate">
-      <img src="./assets/hero-v3-bg.png" alt="" style="position: absolute; top: 20px; left: 160px; width: calc(100% - 320px); height: calc(100% - 40px); object-fit: cover; object-position: 50% 63%; opacity: {{ bgOpacity }}; transform: scale({{ heroZoom }}); transition: opacity 0.9s ease-out, transform 6s ease-out">
+    <div style="position: absolute; top: 0; bottom: 0; left: -140px; right: -140px; overflow: hidden; -webkit-mask-image: linear-gradient(180deg, black 0%, black 38%, transparent 47%); mask-image: linear-gradient(180deg, black 0%, black 38%, transparent 47%);">
+      <img src="./assets/hero-v4-bg.jpg" alt="" style="position: absolute; top: 20px; left: 160px; width: calc(100% - 320px); height: calc(100% - 40px); object-fit: cover; object-position: 50% 50%; opacity: {{ bgOpacity }}; transition: opacity 0.9s ease-out">
     </div>
   </div>
-  <div style="position: absolute; inset: 0; backdrop-filter: blur(8px); -webkit-mask-image: radial-gradient(ellipse 75% 85% at 0% 100%, black 0%, black 45%, rgba(0,0,0,0.4) 70%, transparent 100%); mask-image: radial-gradient(ellipse 75% 85% at 0% 100%, black 0%, black 45%, rgba(0,0,0,0.4) 70%, transparent 100%); pointer-events: none; opacity: {{ bottomOpacity }}; transition: opacity 0.6s ease-out"></div>
   <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(43,58,39,0) 0%, rgba(22,30,19,0.5) 59%); pointer-events: none; opacity: {{ bottomOpacity }}; transition: opacity 0.6s ease-out"></div>
 
   <div style="position: fixed; left: clamp(12px,2.5vw,36px); right: clamp(12px,2.5vw,36px); top: clamp(10px,2vw,24px); z-index: 100; border-radius: 16px; background: rgba(0,0,0,0.3); backdrop-filter: blur(24px); display: {{ desktopHeaderDisplay }}; grid-template-columns: auto 1fr auto; padding: clamp(10px,1.2vw,16px) clamp(10px,1.2vw,16px) clamp(10px,1.2vw,16px) clamp(14px,1.8vw,24px); align-items: center; box-sizing: border-box; gap: 16px; opacity:{{ headerOpacity }}; transform:translateY({{ headerOffsetY }}px); transition: opacity 0.6s ease-out, transform 0.6s ease-out;">
@@ -111,7 +110,7 @@
           </div></div>
           <div style="overflow: hidden"><span style="display: block; font-family: 'HeadingNow-82Light'; font-weight: 200; font-size: clamp(30px,3.33vw,48px); line-height: 106%; color: #fff; text-transform: uppercase; white-space: nowrap; transform: translateY({{ heroLY }}%); opacity: {{ heroLO }}; transition: transform 0.9s cubic-bezier(.16,1,.3,1) 280ms, opacity 0.9s ease-out 280ms">подотчётная инвестору</span></div>
         </div>
-        <div style="overflow: hidden"><span style="display: block; font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 400; font-size: clamp(15px,1.25vw,18px); line-height: 1.4; color: rgba(255,255,255,0.8); max-width: 707px; text-align: left; transform: translateY({{ heroLY }}%); opacity: {{ heroLO }}; transition: transform 0.9s cubic-bezier(.16,1,.3,1) 420ms, opacity 0.9s ease-out 420ms">Курортная недвижимость — это отличный выбор как для комфортной жизни, так и для долгосрочных инвестиций. Она предлагает уникальные возможности для отдыха и стабильный доход от аренды в связке с ростом капитала.</span></div>
+        <div style="overflow: hidden"><span style="display: block; font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 400; font-size: clamp(15px,1.25vw,16px); line-height: 1.4; color: rgba(255,255,255,0.8); max-width: 707px; text-align: left; transform: translateY({{ heroLY }}%); opacity: {{ heroLO }}; transition: transform 0.9s cubic-bezier(.16,1,.3,1) 420ms, opacity 0.9s ease-out 420ms; width: 611px; height: 62px">Курортная недвижимость — это отличный выбор как для комфортной жизни, так и для долгосрочных инвестиций. Она предлагает уникальные возможности для отдыха и стабильный доход от аренды в связке с ростом капитала.</span></div>
       </div>
       <div style="display: flex; flex-direction: row; gap: 16px; align-items: center; flex-wrap: wrap; opacity: {{ heroLO }}; transform: translateY({{ heroBtnY }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1) 560ms, opacity 0.9s ease-out 560ms">
         <div onClick="{{ goProjects }}" style="border-radius: 8px; background: rgb(43,58,39); display: flex; padding: clamp(16px,2.5vh,20px) clamp(28px,3.33vw,48px); justify-content: center; align-items: center; box-sizing: border-box; cursor: pointer; transition: background 0.2s ease-out" style-hover="background: rgb(30,41,27)">
@@ -159,14 +158,7 @@
 
 </div>
 <div style="width: 100%; background: #EBEAE6; padding: 72px 16px; box-sizing: border-box; display: flex; flex-direction: column; gap: 48px" data-om-label="intro-mobile" data-screen-label="Интро (mobile)">
-  <div data-reveal="s1head" style="font-size: 24px; line-height: 1.25; text-transform: uppercase; color: rgb(25,35,22); display: flex; flex-direction: column; gap: 2px; text-align: center; align-items: stretch; justify-content: flex-start">
-    <div style="overflow: hidden"><div style="transform: translateY({{ h1Y }}%); opacity: {{ h1O }}; filter: blur({{ h1B }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1), opacity 0.9s ease-out, filter 0.9s ease-out"><span style="font-weight: 400; font-family: HeadingNow-82Light">Этот сайт — для тех, </span><span style="font-weight: 700; font-family: HeadingNow-84Regular">кто уже в проекте.</span></div></div>
-    <div style="overflow: hidden"><div style="transform: translateY({{ h2Y }}%); opacity: {{ h2O }}; filter: blur({{ h2B }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1) 120ms, opacity 0.9s ease-out 120ms, filter 0.9s ease-out 120ms"><span style="font-weight: 400; font-family: HeadingNow-82Light">И для тех, </span><span style="font-weight: 700; font-family: HeadingNow-84Regular">кто верит</span></div></div>
-    <div style="overflow: hidden"><div style="display: flex; flex-direction: column; gap: 2px; transform: translateY({{ h3Y }}%); opacity: {{ h3O }}; filter: blur({{ h3B }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1) 240ms, opacity 0.9s ease-out 240ms, filter 0.9s ease-out 240ms">
-      <div style="display: flex; flex-direction: row; align-items: center; gap: 18px"><span style="font-weight: 700; font-family: HeadingNow-84Regular; white-space: nowrap">фактам,</span><span style="flex: 1 1 auto; height: 2px; background: rgb(25,35,22); display: block; transform: scaleX({{ lineScale }}); transform-origin: left; transition: transform 0.7s cubic-bezier(.16,1,.3,1)"></span></div>
-      <div style="display: flex; flex-direction: row; align-items: center; gap: 18px"><span style="flex: 0 0 auto; width: 46px; height: 2px; background: rgb(25,35,22); display: block; transform: scaleX({{ lineScale }}); transform-origin: left; transition: transform 0.7s cubic-bezier(.16,1,.3,1)"></span><span style="font-weight: 700; font-family: HeadingNow-84Regular; white-space: nowrap">а не обещаниям.</span></div>
-    </div></div>
-  </div>
+  
 
   <div data-reveal="s1cards" style="display: flex; flex-direction: column; gap: 40px; transform: translateY({{ secY }}px); opacity: {{ secO }}; filter: blur({{ secB }}px); transition: transform 0.7s cubic-bezier(.16,1,.3,1), opacity 0.7s ease-out, filter 0.7s ease-out">
     <div style="display: flex; flex-direction: column; gap: 20px">
@@ -200,17 +192,9 @@
 <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
 <div style="position: relative; overflow: hidden; background: rgb(25,35,22); padding: clamp(80px,9vw,150px) 60px; box-sizing: border-box; display: flex; justify-content: center" ref="{{ sectionRef }}">
   <div style="position: relative; width: 100%; max-width: 1320px; display: flex; flex-direction: column; align-items: center; gap: clamp(40px,4.5vw,72px)">
-    <div data-reveal="s1head" style="font-size: clamp(26px,2.4vw,38px); line-height: 1.3; text-transform: uppercase; color: #fff; display: flex; flex-direction: column; gap: 4px; align-items: center; text-align: center">
-      <div style="overflow: hidden"><div style="transform: translateY({{ h1Y }}%); opacity: {{ h1O }}; filter: blur({{ h1B }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1) 0ms, opacity 0.9s ease-out 0ms, filter 0.9s ease-out 0ms"><span style="font-weight: 400; font-family: HeadingNow-82Light; white-space: nowrap">Этот сайт — для тех,</span></div></div>
-      <div style="overflow: hidden"><div style="display: flex; align-items: center; gap: 24px; flex-wrap: nowrap; transform: translateY({{ h2Y }}%); opacity: {{ h2O }}; filter: blur({{ h2B }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1) 120ms, opacity 0.9s ease-out 120ms, filter 0.9s ease-out 120ms"><span style="flex: 0 0 auto; width: clamp(60px,8vw,120px); height: 2px; background: #fff; display: block; transform: scaleX({{ lineScale }}); transform-origin: left; transition: transform 0.7s cubic-bezier(.16,1,.3,1)"></span><span style="font-weight: 700; font-family: HeadingNow-84Regular; white-space: nowrap">кто уже в проекте.</span></div></div>
-      <div style="overflow: hidden"><div style="transform: translateY({{ h3Y }}%); opacity: {{ h3O }}; filter: blur({{ h3B }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1) 240ms, opacity 0.9s ease-out 240ms, filter 0.9s ease-out 240ms"><span style="font-weight: 400; font-family: HeadingNow-82Light">И для тех, </span><span style="font-weight: 700; font-family: HeadingNow-84Regular">кто верит фактам,</span></div></div>
-      <div style="overflow: hidden"><div style="display: flex; align-items: center; gap: 24px; flex-wrap: nowrap; transform: translateY({{ h3Y }}%); opacity: {{ h3O }}; filter: blur({{ h3B }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1) 360ms, opacity 0.9s ease-out 360ms"><span style="font-weight: 700; font-family: HeadingNow-84Regular; white-space: nowrap">а не обещаниям.</span><span style="flex: 0 0 auto; width: clamp(60px,8vw,120px); height: 2px; background: #fff; display: block; transform: scaleX({{ lineScale }}); transform-origin: right; transition: transform 0.7s cubic-bezier(.16,1,.3,1)"></span></div></div>
-    </div>
+    
     <div data-reveal="s1cards" style="display: flex; flex-direction: column; align-items: center; gap: clamp(40px,4.5vw,64px); transform: translateY({{ secY }}px); opacity: {{ secO }}; filter: blur({{ secB }}px); transition: transform 0.7s cubic-bezier(.16,1,.3,1), opacity 0.7s ease-out, filter 0.7s ease-out; width: 100%">
       <span style="font-size: 16px; line-height: 1.6; font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; color: #E9E9E9; max-width: 720px; text-align: center"><b style="color: #fff">В одном месте</b> — документы, бюджеты, юридические заключения, строительная отчётность, операционные сводки и список ответственных. Публичный сайт показывает стандарт. Закрытые каналы открывают файлы.</span>
-      <div style="width: 100%; max-width: 1180px; height: clamp(220px,24vw,340px); border-radius: 16px; overflow: hidden; position: relative">
-        <img src="./assets/principles-balcony.webp" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 35%; display: block">
-      </div>
       <div style="display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: clamp(28px,3.5vw,56px); width: 100%; max-width: 1180px">
         <div style="border-top: 1px solid rgba(255,255,255,0.3); padding-top: 24px; display: flex; flex-direction: column; gap: 14px">
           <span style="font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 700; font-size: 14px; color: rgba(235,234,230,0.55)">01</span>
@@ -227,6 +211,9 @@
           <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 20px; text-transform: uppercase; color: #fff; line-height: 1.25">Следующий шаг ясен</span>
           <span style="font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 400; font-size: 14px; line-height: 1.6; color: #D9D8D4">Документ называет открытый вопрос, ответственного и решение, которого ждут — от команды или от инвестора.</span>
         </div>
+      </div>
+      <div style="width: 100%; max-width: 1180px; height: clamp(220px,24vw,340px); border-radius: 16px; overflow: hidden; position: relative">
+        <img src="./assets/principles-balcony.webp" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 35%; display: block">
       </div>
     </div>
   </div>
@@ -442,7 +429,7 @@
   </div></div>
   
 </div><div style="position: relative; overflow: hidden; background: url('./assets/footer-beach.webp') center / cover no-repeat, rgb(25,35,22); padding: {{ footPadTop }} {{ padX }} {{ footPadBottom }}; box-sizing: border-box; display: flex; flex-direction: column; align-items: center" data-om-label="footer" data-screen-label="Футер" ref="{{ footRef }}">
-  
+  <video ref="{{ footerVideoRef }}" src="./assets/footer-video.mp4" poster="./assets/footer-beach.webp" loop="{{ true }}" muted="{{ true }}" playsInline="{{ true }}" autoPlay="{{ true }}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; pointer-events: none"></video>
   <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,18,12,0.85), rgba(10,18,12,0.6) 55%, rgba(10,18,12,0.35)); pointer-events: none"></div>
   <div data-reveal="foot" style="position: relative; width: 100%; max-width: 1320px; display: flex; flex-direction: {{ footDir }}; justify-content: space-between; align-items: {{ footAlign }}; gap: clamp(32px,4vw,56px); flex-wrap: wrap; opacity: {{ footO }}; transform: translateY({{ footY }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1), opacity 0.9s ease-out; font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif">
     <a href="./" style="display: block; flex: 0 0 auto"><img src="./assets/logo.svg" alt="EVERVILLE" style="width: 131px; height: auto; display: block"></a>
@@ -796,9 +783,8 @@ class Component extends DCLogic {
       { tag: "стандарт девелопмента", title: "ROYA RESORT", subtitle: "резорт · сёрф · гольф", image: (window.__resources && window.__resources['roya-resort']) || './assets/roya-resort.webp', location: "Dreamland Beach, Бали" },
       { tag: "инфраструктура города", title: "ROYA DESA", subtitle: "прибрежный город · марина", image: (window.__resources && window.__resources['roya-desa']) || './assets/roya-desa.webp', location: "Чандидаса, Бали" },
       { tag: "доступность острова", title: "BALICOPTER", subtitle: "частная авиация", image: (window.__resources && window.__resources['balicopter']) || './assets/balicopter.webp', location: "Убуд, Бали" },
-      { tag: "стандарт девелопмента", title: "ROYA RESORT", subtitle: "резорт · сёрф · гольф", image: (window.__resources && window.__resources['roya-resort']) || './assets/roya-resort.webp', location: "Dreamland Beach, Бали" },
-      { tag: "инфраструктура города", title: "ROYA DESA", subtitle: "прибрежный город · марина", image: (window.__resources && window.__resources['roya-desa']) || './assets/roya-desa.webp', location: "Чандидаса, Бали" },
-      { tag: "доступность острова", title: "BALICOPTER", subtitle: "частная авиация", image: (window.__resources && window.__resources['balicopter']) || './assets/balicopter.webp', location: "Убуд, Бали" },
+      { tag: "морская инфраструктура", title: "MARINA", subtitle: "яхтенная марина · береговой клуб", image: './assets/projects/ext-2-4-1.webp', location: "Южное побережье, Бали" },
+      { tag: "wellness и долголетие", title: "SANATORIUM", subtitle: "wellness · Sanatorium AI OS", image: './assets/projects/int-03-7.webp', location: "Печату, Бали" },
     ];
     const isMob = forceView === "mobile" || (forceView !== "desktop" && forceView !== "tablet" && !!this.state.mobile);
     const isTab = forceView === "tablet" || (forceView === "auto" && !this.state.mobile && !!this.state.tablet);
@@ -916,7 +902,7 @@ class Component extends DCLogic {
       projTitleO: this.state.projVisible ? 1 : 0,
       projTitleB: this.state.projVisible ? 0 : 0,
       lineScale3: this.state.projLinesVisible ? 1 : 0,
-      projects: projects.map(p => Object.assign({}, p, { onOpen: () => { if (this._movedCard) { this._movedCard = false; return; } const map = {"ROYA RESORT":"./roya.html","ROYA DESA":"./roya-desa.html","BALICOPTER":"./balicopter.html"}; if (map[p.title]) window.location.href = map[p.title]; } })),
+      projects: projects.map(p => Object.assign({}, p, { onOpen: () => { if (this._movedCard) { this._movedCard = false; return; } const map = {"ROYA RESORT":"./roya.html","ROYA DESA":"./roya-desa.html","BALICOPTER":"./balicopter.html","MARINA":"./marina.html","SANATORIUM":"./sanatorium.html"}; if (map[p.title]) window.location.href = map[p.title]; } })),
       cardW: cardW + "px",
       cardGap: gap + "px",
       pillLeft: isMob ? "12px" : "131px",
