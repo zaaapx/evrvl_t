@@ -19,7 +19,7 @@
     @font-face { font-family: "HeadingNow-84Regular"; src: url("./fonts/HeadingNow-84Regular.otf") format("opentype"); font-weight: 400; font-display: swap; }
     @font-face { font-family: "HeadingNow-82Light"; src: url("./fonts/HeadingNow-82Light.otf") format("opentype"); font-weight: 200; font-display: swap; }
     @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap");
-    html, body { margin: 0; height: 100%; overflow-x: hidden; scroll-behavior: smooth; }
+    html, body { margin: 0; min-height: 100%; overflow-x: hidden; scroll-behavior: smooth; }
     a { color: rgb(255,255,255); }
     a:hover { color: rgba(255,255,255,0.8); }
     @keyframes evrvl-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
@@ -66,9 +66,9 @@
 <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
 <div style="width: 100%; height: 100vh; max-height: {{ heroMaxH }}; overflow: hidden; position: relative; background-color: #EBEAE6" data-om-label="hero" data-screen-label="Hero (desktop)">
 <div style="position: relative; width: 100%; height: 100%; overflow: hidden; border-radius: 0px; font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; box-sizing: border-box">
-  <img src="./assets/layer-bg.webp" alt="" style="position: absolute; inset: 0; width: 100%; height: 110%; object-fit: cover; top: -80px; opacity: {{ bgOpacity }}; transform: scale({{ bgScale }}); transition: opacity 0.9s ease-out, transform 1.2s ease-out">
-  <img src="./assets/logo-hero.svg" alt="" style="position: absolute; left: {{ logoLeft }}px; top: {{ logoTop }}px; width: {{ logoWidth }}px; height: auto; opacity: {{ logoOpacity }}; transform: translateY({{ logoOffsetY }}px) scale({{ logoScale }}); transform-origin: center; transition: opacity 0.6s ease-out, transform 0.7s ease-out" data-om-label="logo">
-  <img src="./assets/layer-top.webp" alt="" style="position: absolute; inset: 0; width: 100%; height: 110%; object-fit: cover; top: -80px; opacity: {{ topOpacity }}; transform: scale({{ topScale }}); transition: opacity 0.9s ease-out, transform 1.2s ease-out">
+  <img src="./assets/hero-v4-bg.jpg" alt="" style="position: absolute; inset: 0; width: 100%; height: 110%; object-fit: cover; top: -80px; opacity: {{ bgOpacity }}; transform: scale({{ bgScale }}); transition: opacity 0.9s ease-out, transform 1.2s ease-out">
+  
+  
 
   <div style="position: fixed; left: clamp(12px,2.5vw,36px); right: clamp(12px,2.5vw,36px); top: clamp(10px,2vw,24px); z-index: 100; border-radius: 16px; background: rgba(0,0,0,0.3); backdrop-filter: blur(24px); display: {{ desktopHeaderDisplay }}; grid-template-columns: auto 1fr auto; padding: clamp(10px,1.2vw,16px) clamp(10px,1.2vw,16px) clamp(10px,1.2vw,16px) clamp(14px,1.8vw,24px); align-items: center; box-sizing: border-box; gap: 16px; opacity:{{ headerOpacity }}; transform:translateY({{ headerOffsetY }}px); transition: opacity 0.6s ease-out, transform 0.6s ease-out;">
     <a href="./" style="width: 131px; justify-self: start; flex-shrink: 0; display: block; height: 42px; align-self: flex-end; flex-direction: column-reverse"><img src="./assets/logo.svg" alt="EVERVILLE" style="width: 128px; height: 40px; display: block"></a>
@@ -101,6 +101,7 @@
       <div style="display: flex; flex-direction: column; gap: 8px; align-items: center; width: 100%">
         <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: clamp(31px,2.92vw,42px); text-align: center; white-space: normal; line-height: 120%; color: #fff; text-transform: uppercase; width: 100%; align-self: auto; flex-grow: 0">гостиничная недвижимость на Бали</span>
         <span style="font-family: 'HeadingNow-82Light'; font-weight: 200; font-size: clamp(31px,2.92vw,42px); text-align: center; white-space: normal; line-height: 120%; color: #fff; text-transform: uppercase; width: 100%">подотчётная инвестору</span>
+        <span style="font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 400; font-size: clamp(14px,1.25vw,16px); line-height: 1.5; color: rgba(255,255,255,0.8); text-align: center; max-width: 620px; margin-top: 8px">Курортная недвижимость — это отличный выбор как для комфортной жизни, так и для долгосрочных инвестиций. Она предлагает уникальные возможности для отдыха и стабильный доход от аренды в связке с ростом капитала.</span>
       </div>
       <div style="display: flex; flex-direction: row; gap: 12px; align-items: center; flex-wrap: wrap; justify-content: center">
         <div onClick="{{ openInvest }}" style="border-radius: 8px; background: #fff; display: flex; padding: clamp(14px,2.5vh,20px) clamp(28px,6vw,48px); justify-content: center; align-items: center; box-sizing: border-box; padding-top: 16px; padding-bottom: 16px; padding-left: 24px; padding-right: 24px; cursor: pointer; transition: background 0.2s ease-out" style-hover="background: rgb(206,210,199)">
@@ -119,9 +120,9 @@
 <sc-if value="{{ isMobile }}">
 <div style="width: 100%; margin: 0 auto; position: relative; background: #EBEAE6">
 <div ref="{{ mobileHeroRef }}" style="position: relative; width: 100%; height: {{ mobileHeroHeight }}; min-height: 560px; overflow: hidden; background-color: #EBEAE6; font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif" data-om-label="hero-mobile" data-screen-label="Hero (mobile)">
-  <img src="./assets/layer-bg-mobile.webp" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center center; opacity: {{ bgOpacity }}; transform: scale({{ bgScale }}); transition: opacity 0.9s ease-out, transform 1.2s ease-out">
-  <img src="./assets/logo-hero-mobile.svg" alt="EVERVILLE" style="position: absolute; left: 16px; right: 16px; bottom: calc(100% - {{ mobileLogoBottom }}px); width: calc(100% - 32px); max-width: 280px; margin: 0 auto; height: auto; display: block; opacity: {{ logoOpacity }}; transform: translateY({{ logoOffsetY }}px) scale({{ logoScale }}); transition: opacity 0.6s ease-out, transform 0.7s ease-out" data-om-label="logo-mobile">
-  <img src="./assets/layer-top-mobile.webp" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center center; opacity: {{ topOpacity }}; transform: scale({{ topScale }}); transition: opacity 0.9s ease-out, transform 1.2s ease-out">
+  <img src="./assets/hero-v4-mobile.jpg" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center center; opacity: {{ bgOpacity }}; transform: scale({{ bgScale }}); transition: opacity 0.9s ease-out, transform 1.2s ease-out">
+  
+  
   <div style="position: absolute; left: 0; top: 0; width: 100%; height: 58%; background: linear-gradient(180deg, rgba(20,28,18,0.42) 0%, rgba(20,28,18,0.22) 55%, rgba(20,28,18,0) 100%); pointer-events: none; z-index: 2"></div>
 
 
@@ -132,6 +133,7 @@
       <div style="display: flex; flex-direction: column; gap: 8px; align-items: center">
         <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 28px; text-align: center; line-height: 1.15; color: #fff; text-transform: uppercase">гостиничная недвижимость на Бали</span>
         <span style="font-family: 'HeadingNow-82Light'; font-weight: 200; font-size: 28px; text-align: center; line-height: 1.15; color: #fff; text-transform: uppercase">подотчётная инвестору</span>
+        <span style="font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 400; font-size: 14px; line-height: 1.5; color: rgba(255,255,255,0.8); text-align: center; max-width: 100%; margin-top: 8px">Курортная недвижимость — это отличный выбор как для комфортной жизни, так и для долгосрочных инвестиций. Она предлагает уникальные возможности для отдыха и стабильный доход от аренды в связке с ростом капитала.</span>
       </div>
       <div style="display: flex; flex-direction: column; gap: 10px; align-items: stretch">
         <div onClick="{{ openInvest }}" style="border-radius: 8px; background: #fff; display: flex; padding: 18px 24px; justify-content: center; align-items: center; box-sizing: border-box; cursor: pointer">
@@ -153,15 +155,10 @@
 
   <div data-reveal="s1cards" style="display: flex; flex-direction: column; gap: 40px; transform: translateY({{ secY }}px); opacity: {{ secO }}; filter: blur({{ secB }}px); transition: transform 0.7s cubic-bezier(.16,1,.3,1), opacity 0.7s ease-out, filter 0.7s ease-out">
     <div style="display: flex; flex-direction: column; gap: 20px">
-      <div style="font-family: 'HeadingNow-82Light'; font-size: 18px; line-height: 1.25; text-transform: uppercase; color: #fff; display: flex; flex-direction: column; gap: 0px">
-        <div><span style="font-weight: 200">Единый портал, </span><span style="font-weight: 700; font-family: HeadingNow-84Regular">для инвесторов и партнёров</span></div>
-        <div style="display: flex; flex-direction: row; align-items: center; gap: 18px"><span style="font-weight: 700; font-family: HeadingNow-84Regular; white-space: nowrap">проекта.</span><span style="flex: 1 1 auto; height: 2px; background: #fff; display: block; transform: scaleX({{ lineScale2 }}); transform-origin: left; transition: transform 0.7s cubic-bezier(.16,1,.3,1)"></span></div>
-        <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; padding-left: 42px; gap: 18px"><span style="flex: 1 1 auto; min-width: 40px; height: 2px; background: #fff; display: block; transform: scaleX({{ lineScale2 }}); transform-origin: left; transition: transform 0.7s cubic-bezier(.16,1,.3,1); width: 94px"></span><span style="font-weight: 200; white-space: nowrap">Все факты</span></div>
-        <div><span style="font-weight: 200">В одном месте.</span></div>
-      </div>
-      <span style="font-size: 15px; line-height: 1.55; font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; color: #E9E9E9"><b>В одном месте</b> — документы, бюджеты, юридические заключения, строительная отчётность, операционные сводки и список ответственных. Публичный сайт показывает стандарт. Закрытые каналы открывают файлы.</span>
-    </div>
+      
     <div style="display: flex; flex-direction: column; gap: 28px">
+<span style="font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-size: 15px; line-height: 1.6; color: #E9E9E9"><b style="color: #fff">В одном месте</b> — документы, бюджеты, юридические заключения, строительная отчётность, операционные сводки и список ответственных. Публичный сайт показывает стандарт. Закрытые каналы открывают файлы.</span>
+
 <div style="border-top: 1px solid rgba(255,255,255,0.3); padding-top: 18px; display: flex; flex-direction: column; gap: 12px">
 <span style="font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 700; font-size: 13px; color: rgba(235,234,230,0.55)">01</span>
 <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 17px; text-transform: uppercase; color: #fff; line-height: 1.25">Всё по одному активу</span>
@@ -182,6 +179,7 @@
   </div>
 </div>
 
+</div>
 </sc-if>
 
 <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
@@ -224,12 +222,12 @@
       <div style="width: 100%; max-width: {{ projColMax }}; flex: 1 1 420px; display: flex; flex-direction: column; gap: 8px; align-items: flex-end; transform: translateY({{ projTitleY }}%); opacity: {{ projTitleO }}; filter: blur({{ projTitleB }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1) 120ms, opacity 0.9s ease-out 120ms, filter 0.9s ease-out 120ms">
         <span style="font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 400; font-size: clamp(14px,calc(9.43px + 0.595vw),16px); line-height: 1.5; color: #2D2D2D; align-self: stretch"><b>В Everville каждый проект</b> — это часть большой картины жизни на Бали. Мы создаём не просто объекты, а звенья единой цепи, которые усиливают друг друга. Это жизнь в формате 360: честная, прозрачная и наполненная всеми привилегиями острова, собранными в одну систему для наших гостей и партнёров</span>
         <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; width: 100%; flex-wrap: wrap; gap: 16px">
-          <div style="display: flex; flex-direction: row; gap: 12px; align-items: center">
+          <div style="display: flex; flex-direction: row; gap: 12px; align-items: center; flex: 1 1 auto; min-width: 0; flex-wrap: wrap">
             <sc-for list="{{ indicatorDots }}" as="dot" hint-placeholder-count="3">
               <span style="width: {{ dot.width }}px; height: 2px; background: rgb(25,35,22); display: block; opacity: {{ dot.opacity }}; transition: width 0.3s ease-out, opacity 0.3s ease-out"></span>
             </sc-for>
           </div>
-          <div style="display: flex; flex-direction: row; gap: 8px; align-items: center">
+          <div style="display: flex; flex-direction: row; gap: 8px; align-items: center; margin-left: auto; flex: 0 0 auto">
             <div onClick="{{ onPrev }}" style="width: clamp(48px,calc(29.7px + 2.38vw),64px); height: clamp(48px,calc(29.7px + 2.38vw),64px); border-radius: 50%; box-shadow: inset 0 0 0 1px rgb(25,35,22); display: flex; align-items: center; justify-content: center; cursor: pointer; opacity: {{ prevOpacity }}; pointer-events: {{ prevPointerEvents }}; transition: box-shadow 0.2s ease-out" style-hover="box-shadow: inset 0 0 0 1.5px rgb(25,35,22)">
               <svg width="24" height="14" viewBox="0 0 24 14" fill="none"><path d="M 1 7 L 23 7 M 8 1 L 1 7 L 8 13" stroke="rgb(25,35,22)" stroke-width="1.5" fill="none"></path></svg>
             </div>
@@ -329,7 +327,7 @@
         <div style="overflow: hidden"><div style="display: flex; flex-direction: row; align-items: center; gap: clamp(20px,3vw,44px); transform: translateY({{ tstTitleY }}%); opacity: {{ tstTitleO }}; transition: transform 0.9s cubic-bezier(.16,1,.3,1) 100ms, opacity 0.9s ease-out 100ms"><span style="flex: 0 0 auto; width: clamp(60px,8vw,120px); height: 2px; background: rgb(25,35,22); display: block; transform: scaleX({{ tstLine }}); transform-origin: right; transition: transform 0.7s cubic-bezier(.16,1,.3,1) 200ms"></span><span style="font-family: 'HeadingNow-84Regular'; font-weight: 700; font-size: clamp(24px,calc(-12.5px + 4.76vw),36px); color: rgb(25,35,22); white-space: nowrap">ДОВЕРЯЮТ</span></div></div>
       </div>
       <div style="box-sizing: border-box; display: flex; flex-direction: column; gap: 24px; justify-content: space-between; align-items: flex-start; width: {{ tstColW }}"><span style="display: block; font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 400; font-size: clamp(14px,calc(9.43px + 0.595vw),16px); line-height: 1.5; color: #2D2D2D; max-width: 648px"><b>За каждой историей</b> — реальная сделка: документы, цифры и конкретные имена. Инвесторы и партнёры рассказывают, как устроена работа с Everville — от первого юридического пакета до операционной отчётности по своему активу</span><div style="display: flex; flex-direction: row; gap: clamp(24px,4.5vw,72px); align-items: center; flex: 0 1 auto; transform: translateY({{ tstTitleY }}%); opacity: {{ tstTitleO }}; transition: transform 0.9s cubic-bezier(.16,1,.3,1) 120ms, opacity 0.9s ease-out 120ms; height: {{ tstHeadH }}; justify-content: space-between; width: {{ tstHeadW }}; flex-wrap: wrap">
-        <div style="display: flex; flex-direction: row; gap: 12px; align-items: center">
+        <div style="display: flex; flex-direction: row; gap: 12px; align-items: center; flex: 1 1 auto; min-width: 0; flex-wrap: wrap">
           <sc-for list="{{ tstDots }}" as="dot" hint-placeholder-count="3">
             <span style="width: {{ dot.width }}px; height: 2px; background: rgb(25,35,22); display: block; opacity: {{ dot.opacity }}; transition: width 0.3s ease-out, opacity 0.3s ease-out"></span>
           </sc-for>
@@ -526,8 +524,8 @@ class Component extends DCLogic {
   heroSources() {
     const mob = window.innerWidth <= this.MOBILE_MAX || this.props.forceView === "mobile";
     return mob
-      ? ["./assets/layer-bg-mobile.webp", "./assets/layer-top-mobile.webp", "./assets/logo-hero-mobile.svg"]
-      : ["./assets/layer-bg.webp", "./assets/layer-top.webp", "./assets/logo-hero.svg"];
+      ? ["./assets/hero-v4-mobile.jpg"]
+      : ["./assets/hero-v4-bg.jpg"];
   }
   mobileHeroRef = React.createRef();
   footerVideoRef = React.createRef();
@@ -857,10 +855,10 @@ class Component extends DCLogic {
       onToggleMenu: () => { this._hdrHidden = false; this.applyHdr(); this.setState(s => ({ menuOpen: !s.menuOpen })); },
       goProjects: () => {
         const w = window.innerWidth;
-        const page = w >= 1024 ? "projects-tablet.html" : w >= 768 ? "projects-tablet.html" : "projects-mobile.html";
+        const page = w >= 1024 ? "./projects-tablet.html" : w >= 768 ? "./projects-tablet.html" : "./projects-mobile.html";
         window.location.href = "./" + page;
       },
-      navItems: [{ label: "Проекты", onClick: () => { window.location.href = "./" + (window.innerWidth >= 1024 ? "projects-tablet.html" : window.innerWidth >= 768 ? "projects-tablet.html" : "projects-mobile.html"); } }, { label: "Инвестиции" }, { label: "Юридика" }, { label: "О компании" }, { label: "Контакты" }],
+      navItems: [{ label: "Проекты", onClick: () => { window.location.href = "./" + (window.innerWidth >= 1024 ? "./projects-tablet.html" : window.innerWidth >= 768 ? "./projects-tablet.html" : "./projects-mobile.html"); } }, { label: "Инвестиции" }, { label: "Юридика" }, { label: "О компании" }, { label: "Контакты" }],
       h1Y: this.state.sec1Visible ? 0 : 100,
       h1O: this.state.sec1Visible ? 1 : 0,
       h2Y: this.state.sec1Visible ? 0 : 100,

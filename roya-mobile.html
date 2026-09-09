@@ -10,8 +10,8 @@
 <x-dc>
 <helmet>
   <style>
-    @font-face { font-family: "HeadingNow-84Regular"; src: url("./fonts/HeadingNow-84Regular.otf") format("opentype"); font-weight: 400; font-display: swap; }
-    @font-face { font-family: "HeadingNow-82Light"; src: url("./fonts/HeadingNow-82Light.otf") format("opentype"); font-weight: 200; font-display: swap; }
+    @font-face { font-family: "HeadingNow-84Regular"; src: url("./fonts/HeadingNow-84Regular.otf") format("opentype"); font-weight: 400; }
+    @font-face { font-family: "HeadingNow-82Light"; src: url("./fonts/HeadingNow-82Light.otf") format("opentype"); font-weight: 200; }
     @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap");
     html, body { margin: 0; background: #EBEAE6; overflow-x: hidden; scroll-behavior: smooth; }
     a { color: rgb(25,35,22); text-decoration: none; }
@@ -131,12 +131,12 @@
         </div>
       </div>
       <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; gap: 16px; padding-right: 16px">
-        <div style="display: flex; flex-direction: row; gap: 8px; align-items: center">
+        <div style="display: flex; flex-direction: row; gap: 8px; align-items: center; flex: 1 1 auto; min-width: 0; flex-wrap: wrap">
           <sc-for list="{{ dots }}" as="dot" hint-placeholder-count="4">
             <span style="width: {{ dot.width }}px; height: 2px; background: rgb(25,35,22); display: block; opacity: {{ dot.opacity }}; transition: width 0.3s ease-out, opacity 0.3s ease-out"></span>
           </sc-for>
         </div>
-        <div style="display: flex; flex-direction: row; gap: 8px; align-items: center">
+        <div style="display: flex; flex-direction: row; gap: 8px; align-items: center; margin-left: auto; flex: 0 0 auto">
           <div onClick="{{ onPrev }}" style="width: 46px; height: 46px; border-radius: 50%; box-shadow: inset 0 0 0 1px rgb(25,35,22); display: flex; align-items: center; justify-content: center; cursor: pointer; opacity: {{ prevOpacity }}; pointer-events: {{ prevPointer }}">
             <svg width="20" height="12" viewBox="0 0 24 14" fill="none"><path d="M 1 7 L 23 7 M 8 1 L 1 7 L 8 13" stroke="rgb(25,35,22)" stroke-width="1.5" fill="none"></path></svg>
           </div>

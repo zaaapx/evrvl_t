@@ -217,7 +217,7 @@
         <div style="overflow: hidden"><div data-line="1" style="display: flex; flex-direction: row; align-items: center; gap: 20px; transform: translateY(110%); opacity: 0; transition: transform 0.9s cubic-bezier(.16,1,.3,1), opacity 0.9s ease-out"><span data-rule="left" style="flex: 0 0 auto; width: 20px; height: 2px; background: rgb(25,35,22); display: block; transform: scaleX(0); transform-origin: right center; transition: transform 0.9s cubic-bezier(.16,1,.3,1) 120ms"></span><span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: clamp(20px,calc(-5.1px + 3.27vw),42px); color: rgb(25,35,22)">ДОВЕРЯЮТ</span></div></div>
       </div>
       <div style="display: flex; flex-direction: row; gap: clamp(24px,4.5vw,72px); align-items: center; flex: 0 1 auto; height: 62px; justify-content: space-between; width: 100%">
-        <div style="display: flex; flex-direction: row; gap: 12px; align-items: center">
+        <div style="display: flex; flex-direction: row; gap: 12px; align-items: center; flex: 1 1 auto; min-width: 0; flex-wrap: wrap">
           <sc-for list="{{ tstDots }}" as="dot" hint-placeholder-count="3">
             <span style="width: {{ dot.width }}px; height: 2px; background: rgb(25,35,22); display: block; opacity: {{ dot.opacity }}; transition: width 0.3s ease-out, opacity 0.3s ease-out"></span>
           </sc-for>
@@ -616,7 +616,7 @@ class Component extends DCLogic {
       evrvlMenuT: this.evrvlMenuOpen ? "translateX(0)" : "translateX(100%)",
       evrvlMenuPtr: this.evrvlMenuOpen ? "auto" : "none",
       evrvlMenuVis: this.evrvlMenuOpen ? "visible" : "hidden",
-      evrvlGoProjects: () => { const w = window.innerWidth; window.location.href = "./" + (w >= 1024 ? "projects-tablet.html" : w >= 768 ? "projects-tablet.html" : "projects-mobile.html"); },
+      evrvlGoProjects: () => { const w = window.innerWidth; window.location.href = "./" + (w >= 1024 ? "./projects-tablet.html" : w >= 768 ? "./projects-tablet.html" : "./projects-mobile.html"); },
       goLogin: () => window.open("https://portal.everville.estate/login", "_blank", "noopener"),
       openInvest: this.openInvest,
       ctaNameRef: this.ctaNameRef,

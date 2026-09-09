@@ -10,8 +10,8 @@
 <x-dc>
 <helmet>
   <style>
-    @font-face { font-family: "HeadingNow-84Regular"; src: url("./fonts/HeadingNow-84Regular.otf") format("opentype"); font-weight: 400; font-display: swap; }
-    @font-face { font-family: "HeadingNow-82Light"; src: url("./fonts/HeadingNow-82Light.otf") format("opentype"); font-weight: 200; font-display: swap; }
+    @font-face { font-family: "HeadingNow-84Regular"; src: url("./fonts/HeadingNow-84Regular.otf") format("opentype"); font-weight: 400; }
+    @font-face { font-family: "HeadingNow-82Light"; src: url("./fonts/HeadingNow-82Light.otf") format("opentype"); font-weight: 200; }
     @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap");
     html, body { margin: 0; background: #EBEAE6; overflow-x: hidden; scroll-behavior: smooth; }
     a { color: rgb(25,35,22); text-decoration: none; }
@@ -72,7 +72,7 @@
           <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 15px">повышают ценность бренда,<br>капитала и каждого проекта в экосистеме</span>
         </div>
       </div>
-      <span style="max-width: 560px; margin: 0 auto; margin-top: 4px; font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 400; font-size: 15px; line-height: 1.55; text-transform: none; text-align: center; color: #2D2D2D">Пять проектов одной экосистемы: вертолётный оператор, марина, резорт, деревня и wellness-резорт. Единая управляющая компания, общие стандарты юридической чистоты и отчётности.</span>
+      <span style="max-width: 560px; margin: 0 auto; margin-top: 4px; font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 400; font-size: 15px; line-height: 1.55; text-transform: none; text-align: center; color: #2D2D2D">Пять проектов одной экосистемы: вертолётный оператор, марина, резорт, деревня и wellness-резорт. Единая управляющая компания, общие стандарты юридической чистоты, отчётности и сервиса для инвестора.</span>
 <div style="display: flex; flex-direction: column; gap: 12px; align-items: center; justify-content: center; margin-top: 10px; width: 100%; position: relative; z-index: 2;">
         <div onClick="{{ openInvest }}" style="width: 100%; border-radius: 8px; background: rgb(43,58,39); display: flex; padding: 14px 22px; justify-content: center; align-items: center; box-sizing: border-box; cursor: pointer"><span style="font-weight: 700; font-size: 14px; color: #fff; text-transform: none; white-space: nowrap">Инвестировать</span></div>
         <div onClick="{{ scrollToProjects }}" style="width: 100%; border-radius: 8px; background: rgba(255,255,255,0.55); backdrop-filter: blur(8px) saturate(1.08); display: flex; padding: 14px 22px; justify-content: center; align-items: center; box-sizing: border-box; cursor: pointer"><span style="font-weight: 700; font-size: 14px; color: rgb(43,58,39); text-transform: none; white-space: nowrap">Смотреть проекты</span></div>
@@ -147,7 +147,7 @@
       </div>
       <div data-reveal="prj{{ pr.i }}g" style="display: flex; flex-direction: column; gap: 16px; transform: translateY({{ pr.gal.y }}px); opacity: {{ pr.gal.o }}; filter: blur({{ pr.gal.b }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1), opacity 0.9s ease-out, filter 0.9s ease-out" data-om-label="{{ pr.id }}-gallery">
         <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; gap: 16px">
-          <div style="display: flex; flex-direction: row; gap: 8px; align-items: center">
+          <div style="display: flex; flex-direction: row; gap: 8px; align-items: center; flex: 1 1 auto; min-width: 0; flex-wrap: wrap">
             <sc-for list="{{ pr.dots }}" as="dot" hint-placeholder-count="3">
               <span style="width: {{ dot.width }}px; height: 2px; background: rgb(25,35,22); display: block; opacity: {{ dot.opacity }}; transition: width 0.3s ease-out, opacity 0.3s ease-out"></span>
             </sc-for>
@@ -600,7 +600,7 @@ class Component extends DCLogic {
     const lbP = s.lbProj !== null ? this.PROJECTS[s.lbProj] : null;
     const lbPh = lbP && s.lbIdx !== null ? lbP.photos[s.lbIdx] : null;
     return { ...this.evrvlVals(),
-      goInvest: () => { window.location.href = "./" + (window.innerWidth >= 1024 ? "index-mobile.html" : window.innerWidth >= 768 ? "index-tablet.html" : "index-mobile.html") + "#invest"; },
+      goInvest: () => { window.location.href = "./" + (window.innerWidth >= 1024 ? "./index-mobile.html" : window.innerWidth >= 768 ? "./index-tablet.html" : "./index-mobile.html") + "#invest"; },
       scrollToProjects: () => {
         const el = document.querySelector('[data-om-label^="project-"]');
         if (!el) return;
@@ -616,8 +616,8 @@ class Component extends DCLogic {
       projects,
       showMoreBtn: !s.showAll,
       onShowAll: () => this.setState({ showAll: true }, () => { this.attachReveal(); this.forceUpdate(); }),
-      goProjects: () => { const w = window.innerWidth; const p = w >= 1024 ? "projects-mobile.html" : w >= 768 ? "projects-tablet.html" : "projects-mobile.html"; window.location.href = "./" + p; },
-      goHome: () => { window.location.href = "./" + (window.innerWidth >= 1024 ? "index-mobile.html" : window.innerWidth >= 768 ? "index-tablet.html" : "index-mobile.html"); },
+      goProjects: () => { const w = window.innerWidth; const p = w >= 1024 ? "./projects-mobile.html" : w >= 768 ? "./projects-tablet.html" : "./projects-mobile.html"; window.location.href = "./" + p; },
+      goHome: () => { window.location.href = "./" + (window.innerWidth >= 1024 ? "./index-mobile.html" : window.innerWidth >= 768 ? "./index-tablet.html" : "./index-mobile.html"); },
       hdrRef: this.hdrRef,
       menuOpen: !!s.menuOpen,
       onToggleMenu: () => { this._hdrHidden = false; this.applyHdr(); this.setState(st => ({ menuOpen: !st.menuOpen })); },

@@ -10,8 +10,8 @@
 <x-dc>
 <helmet>
   <style>
-    @font-face { font-family: "HeadingNow-84Regular"; src: url("./fonts/HeadingNow-84Regular.otf") format("opentype"); font-weight: 400; font-display: swap; }
-    @font-face { font-family: "HeadingNow-82Light"; src: url("./fonts/HeadingNow-82Light.otf") format("opentype"); font-weight: 200; font-display: swap; }
+    @font-face { font-family: "HeadingNow-84Regular"; src: url("./fonts/HeadingNow-84Regular.otf") format("opentype"); font-weight: 400; }
+    @font-face { font-family: "HeadingNow-82Light"; src: url("./fonts/HeadingNow-82Light.otf") format("opentype"); font-weight: 200; }
     @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap");
     html, body { margin: 0; background: #EBEAE6; overflow-x: hidden; scroll-behavior: smooth; }
     a { color: rgb(25,35,22); text-decoration: none; }
@@ -127,7 +127,7 @@
         </div>
         <div data-reveal="prj{{ pr.i }}g" style="display: flex; flex-direction: column; gap: 24px; transform: translateY({{ pr.gal.y }}px); opacity: {{ pr.gal.o }}; filter: blur({{ pr.gal.b }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1), opacity 0.9s ease-out, filter 0.9s ease-out" data-om-label="{{ pr.id }}-gallery">
           <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap">
-            <div style="display: flex; flex-direction: row; gap: 12px; align-items: center">
+            <div style="display: flex; flex-direction: row; gap: 12px; align-items: center; flex: 1 1 auto; min-width: 0; flex-wrap: wrap">
               <sc-for list="{{ pr.dots }}" as="dot" hint-placeholder-count="3">
                 <span style="width: {{ dot.width }}px; height: 2px; background: rgb(25,35,22); display: block; opacity: {{ dot.opacity }}; transition: width 0.3s ease-out, opacity 0.3s ease-out"></span>
               </sc-for>
@@ -583,7 +583,7 @@ class Component extends DCLogic {
     const lbP = s.lbProj !== null ? this.PROJECTS[s.lbProj] : null;
     const lbPh = lbP && s.lbIdx !== null ? lbP.photos[s.lbIdx] : null;
     return { ...this.evrvlVals(),
-      goInvest: () => { window.location.href = "./" + (window.innerWidth >= 1024 ? "index.html" : window.innerWidth >= 768 ? "index-tablet.html" : "index-mobile.html") + "#invest"; },
+      goInvest: () => { window.location.href = "./" + (window.innerWidth >= 1024 ? "./index.html" : window.innerWidth >= 768 ? "./index-tablet.html" : "./index-mobile.html") + "#invest"; },
       scrollToProjects: () => {
         const el = document.querySelector('[data-om-label^="project-"]');
         if (!el) return;
