@@ -93,7 +93,7 @@
 
   <div style="background: #EBEAE6; padding: clamp(56px,6vw,110px) clamp(20px,3.13vw,60px); box-sizing: border-box; display: flex; justify-content: center" data-om-label="concept" data-screen-label="Концепция">
     <div data-reveal="concept" style="width: 100%; max-width: 1320px; display: grid; grid-template-columns: minmax(0,0.9fr) minmax(0,1.1fr); gap: clamp(32px,4vw,72px); align-items: center; opacity: {{ conBlk.o }}; transform: translateY({{ conBlk.y }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1), opacity 0.9s ease-out">
-      <img data-lazysrc="./assets/projects/ext-2-2.webp" alt="Набережная района" style="width: 100%; height: clamp(340px,38vw,620px); object-fit: cover; border-radius: 16px; display: block">
+      <img data-lazysrc="./assets/desa/o-3.jpg" alt="Кварталы у океана на закате" style="width: 100%; height: clamp(340px,38vw,620px); object-fit: cover; border-radius: 16px; display: block">
       <div style="display: flex; flex-direction: column; gap: clamp(20px,2vw,32px); align-items: flex-start; text-align: left">
         <span style="font-weight: 400; font-size: clamp(14px,1.04vw,16px); text-transform: lowercase; letter-spacing: 0.02em; color: rgb(138,70,70)">концепция</span>
         <div style="display: flex; flex-direction: column; gap: 6px; align-items: flex-start">
@@ -191,7 +191,7 @@
         <img data-lazysrc="./assets/projects/int-19-1.webp" alt="Лаунж" style="width: 100%; height: 100%; min-height: clamp(88px,7vw,120px); object-fit: cover; display: block">
         <img data-lazysrc="./assets/projects/int-cam-33-2.webp" alt="Спа" style="width: 100%; height: 100%; min-height: clamp(88px,7vw,120px); object-fit: cover; display: block">
         <img data-lazysrc="./assets/projects/int-rest-cam-1-1.webp" alt="Ресторан" style="width: 100%; height: 100%; min-height: clamp(88px,7vw,120px); object-fit: cover; display: block">
-        <img data-lazysrc="./assets/projects/ext-2-2.webp" alt="Территория" style="width: 100%; height: 100%; min-height: clamp(88px,7vw,120px); object-fit: cover; display: block">
+        <img data-lazysrc="./assets/desa/o-8.jpg" alt="Дайвинг и рифы" style="width: 100%; height: 100%; min-height: clamp(88px,7vw,120px); object-fit: cover; display: block">
       </div>
     </div>
   </div>
@@ -400,28 +400,26 @@ class Component extends DCLogic {
     });
   };
   FIGURES = [
-    { label: "вход от", value: "$180 000" },
+    { label: "вход от", value: "$190 000" },
     { label: "резиденции", value: "320" },
     { label: "очередей строительства", value: "3" },
     { label: "старт продаж", value: "Q4 2026" },
-    { label: "прогноз ROI", value: "12–16%" },
+    { label: "прогноз ROI", value: "10–11%" },
     { label: "рост капитала", value: "15–20%" },
     { label: "набережная", value: "1,4 км" },
     { label: "управление", value: "EVERVILLE" },
   ];
-  TABS = ["все", "район", "резиденции", "интерьеры"];
+  TABS = ["все", "район", "резиденции", "жизнь"];
   PHOTOS = [
-    { src: "./assets/projects/ext-4-1.webp", alt: "ROYA DESA — набережная", place: "набережная", tab: "район" },
-    { src: "./assets/projects/ext-2-2.webp", alt: "Фасады кварталов", place: "фасады", tab: "район" },
-    { src: "./assets/projects/ext-2-4-1.webp", alt: "Береговая линия", place: "береговая линия", tab: "район" },
-    { src: "./assets/projects/ext-3-1-1.webp", alt: "Террасы резиденций", place: "террасы", tab: "резиденции" },
-    { src: "./assets/projects/ext-3-3.webp", alt: "Резиденции на закате", place: "резиденции", tab: "резиденции" },
-    { src: "./assets/projects/int-cam1-2.webp", alt: "Лобби", place: "лобби", tab: "интерьеры" },
-    { src: "./assets/projects/int-rest-cam-9-2-1.webp", alt: "Ресторан на набережной", place: "ресторан", tab: "интерьеры" },
+    { src: "./assets/desa/o-1.jpg", alt: "Береговая линия и деревня с высоты", place: "береговая линия", tab: "район" },
+    { src: "./assets/desa/o-2.jpg", alt: "Марина с высоты", place: "марина", tab: "район" },
+    { src: "./assets/desa/o-4.jpg", alt: "Вилла с приватным бассейном вечером", place: "вилла с бассейном", tab: "резиденции" },
+    { src: "./assets/desa/o-7.jpg", alt: "Улочки квартала вечером", place: "улицы квартала", tab: "резиденции" },
+    { src: "./assets/desa/o-5.jpg", alt: "Детская образовательная студия", place: "детский клуб", tab: "жизнь" },
   ];
   INDICATORS = [
     { label: "юридическая структура", value: "PT PMA / Hak Pakai", note: "Оптимальная структура подбирается индивидуально вместе с Good Guys Group." },
-    { label: "потенциальная доходность", value: "12–16% годовых", note: "Аренда и рост стоимости по мере развития района и марины." },
+    { label: "потенциальная доходность", value: "10–11% годовых", note: "Аренда и рост стоимости по мере развития района и марины." },
     { label: "ранний вход", value: "Q4 2026", note: "Бронирование первой очереди до официального старта продаж." },
     { label: "рост капитализации", value: "15–20% в год", note: "Прогноз на основе динамики прибрежных районов Бали за 2022–2025 гг." },
   ];

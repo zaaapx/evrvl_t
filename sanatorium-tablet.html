@@ -421,12 +421,9 @@ class Component extends DCLogic {
   PHOTOS = [
     { src: "./assets/projects/san-jungle.jpg", alt: "Территория в джунглях", place: "территория", tab: "территория" },
     { src: "./assets/projects/san-arches.jpg", alt: "Аркады у бассейна", place: "территория", tab: "территория" },
-    { src: "./assets/projects/san-arcade.jpg", alt: "Корпуса комплекса", place: "корпуса", tab: "территория" },
     { src: "./assets/projects/san-ceiling.jpg", alt: "Номер", place: "номер", tab: "номера" },
     { src: "./assets/projects/san-glass.jpg", alt: "Резиденция", place: "резиденция", tab: "номера", pos: "10% 50%" },
-    { src: "./assets/projects/san-rock.jpg", alt: "Интерьер номера", place: "интерьер", tab: "номера", pos: "50% 85%" },
     { src: "./assets/projects/san-water.jpg", alt: "Спа и термы", place: "спа", tab: "клиника" },
-    { src: "./assets/projects/san-forest.jpg", alt: "Лаунж клиники", place: "лаунж", tab: "клиника" },
   ];
   INDICATORS = [
     { label: "юридическая структура", value: "PT PMA / Hak Pakai", note: "Структура владения подбирается вместе с Good Guys Group." },
@@ -669,7 +666,7 @@ class Component extends DCLogic {
         bg: t === s.tab ? "rgb(43,58,39)" : "transparent",
         color: t === s.tab ? "#fff" : "rgb(25,35,22)",
         ring: t === s.tab ? "none" : "inset 0 0 0 1.5px rgba(25,35,22,0.35)",
-        onPick: () => this.setState({ tab: t, idx: 0 }),
+        onPick: () => this.setState({ tab: t, idx: 0 }, () => requestAnimationFrame(() => this.forceUpdate())),
       })),
       photos: photos.map((p, i) => Object.assign({}, p, { pos: p.pos || "50% 50%", onOpen: () => this.openLb(i) })),
       dots: Array.from({ length: maxIdx + 1 }, (_, i) => ({ width: i === idx ? 40 : 18, opacity: i === idx ? 1 : 0.35 })),

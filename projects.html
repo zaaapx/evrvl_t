@@ -26,7 +26,18 @@
   <div style="position: fixed; left: clamp(12px,2.5vw,36px); right: clamp(12px,2.5vw,36px); top: clamp(10px,2vw,24px); z-index: 100; border-radius: 16px; background: rgba(0,0,0,0.3); backdrop-filter: blur(24px); display: grid; grid-template-columns: auto 1fr auto; padding: clamp(10px,1.2vw,16px) clamp(10px,1.2vw,16px) clamp(10px,1.2vw,16px) clamp(14px,1.8vw,24px); align-items: center; box-sizing: border-box; gap: 16px" data-om-label="header">
     <a href="./index.html" style="width: 131px; justify-self: start; flex-shrink: 0; display: block; height: 42px; text-decoration: none"><img src="./assets/logo.svg" alt="EVERVILLE" style="width: 128px; height: 40px; display: block"></a>
     <div style="display: flex; flex-direction: row; gap: clamp(10px,1.8vw,36px); align-items: center; flex-wrap: nowrap; justify-self: start; margin-left: clamp(8px,1.2vw,20px); min-width: 0; overflow: visible">
-      <span style="position: relative; font-size: clamp(11px,0.97vw,16px); font-weight: 700; line-height: 21px; color: #fff; white-space: nowrap; cursor: pointer" style-after="content: ''; position: absolute; left: 50%; bottom: -5px; width: 4px; height: 4px; margin-left: -2px; border-radius: 50%; background: #fff">Проекты</span>
+      <div onMouseEnter="{{ openProjMenu }}" onMouseLeave="{{ closeProjMenu }}" style="position: relative; display: flex; align-items: center">
+        <span style="position: relative; font-size: clamp(11px,0.97vw,16px); font-weight: 700; line-height: 21px; color: #fff; white-space: nowrap; cursor: pointer" style-after="content: ''; position: absolute; left: 50%; bottom: -5px; width: 4px; height: 4px; margin-left: -2px; border-radius: 50%; background: #fff">Проекты</span>
+        <div style="position: absolute; left: -16px; top: 100%; padding-top: 18px; min-width: 260px; opacity: {{ projMenuO }}; visibility: {{ projMenuV }}; transform: translateY({{ projMenuY }}px); transition: opacity 0.22s ease-out, transform 0.22s cubic-bezier(.16,1,.3,1), visibility 0.22s">
+          <div style="display: flex; flex-direction: column; padding: 10px; border-radius: 12px; background: rgba(25,35,22,0.94); backdrop-filter: blur(14px) saturate(1.1); box-shadow: 0 18px 48px rgba(12,18,11,0.28)">
+            <a href="./roya.html" style="padding: 11px 14px; border-radius: 8px; font-size: 15px; font-weight: 400; line-height: 1.2; color: #fff; text-decoration: none; white-space: nowrap; transition: background 0.18s ease-out" style-hover="background: rgba(255,255,255,0.12)">ROYA RESORT</a>
+            <a href="./roya-desa.html" style="padding: 11px 14px; border-radius: 8px; font-size: 15px; font-weight: 400; line-height: 1.2; color: #fff; text-decoration: none; white-space: nowrap; transition: background 0.18s ease-out" style-hover="background: rgba(255,255,255,0.12)">ROYA DESA</a>
+            <a href="./balicopter.html" style="padding: 11px 14px; border-radius: 8px; font-size: 15px; font-weight: 400; line-height: 1.2; color: #fff; text-decoration: none; white-space: nowrap; transition: background 0.18s ease-out" style-hover="background: rgba(255,255,255,0.12)">BALICOPTER</a>
+            <a href="./marina.html" style="padding: 11px 14px; border-radius: 8px; font-size: 15px; font-weight: 400; line-height: 1.2; color: #fff; text-decoration: none; white-space: nowrap; transition: background 0.18s ease-out" style-hover="background: rgba(255,255,255,0.12)">MARINA</a>
+            <a href="./sanatorium.html" style="padding: 11px 14px; border-radius: 8px; font-size: 15px; font-weight: 400; line-height: 1.2; color: #fff; text-decoration: none; white-space: nowrap; transition: background 0.18s ease-out" style-hover="background: rgba(255,255,255,0.12)">SANATORIUM</a>
+          </div>
+        </div>
+      </div>
       <a href="./investments.html" style="font-size: clamp(11px,0.97vw,16px); font-weight: 400; line-height: 21px; color: #fff; white-space: nowrap; transition: color 0.2s ease-out; text-decoration: none" style-hover="color: rgba(255,255,255,0.65)">Инвестиции</a>
       <a href="./legal.html" style="font-size: clamp(11px,0.97vw,16px); font-weight: 400; line-height: 21px; color: #fff; white-space: nowrap; transition: color 0.2s ease-out; text-decoration: none" style-hover="color: rgba(255,255,255,0.65)">Юридика</a>
       <a href="./about.html" style="font-size: clamp(11px,0.97vw,16px); font-weight: 400; line-height: 21px; color: #fff; white-space: nowrap; transition: color 0.2s ease-out; text-decoration: none" style-hover="color: rgba(255,255,255,0.65)">О компании</a>
@@ -156,10 +167,10 @@
           <sc-for list="{{ pr.stats }}" as="st" hint-placeholder-count="3">
             <div style="position: relative; display: flex; flex-direction: column; gap: 12px; border-top: 2px solid transparent; padding-top: clamp(12px,1.4vw,20px)"><span data-rule="top" style="position: absolute; left: 0; top: -2px; width: 100%; height: 2px; background: rgb(25,35,22); transform: scaleX(0); transform-origin: left center; transition: transform 0.9s cubic-bezier(.16,1,.3,1) 120ms"></span>
               <span style="font-weight: 400; font-size: clamp(13px,1.04vw,18px); line-height: 1.1; color: #2D2D2D">{{ st.label }}</span>
-              <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: clamp(18px,1.8vw,32px); line-height: 1.1; color: rgb(25,35,22); white-space: nowrap">{{ st.value }}</span>
+              <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: clamp(18px,1.8vw,32px); line-height: 1.1; color: rgb(25,35,22); text-wrap: balance">{{ st.value }}</span>
             </div>
           </sc-for>
-          <div style="display: flex; flex-direction: column; gap: 12px; border-top: 2px solid transparent; padding-top: clamp(12px,1.4vw,20px); align-items: flex-start; justify-content: flex-end">
+          <div style="grid-column: 4; display: flex; flex-direction: column; gap: 12px; border-top: 2px solid transparent; padding-top: clamp(12px,1.4vw,20px); align-items: flex-start; justify-content: flex-end">
             <a href="{{ pr.href }}" style="border-radius: 8px; background: rgb(43,58,39); display: flex; flex-direction: row; gap: 10px; padding: 16px 24px; justify-content: center; align-items: center; cursor: pointer; text-decoration: none; transition: background 0.2s ease-out" style-hover="background: rgb(30,41,27)">
               <span style="font-weight: 700; font-size: 14px; color: #fff; white-space: nowrap">Подробнее о проекте</span>
               <svg width="18" height="12" viewBox="0 0 24 14" fill="none"><path d="M 1 7 L 23 7 M 16 1 L 23 7 L 16 13" stroke="#fff" stroke-width="1.5" fill="none"></path></svg>
@@ -343,7 +354,7 @@ class Component extends DCLogic {
     { id: "roya-resort", titleA: "ROYA", titleB: "RESORT", status: "продажи открыты", href: "./roya.html",
       lead: "Резорт · сёрф · гольф.", desc: "Флагманский курорт Everville на первой линии Dreamland Beach — гостиничная недвижимость с прозрачной отчётностью и полным юридическим пакетом до сделки.",
       loc: "Dreamland Beach, Бали",
-      stats: [{ label: "вход от", value: "$250 000" }, { label: "прогноз ROI", value: "14–18%" }, { label: "продано", value: "70%" }],
+      stats: [{ label: "вход от", value: "$230 000" }, { label: "прогноз ROI", value: "10–12%" }, { label: "продано", value: "64%" }],
       photos: [
         { src: "./assets/projects/ext-5-1.webp", alt: "ROYA Resort ночью — вид с высоты", place: "курорт с высоты" },
         { src: "./assets/projects/ext-2-2.webp", alt: "Фасад корпуса", place: "фасад" },
@@ -354,7 +365,7 @@ class Component extends DCLogic {
     { id: "roya-desa", href: "./roya-desa.html", titleA: "ROYA", titleB: "DESA", status: "старт продаж — Q4 2026",
       lead: "Прибрежный город · марина.", desc: "Новый прибрежный район Everville: жилые кварталы, набережная и городская инфраструктура, которые масштабируют среду вокруг курортов холдинга.",
       loc: "Бали, юго-западное побережье",
-      stats: [{ label: "вход от", value: "$180 000" }, { label: "прогноз ROI", value: "12–16%" }, { label: "очередь", value: "1 из 3" }],
+      stats: [{ label: "вход от", value: "$190 000" }, { label: "прогноз ROI", value: "10–11%" }, { label: "очередь", value: "1 из 3" }],
       photos: [
         { src: "./assets/projects/ext-4-1.webp", alt: "ROYA DESA — жилой корпус", place: "фасад" },
         { src: "./assets/projects/ext-3-1-1.webp", alt: "Террасы резиденций", place: "террасы" },
@@ -364,16 +375,18 @@ class Component extends DCLogic {
     { id: "balicopter", href: "./balicopter.html", titleA: "BALICOPTER", titleB: "", status: "сервис запущен",
       lead: "Частная авиация.", desc: "Вертолётные маршруты между проектами холдинга и труднодоступными локациями острова — время в пути сокращается с часов до минут.",
       loc: "Бали, хабы Everville",
-      stats: [{ label: "вход от", value: "$50 000" }, { label: "прогноз ROI", value: "10–14%" }, { label: "маршрутов", value: "12" }],
+      stats: [{ label: "вход", value: "Индивидуальные условия" }, { label: "маршрутов", value: "12" }],
       photos: [
-        { src: "./assets/projects/ext-5-3.webp", alt: "Ночной фасад хаба", place: "хаб" },
-        { src: "./assets/projects/int-19-1.webp", alt: "Лаунж", place: "лаунж" },
-        { src: "./assets/projects/int-cam-30.webp", alt: "Зона ожидания", place: "зона ожидания" },
+        { src: "./assets/projects/o-bali-heli-1.jpg", alt: "Вертолёт Balicopter над курортом", place: "борт" },
+        { src: "./assets/projects/o-bali-heli-2.jpg", alt: "Полёт над вулканом", place: "маршрут" },
+        { src: "./assets/projects/o-bali-heli-3.jpg", alt: "Кратер Иджен с воздуха", place: "локация" },
+        { src: "./assets/projects/o-bali-heli-4.jpg", alt: "Вид на Батур и Агунг из кабины", place: "на борту" },
+        { src: "./assets/projects/o-bali-heli-5.jpg", alt: "Полёт вдоль горного хребта", place: "маршрут" },
       ] },
     { id: "marina", href: "./marina.html", titleA: "MARINA", titleB: "", status: "в проектировании",
       lead: "Морская инфраструктура.", desc: "Яхтенная марина с причалами, сервисом и береговым клубом — добавляет морское измерение экосистеме Everville.",
       loc: "Бали, южное побережье",
-      stats: [{ label: "вход от", value: "$120 000" }, { label: "прогноз ROI", value: "11–15%" }, { label: "причалов", value: "120" }],
+      stats: [{ label: "вход от", value: "$180 000" }, { label: "прогноз ROI", value: "11–13%" }, { label: "длина яхты", value: "12–40 м" }],
       photos: [
         { src: "./assets/projects/ext-2-4-1.webp", alt: "Береговой клуб на закате", place: "береговой клуб" },
         { src: "./assets/projects/int-rest-cam-9-2-1.webp", alt: "Ресторан клуба", place: "ресторан" },
@@ -384,10 +397,10 @@ class Component extends DCLogic {
       loc: "Печату, Улувату, Бали",
       stats: [{ label: "номеров", value: "100" }, { label: "прогноз ROI", value: "20–37%" }, { label: "IRR", value: "35%" }],
       photos: [
-        { src: "./assets/projects/int-03-7.webp", alt: "Интерьер комплекса", place: "холл" },
-        { src: "./assets/projects/int-cam5-1.webp", alt: "Зона восстановления", place: "зона восстановления" },
-        { src: "./assets/projects/int-17.webp", alt: "Резиденции", place: "резиденции" },
-        { src: "./assets/projects/int-cam-33-2.webp", alt: "Спа", place: "спа" },
+        { src: "./assets/projects/san-arch.jpg", alt: "Зал медитации", place: "зал медитации" },
+        { src: "./assets/projects/san-spa.jpg", alt: "Спа-комплекс", place: "спа" },
+        { src: "./assets/projects/san-tree.jpg", alt: "Интерьеры комплекса", place: "интерьеры" },
+        { src: "./assets/projects/san-pool.jpg", alt: "Термы", place: "термы" },
       ] },
   ];
   _vpEls = {}; _trEls = {}; _vpRefs = {}; _trRefs = {};
@@ -583,7 +596,7 @@ class Component extends DCLogic {
     const lbP = s.lbProj !== null ? this.PROJECTS[s.lbProj] : null;
     const lbPh = lbP && s.lbIdx !== null ? lbP.photos[s.lbIdx] : null;
     return { ...this.evrvlVals(),
-      goInvest: () => { window.location.href = "./" + (window.innerWidth >= 1024 ? "./index.html" : window.innerWidth >= 768 ? "./index-tablet.html" : "./index-mobile.html") + "#invest"; },
+      goInvest: () => { window.location.href = "./" + (window.innerWidth >= 1024 ? "index.html" : window.innerWidth >= 768 ? "index-tablet.html" : "index-mobile.html") + "#invest"; },
       scrollToProjects: () => {
         const el = document.querySelector('[data-om-label^="project-"]');
         if (!el) return;
@@ -609,6 +622,11 @@ class Component extends DCLogic {
       footO: s.rv.foot ? 1 : 0,
       footY: s.rv.foot ? 0 : 32,
       footerVideo: !!s.footerVideo,
+      openProjMenu: () => this.setState({ projMenu: true }),
+      closeProjMenu: () => this.setState({ projMenu: false }),
+      projMenuO: this.state.projMenu ? 1 : 0,
+      projMenuV: this.state.projMenu ? "visible" : "hidden",
+      projMenuY: this.state.projMenu ? 0 : -6,
       footerVideoRef: this.footerVideoRef,
       footerCols: [
         { title: "Проекты", links: [

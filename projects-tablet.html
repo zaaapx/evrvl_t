@@ -616,7 +616,7 @@ class Component extends DCLogic {
     const lbP = s.lbProj !== null ? this.PROJECTS[s.lbProj] : null;
     const lbPh = lbP && s.lbIdx !== null ? lbP.photos[s.lbIdx] : null;
     return { ...this.evrvlVals(),
-      goInvest: () => { window.location.href = "./" + (window.innerWidth >= 1024 ? "./index-tablet.html" : window.innerWidth >= 768 ? "./index-tablet.html" : "./index-mobile.html") + "#invest"; },
+      goInvest: () => { window.location.href = "./" + (window.innerWidth >= 1024 ? "index-tablet.html" : window.innerWidth >= 768 ? "index-tablet.html" : "index-mobile.html") + "#invest"; },
       scrollToProjects: () => {
         const el = document.querySelector('[data-om-label^="project-"]');
         if (!el) return;
@@ -633,8 +633,8 @@ class Component extends DCLogic {
       projects,
       showMoreBtn: !s.showAll,
       onShowAll: () => this.setState({ showAll: true }, () => { this.attachReveal(); this.forceUpdate(); }),
-      goProjects: () => { const w = window.innerWidth; const p = w >= 1024 ? "./projects-tablet.html" : w >= 768 ? "./projects-tablet.html" : "./projects-mobile.html"; window.location.href = "./" + p; },
-      goHome: () => { window.location.href = "./" + (window.innerWidth >= 1024 ? "./index-tablet.html" : window.innerWidth >= 768 ? "./index-tablet.html" : "./index-mobile.html"); },
+      goProjects: () => { const w = window.innerWidth; const p = w >= 1024 ? "projects-tablet.html" : w >= 768 ? "projects-tablet.html" : "projects-mobile.html"; window.location.href = "./" + p; },
+      goHome: () => { window.location.href = "./" + (window.innerWidth >= 1024 ? "index-tablet.html" : window.innerWidth >= 768 ? "index-tablet.html" : "index-mobile.html"); },
       hdrRef: this.hdrRef,
       menuOpen: !!s.menuOpen,
       onToggleMenu: () => { this._hdrHidden = false; this.applyHdr(); this.setState(st => ({ menuOpen: !st.menuOpen })); },

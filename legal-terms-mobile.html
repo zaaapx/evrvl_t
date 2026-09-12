@@ -397,7 +397,7 @@ class Component extends DCLogic {
       evrvlMenuT: this.evrvlMenuOpen ? "translateX(0)" : "translateX(100%)",
       evrvlMenuPtr: this.evrvlMenuOpen ? "auto" : "none",
       evrvlMenuVis: this.evrvlMenuOpen ? "visible" : "hidden",
-      evrvlGoProjects: () => { const w = window.innerWidth; window.location.href = "./" + (w >= 1024 ? "./projects-mobile.html" : w >= 768 ? "./projects-tablet.html" : "./projects-mobile.html"); },
+      evrvlGoProjects: () => { const w = window.innerWidth; window.location.href = "./" + (w >= 1024 ? "projects-mobile.html" : w >= 768 ? "projects-tablet.html" : "projects-mobile.html"); },
       goLogin: () => window.open("https://portal.everville.estate/login", "_blank", "noopener"),
       openInvest: this.openInvest,
       closeInvest: this.closeInvest,

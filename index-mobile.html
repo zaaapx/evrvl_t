@@ -6,10 +6,10 @@
 </template>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>(function(){var w=window.innerWidth,d=w>=1024?"desktop":w>=768?"tablet":"mobile";if(d!=="mobile"){var s={desktop:"index.html",tablet:"index-tablet.html",mobile:"index-mobile.html"};window.location.replace(s[d]);}})();</script>
 <meta name="ext-resource-dependency" content="./assets/roya-resort.webp" data-resource-id="roya-resort" />
 <meta name="ext-resource-dependency" content="./assets/roya-desa.webp" data-resource-id="roya-desa" />
 <meta name="ext-resource-dependency" content="./assets/balicopter.webp" data-resource-id="balicopter" />
-<script>(function(){var w=window.innerWidth,d=w>=1024?"desktop":w>=768?"tablet":"mobile";if(d!=="mobile"){var s={desktop:"index.html",tablet:"index-tablet.html",mobile:"index-mobile.html"};window.location.replace(s[d]);}})();</script>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -852,10 +852,10 @@ class Component extends DCLogic {
       onToggleMenu: () => { this._hdrHidden = false; this.applyHdr(); this.setState(s => ({ menuOpen: !s.menuOpen })); },
       goProjects: () => {
         const w = window.innerWidth;
-        const page = w >= 1024 ? "./projects-mobile.html" : w >= 768 ? "./projects-tablet.html" : "./projects-mobile.html";
+        const page = w >= 1024 ? "projects-mobile.html" : w >= 768 ? "projects-tablet.html" : "projects-mobile.html";
         window.location.href = "./" + page;
       },
-      navItems: [{ label: "Проекты", onClick: () => { window.location.href = "./" + (window.innerWidth >= 1024 ? "./projects-mobile.html" : window.innerWidth >= 768 ? "./projects-tablet.html" : "./projects-mobile.html"); } }, { label: "Инвестиции" }, { label: "Юридика" }, { label: "О компании" }, { label: "Контакты" }],
+      navItems: [{ label: "Проекты", onClick: () => { window.location.href = "./" + (window.innerWidth >= 1024 ? "projects-mobile.html" : window.innerWidth >= 768 ? "projects-tablet.html" : "projects-mobile.html"); } }, { label: "Инвестиции" }, { label: "Юридика" }, { label: "О компании" }, { label: "Контакты" }],
       h1Y: this.state.sec1Visible ? 0 : 100,
       h1O: this.state.sec1Visible ? 1 : 0,
       h2Y: this.state.sec1Visible ? 0 : 100,

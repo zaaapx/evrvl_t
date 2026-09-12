@@ -408,11 +408,11 @@ class Component extends DCLogic {
     n.style.transform = this._hdrHidden ? "translateY(-" + (n.offsetHeight + 24) + "px)" : "translateY(0)";
   };
   FIGURES = [
-    { label: "вход от", value: "$120 000" },
+    { label: "вход от", value: "$180 000" },
     { label: "причалов", value: "120" },
     { label: "береговой клуб", value: "4 200 м²" },
     { label: "статус", value: "проектирование" },
-    { label: "прогноз ROI", value: "11–15%" },
+    { label: "прогноз ROI", value: "11–13%" },
     { label: "рост капитала", value: "15–20%" },
     { label: "сервисных доков", value: "8" },
     { label: "управление", value: "EVERVILLE" },
@@ -421,15 +421,13 @@ class Component extends DCLogic {
   PHOTOS = [
     { src: "./assets/projects/ext-2-4-1.webp", alt: "Береговая линия марины", place: "береговая линия", tab: "гавань" },
     { src: "./assets/projects/ext-5-1.webp", alt: "Побережье с высоты", place: "побережье", tab: "гавань" },
-    { src: "./assets/projects/ext-7-2.webp", alt: "Акватория", place: "акватория", tab: "гавань" },
     { src: "./assets/projects/int-rest-cam-11-1.webp", alt: "Бар берегового клуба", place: "бар клуба", tab: "клуб" },
     { src: "./assets/projects/int-19-1.webp", alt: "Лаунж клуба", place: "лаунж", tab: "клуб" },
     { src: "./assets/projects/int-cam-27.webp", alt: "Лобби", place: "лобби", tab: "интерьеры" },
-    { src: "./assets/projects/int-cam-33-2.webp", alt: "Спа-зона", place: "спа", tab: "интерьеры" },
   ];
   INDICATORS = [
     { label: "юридическая структура", value: "PT PMA / Hak Pakai", note: "Инфраструктурный актив; структура владения — вместе с Good Guys Group." },
-    { label: "потенциальная доходность", value: "11–15% годовых", note: "Долгосрочная аренда причалов и доход берегового клуба." },
+    { label: "потенциальная доходность", value: "11–13% годовых", note: "Долгосрочная аренда причалов и доход берегового клуба." },
     { label: "ранний вход", value: "стадия проекта", note: "Минимальная цена входа до начала строительства." },
     { label: "дефицит предложения", value: "марина юга Бали", note: "Современных яхтенных гаваней такого класса на юге острова нет." },
   ];
@@ -668,7 +666,7 @@ class Component extends DCLogic {
         bg: t === s.tab ? "rgb(43,58,39)" : "transparent",
         color: t === s.tab ? "#fff" : "rgb(25,35,22)",
         ring: t === s.tab ? "none" : "inset 0 0 0 1.5px rgba(25,35,22,0.35)",
-        onPick: () => this.setState({ tab: t, idx: 0 }),
+        onPick: () => this.setState({ tab: t, idx: 0 }, () => requestAnimationFrame(() => this.forceUpdate())),
       })),
       photos: photos.map((p, i) => Object.assign({}, p, { onOpen: () => this.openLb(i) })),
       dots: Array.from({ length: maxIdx + 1 }, (_, i) => ({ width: i === idx ? 40 : 18, opacity: i === idx ? 1 : 0.35 })),

@@ -188,8 +188,8 @@
             <span style="font-weight: 400; font-size: 14px; line-height: 1.25; color: rgb(25,35,22)">{{ sv.label }}</span>
           </div>
         </sc-for>
-        <img data-lazysrc="./assets/projects/int-19-1.webp" alt="Лаунж" style="width: 100%; height: 100%; min-height: 78px; object-fit: cover; display: block">
-        <img data-lazysrc="./assets/projects/int-cam-33-2.webp" alt="Спа" style="width: 100%; height: 100%; min-height: 78px; object-fit: cover; display: block">
+        <img data-lazysrc="./assets/roya/o-gym.jpg" alt="Фитнес-центр" style="width: 100%; height: 100%; min-height: 78px; object-fit: cover; display: block">
+        <img data-lazysrc="./assets/roya/o-beauty.jpg" alt="Спа и beauty" style="width: 100%; height: 100%; min-height: 78px; object-fit: cover; display: block">
       </div>
     </div>
   </div>
@@ -396,24 +396,22 @@ class Component extends DCLogic {
     n.style.transform = this._hdrHidden ? "translateY(-" + (n.offsetHeight + 24) + "px)" : "translateY(0)";
   };
   FIGURES = [
-    { label: "вход от", value: "$250 000" },
+    { label: "вход от", value: "$230 000" },
     { label: "резиденции", value: "143" },
     { label: "площадь застройки", value: "6 945 м²" },
     { label: "год сдачи", value: "2027" },
     { label: "прогноз ROI", value: "10–12%" },
     { label: "рост капитала", value: "15–20%" },
-    { label: "продано на старте", value: "47%" },
+    { label: "продано", value: "64%" },
     { label: "управление", value: "EVERVILLE" },
   ];
   TABS = ["все", "территория", "резиденции", "интерьеры"];
   PHOTOS = [
-    { src: "./assets/projects/ext-5-1.webp", alt: "ROYA RESORT — вид с высоты", place: "курорт с высоты", tab: "территория" },
-    { src: "./assets/projects/ext-2-2.webp", alt: "Фасад корпуса", place: "фасад", tab: "территория" },
-    { src: "./assets/projects/ext-3-3.webp", alt: "Террасы на закате", place: "террасы", tab: "резиденции" },
-    { src: "./assets/projects/ext-3-1-1.webp", alt: "Террасы резиденций", place: "террасы резиденций", tab: "резиденции" },
-    { src: "./assets/projects/int-cam-27.webp", alt: "Лобби курорта", place: "лобби", tab: "интерьеры" },
-    { src: "./assets/projects/int-rest-cam-1-1.webp", alt: "Ресторан", place: "ресторан", tab: "интерьеры" },
-    { src: "./assets/projects/int-cam-33-2.webp", alt: "Спа", place: "спа", tab: "интерьеры" },
+    { src: "./assets/roya/o-aerial.jpg", alt: "ROYA RESORT — вид с высоты на закате", place: "курорт с высоты", tab: "территория" },
+    { src: "./assets/roya/o-pool-night.jpg", alt: "Лагунный бассейн вечером", place: "лагунный бассейн", tab: "территория" },
+    { src: "./assets/roya/o-terraces.jpg", alt: "Террасы резиденций и подъезд", place: "террасы резиденций", tab: "резиденции" },
+    { src: "./assets/roya/o-suite-ocean.jpg", alt: "Спальня с видом на океан", place: "вид на океан", tab: "резиденции" },
+    { src: "./assets/roya/o-lobby.jpg", alt: "Лобби курорта", place: "лобби", tab: "интерьеры" },
   ];
   INDICATORS = [
     { label: "юридическая структура", value: "PT PMA / Hak Pakai", note: "Оптимальная структура подбирается индивидуально вместе с Good Guys Group." },
@@ -655,7 +653,7 @@ class Component extends DCLogic {
         bg: t === s.tab ? "rgb(43,58,39)" : "transparent",
         color: t === s.tab ? "#fff" : "rgb(25,35,22)",
         ring: t === s.tab ? "none" : "inset 0 0 0 1.5px rgba(25,35,22,0.35)",
-        onPick: () => this.setState({ tab: t, idx: 0 }),
+        onPick: () => this.setState({ tab: t, idx: 0 }, () => requestAnimationFrame(() => this.forceUpdate())),
       })),
       photos: photos.map((p, i) => Object.assign({}, p, { onOpen: () => this.openLb(i) })),
       dots: Array.from({ length: maxIdx + 1 }, (_, i) => ({ width: i === idx ? 32 : 14, opacity: i === idx ? 1 : 0.35 })),
