@@ -2,8 +2,9 @@
 <html>
 <head>
 <meta charset="utf-8">
+<link rel="icon" type="image/png" href="./assets/favicon.png">
+<link rel="apple-touch-icon" href="./assets/favicon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script>(function(){var w=window.innerWidth,d=w>=1024?"desktop":w>=768?"tablet":"mobile";if(d!=="mobile"){var s={desktop:"roya.html",tablet:"roya-tablet.html",mobile:"roya-mobile.html"};window.location.replace(s[d]);}})();</script>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -53,7 +54,7 @@
   </div>
 
   <div style="position: relative; width: 100%; height: 100svh; overflow: hidden; background: rgb(25,35,22)" data-om-label="hero" data-screen-label="ROYA RESORT — Hero (mobile)">
-    <img ref="{{ heroImgRef }}" src="./assets/projects/ext-5-1.webp" alt="ROYA RESORT" style="position: absolute; left: 0; right: 0; top: -8%; height: 118%; will-change: transform; width: 100%; object-fit: cover; object-position: center; display: block; opacity: {{ heroImg.o }}; transform: scale({{ heroImg.s }}); transition: opacity 1.1s ease-out, transform 1.4s cubic-bezier(.16,1,.3,1)">
+    <img ref="{{ heroImgRef }}" src="./assets/roya/hero-ex1.jpg" alt="ROYA RESORT" style="position: absolute; left: 0; right: 0; top: -8%; height: 118%; will-change: transform; width: 100%; object-fit: cover; object-position: center; display: block; opacity: {{ heroImg.o }}; transform: scale({{ heroImg.s }}); transition: opacity 1.1s ease-out, transform 1.4s cubic-bezier(.16,1,.3,1)">
     <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(12,18,11,0.82), rgba(12,18,11,0.62) 34%, rgba(12,18,11,0.95)); pointer-events: none"></div>
     <div data-reveal="hero" style="position: relative; width: 100%; box-sizing: border-box; padding: 88px 16px 24px; display: flex; flex-direction: column; gap: 16px; height: 100%; justify-content: center; opacity: {{ heroBlk.o }}; transform: translateY({{ heroBlk.y }}px); transition: transform 1s cubic-bezier(.16,1,.3,1), opacity 1s ease-out">
       <div style="display: flex; flex-direction: row; align-items: center; gap: 8px; font-size: 12px; font-weight: 400; flex-wrap: wrap" data-om-label="breadcrumbs">
@@ -76,7 +77,7 @@
         </div>
       </div>
       <div style="border-radius: 14px; background: rgba(255,255,255,0.14); backdrop-filter: blur(14px) saturate(1.08); padding: 12px; box-sizing: border-box; display: flex; flex-direction: column; gap: 10px; opacity: {{ heroCardO }}; transform: translateY({{ heroCardY }}px); transition: opacity 0.9s ease-out 380ms, transform 0.9s cubic-bezier(.16,1,.3,1) 380ms">
-        <img data-lazysrc="./assets/projects/int-cam-27.webp" alt="Лобби курорта" style="width: 100%; height: 104px; object-fit: cover; border-radius: 10px; display: block">
+        <img data-lazysrc="./assets/roya/card-lobby.jpg" alt="Лобби курорта" style="width: 100%; height: 104px; object-fit: cover; border-radius: 10px; display: block">
         <span style="font-weight: 400; font-size: 13px; line-height: 1.4; color: rgba(255,255,255,0.85)">Гостиничная недвижимость под управлением международного оператора. Полный юридический пакет — до подписания.</span>
         <div style="display: flex; flex-direction: column; gap: 8px">
           <div onClick="{{ openInvest }}" style="border-radius: 8px; background: #fff; display: flex; padding: 14px 20px; justify-content: center; align-items: center; cursor: pointer"><span style="font-weight: 700; font-size: 14px; color: rgb(43,58,39)">Инвестировать</span></div>
@@ -91,7 +92,7 @@
       <sc-for list="{{ figures }}" as="f" hint-placeholder-count="8">
         <div style="position: relative; display: flex; flex-direction: column; gap: 8px; border-top: 2px solid transparent; padding-top: 12px; opacity: {{ f.o }}; transform: translateY({{ f.y }}px); transition: opacity 0.7s ease-out {{ f.delay }}, transform 0.7s cubic-bezier(.16,1,.3,1) {{ f.delay }}"><span data-rule="top" style="position: absolute; left: 0; top: -2px; width: 100%; height: 2px; background: rgb(25,35,22); transform: scaleX(0); transform-origin: left center; transition: transform 0.9s cubic-bezier(.16,1,.3,1) 120ms"></span>
           <span style="font-weight: 400; font-size: 13px; line-height: 1.15; color: #2D2D2D">{{ f.label }}</span>
-          <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 24px; line-height: 1.2; color: rgb(25,35,22); white-space: nowrap">{{ f.value }}</span>
+          <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 17px; line-height: 1.2; color: rgb(25,35,22)">{{ f.value }}</span>
         </div>
       </sc-for>
     </div>
@@ -188,8 +189,9 @@
             <span style="font-weight: 400; font-size: 14px; line-height: 1.25; color: rgb(25,35,22)">{{ sv.label }}</span>
           </div>
         </sc-for>
-        <img data-lazysrc="./assets/roya/o-gym.jpg" alt="Фитнес-центр" style="width: 100%; height: 100%; min-height: 78px; object-fit: cover; display: block">
-        <img data-lazysrc="./assets/roya/o-beauty.jpg" alt="Спа и beauty" style="width: 100%; height: 100%; min-height: 78px; object-fit: cover; display: block">
+        <sc-for list="{{ serviceImages }}" as="si" hint-placeholder-count="2">
+          <img data-lazysrc="{{ si.src }}" alt="{{ si.alt }}" style="width: 100%; height: 100%; min-height: 78px; object-fit: cover; display: block">
+        </sc-for>
       </div>
     </div>
   </div>
@@ -420,6 +422,10 @@ class Component extends DCLogic {
     { label: "рост капитализации", value: "15–20% в год", note: "По данным анализа рынка Dreamland Beach за 2022–2025 гг." },
   ];
   SERVICES = ["Консьерж 24/7", "Частная авиация", "Spa & wellness", "Гольф-членство", "Sleep Lab", "Рестораны", "Сёрф-станция", "Трансфер Balicopter", "Фитнес-центр", "Детский клуб", "Охрана 24/7", "Beach club"].map(label => ({ label }));
+  SERVICE_IMAGES = [
+    { src: "./assets/roya/o-gym.jpg", alt: "Фитнес-центр" },
+    { src: "./assets/roya/o-beauty.jpg", alt: "Спа и beauty" },
+  ];
   PINS = [
     { x: "8%", y: "20%", label: "Dreamland Beach" },
     { x: "50%", y: "12%", label: "New Kuta Golf" },
@@ -431,12 +437,12 @@ class Component extends DCLogic {
     { role: "архитектура", name: "Anna Lutaeva Studio" },
     { role: "юридика", name: "Good Guys Group" },
     { role: "управление", name: "Everville" },
-    { role: "строительство", name: "Archetype Group" },
+    { role: "строительство", name: "Soon" },
   ];
   OTHERS = [
-    { title: "ROYA DESA", status: "старт продаж — Q4 2026", src: "./assets/projects/ext-4-1.webp", href: "./roya-desa-mobile.html" },
-    { title: "BALICOPTER", status: "сервис запущен", src: "./assets/projects/ext-5-3.webp", href: "./balicopter-mobile.html" },
-    { title: "SANATORIUM", status: "скоро в продаже", src: "./assets/projects/int-03-7.webp", href: "./sanatorium-mobile.html" },
+    { title: "ROYA DESA", status: "старт продаж — Q4 2026", src: "./assets/projects/cover-desa.jpg", href: "./roya-desa-mobile.html" },
+    { title: "BALICOPTER", status: "сервис запущен", src: "./assets/projects/cover-balicopter.jpg", href: "./balicopter-mobile.html" },
+    { title: "SANATORIUM", status: "скоро в продаже", src: "./assets/projects/san-arch.jpg", href: "./sanatorium-mobile.html" },
   ];
   visible() { return this.state.tab === "все" ? this.PHOTOS : this.PHOTOS.filter(p => p.tab === this.state.tab); }
   bindLazyImages() {
@@ -645,6 +651,7 @@ class Component extends DCLogic {
       figures: this.FIGURES.map((it, i) => Object.assign({}, it, { delay: (i * 50) + "ms", o: s.rv.data ? 1 : 0, y: s.rv.data ? 0 : 18 })),
       indicators: this.INDICATORS.map((it, i) => Object.assign({}, it, { delay: (i * 60) + "ms", o: s.rv.ind ? 1 : 0, y: s.rv.ind ? 0 : 18 })),
       services: this.SERVICES.map((it, i) => Object.assign({}, it, { delay: (i * 40) + "ms", o: s.rv.srv ? 1 : 0, y: s.rv.srv ? 0 : 14 })),
+      serviceImages: this.SERVICE_IMAGES,
       pins: this.PINS.map((p, i) => Object.assign({}, p, { delay: (200 + i * 100) + "ms", o: s.rv.prt ? 1 : 0, s: s.rv.prt ? 1 : 0.85 })),
       partners: this.PARTNERS.map((it, i) => Object.assign({}, it, { delay: (i * 60) + "ms", o: s.rv.prt ? 1 : 0, y: s.rv.prt ? 0 : 16 })),
       others: this.OTHERS.map((it, i) => Object.assign({}, it, { delay: (i * 70) + "ms", o: s.rv.oth ? 1 : 0, y: s.rv.oth ? 0 : 22 })),

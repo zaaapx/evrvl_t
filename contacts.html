@@ -2,8 +2,9 @@
 <html>
 <head>
 <meta charset="utf-8">
+<link rel="icon" type="image/png" href="./assets/favicon.png">
+<link rel="apple-touch-icon" href="./assets/favicon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script>(function(){var w=window.innerWidth,d=w>=1024?"desktop":w>=768?"tablet":"mobile";if(d!=="desktop"){var s={desktop:"contacts.html",tablet:"contacts-tablet.html",mobile:"contacts-mobile.html"};window.location.replace(s[d]);}})();</script>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -22,10 +23,21 @@
 <div style="width: 100%; position: relative; background: #EBEAE6; font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif">
 
   <sc-if value="{{ evrvlIsDesk }}" hint-placeholder-val="{{ true }}">
-  <div style="position: fixed; left: clamp(12px,2.5vw,36px); right: clamp(12px,2.5vw,36px); top: clamp(10px,2vw,24px); z-index: 100; border-radius: 16px; background: rgba(0,0,0,0.3); backdrop-filter: blur(24px); display: grid; grid-template-columns: auto 1fr auto; padding: clamp(10px,1.2vw,16px) clamp(10px,1.2vw,16px) clamp(10px,1.2vw,16px) clamp(14px,1.8vw,24px); align-items: center; box-sizing: border-box; gap: 16px; overflow: hidden" data-om-label="header">
+  <div style="position: fixed; left: clamp(12px,2.5vw,36px); right: clamp(12px,2.5vw,36px); top: clamp(10px,2vw,24px); z-index: 100; border-radius: 16px; background: rgba(0,0,0,0.3); backdrop-filter: blur(24px); display: grid; grid-template-columns: auto 1fr auto; padding: clamp(10px,1.2vw,16px) clamp(10px,1.2vw,16px) clamp(10px,1.2vw,16px) clamp(14px,1.8vw,24px); align-items: center; box-sizing: border-box; gap: 16px" data-om-label="header">
     <a href="./index.html" style="width: 131px; justify-self: start; flex-shrink: 0; display: block; height: 42px; text-decoration: none"><img src="./assets/logo.svg" alt="EVERVILLE" decoding="async" style="width: 128px; height: 40px; display: block"></a>
     <div style="display: flex; flex-direction: row; gap: clamp(10px,1.8vw,36px); align-items: center; flex-wrap: wrap; justify-self: start; margin-left: clamp(8px,1.2vw,20px); min-width: 0">
-      <a href="./projects.html" style="font-size: clamp(11px,0.97vw,16px); font-weight: 400; line-height: 21px; color: #fff; white-space: nowrap; transition: color 0.2s ease-out; text-decoration: none" style-hover="color: rgba(255,255,255,0.65)">Проекты</a>
+      <div onMouseEnter="{{ openProjMenu }}" onMouseLeave="{{ closeProjMenu }}" style="position: relative; display: flex; align-items: center">
+        <a href="./projects.html" style="font-size: clamp(11px,0.97vw,16px); font-weight: 400; line-height: 21px; color: #fff; white-space: nowrap; transition: color 0.2s ease-out; text-decoration: none" style-hover="color: rgba(255,255,255,0.65)">Проекты</a>
+        <div style="position: absolute; left: -16px; top: 100%; padding-top: 18px; min-width: 260px; opacity: {{ projMenuO }}; visibility: {{ projMenuV }}; transform: translateY({{ projMenuY }}px); transition: opacity 0.22s ease-out, transform 0.22s cubic-bezier(.16,1,.3,1), visibility 0.22s">
+          <div style="display: flex; flex-direction: column; padding: 10px; border-radius: 12px; background: rgba(25,35,22,0.94); backdrop-filter: blur(14px) saturate(1.1); box-shadow: 0 18px 48px rgba(12,18,11,0.28)">
+            <a href="./roya.html" style="padding: 11px 14px; border-radius: 8px; font-size: 15px; font-weight: 400; line-height: 1.2; color: #fff; text-decoration: none; white-space: nowrap; transition: background 0.18s ease-out" style-hover="background: rgba(255,255,255,0.12)">ROYA RESORT</a>
+            <a href="./roya-desa.html" style="padding: 11px 14px; border-radius: 8px; font-size: 15px; font-weight: 400; line-height: 1.2; color: #fff; text-decoration: none; white-space: nowrap; transition: background 0.18s ease-out" style-hover="background: rgba(255,255,255,0.12)">ROYA DESA</a>
+            <a href="./balicopter.html" style="padding: 11px 14px; border-radius: 8px; font-size: 15px; font-weight: 400; line-height: 1.2; color: #fff; text-decoration: none; white-space: nowrap; transition: background 0.18s ease-out" style-hover="background: rgba(255,255,255,0.12)">BALICOPTER</a>
+            <a href="./marina.html" style="padding: 11px 14px; border-radius: 8px; font-size: 15px; font-weight: 400; line-height: 1.2; color: #fff; text-decoration: none; white-space: nowrap; transition: background 0.18s ease-out" style-hover="background: rgba(255,255,255,0.12)">MARINA</a>
+            <a href="./sanatorium.html" style="padding: 11px 14px; border-radius: 8px; font-size: 15px; font-weight: 400; line-height: 1.2; color: #fff; text-decoration: none; white-space: nowrap; transition: background 0.18s ease-out" style-hover="background: rgba(255,255,255,0.12)">SANATORIUM</a>
+          </div>
+        </div>
+      </div>
       <a href="./investments.html" style="font-size: clamp(11px,0.97vw,16px); font-weight: 400; line-height: 21px; color: #fff; white-space: nowrap; transition: color 0.2s ease-out; text-decoration: none" style-hover="color: rgba(255,255,255,0.65)">Инвестиции</a>
       <a href="./legal.html" style="font-size: clamp(11px,0.97vw,16px); font-weight: 400; line-height: 21px; color: #fff; white-space: nowrap; transition: color 0.2s ease-out; text-decoration: none" style-hover="color: rgba(255,255,255,0.65)">Юридика</a>
       <a href="./about.html" style="font-size: clamp(11px,0.97vw,16px); font-weight: 400; line-height: 21px; color: #fff; white-space: nowrap; transition: color 0.2s ease-out; text-decoration: none" style-hover="color: rgba(255,255,255,0.65)">О компании</a>
@@ -360,6 +372,11 @@ class Component extends DCLogic {
   renderVals() {
     return { ...this.evrvlVals(),
       progressRef: this.progressRef,
+      openProjMenu: () => this.setState({ projMenu: true }),
+      closeProjMenu: () => this.setState({ projMenu: false }),
+      projMenuO: this.state.projMenu ? 1 : 0,
+      projMenuV: this.state.projMenu ? "visible" : "hidden",
+      projMenuY: this.state.projMenu ? 0 : -6,
       footerVideoRef: this.footerVideoRef,
       footerVideoSrc: undefined,
       formRef: this.formRef,

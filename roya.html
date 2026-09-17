@@ -2,8 +2,9 @@
 <html>
 <head>
 <meta charset="utf-8">
+<link rel="icon" type="image/png" href="./assets/favicon.png">
+<link rel="apple-touch-icon" href="./assets/favicon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script>(function(){var w=window.innerWidth,d=w>=1024?"desktop":w>=768?"tablet":"mobile";if(d!=="desktop"){var s={desktop:"roya.html",tablet:"roya-tablet.html",mobile:"roya-mobile.html"};window.location.replace(s[d]);}})();</script>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -23,7 +24,18 @@
   <div style="position: fixed; left: clamp(12px,2.5vw,36px); right: clamp(12px,2.5vw,36px); top: clamp(10px,2vw,24px); z-index: 100; border-radius: 16px; background: rgba(0,0,0,0.3); backdrop-filter: blur(24px); display: grid; grid-template-columns: auto 1fr auto; padding: clamp(10px,1.2vw,16px) clamp(10px,1.2vw,16px) clamp(10px,1.2vw,16px) clamp(14px,1.8vw,24px); align-items: center; box-sizing: border-box; gap: 16px" data-om-label="header">
     <a href="./index.html" style="width: 131px; justify-self: start; flex-shrink: 0; display: block; height: 42px; text-decoration: none"><img src="./assets/logo.svg" alt="EVERVILLE" style="width: 128px; height: 40px; display: block"></a>
     <div style="display: flex; flex-direction: row; gap: clamp(10px,1.8vw,36px); align-items: center; flex-wrap: nowrap; justify-self: start; margin-left: clamp(8px,1.2vw,20px); min-width: 0">
-      <a href="./projects.html" style="position: relative; font-size: clamp(11px,0.97vw,16px); font-weight: 700; line-height: 21px; color: #fff; white-space: nowrap; cursor: pointer; text-decoration: none" style-after="content: ''; position: absolute; left: 50%; bottom: -5px; width: 4px; height: 4px; margin-left: -2px; border-radius: 50%; background: #fff">Проекты</a>
+      <div onMouseEnter="{{ openProjMenu }}" onMouseLeave="{{ closeProjMenu }}" style="position: relative; display: flex; align-items: center">
+        <a href="./projects.html" style="position: relative; font-size: clamp(11px,0.97vw,16px); font-weight: 700; line-height: 21px; color: #fff; white-space: nowrap; cursor: pointer; text-decoration: none" style-after="content: ''; position: absolute; left: 50%; bottom: -5px; width: 4px; height: 4px; margin-left: -2px; border-radius: 50%; background: #fff">Проекты</a>
+        <div style="position: absolute; left: -16px; top: 100%; padding-top: 18px; min-width: 260px; opacity: {{ projMenuO }}; visibility: {{ projMenuV }}; transform: translateY({{ projMenuY }}px); transition: opacity 0.22s ease-out, transform 0.22s cubic-bezier(.16,1,.3,1), visibility 0.22s">
+          <div style="display: flex; flex-direction: column; padding: 10px; border-radius: 12px; background: rgba(25,35,22,0.94); backdrop-filter: blur(14px) saturate(1.1); box-shadow: 0 18px 48px rgba(12,18,11,0.28)">
+            <a href="./roya.html" style="padding: 11px 14px; border-radius: 8px; font-size: 15px; font-weight: 400; line-height: 1.2; color: #fff; text-decoration: none; white-space: nowrap; transition: background 0.18s ease-out" style-hover="background: rgba(255,255,255,0.12)">ROYA RESORT</a>
+            <a href="./roya-desa.html" style="padding: 11px 14px; border-radius: 8px; font-size: 15px; font-weight: 400; line-height: 1.2; color: #fff; text-decoration: none; white-space: nowrap; transition: background 0.18s ease-out" style-hover="background: rgba(255,255,255,0.12)">ROYA DESA</a>
+            <a href="./balicopter.html" style="padding: 11px 14px; border-radius: 8px; font-size: 15px; font-weight: 400; line-height: 1.2; color: #fff; text-decoration: none; white-space: nowrap; transition: background 0.18s ease-out" style-hover="background: rgba(255,255,255,0.12)">BALICOPTER</a>
+            <a href="./marina.html" style="padding: 11px 14px; border-radius: 8px; font-size: 15px; font-weight: 400; line-height: 1.2; color: #fff; text-decoration: none; white-space: nowrap; transition: background 0.18s ease-out" style-hover="background: rgba(255,255,255,0.12)">MARINA</a>
+            <a href="./sanatorium.html" style="padding: 11px 14px; border-radius: 8px; font-size: 15px; font-weight: 400; line-height: 1.2; color: #fff; text-decoration: none; white-space: nowrap; transition: background 0.18s ease-out" style-hover="background: rgba(255,255,255,0.12)">SANATORIUM</a>
+          </div>
+        </div>
+      </div>
       <a href="./investments.html" style="font-size: clamp(11px,0.97vw,16px); font-weight: 400; line-height: 21px; color: #fff; white-space: nowrap; transition: color 0.2s ease-out; text-decoration: none" style-hover="color: rgba(255,255,255,0.65)">Инвестиции</a>
       <a href="./legal.html" style="font-size: clamp(11px,0.97vw,16px); font-weight: 400; line-height: 21px; color: #fff; white-space: nowrap; transition: color 0.2s ease-out; text-decoration: none" style-hover="color: rgba(255,255,255,0.65)">Юридика</a>
       <a href="./about.html" style="font-size: clamp(11px,0.97vw,16px); font-weight: 400; line-height: 21px; color: #fff; white-space: nowrap; transition: color 0.2s ease-out; text-decoration: none" style-hover="color: rgba(255,255,255,0.65)">О компании</a>
@@ -46,7 +58,7 @@
   </div>
 
   <div style="position: relative; width: 100%; min-height: 100vh; height: 100vh; overflow: hidden; background: rgb(25,35,22)" data-om-label="hero" data-screen-label="ROYA RESORT — Hero">
-    <img ref="{{ heroImgRef }}" src="./assets/projects/ext-5-1.webp" alt="ROYA RESORT" style="position: absolute; left: 0; right: 0; top: -8%; height: 118%; will-change: transform; width: 100%; object-fit: cover; object-position: center; display: block; opacity: {{ heroImg.o }}; transform: scale({{ heroImg.s }}); transition: opacity 1.1s ease-out, transform 1.4s cubic-bezier(.16,1,.3,1)">
+    <img ref="{{ heroImgRef }}" src="./assets/roya/hero-ex1.jpg" alt="ROYA RESORT" style="position: absolute; left: 0; right: 0; top: -8%; height: 118%; will-change: transform; width: 100%; object-fit: cover; object-position: center; display: block; opacity: {{ heroImg.o }}; transform: scale({{ heroImg.s }}); transition: opacity 1.1s ease-out, transform 1.4s cubic-bezier(.16,1,.3,1)">
     <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(12,18,11,0.55), rgba(12,18,11,0.25) 40%, rgba(12,18,11,0.75)); pointer-events: none"></div>
     <div style="position: absolute; z-index: 2; left: clamp(12px,2.5vw,36px); top: calc(clamp(10px,2vw,24px) + clamp(66px,6.2vw,90px) + 40px); display: flex; flex-direction: row; align-items: center; gap: 10px; padding: 0 clamp(14px,1.8vw,24px); font-size: clamp(12px,0.97vw,15px); font-weight: 400" data-om-label="breadcrumbs">
       <a href="./index.html" style="color: rgba(255,255,255,0.65); text-decoration: none; transition: color 0.2s ease-out" style-hover="color: #fff">Главная</a>
@@ -70,7 +82,7 @@
         </div>
       </div>
       <div style="border-radius: 16px; background: rgba(255,255,255,0.14); backdrop-filter: blur(14px) saturate(1.08); padding: clamp(16px,1.4vw,24px); box-sizing: border-box; display: flex; flex-direction: column; gap: clamp(14px,1.2vw,20px); opacity: {{ heroCardO }}; transform: translateY({{ heroCardY }}px); transition: opacity 0.9s ease-out 380ms, transform 0.9s cubic-bezier(.16,1,.3,1) 380ms">
-        <img data-lazysrc="./assets/projects/int-cam-27.webp" alt="Лобби курорта" style="width: 100%; height: clamp(180px,17vw,260px); object-fit: cover; border-radius: 10px; display: block">
+        <img data-lazysrc="./assets/roya/card-lobby.jpg" alt="Лобби курорта" style="width: 100%; height: clamp(180px,17vw,260px); object-fit: cover; border-radius: 10px; display: block">
         <span style="font-weight: 400; font-size: clamp(13px,1.04vw,16px); line-height: 1.45; color: rgba(255,255,255,0.85)">Гостиничная недвижимость под управлением международного оператора. Полный юридический пакет — до подписания.</span>
         <div style="display: flex; flex-direction: column; gap: 8px">
           <div onClick="{{ openInvest }}" style="border-radius: 8px; background: #fff; display: flex; padding: 16px 22px; justify-content: center; align-items: center; cursor: pointer; transition: background 0.2s ease-out" style-hover="background: rgb(206,210,199)"><span style="font-weight: 700; font-size: 14px; color: rgb(43,58,39); white-space: nowrap">Инвестировать</span></div>
@@ -85,7 +97,7 @@
       <sc-for list="{{ figures }}" as="f" hint-placeholder-count="8">
         <div style="position: relative; display: flex; flex-direction: column; gap: 12px; border-top: 2px solid transparent; padding-top: clamp(12px,1.4vw,20px); opacity: {{ f.o }}; transform: translateY({{ f.y }}px); transition: opacity 0.7s ease-out {{ f.delay }}, transform 0.7s cubic-bezier(.16,1,.3,1) {{ f.delay }}"><span data-rule="top" style="position: absolute; left: 0; top: -2px; width: 100%; height: 2px; background: rgb(25,35,22); transform: scaleX(0); transform-origin: left center; transition: transform 0.9s cubic-bezier(.16,1,.3,1) 120ms"></span>
           <span style="font-weight: 400; font-size: clamp(13px,1.04vw,18px); line-height: 1.1; color: #2D2D2D">{{ f.label }}</span>
-          <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 28px; line-height: 1.1; color: rgb(25,35,22); white-space: nowrap; font-family: HeadingNow-84Regular">{{ f.value }}</span>
+          <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 20px; line-height: 1.1; color: rgb(25,35,22); font-family: HeadingNow-84Regular">{{ f.value }}</span>
         </div>
       </sc-for>
     </div>
@@ -188,10 +200,9 @@
             <span style="font-weight: 400; font-size: clamp(14px,1.15vw,20px); line-height: 1.25; color: rgb(25,35,22)">{{ sv.label }}</span>
           </div>
         </sc-for>
-        <img data-lazysrc="./assets/roya/o-gym.jpg" alt="Фитнес-центр" style="width: 100%; height: 100%; min-height: clamp(88px,7vw,120px); object-fit: cover; display: block">
-        <img data-lazysrc="./assets/roya/o-beauty.jpg" alt="Спа и beauty" style="width: 100%; height: 100%; min-height: clamp(88px,7vw,120px); object-fit: cover; display: block">
-        <img data-lazysrc="./assets/roya/o-kids.jpg" alt="Детский клуб" style="width: 100%; height: 100%; min-height: clamp(88px,7vw,120px); object-fit: cover; display: block">
-        <img data-lazysrc="./assets/roya/o-lobby-shop.jpg" alt="Ритейл в лобби" style="width: 100%; height: 100%; min-height: clamp(88px,7vw,120px); object-fit: cover; display: block">
+        <sc-for list="{{ serviceImages }}" as="si" hint-placeholder-count="4">
+          <img data-lazysrc="{{ si.src }}" alt="{{ si.alt }}" style="width: 100%; height: 100%; min-height: clamp(88px,7vw,120px); object-fit: cover; display: block">
+        </sc-for>
       </div>
     </div>
   </div>
@@ -424,6 +435,12 @@ class Component extends DCLogic {
     { label: "рост капитализации", value: "15–20% в год", note: "По данным анализа рынка Dreamland Beach за 2022–2025 гг." },
   ];
   SERVICES = ["Консьерж 24/7", "Частная авиация", "Spa & wellness", "Гольф-членство", "Sleep Lab", "Рестораны", "Сёрф-станция", "Трансфер Balicopter", "Фитнес-центр", "Детский клуб", "Охрана 24/7", "Beach club"].map(label => ({ label }));
+  SERVICE_IMAGES = [
+    { src: "./assets/roya/o-gym.jpg", alt: "Фитнес-центр" },
+    { src: "./assets/roya/o-beauty.jpg", alt: "Спа и beauty" },
+    { src: "./assets/roya/o-kids.jpg", alt: "Детский клуб" },
+    { src: "./assets/roya/o-lobby-shop.jpg", alt: "Ритейл в лобби" },
+  ];
   PINS = [
     { x: "12%", y: "24%", label: "Dreamland Beach" },
     { x: "58%", y: "16%", label: "New Kuta Golf" },
@@ -435,12 +452,12 @@ class Component extends DCLogic {
     { role: "архитектура", name: "Anna Lutaeva Studio" },
     { role: "юридика", name: "Good Guys Group" },
     { role: "управление", name: "Everville" },
-    { role: "строительство", name: "Archetype Group" },
+    { role: "строительство", name: "Soon" },
   ];
   OTHERS = [
-    { title: "ROYA DESA", status: "старт продаж — Q4 2026", src: "./assets/projects/ext-4-1.webp", href: "./roya-desa.html" },
-    { title: "BALICOPTER", status: "сервис запущен", src: "./assets/projects/ext-5-3.webp", href: "./balicopter.html" },
-    { title: "SANATORIUM", status: "скоро в продаже", src: "./assets/projects/int-03-7.webp", href: "./sanatorium.html" },
+    { title: "ROYA DESA", status: "старт продаж — Q4 2026", src: "./assets/projects/cover-desa.jpg", href: "./roya-desa.html" },
+    { title: "BALICOPTER", status: "сервис запущен", src: "./assets/projects/cover-balicopter.jpg", href: "./balicopter.html" },
+    { title: "SANATORIUM", status: "скоро в продаже", src: "./assets/projects/san-arch.jpg", href: "./sanatorium.html" },
   ];
   visible() { return this.state.tab === "все" ? this.PHOTOS : this.PHOTOS.filter(p => p.tab === this.state.tab); }
   bindLazyImages() {
@@ -609,6 +626,7 @@ class Component extends DCLogic {
       figures: this.FIGURES.map((it, i) => Object.assign({}, it, { delay: (i * 70) + "ms", o: s.rv.data ? 1 : 0, y: s.rv.data ? 0 : 22 })),
       indicators: this.INDICATORS.map((it, i) => Object.assign({}, it, { delay: (i * 70) + "ms", o: s.rv.ind ? 1 : 0, y: s.rv.ind ? 0 : 22 })),
       services: this.SERVICES.map((it, i) => Object.assign({}, it, { delay: (i * 70) + "ms", o: s.rv.srv ? 1 : 0, y: s.rv.srv ? 0 : 18 })),
+      serviceImages: this.SERVICE_IMAGES,
       pins: this.PINS.map((p, i) => Object.assign({}, p, { delay: (200 + i * 110) + "ms", o: s.rv.prt ? 1 : 0, s: s.rv.prt ? 1 : 0.85 })),
       partners: this.PARTNERS.map((it, i) => Object.assign({}, it, { delay: (i * 70) + "ms", o: s.rv.prt ? 1 : 0, y: s.rv.prt ? 0 : 20 })),
       others: this.OTHERS.map((it, i) => Object.assign({}, it, { delay: (i * 70) + "ms", o: s.rv.oth ? 1 : 0, y: s.rv.oth ? 0 : 26 })),
@@ -641,6 +659,11 @@ class Component extends DCLogic {
       ctaFormO: s.rv.ctaform ? 1 : 0, ctaFormY: s.rv.ctaform ? 0 : 24,
       footO: s.rv.foot ? 1 : 0, footY: s.rv.foot ? 0 : 32,
       footerVideo: !!s.footerVideo,
+      openProjMenu: () => this.setState({ projMenu: true }),
+      closeProjMenu: () => this.setState({ projMenu: false }),
+      projMenuO: this.state.projMenu ? 1 : 0,
+      projMenuV: this.state.projMenu ? "visible" : "hidden",
+      projMenuY: this.state.projMenu ? 0 : -6,
       footerVideoRef: this.footerVideoRef,
       footerCols: [
         { title: "Проекты", links: [

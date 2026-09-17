@@ -5,8 +5,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#EBEAE6"/><text x="50" y="58" font-family="serif" font-size="30" fill="rgb(25,35,22)" text-anchor="middle">E</text></svg>
 </template>
 <meta charset="utf-8">
+<link rel="icon" type="image/png" href="./assets/favicon.png">
+<link rel="apple-touch-icon" href="./assets/favicon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script>(function(){var w=window.innerWidth,d=w>=1024?"desktop":w>=768?"tablet":"mobile";if(d!=="desktop"){var s={desktop:"index.html",tablet:"index-tablet.html",mobile:"index-mobile.html"};window.location.replace(s[d]);}})();</script>
 <meta name="ext-resource-dependency" content="./assets/roya-resort.webp" data-resource-id="roya-resort" />
 <meta name="ext-resource-dependency" content="./assets/roya-desa.webp" data-resource-id="roya-desa" />
 <meta name="ext-resource-dependency" content="./assets/balicopter.webp" data-resource-id="balicopter" />
@@ -31,7 +32,7 @@
 <div style="width: {{ mobileWidth }}; margin: 0 auto; position: relative; background: #EBEAE6">
 <div style="display: {{ mobileHeaderDisplay }}; position: fixed; left: 0; right: 0; top: {{ headerTop }}; height: 0; z-index: 400">
   <div ref="{{ hdrRef }}" data-export-hide="true" style="position: relative; margin: 0 12px; z-index: 500; border-radius: 14px; background: rgba(0,0,0,0.32); backdrop-filter: blur(24px); transform: translateY(0); transition: transform 0.4s cubic-bezier(.16,1,.3,1); display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 10px 10px 14px; box-sizing: border-box; opacity:{{ headerOpacity }}; transform:translateY({{ headerOffsetY }}px); transition: opacity 0.6s ease-out, transform 0.6s ease-out">
-    <a href="./" style="display: block; flex-shrink: 0"><img src="./assets/logo-mobile.svg" alt="EVERVILLE" style="width: 120px; height: 36px; display: block"></a>
+    <a href="./index.html" style="display: block; flex-shrink: 0"><img src="./assets/logo-mobile.svg" alt="EVERVILLE" style="width: 120px; height: 36px; display: block"></a>
     <div style="display: flex; flex-direction: row; align-items: center; gap: 6px">
       <div style="display: flex; flex-direction: row; gap: 4px; align-items: center; padding: 12px 10px; border-radius: 8px; cursor: pointer">
         <span style="font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 700; font-size: 13px; color: #fff">RU</span>
@@ -74,9 +75,20 @@
   <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(43,58,39,0) 0%, rgba(22,30,19,0.5) 59%); pointer-events: none; opacity: {{ bottomOpacity }}; transition: opacity 0.6s ease-out"></div>
 
   <div style="position: fixed; left: clamp(12px,2.5vw,36px); right: clamp(12px,2.5vw,36px); top: clamp(10px,2vw,24px); z-index: 100; border-radius: 16px; background: rgba(0,0,0,0.3); backdrop-filter: blur(24px); display: {{ desktopHeaderDisplay }}; grid-template-columns: auto 1fr auto; padding: clamp(10px,1.2vw,16px) clamp(10px,1.2vw,16px) clamp(10px,1.2vw,16px) clamp(14px,1.8vw,24px); align-items: center; box-sizing: border-box; gap: 16px; opacity:{{ headerOpacity }}; transform:translateY({{ headerOffsetY }}px); transition: opacity 0.6s ease-out, transform 0.6s ease-out;">
-    <a href="./" style="width: 131px; justify-self: start; flex-shrink: 0; display: block; height: 42px; align-self: flex-end; flex-direction: column-reverse"><img src="./assets/logo.svg" alt="EVERVILLE" style="width: 128px; height: 40px; display: block"></a>
-    <div style="display:flex; flex-direction:row; gap:clamp(10px,1.8vw,36px); align-items:center; flex-wrap:nowrap; justify-self:start; margin-left:clamp(8px,1.2vw,20px); min-width:0; overflow:hidden;">
-      <span style="font-size: clamp(11px,0.97vw,16px); font-weight: 400; line-height: 21px; color: #fff; text-transform: none; white-space: nowrap; cursor: pointer; transition: color 0.2s ease-out" onClick="{{ goProjects }}" style-hover="color: rgba(255,255,255,0.65)">Проекты</span>
+    <a href="./index.html" style="width: 131px; justify-self: start; flex-shrink: 0; display: block; height: 42px; align-self: flex-end; flex-direction: column-reverse"><img src="./assets/logo.svg" alt="EVERVILLE" style="width: 128px; height: 40px; display: block"></a>
+    <div style="display:flex; flex-direction:row; gap:clamp(10px,1.8vw,36px); align-items:center; flex-wrap:nowrap; justify-self:start; margin-left:clamp(8px,1.2vw,20px); min-width:0; overflow:visible;">
+      <div onMouseEnter="{{ openProjMenu }}" onMouseLeave="{{ closeProjMenu }}" style="position: relative; display: flex; align-items: center">
+        <span style="font-size: clamp(11px,0.97vw,16px); font-weight: 400; line-height: 21px; color: #fff; text-transform: none; white-space: nowrap; cursor: pointer; transition: color 0.2s ease-out" onClick="{{ goProjects }}" style-hover="color: rgba(255,255,255,0.65)">Проекты</span>
+        <div style="position: absolute; left: -16px; top: 100%; padding-top: 18px; min-width: 260px; opacity: {{ projMenuO }}; visibility: {{ projMenuV }}; transform: translateY({{ projMenuY }}px); transition: opacity 0.22s ease-out, transform 0.22s cubic-bezier(.16,1,.3,1), visibility 0.22s">
+          <div style="display: flex; flex-direction: column; padding: 10px; border-radius: 12px; background: rgba(25,35,22,0.94); backdrop-filter: blur(14px) saturate(1.1); box-shadow: 0 18px 48px rgba(12,18,11,0.28)">
+            <a href="./roya.html" style="padding: 11px 14px; border-radius: 8px; font-size: 15px; font-weight: 400; line-height: 1.2; color: #fff; text-decoration: none; white-space: nowrap; transition: background 0.18s ease-out" style-hover="background: rgba(255,255,255,0.12)">ROYA RESORT</a>
+            <a href="./roya-desa.html" style="padding: 11px 14px; border-radius: 8px; font-size: 15px; font-weight: 400; line-height: 1.2; color: #fff; text-decoration: none; white-space: nowrap; transition: background 0.18s ease-out" style-hover="background: rgba(255,255,255,0.12)">ROYA DESA</a>
+            <a href="./balicopter.html" style="padding: 11px 14px; border-radius: 8px; font-size: 15px; font-weight: 400; line-height: 1.2; color: #fff; text-decoration: none; white-space: nowrap; transition: background 0.18s ease-out" style-hover="background: rgba(255,255,255,0.12)">BALICOPTER</a>
+            <a href="./marina.html" style="padding: 11px 14px; border-radius: 8px; font-size: 15px; font-weight: 400; line-height: 1.2; color: #fff; text-decoration: none; white-space: nowrap; transition: background 0.18s ease-out" style-hover="background: rgba(255,255,255,0.12)">MARINA</a>
+            <a href="./sanatorium.html" style="padding: 11px 14px; border-radius: 8px; font-size: 15px; font-weight: 400; line-height: 1.2; color: #fff; text-decoration: none; white-space: nowrap; transition: background 0.18s ease-out" style-hover="background: rgba(255,255,255,0.12)">SANATORIUM</a>
+          </div>
+        </div>
+      </div>
       <a href="./investments.html" style="font-size: clamp(11px,0.97vw,16px); font-weight: 400; line-height: 21px; color: #fff; text-transform: none; white-space: nowrap; transition: color 0.2s ease-out; text-decoration: none" style-hover="color: rgba(255,255,255,0.65)">Инвестиции</a>
       <a href="./legal.html" style="font-size: clamp(11px,0.97vw,16px); font-weight: 400; line-height: 21px; color: #fff; text-transform: none; white-space: nowrap; transition: color 0.2s ease-out; text-decoration: none" style-hover="color: rgba(255,255,255,0.65)">Юридика</a>
       <a href="./about.html" style="font-size: clamp(11px,0.97vw,16px); font-weight: 400; line-height: 21px; color: #fff; text-transform: none; white-space: nowrap; transition: color 0.2s ease-out; text-decoration: none" style-hover="color: rgba(255,255,255,0.65)">О компании</a>
@@ -112,6 +124,7 @@
         </div>
         <div style="overflow: hidden"></div>
       </div>
+      <p style="max-width: 560px; margin: clamp(-40px,-2.6vw,-16px) 0 0; font-weight: 400; font-size: clamp(14px,1.04vw,17px); line-height: 1.55; color: rgba(255,255,255,0.88); text-wrap: pretty; opacity: {{ heroLO }}; transform: translateY({{ heroBtnY }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1) 480ms, opacity 0.9s ease-out 480ms">Проекты под управлением международных операторов: полный юридический пакет до подписания, прозрачная отчётность и доступ к показателям актива в личном кабинете инвестора.</p>
       <div style="display: flex; flex-direction: row; gap: 16px; align-items: center; flex-wrap: wrap; opacity: {{ heroLO }}; transform: translateY({{ heroBtnY }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1) 560ms, opacity 0.9s ease-out 560ms">
         <div onClick="{{ goProjects }}" style="border-radius: 8px; background: rgb(43,58,39); display: flex; padding: clamp(16px,2.5vh,20px) clamp(28px,3.33vw,48px); justify-content: center; align-items: center; box-sizing: border-box; cursor: pointer; transition: background 0.2s ease-out" style-hover="background: rgb(30,41,27)">
           <span style="font-weight: 700; font-size: clamp(13px,calc(11.43px + 0.179vw),16px); line-height: 21px; color: #fff; text-transform: none; white-space: nowrap">Смотреть проекты</span>
@@ -452,7 +465,7 @@
   <video ref="{{ footerVideoRef }}" src="./assets/footer-video.mp4" poster="./assets/footer-beach.webp" loop="{{ true }}" muted="{{ true }}" playsInline="{{ true }}" autoPlay="{{ true }}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; pointer-events: none"></video>
   <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,18,12,0.85), rgba(10,18,12,0.6) 55%, rgba(10,18,12,0.35)); pointer-events: none"></div>
   <div data-reveal="foot" style="position: relative; width: 100%; max-width: 1320px; display: flex; flex-direction: {{ footDir }}; justify-content: space-between; align-items: {{ footAlign }}; gap: clamp(32px,4vw,56px); flex-wrap: wrap; opacity: {{ footO }}; transform: translateY({{ footY }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1), opacity 0.9s ease-out; font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif">
-    <a href="./" style="display: block; flex: 0 0 auto"><img src="./assets/logo.svg" alt="EVERVILLE" style="width: 131px; height: auto; display: block"></a>
+    <a href="./index.html" style="display: block; flex: 0 0 auto"><img src="./assets/logo.svg" alt="EVERVILLE" style="width: 131px; height: auto; display: block"></a>
     <sc-for list="{{ footerCols }}" as="col" hint-placeholder-count="3">
       <div style="display: flex; flex-direction: column; gap: clamp(24px,2.5vw,24px); flex: 0 1 auto; min-width: 160px; align-items: {{ footColAlign }}; text-align: {{ footTextAlign }}">
         <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 18px; line-height: 1.2; text-transform: uppercase; color: #fff">{{ col.title }}</span>
@@ -1005,6 +1018,11 @@ class Component extends DCLogic {
       footO: this.state.footVisible ? 1 : 0,
       footY: this.state.footVisible ? 0 : 32,
       footerVideo: !!this.state.footerVideo,
+      openProjMenu: () => this.setState({ projMenu: true }),
+      closeProjMenu: () => this.setState({ projMenu: false }),
+      projMenuO: this.state.projMenu ? 1 : 0,
+      projMenuV: this.state.projMenu ? "visible" : "hidden",
+      projMenuY: this.state.projMenu ? 0 : -6,
       footerVideoRef: this.footerVideoRef,
       footerCols: [
         { title: "Проекты", links: [
@@ -1028,10 +1046,10 @@ class Component extends DCLogic {
 
       ...(() => {
         const testimonials = [
-          { name: "Александр К.", role: "Инвестор из Москвы", initials: "АК", color: "rgb(43,58,39)", photo: "./assets/investor-1.png", quote: "«Это первый девелопер, который дал мне полный юридический пакет ещё до подписания чего-либо. Именно это и решило.»" },
-          { name: "Марина С.", role: "Инвестор из Москвы", initials: "МС", color: "#391011", photo: "./assets/investor-3.png", quote: "«Прозрачность процессов поразила с первой встречи. Investor Portal — это не просто красивый интерфейс, это реальный контроль над своим активом.»" },
-          { name: "Дмитрий Л.", role: "Инвестор из Дубая", initials: "ДЛ", color: "#8C7A6C", photo: "./assets/investor-2.png", quote: "«Мы рассматривали 8 проектов на Бали. Everville — единственные, кто показал структуру сделки раньше, чем рендеры.»" },
-          { name: "Елена В.", role: "Партнёр проекта", initials: "ЕВ", color: "rgb(138,70,70)", photo: "./assets/investor-4.png", quote: "«Каждое обновление приходит с документом-основанием. За два года — ни одного вопроса без ответа.»" },
+          { name: "Michael R.", role: "Инвестор из США", initials: "MR", color: "rgb(43,58,39)", photo: "./assets/investor-1.png", quote: "«Это первый девелопер, который дал мне полный юридический пакет ещё до подписания чего-либо. Именно это и решило.»" },
+          { name: "Layla A.", role: "Инвестор из ОАЭ", initials: "LA", color: "#391011", photo: "./assets/investor-3.png", quote: "«Прозрачность процессов поразила с первой встречи. Investor Portal — это не просто красивый интерфейс, это реальный контроль над своим активом.»" },
+          { name: "James H.", role: "Инвестор из Великобритании", initials: "JH", color: "#8C7A6C", photo: "./assets/investor-2.png", quote: "«Мы рассматривали 8 проектов на Бали. Everville — единственные, кто показал структуру сделки раньше, чем рендеры.»" },
+          { name: "Anna K.", role: "Инвестор из Германии", initials: "AK", color: "rgb(138,70,70)", photo: "./assets/investor-4.png", quote: "«Каждое обновление приходит с документом-основанием. За два года — ни одного вопроса без ответа.»" },
         ];
         testimonials.forEach(t => { t.bg = t.photo ? "transparent" : t.color; t.noPhoto = !t.photo; });
         const tstCardW = isMob ? 327 : this.CARD_W;
@@ -1091,7 +1109,7 @@ class Component extends DCLogic {
       parMarqO: this.state.marqueeVisible ? 1 : 0,
       parMarqY: this.state.marqueeVisible ? 0 : 28,
       marqueeLogos: (() => {
-        const set = ["./assets/partner-archetype.svg", "./assets/partner-anna-lutaeva.svg", "./assets/partner-goodguys.svg"];
+        const set = ["./assets/partner-archetype.svg", "./assets/partner-anna-lutaeva.svg", "./assets/partner-goodguys.svg", "./assets/partner-oxo.svg"];
         const row = [];
         for (let i = 0; i < 24; i++) row.push({ src: set[i % set.length] });
         return row;

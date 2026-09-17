@@ -2,8 +2,9 @@
 <html>
 <head>
 <meta charset="utf-8">
+<link rel="icon" type="image/png" href="./assets/favicon.png">
+<link rel="apple-touch-icon" href="./assets/favicon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script>(function(){var w=window.innerWidth,d=w>=1024?"desktop":w>=768?"tablet":"mobile";if(d!=="tablet"){var s={desktop:"balicopter.html",tablet:"balicopter-tablet.html",mobile:"balicopter-mobile.html"};window.location.replace(s[d]);}})();</script>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -95,7 +96,7 @@
       <sc-for list="{{ figures }}" as="f" hint-placeholder-count="8">
         <div style="position: relative; display: flex; flex-direction: column; gap: 10px; border-top: 2px solid transparent; padding-top: 14px; opacity: {{ f.o }}; transform: translateY({{ f.y }}px); transition: opacity 0.7s ease-out {{ f.delay }}, transform 0.7s cubic-bezier(.16,1,.3,1) {{ f.delay }}"><span data-rule="top" style="position: absolute; left: 0; top: -2px; width: 100%; height: 2px; background: rgb(25,35,22); transform: scaleX(0); transform-origin: left center; transition: transform 0.9s cubic-bezier(.16,1,.3,1) 120ms"></span>
           <span style="font-weight: 400; font-size: 14px; line-height: 1.1; color: #2D2D2D">{{ f.label }}</span>
-          <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 30px; line-height: 1.2; color: rgb(25,35,22); white-space: nowrap">{{ f.value }}</span>
+          <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 22px; line-height: 1.2; color: rgb(25,35,22)">{{ f.value }}</span>
         </div>
       </sc-for>
     </div>
@@ -200,30 +201,15 @@
             <span style="font-weight: 400; font-size: 15px; line-height: 1.25; color: rgb(25,35,22)">{{ sv.label }}</span>
           </div>
         </sc-for>
-        <img data-lazysrc="./assets/projects/int-19-1.webp" alt="Лаунж" style="width: 100%; height: 100%; min-height: 96px; object-fit: cover; display: block">
-        <img data-lazysrc="./assets/projects/int-cam-33-2.webp" alt="Спа" style="width: 100%; height: 100%; min-height: 96px; object-fit: cover; display: block">
-        <img data-lazysrc="./assets/projects/int-rest-cam-1-1.webp" alt="Ресторан" style="width: 100%; height: 100%; min-height: 96px; object-fit: cover; display: block">
+        <sc-for list="{{ serviceImages }}" as="si" hint-placeholder-count="3">
+          <img data-lazysrc="{{ si.src }}" alt="{{ si.alt }}" style="width: 100%; height: 100%; min-height: 96px; object-fit: cover; display: block">
+        </sc-for>
       </div>
     </div>
   </div>
 
 
-  <div style="background: #EBEAE6; padding: 56px 24px; box-sizing: border-box; display: flex; justify-content: center" data-om-label="partners" data-screen-label="Партнёры проекта">
-    <div data-reveal="prt" style="width: 100%; display: flex; flex-direction: column; gap: 32px; opacity: {{ prtBlk.o }}; transform: translateY({{ prtBlk.y }}px); transition: transform 0.9s cubic-bezier(.16,1,.3,1), opacity 0.9s ease-out">
-      <div style="position: relative; width: 100%; border-radius: 16px; overflow: hidden">
-        <img data-lazysrc="./assets/projects/ext-2-4-1.webp" alt="Локация проекта" style="width: 100%; height: 340px; object-fit: cover; display: block">
-        <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(12,18,11,0.35), rgba(12,18,11,0.1) 45%, rgba(12,18,11,0.45)); pointer-events: none"></div>
-      </div>
-      <div style="display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 24px">
-      <sc-for list="{{ partners }}" as="p" hint-placeholder-count="4">
-        <div style="position: relative; display: flex; flex-direction: column; gap: 10px; border-top: 2px solid transparent; padding-top: 14px; opacity: {{ p.o }}; transform: translateY({{ p.y }}px); transition: opacity 0.7s ease-out {{ p.delay }}, transform 0.7s cubic-bezier(.16,1,.3,1) {{ p.delay }}"><span data-rule="top" style="position: absolute; left: 0; top: -2px; width: 100%; height: 2px; background: rgb(25,35,22); transform: scaleX(0); transform-origin: left center; transition: transform 0.9s cubic-bezier(.16,1,.3,1) 120ms"></span>
-          <span style="font-weight: 400; font-size: 13px; text-transform: lowercase; letter-spacing: 0.02em; color: rgb(138,70,70)">{{ p.role }}</span>
-          <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 20px; line-height: 1.15; text-transform: uppercase; color: rgb(25,35,22)">{{ p.name }}</span>
-        </div>
-      </sc-for>
-      </div>
-    </div>
-  </div>
+  
 
   <sc-if value="{{ showOther }}" hint-placeholder-val="{{ true }}">
     <div style="background: #fff; padding: 64px 24px; box-sizing: border-box; display: flex; justify-content: center" data-om-label="other" data-screen-label="Другие проекты">
@@ -432,6 +418,11 @@ class Component extends DCLogic {
     { label: "масштабирование", value: "+6 маршрутов", note: "План расширения сети маршрутов и площадок на 2026–2027 гг." },
   ];
   SERVICES = ["Чартерные рейсы", "Регулярные маршруты", "Трансфер из аэропорта", "VIP-терминалы", "Экскурсионные полёты", "Корпоративные контракты", "Грузовые рейсы", "Техническое обслуживание", "Страхование полётов", "Обучение пилотов", "Партнёрская программа", "Консьерж 24/7"].map(label => ({ label }));
+  SERVICE_IMAGES = [
+    { src: "./assets/heli/s-1.jpg", alt: "Побережье с высоты" },
+    { src: "./assets/heli/s-2.jpg", alt: "Кратер Иджен" },
+    { src: "./assets/heli/s-3.jpg", alt: "Скалы Келингкинг" },
+  ];
   PINS = [
     { x: "10%", y: "22%", label: "Dreamland Beach" },
     { x: "56%", y: "14%", label: "New Kuta Golf" },
@@ -446,9 +437,9 @@ class Component extends DCLogic {
     { role: "инфраструктура", name: "Archetype Group" },
   ];
   OTHERS = [
-    { title: "ROYA RESORT", status: "продажи открыты", src: "./assets/projects/ext-5-1.webp", href: "./roya-tablet.html" },
-    { title: "ROYA DESA", status: "старт продаж — Q4 2026", src: "./assets/projects/ext-4-1.webp", href: "./roya-desa-tablet.html" },
-    { title: "SANATORIUM", status: "скоро в продаже", src: "./assets/projects/int-03-7.webp", href: "./sanatorium-tablet.html" },
+    { title: "ROYA RESORT", status: "продажи открыты", src: "./assets/projects/cover-roya.jpg", href: "./roya-tablet.html" },
+    { title: "ROYA DESA", status: "старт продаж — Q4 2026", src: "./assets/projects/cover-desa.jpg", href: "./roya-desa-tablet.html" },
+    { title: "SANATORIUM", status: "скоро в продаже", src: "./assets/projects/san-arch.jpg", href: "./sanatorium-tablet.html" },
   ];
   visible() { return this.state.tab === "все" ? this.PHOTOS : this.PHOTOS.filter(p => p.tab === this.state.tab); }
   bindLazyImages() {
@@ -658,6 +649,7 @@ class Component extends DCLogic {
       figures: this.FIGURES.map((it, i) => Object.assign({}, it, { delay: (i * 60) + "ms", o: s.rv.data ? 1 : 0, y: s.rv.data ? 0 : 22 })),
       indicators: this.INDICATORS.map((it, i) => Object.assign({}, it, { delay: (i * 70) + "ms", o: s.rv.ind ? 1 : 0, y: s.rv.ind ? 0 : 22 })),
       services: this.SERVICES.map((it, i) => Object.assign({}, it, { delay: (i * 50) + "ms", o: s.rv.srv ? 1 : 0, y: s.rv.srv ? 0 : 18 })),
+      serviceImages: this.SERVICE_IMAGES,
       pins: this.PINS.map((p, i) => Object.assign({}, p, { delay: (200 + i * 110) + "ms", o: s.rv.prt ? 1 : 0, s: s.rv.prt ? 1 : 0.85 })),
       partners: this.PARTNERS.map((it, i) => Object.assign({}, it, { delay: (i * 70) + "ms", o: s.rv.prt ? 1 : 0, y: s.rv.prt ? 0 : 20 })),
       others: this.OTHERS.map((it, i) => Object.assign({}, it, { delay: (i * 70) + "ms", o: s.rv.oth ? 1 : 0, y: s.rv.oth ? 0 : 26 })),

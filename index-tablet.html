@@ -5,8 +5,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#EBEAE6"/><text x="50" y="58" font-family="serif" font-size="30" fill="rgb(25,35,22)" text-anchor="middle">E</text></svg>
 </template>
 <meta charset="utf-8">
+<link rel="icon" type="image/png" href="./assets/favicon.png">
+<link rel="apple-touch-icon" href="./assets/favicon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script>(function(){var w=window.innerWidth,d=w>=1024?"desktop":w>=768?"tablet":"mobile";if(d!=="tablet"){var s={desktop:"index.html",tablet:"index-tablet.html",mobile:"index-mobile.html"};window.location.replace(s[d]);}})();</script>
 <meta name="ext-resource-dependency" content="./assets/roya-resort.webp" data-resource-id="roya-resort" />
 <meta name="ext-resource-dependency" content="./assets/roya-desa.webp" data-resource-id="roya-desa" />
 <meta name="ext-resource-dependency" content="./assets/balicopter.webp" data-resource-id="balicopter" />
@@ -30,7 +31,7 @@
 <div style="width: {{ mobileWidth }}; margin: 0 auto; position: relative; background: #EBEAE6">
 <div style="display: {{ mobileHeaderDisplay }}; position: fixed; left: 0; right: 0; top: {{ headerTop }}; height: 0; z-index: 400">
   <div ref="{{ hdrRef }}" data-export-hide="true" style="position: relative; margin: 0 12px; z-index: 500; border-radius: 16px; background: rgba(0,0,0,0.3); backdrop-filter: blur(24px); transform: translateY(0); transition: transform 0.4s cubic-bezier(.16,1,.3,1); display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 12px 12px 20px; box-sizing: border-box; overflow: hidden; opacity:{{ headerOpacity }}; transform:translateY({{ headerOffsetY }}px); transition: opacity 0.6s ease-out, transform 0.6s ease-out">
-    <a href="./" style="display: block; flex-shrink: 0"><img src="./assets/logo.svg" alt="EVERVILLE" style="width: 128px; height: 40px; display: block"></a>
+    <a href="./index-tablet.html" style="display: block; flex-shrink: 0"><img src="./assets/logo.svg" alt="EVERVILLE" style="width: 128px; height: 40px; display: block"></a>
     <div style="display: flex; flex-direction: row; align-items: center; gap: 8px">
       <div onClick="{{ openInvest }}" style="border-radius: 8px; background: #fff; display: inline-flex; padding: 12px 18px; justify-content: center; align-items: center; box-sizing: border-box; cursor: pointer; transition: background 0.2s ease-out" style-hover="background: rgb(206,210,199)"><span style="font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 700; font-size: 14px; line-height: 21px; color: rgb(43,58,39); white-space: nowrap">Инвестировать</span></div>
       <div onClick="{{ goLogin }}" style="border-radius: 8px; background: rgb(43,58,39); display: inline-flex; padding: 12px 18px; justify-content: center; align-items: center; box-sizing: border-box; cursor: pointer; transition: background 0.2s ease-out" style-hover="background: rgb(30,41,27)"><span style="font-family: Outfit,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-weight: 700; font-size: 14px; line-height: 21px; color: #fff; white-space: nowrap">Войти</span></div>
@@ -71,7 +72,7 @@
   
 
   <div style="position: fixed; left: clamp(12px,2.5vw,36px); right: clamp(12px,2.5vw,36px); top: clamp(10px,2vw,24px); z-index: 100; border-radius: 16px; background: rgba(0,0,0,0.3); backdrop-filter: blur(24px); display: {{ desktopHeaderDisplay }}; grid-template-columns: auto 1fr auto; padding: clamp(10px,1.2vw,16px) clamp(10px,1.2vw,16px) clamp(10px,1.2vw,16px) clamp(14px,1.8vw,24px); align-items: center; box-sizing: border-box; gap: 16px; opacity:{{ headerOpacity }}; transform:translateY({{ headerOffsetY }}px); transition: opacity 0.6s ease-out, transform 0.6s ease-out;">
-    <a href="./" style="width: 131px; justify-self: start; flex-shrink: 0; display: block; height: 42px; align-self: flex-end; flex-direction: column-reverse"><img src="./assets/logo.svg" alt="EVERVILLE" style="width: 128px; height: 40px; display: block"></a>
+    <a href="./index-tablet.html" style="width: 131px; justify-self: start; flex-shrink: 0; display: block; height: 42px; align-self: flex-end; flex-direction: column-reverse"><img src="./assets/logo.svg" alt="EVERVILLE" style="width: 128px; height: 40px; display: block"></a>
     <div style="display:flex; flex-direction:row; gap:clamp(10px,1.8vw,36px); align-items:center; flex-wrap:nowrap; justify-self:start; margin-left:clamp(8px,1.2vw,20px); min-width:0; overflow:hidden;">
       <span style="font-size: clamp(11px,0.97vw,16px); font-weight: 400; line-height: 21px; color: #fff; text-transform: none; white-space: nowrap; cursor: pointer; transition: color 0.2s ease-out" onClick="{{ goProjects }}" style-hover="color: rgba(255,255,255,0.65)">Проекты</span>
       <a href="./investments-tablet.html" style="font-size: clamp(11px,0.97vw,16px); font-weight: 400; line-height: 21px; color: #fff; text-transform: none; white-space: nowrap; transition: color 0.2s ease-out; text-decoration: none" style-hover="color: rgba(255,255,255,0.65)">Инвестиции</a>
@@ -987,10 +988,10 @@ class Component extends DCLogic {
 
       ...(() => {
         const testimonials = [
-          { name: "Александр К.", role: "Инвестор из Москвы", initials: "АК", color: "rgb(43,58,39)", photo: "./assets/investor-1.png", quote: "«Это первый девелопер, который дал мне полный юридический пакет ещё до подписания чего-либо. Именно это и решило.»" },
-          { name: "Марина С.", role: "Инвестор из Москвы", initials: "МС", color: "#391011", photo: "./assets/investor-3.png", quote: "«Прозрачность процессов поразила с первой встречи. Investor Portal — это не просто красивый интерфейс, это реальный контроль над своим активом.»" },
-          { name: "Дмитрий Л.", role: "Инвестор из Дубая", initials: "ДЛ", color: "#8C7A6C", photo: "./assets/investor-2.png", quote: "«Мы рассматривали 8 проектов на Бали. Everville — единственные, кто показал структуру сделки раньше, чем рендеры.»" },
-          { name: "Елена В.", role: "Партнёр проекта", initials: "ЕВ", color: "rgb(138,70,70)", photo: "./assets/investor-4.png", quote: "«Каждое обновление приходит с документом-основанием. За два года — ни одного вопроса без ответа.»" },
+          { name: "Michael R.", role: "Инвестор из США", initials: "MR", color: "rgb(43,58,39)", photo: "./assets/investor-1.png", quote: "«Это первый девелопер, который дал мне полный юридический пакет ещё до подписания чего-либо. Именно это и решило.»" },
+          { name: "Layla A.", role: "Инвестор из ОАЭ", initials: "LA", color: "#391011", photo: "./assets/investor-3.png", quote: "«Прозрачность процессов поразила с первой встречи. Investor Portal — это не просто красивый интерфейс, это реальный контроль над своим активом.»" },
+          { name: "James H.", role: "Инвестор из Великобритании", initials: "JH", color: "#8C7A6C", photo: "./assets/investor-2.png", quote: "«Мы рассматривали 8 проектов на Бали. Everville — единственные, кто показал структуру сделки раньше, чем рендеры.»" },
+          { name: "Anna K.", role: "Инвестор из Германии", initials: "AK", color: "rgb(138,70,70)", photo: "./assets/investor-4.png", quote: "«Каждое обновление приходит с документом-основанием. За два года — ни одного вопроса без ответа.»" },
         ];
         testimonials.forEach(t => { t.bg = t.photo ? "transparent" : t.color; t.noPhoto = !t.photo; });
         const tstCardW = isMob ? 327 : this.CARD_W;
@@ -1050,7 +1051,7 @@ class Component extends DCLogic {
       parMarqO: this.state.marqueeVisible ? 1 : 0,
       parMarqY: this.state.marqueeVisible ? 0 : 28,
       marqueeLogos: (() => {
-        const set = ["./assets/partner-archetype.svg", "./assets/partner-anna-lutaeva.svg", "./assets/partner-goodguys.svg"];
+        const set = ["./assets/partner-archetype.svg", "./assets/partner-anna-lutaeva.svg", "./assets/partner-goodguys.svg", "./assets/partner-oxo.svg"];
         const row = [];
         for (let i = 0; i < 24; i++) row.push({ src: set[i % set.length] });
         return row;

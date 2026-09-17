@@ -2,8 +2,9 @@
 <html>
 <head>
 <meta charset="utf-8">
+<link rel="icon" type="image/png" href="./assets/favicon.png">
+<link rel="apple-touch-icon" href="./assets/favicon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script>(function(){var w=window.innerWidth,d=w>=1024?"desktop":w>=768?"tablet":"mobile";if(d!=="tablet"){var s={desktop:"sanatorium.html",tablet:"sanatorium-tablet.html",mobile:"sanatorium-mobile.html"};window.location.replace(s[d]);}})();</script>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -95,7 +96,7 @@
       <sc-for list="{{ figures }}" as="f" hint-placeholder-count="8">
         <div style="position: relative; display: flex; flex-direction: column; gap: 10px; border-top: 2px solid transparent; padding-top: 14px; opacity: {{ f.o }}; transform: translateY({{ f.y }}px); transition: opacity 0.7s ease-out {{ f.delay }}, transform 0.7s cubic-bezier(.16,1,.3,1) {{ f.delay }}"><span data-rule="top" style="position: absolute; left: 0; top: -2px; width: 100%; height: 2px; background: rgb(25,35,22); transform: scaleX(0); transform-origin: left center; transition: transform 0.9s cubic-bezier(.16,1,.3,1) 120ms"></span>
           <span style="font-weight: 400; font-size: 14px; line-height: 1.1; color: #2D2D2D">{{ f.label }}</span>
-          <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 30px; line-height: 1.2; color: rgb(25,35,22); white-space: nowrap">{{ f.value }}</span>
+          <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 22px; line-height: 1.2; color: rgb(25,35,22)">{{ f.value }}</span>
         </div>
       </sc-for>
     </div>
@@ -200,9 +201,9 @@
             <span style="font-weight: 400; font-size: 15px; line-height: 1.25; color: rgb(25,35,22)">{{ sv.label }}</span>
           </div>
         </sc-for>
-        <img data-lazysrc="./assets/projects/san-forest.jpg" alt="Лаунж" style="width: 100%; height: 100%; min-height: 96px; object-fit: cover; display: block">
-        <img data-lazysrc="./assets/projects/san-pool.jpg" alt="Спа" style="width: 100%; height: 100%; min-height: 96px; object-fit: cover; display: block">
-        <img data-lazysrc="./assets/projects/san-court.jpg" alt="Ресторан" style="width: 100%; height: 100%; min-height: 96px; object-fit: cover; display: block">
+        <sc-for list="{{ serviceImages }}" as="si" hint-placeholder-count="3">
+          <img data-lazysrc="{{ si.src }}" alt="{{ si.alt }}" style="width: 100%; height: 100%; min-height: 96px; object-fit: cover; display: block">
+        </sc-for>
       </div>
     </div>
   </div>
@@ -412,26 +413,31 @@ class Component extends DCLogic {
     { label: "типов размещения", value: "3" },
     { label: "до Улувату", value: "5 мин" },
     { label: "до аэропорта", value: "17 км" },
-    { label: "прогноз ROI", value: "20–37%" },
+    { label: "прогноз ROI", value: "10–12%" },
     { label: "IRR", value: "35%" },
     { label: "рост wellness-недвижимости", value: "+21%" },
     { label: "оператор", value: "KI-KOSHI" },
   ];
   TABS = ["все", "территория", "номера", "клиника"];
   PHOTOS = [
-    { src: "./assets/projects/san-rice.jpg", alt: "Рисовые террасы вокруг комплекса", place: "террасы", tab: "территория" },
     { src: "./assets/projects/san-court.jpg", alt: "Внутренний двор с водным зеркалом", place: "внутренний двор", tab: "территория" },
+    { src: "./assets/projects/san-tree.jpg", alt: "Территория комплекса", place: "территория", tab: "территория" },
     { src: "./assets/projects/san-pavilion.jpg", alt: "Павильон с панорамным остеклением", place: "павильон", tab: "номера" },
     { src: "./assets/projects/san-glass.jpg", alt: "Резиденция", place: "резиденция", tab: "номера", pos: "10% 50%" },
     { src: "./assets/projects/san-water.jpg", alt: "Спа и термы", place: "спа", tab: "клиника" },
   ];
   INDICATORS = [
     { label: "юридическая структура", value: "PT PMA / Hak Pakai", note: "Структура владения подбирается вместе с Good Guys Group." },
-    { label: "прогноз доходности", value: "ROI 20–37% · IRR 35%", note: "Оценка управляющей компании на данных Global Wellness Institute." },
+    { label: "прогноз доходности", value: "ROI 10–12% · IRR 35%", note: "Оценка управляющей компании на данных Global Wellness Institute." },
     { label: "оператор", value: "KI-KOSHI · Sanatorium AI OS", note: "Номерной фонд работает под управлением wellness-оператора с цифровой платформой." },
     { label: "рынок wellness-недвижимости", value: "$913 млрд к 2028", note: "Рост 15,8% в год при дефиците предложения около 46% (GWI)." },
   ];
   SERVICES = ["Диагностика и мониторинг", "Sanatorium AI OS", "Персональный wellness-план", "Sleep Lab", "Гидротерапия", "Дыхательные практики", "Звук и свет", "Нутрициология и детокс", "Йога и медитация", "Фитнес и восстановление", "Телемедицина 24/7", "Whoop · Oura · Apple Health"].map(label => ({ label }));
+  SERVICE_IMAGES = [
+    { src: "./assets/projects/san-forest.jpg", alt: "Лаунж" },
+    { src: "./assets/projects/san-pool.jpg", alt: "Спа" },
+    { src: "./assets/projects/san-court.jpg", alt: "Ресторан" },
+  ];
   PINS = [
     { x: "10%", y: "22%", label: "Dream Beach" },
     { x: "56%", y: "14%", label: "New Kuta Golf" },
@@ -440,15 +446,15 @@ class Component extends DCLogic {
     { x: "12%", y: "78%", label: "Аэропорт — 17 км" },
   ];
   PARTNERS = [
-    { role: "архитектура", name: "Anna Lutaeva Studio" },
+    { role: "архитектура", name: "Soon" },
     { role: "юридика", name: "Good Guys Group" },
     { role: "управление", name: "Everville" },
-    { role: "строительство", name: "Archetype Group" },
+    { role: "строительство", name: "Soon" },
   ];
   OTHERS = [
-    { title: "ROYA RESORT", status: "продажи открыты", src: "./assets/projects/ext-5-1.webp", href: "./roya-tablet.html" },
-    { title: "ROYA DESA", status: "старт продаж — Q4 2026", src: "./assets/projects/ext-4-1.webp", href: "./roya-desa-tablet.html" },
-    { title: "MARINA", status: "в проектировании", src: "./assets/projects/ext-2-4-1.webp", href: "./marina-tablet.html" },
+    { title: "ROYA RESORT", status: "продажи открыты", src: "./assets/projects/cover-roya.jpg", href: "./roya-tablet.html" },
+    { title: "ROYA DESA", status: "старт продаж — Q4 2026", src: "./assets/projects/cover-desa.jpg", href: "./roya-desa-tablet.html" },
+    { title: "MARINA", status: "в проектировании", src: "./assets/projects/cover-marina.jpg", href: "./marina-tablet.html" },
   ];
   visible() { return this.state.tab === "все" ? this.PHOTOS : this.PHOTOS.filter(p => p.tab === this.state.tab); }
   bindLazyImages() {
@@ -658,6 +664,7 @@ class Component extends DCLogic {
       figures: this.FIGURES.map((it, i) => Object.assign({}, it, { delay: (i * 60) + "ms", o: s.rv.data ? 1 : 0, y: s.rv.data ? 0 : 22 })),
       indicators: this.INDICATORS.map((it, i) => Object.assign({}, it, { delay: (i * 70) + "ms", o: s.rv.ind ? 1 : 0, y: s.rv.ind ? 0 : 22 })),
       services: this.SERVICES.map((it, i) => Object.assign({}, it, { delay: (i * 50) + "ms", o: s.rv.srv ? 1 : 0, y: s.rv.srv ? 0 : 18 })),
+      serviceImages: this.SERVICE_IMAGES,
       pins: this.PINS.map((p, i) => Object.assign({}, p, { delay: (200 + i * 110) + "ms", o: s.rv.prt ? 1 : 0, s: s.rv.prt ? 1 : 0.85 })),
       partners: this.PARTNERS.map((it, i) => Object.assign({}, it, { delay: (i * 70) + "ms", o: s.rv.prt ? 1 : 0, y: s.rv.prt ? 0 : 20 })),
       others: this.OTHERS.map((it, i) => Object.assign({}, it, { delay: (i * 70) + "ms", o: s.rv.oth ? 1 : 0, y: s.rv.oth ? 0 : 26 })),

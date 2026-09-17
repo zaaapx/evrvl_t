@@ -2,8 +2,9 @@
 <html>
 <head>
 <meta charset="utf-8">
+<link rel="icon" type="image/png" href="./assets/favicon.png">
+<link rel="apple-touch-icon" href="./assets/favicon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script>(function(){var w=window.innerWidth,d=w>=1024?"desktop":w>=768?"tablet":"mobile";if(d!=="mobile"){var s={desktop:"about.html",tablet:"about-tablet.html",mobile:"about-mobile.html"};window.location.replace(s[d]);}})();</script>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -433,10 +434,10 @@ class Component extends DCLogic {
   }
   tstIndex = 0;
   TESTIMONIALS = [
-    { name: "Александр К.", role: "Инвестор из Москвы", photo: "./assets/investor-1.png", quote: "«Это первый девелопер, который дал мне полный юридический пакет ещё до подписания чего-либо. Именно это и решило.»" },
-    { name: "Марина С.", role: "Инвестор из Москвы", photo: "./assets/investor-3.png", quote: "«Прозрачность процессов поразила с первой встречи. Investor Portal — это не просто красивый интерфейс, это реальный контроль над своим активом.»" },
-    { name: "Дмитрий Л.", role: "Инвестор из Дубая", photo: "./assets/investor-2.png", quote: "«Мы рассматривали 8 проектов на Бали. Everville — единственные, кто показал структуру сделки раньше, чем рендеры.»" },
-    { name: "Елена В.", role: "Партнёр проекта", photo: "./assets/investor-4.png", quote: "«Каждое обновление приходит с документом-основанием. За два года — ни одного вопроса без ответа.»" },
+    { name: "Michael R.", role: "Инвестор из США", photo: "./assets/investor-1.png", quote: "«Это первый девелопер, который дал мне полный юридический пакет ещё до подписания чего-либо. Именно это и решило.»" },
+    { name: "Layla A.", role: "Инвестор из ОАЭ", photo: "./assets/investor-3.png", quote: "«Прозрачность процессов поразила с первой встречи. Investor Portal — это не просто красивый интерфейс, это реальный контроль над своим активом.»" },
+    { name: "James H.", role: "Инвестор из Великобритании", photo: "./assets/investor-2.png", quote: "«Мы рассматривали 8 проектов на Бали. Everville — единственные, кто показал структуру сделки раньше, чем рендеры.»" },
+    { name: "Anna K.", role: "Инвестор из Германии", photo: "./assets/investor-4.png", quote: "«Каждое обновление приходит с документом-основанием. За два года — ни одного вопроса без ответа.»" },
   ];
   CARD_W = 327; CARD_GAP = 12;
   tstViewportRef = React.createRef();
@@ -482,7 +483,7 @@ class Component extends DCLogic {
   componentDidUpdate() { this.bindLazyImages(); }
   renderVals() {
     return { ...this.evrvlVals(),
-      marqueeLogos: (() => { const set = ["./assets/partner-archetype.svg", "./assets/partner-anna-lutaeva.svg", "./assets/partner-goodguys.svg"]; const row = []; for (let i = 0; i < 24; i++) row.push({ src: set[i % set.length] }); return row; })(),
+      marqueeLogos: (() => { const set = ["./assets/partner-archetype.svg", "./assets/partner-anna-lutaeva.svg", "./assets/partner-goodguys.svg", "./assets/partner-oxo.svg"]; const row = []; for (let i = 0; i < 24; i++) row.push({ src: set[i % set.length] }); return row; })(),
       testimonials: this.TESTIMONIALS.map(t => ({ ...t, bg: "transparent" })),
       tstViewportRef: this.tstViewportRef,
       onTstTouchStart: this.onTstTouchStart,
