@@ -97,7 +97,7 @@
       <sc-for list="{{ figures }}" as="f" hint-placeholder-count="8">
         <div style="position: relative; display: flex; flex-direction: column; gap: 12px; border-top: 2px solid transparent; padding-top: clamp(12px,1.4vw,20px); opacity: {{ f.o }}; transform: translateY({{ f.y }}px); transition: opacity 0.7s ease-out {{ f.delay }}, transform 0.7s cubic-bezier(.16,1,.3,1) {{ f.delay }}"><span data-rule="top" style="position: absolute; left: 0; top: -2px; width: 100%; height: 2px; background: rgb(25,35,22); transform: scaleX(0); transform-origin: left center; transition: transform 0.9s cubic-bezier(.16,1,.3,1) 120ms"></span>
           <span style="font-weight: 400; font-size: clamp(13px,1.04vw,18px); line-height: 1.1; color: #2D2D2D">{{ f.label }}</span>
-          <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: clamp(18px,1.87vw,33px); line-height: 1.1; color: rgb(25,35,22)">{{ f.value }}</span>
+          <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: clamp(16px,1.45vw,26px); line-height: 1.1; color: rgb(25,35,22); overflow-wrap: anywhere; hyphens: auto">{{ f.value }}</span>
         </div>
       </sc-for>
     </div>

@@ -174,7 +174,7 @@
         <sc-for list="{{ pr.stats }}" as="st" hint-placeholder-count="3">
           <div style="position: relative; display: flex; flex-direction: column; gap: 8px; border-top: 2px solid transparent; padding-top: 12px"><span data-rule="top" style="position: absolute; left: 0; top: -2px; width: 100%; height: 2px; background: rgb(25,35,22); transform: scaleX(0); transform-origin: left center; transition: transform 0.9s cubic-bezier(.16,1,.3,1) 120ms"></span>
             <span style="font-weight: 400; font-size: 13px; line-height: 1.1; color: #2D2D2D">{{ st.label }}</span>
-            <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 20px; line-height: 1.1; color: rgb(25,35,22); white-space: nowrap">{{ st.value }}</span>
+            <span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; font-size: 17px; line-height: 1.15; color: rgb(25,35,22); overflow-wrap: anywhere; hyphens: auto">{{ st.value }}</span>
           </div>
         </sc-for>
         <div style="grid-column: 1 / -1; margin-top: 8px">
@@ -359,7 +359,7 @@ class Component extends DCLogic {
     { id: "roya-resort", titleA: "ROYA", titleB: "RESORT", status: "продажи открыты", href: "./roya-mobile.html",
       lead: "Резорт · сёрф · гольф.", desc: "Флагманский курорт Everville на первой линии Dreamland Beach — гостиничная недвижимость с прозрачной отчётностью и полным юридическим пакетом до сделки.",
       loc: "Dreamland Beach, Бали",
-      stats: [{ label: "вход от", value: "$250 000" }, { label: "прогноз ROI", value: "14–18%" }, { label: "продано", value: "70%" }],
+      stats: [{ label: "вход от", value: "$230 000" }, { label: "прогноз ROI", value: "10–12%" }, { label: "продано", value: "64%" }],
       photos: [
         { src: "./assets/projects/ext-5-1.webp", alt: "ROYA Resort ночью — вид с высоты", place: "курорт с высоты" },
         { src: "./assets/projects/ext-2-2.webp", alt: "Фасад корпуса", place: "фасад" },
@@ -369,8 +369,8 @@ class Component extends DCLogic {
       ] },
     { id: "roya-desa", href: "./roya-desa-mobile.html", titleA: "ROYA", titleB: "DESA", status: "старт продаж — Q4 2026",
       lead: "Прибрежный город · марина.", desc: "Новый прибрежный район Everville: жилые кварталы, набережная и городская инфраструктура, которые масштабируют среду вокруг курортов холдинга.",
-      loc: "Karangasem, Bali",
-      stats: [{ label: "вход от", value: "$180 000" }, { label: "прогноз ROI", value: "12–16%" }, { label: "очередь", value: "1 из 3" }],
+      loc: "Карангасем, Бали",
+      stats: [{ label: "вход от", value: "$190 000" }, { label: "прогноз ROI", value: "10–11%" }, { label: "очередь", value: "1 из 3" }],
       photos: [
         { src: "./assets/projects/ext-4-1.webp", alt: "ROYA DESA — жилой корпус", place: "фасад" },
         { src: "./assets/projects/ext-3-1-1.webp", alt: "Террасы резиденций", place: "террасы" },
@@ -379,8 +379,8 @@ class Component extends DCLogic {
       ] },
     { id: "balicopter", href: "./balicopter-mobile.html", titleA: "BALICOPTER", titleB: "", status: "сервис запущен",
       lead: "Частная авиация.", desc: "Вертолётные маршруты между проектами холдинга и труднодоступными локациями острова — время в пути сокращается с часов до минут.",
-      loc: "Бали, хабы Everville",
-      stats: [{ label: "вход от", value: "$50 000" }, { label: "прогноз ROI", value: "10–14%" }, { label: "маршрутов", value: "12" }],
+      loc: "Хабы Everville, Бали",
+      stats: [{ label: "вход", value: "Индивидуальные условия" }, { label: "прогноз ROI", value: "10–14%" }, { label: "маршрутов", value: "12" }],
       photos: [
         { src: "./assets/projects/ext-5-3.webp", alt: "Ночной фасад хаба", place: "хаб" },
         { src: "./assets/projects/int-19-1.webp", alt: "Лаунж", place: "лаунж" },
@@ -388,8 +388,8 @@ class Component extends DCLogic {
       ] },
     { id: "marina", href: "./marina-mobile.html", titleA: "MARINA", titleB: "", status: "в проектировании",
       lead: "Морская инфраструктура.", desc: "Яхтенная марина с причалами, сервисом и береговым клубом — добавляет морское измерение экосистеме Everville.",
-      loc: "Karangasem, Bali",
-      stats: [{ label: "вход от", value: "$120 000" }, { label: "прогноз ROI", value: "11–15%" }, { label: "причалов", value: "120" }],
+      loc: "Карангасем, Бали",
+      stats: [{ label: "вход от", value: "$180 000" }, { label: "прогноз ROI", value: "11–13%" }, { label: "причалов", value: "120" }],
       photos: [
         { src: "./assets/projects/ext-2-4-1.webp", alt: "Береговой клуб на закате", place: "береговой клуб" },
         { src: "./assets/projects/int-rest-cam-9-2-1.webp", alt: "Ресторан клуба", place: "ресторан" },
@@ -398,7 +398,7 @@ class Component extends DCLogic {
     { id: "sanatorium", href: "./sanatorium-mobile.html", titleA: "SANATORIUM", titleB: "", status: "скоро в продаже",
       lead: "Wellness · долголетие · Sanatorium AI OS.", desc: "Wellness-резорт и оператор долголетия у Dream Beach в Печату — восстановительная среда и цифровая платформа Sanatorium AI OS для резидентов и гостей.",
       loc: "Печату, Улувату, Бали",
-      stats: [{ label: "номеров", value: "100" }, { label: "прогноз ROI", value: "20–37%" }, { label: "IRR", value: "35%" }],
+      stats: [{ label: "номеров", value: "100" }, { label: "прогноз ROI", value: "10–12%" }, { label: "IRR", value: "35%" }],
       photos: [
         { src: "./assets/projects/int-03-7.webp", alt: "Интерьер комплекса", place: "холл" },
         { src: "./assets/projects/int-cam5-1.webp", alt: "Зона восстановления", place: "зона восстановления" },
