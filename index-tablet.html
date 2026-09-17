@@ -459,7 +459,7 @@
       <sc-if value="{{ investNotSent }}" hint-placeholder-val="{{ true }}">
         <div style="display: flex; flex-direction: column; gap: 2px; text-transform: uppercase; color: rgb(25,35,22); font-size: clamp(22px,2.2vw,32px); line-height: 1.2; padding-right: 40px">
           <span style="font-family: 'HeadingNow-82Light'; font-weight: 200">оставьте заявку</span>
-          <div style="display: flex; flex-direction: row; align-items: center; gap: clamp(18px,2.4vw,40px)"><span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; white-space: nowrap">на знакомство</span><span data-rule="right" style="flex: 1 1 auto; min-width: 40px; height: 2px; background: rgb(25,35,22); display: block; transform: scaleX(0); transform-origin: left center; transition: transform 0.9s cubic-bezier(.16,1,.3,1) 120ms"></span></div>
+          <div style="display: flex; flex-direction: row; align-items: center; gap: clamp(18px,2.4vw,40px)"><span data-rule="left" style="flex: 1 1 auto; min-width: 40px; height: 2px; background: rgb(25,35,22); display: block; transform: scaleX(0); transform-origin: right center; transition: transform 0.9s cubic-bezier(.16,1,.3,1) 120ms"></span><span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; white-space: nowrap">на знакомство</span></div>
         </div>
         <div style="display: flex; flex-direction: column; gap: 10px">
           <div style="display: flex; flex-direction: column; gap: 10px">
@@ -761,16 +761,16 @@ class Component extends DCLogic {
   renderVals() {
     const forceView = "tablet";
     const projects = [
-      { tag: "стандарт девелопмента", title: "ROYA RESORT", subtitle: "резорт · сёрф · гольф", image: (window.__resources && window.__resources['roya-resort']) || './assets/roya-resort.webp', location: "Dreamland Beach, Бали" },
-      { tag: "инфраструктура города", title: "ROYA DESA", subtitle: "прибрежный город · марина", image: (window.__resources && window.__resources['roya-desa']) || './assets/roya-desa.webp', location: "Карангасем, Бали" },
-      { tag: "доступность острова", title: "BALICOPTER", subtitle: "частная авиация", image: (window.__resources && window.__resources['balicopter']) || './assets/balicopter.webp', location: "Хабы Everville, Бали" },
-      { tag: "морская инфраструктура", title: "MARINA", subtitle: "яхтенная марина · береговой клуб", image: './assets/projects/ext-2-4-1.webp', location: "Карангасем, Бали" },
-      { tag: "wellness и долголетие", title: "SANATORIUM", subtitle: "wellness · Sanatorium AI OS", image: './assets/projects/int-03-7.webp', location: "Печату, Улувату, Бали" },
-      { tag: "стандарт девелопмента", title: "ROYA RESORT", subtitle: "резорт · сёрф · гольф", image: (window.__resources && window.__resources['roya-resort']) || './assets/roya-resort.webp', location: "Dreamland Beach, Бали" },
-      { tag: "инфраструктура города", title: "ROYA DESA", subtitle: "прибрежный город · марина", image: (window.__resources && window.__resources['roya-desa']) || './assets/roya-desa.webp', location: "Карангасем, Бали" },
-      { tag: "доступность острова", title: "BALICOPTER", subtitle: "частная авиация", image: (window.__resources && window.__resources['balicopter']) || './assets/balicopter.webp', location: "Хабы Everville, Бали" },
-      { tag: "морская инфраструктура", title: "MARINA", subtitle: "яхтенная марина · береговой клуб", image: './assets/projects/ext-2-4-1.webp', location: "Карангасем, Бали" },
-      { tag: "wellness и долголетие", title: "SANATORIUM", subtitle: "wellness · Sanatorium AI OS", image: './assets/projects/int-03-7.webp', location: "Печату, Улувату, Бали" },
+      { tag: "стандарт девелопмента", title: "ROYA RESORT", subtitle: "резорт · сёрф · гольф", image: (window.__resources && window.__resources['roya-resort']) || './assets/roya-resort.webp', location: "Dreamland Beach, Bali" },
+      { tag: "инфраструктура города", title: "ROYA DESA", subtitle: "прибрежный город · марина", image: (window.__resources && window.__resources['roya-desa']) || './assets/roya-desa.webp', location: "Karangasem, Bali" },
+      { tag: "доступность острова", title: "BALICOPTER", subtitle: "частная авиация", image: (window.__resources && window.__resources['balicopter']) || './assets/balicopter.webp', location: "Everville Hubs, Bali" },
+      { tag: "морская инфраструктура", title: "MARINA", subtitle: "яхтенная марина · береговой клуб", image: './assets/projects/ext-2-4-1.webp', location: "Karangasem, Bali" },
+      { tag: "wellness и долголетие", title: "SANATORIUM", subtitle: "wellness · Sanatorium AI OS", image: './assets/projects/int-03-7.webp', location: "Pecatu, Uluwatu, Bali" },
+      { tag: "стандарт девелопмента", title: "ROYA RESORT", subtitle: "резорт · сёрф · гольф", image: (window.__resources && window.__resources['roya-resort']) || './assets/roya-resort.webp', location: "Dreamland Beach, Bali" },
+      { tag: "инфраструктура города", title: "ROYA DESA", subtitle: "прибрежный город · марина", image: (window.__resources && window.__resources['roya-desa']) || './assets/roya-desa.webp', location: "Karangasem, Bali" },
+      { tag: "доступность острова", title: "BALICOPTER", subtitle: "частная авиация", image: (window.__resources && window.__resources['balicopter']) || './assets/balicopter.webp', location: "Everville Hubs, Bali" },
+      { tag: "морская инфраструктура", title: "MARINA", subtitle: "яхтенная марина · береговой клуб", image: './assets/projects/ext-2-4-1.webp', location: "Karangasem, Bali" },
+      { tag: "wellness и долголетие", title: "SANATORIUM", subtitle: "wellness · Sanatorium AI OS", image: './assets/projects/int-03-7.webp', location: "Pecatu, Uluwatu, Bali" },
     ];
     const isMob = forceView === "mobile" || (forceView !== "desktop" && forceView !== "tablet" && !!this.state.mobile);
     const isTab = forceView === "tablet" || (forceView === "auto" && !this.state.mobile && !!this.state.tablet);

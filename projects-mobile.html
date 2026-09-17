@@ -307,7 +307,7 @@
       <sc-if value="{{ investNotSent }}" hint-placeholder-val="{{ true }}">
         <div style="display: flex; flex-direction: column; gap: 2px; text-transform: uppercase; color: rgb(25,35,22); font-size: clamp(22px,2.2vw,32px); line-height: 1.2; padding-right: 40px">
           <span style="font-family: 'HeadingNow-82Light'; font-weight: 200">оставьте заявку</span>
-          <div style="display: flex; flex-direction: row; align-items: center; gap: clamp(18px,2.4vw,40px)"><span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; white-space: nowrap">на знакомство</span><span data-rule="right" style="flex: 0 0 auto; width: 96px; height: 2px; background: rgb(25,35,22); display: block; transform: scaleX(0); transform-origin: left center; transition: transform 0.9s cubic-bezier(.16,1,.3,1) 120ms"></span></div>
+          <div style="display: flex; flex-direction: row; align-items: center; gap: clamp(18px,2.4vw,40px)"><span data-rule="left" style="flex: 0 0 auto; width: 96px; height: 2px; background: rgb(25,35,22); display: block; transform: scaleX(0); transform-origin: right center; transition: transform 0.9s cubic-bezier(.16,1,.3,1) 120ms"></span><span style="font-family: 'HeadingNow-84Regular'; font-weight: 400; white-space: nowrap">на знакомство</span></div>
         </div>
         <div style="display: flex; flex-direction: column; gap: 10px">
           <div style="display: flex; flex-direction: row; gap: 10px; flex-wrap: wrap">
@@ -358,7 +358,7 @@ class Component extends DCLogic {
   PROJECTS = [
     { id: "roya-resort", titleA: "ROYA", titleB: "RESORT", status: "продажи открыты", href: "./roya-mobile.html",
       lead: "Резорт · сёрф · гольф.", desc: "Флагманский курорт Everville на первой линии Dreamland Beach — гостиничная недвижимость с прозрачной отчётностью и полным юридическим пакетом до сделки.",
-      loc: "Dreamland Beach, Бали",
+      loc: "Dreamland Beach, Bali",
       stats: [{ label: "вход от", value: "$230 000" }, { label: "прогноз ROI", value: "10–12%" }, { label: "продано", value: "64%" }],
       photos: [
         { src: "./assets/projects/ext-5-1.webp", alt: "ROYA Resort ночью — вид с высоты", place: "курорт с высоты" },
@@ -369,7 +369,7 @@ class Component extends DCLogic {
       ] },
     { id: "roya-desa", href: "./roya-desa-mobile.html", titleA: "ROYA", titleB: "DESA", status: "старт продаж — Q4 2026",
       lead: "Прибрежный город · марина.", desc: "Новый прибрежный район Everville: жилые кварталы, набережная и городская инфраструктура, которые масштабируют среду вокруг курортов холдинга.",
-      loc: "Карангасем, Бали",
+      loc: "Karangasem, Bali",
       stats: [{ label: "вход от", value: "$190 000" }, { label: "прогноз ROI", value: "10–11%" }, { label: "очередь", value: "1 из 3" }],
       photos: [
         { src: "./assets/projects/ext-4-1.webp", alt: "ROYA DESA — жилой корпус", place: "фасад" },
@@ -379,7 +379,7 @@ class Component extends DCLogic {
       ] },
     { id: "balicopter", href: "./balicopter-mobile.html", titleA: "BALICOPTER", titleB: "", status: "сервис запущен",
       lead: "Частная авиация.", desc: "Вертолётные маршруты между проектами холдинга и труднодоступными локациями острова — время в пути сокращается с часов до минут.",
-      loc: "Хабы Everville, Бали",
+      loc: "Everville Hubs, Bali",
       stats: [{ label: "вход", value: "Индивидуальные условия" }, { label: "прогноз ROI", value: "10–14%" }, { label: "маршрутов", value: "12" }],
       photos: [
         { src: "./assets/projects/ext-5-3.webp", alt: "Ночной фасад хаба", place: "хаб" },
@@ -388,7 +388,7 @@ class Component extends DCLogic {
       ] },
     { id: "marina", href: "./marina-mobile.html", titleA: "MARINA", titleB: "", status: "в проектировании",
       lead: "Морская инфраструктура.", desc: "Яхтенная марина с причалами, сервисом и береговым клубом — добавляет морское измерение экосистеме Everville.",
-      loc: "Карангасем, Бали",
+      loc: "Karangasem, Bali",
       stats: [{ label: "вход от", value: "$180 000" }, { label: "прогноз ROI", value: "11–13%" }, { label: "причалов", value: "120" }],
       photos: [
         { src: "./assets/projects/ext-2-4-1.webp", alt: "Береговой клуб на закате", place: "береговой клуб" },
@@ -397,7 +397,7 @@ class Component extends DCLogic {
       ] },
     { id: "sanatorium", href: "./sanatorium-mobile.html", titleA: "SANATORIUM", titleB: "", status: "скоро в продаже",
       lead: "Wellness · долголетие · Sanatorium AI OS.", desc: "Wellness-резорт и оператор долголетия у Dream Beach в Печату — восстановительная среда и цифровая платформа Sanatorium AI OS для резидентов и гостей.",
-      loc: "Печату, Улувату, Бали",
+      loc: "Pecatu, Uluwatu, Bali",
       stats: [{ label: "номеров", value: "100" }, { label: "прогноз ROI", value: "10–12%" }, { label: "IRR", value: "35%" }],
       photos: [
         { src: "./assets/projects/int-03-7.webp", alt: "Интерьер комплекса", place: "холл" },
